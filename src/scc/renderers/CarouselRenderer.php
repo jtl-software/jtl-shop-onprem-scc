@@ -1,0 +1,40 @@
+<?php
+/**
+ * @copyright (c) JTL-Software-GmbH
+ * @license       http://jtl-url.de/jtlshoplicense
+ */
+
+namespace scc\renderers;
+
+use scc\ComponentRendererTrait;
+
+/**
+ * Class CarouselRenderer
+ *
+ * @package scc\renderers
+ */
+class CarouselRenderer extends BlockRenderer
+{
+    use ComponentRendererTrait;
+
+    /**
+     * @inheritdoc
+     */
+    public function render(array $params, ...$args): string
+    {
+        $content = $args[0];
+        if ($content === null) {
+            return '';
+        }
+        $tpl    = $args[1];
+        $params = $this->mergeParams($this->component->getParams(), $params);
+        $tpl->assign('params', $params)
+            ->assign('blockContent', $content)
+            ->assign('parentSmarty', $tpl->smarty);
+
+        $res = $tpl->fetch($this->component->getTemplate());
+        $tpl->smarty->assign('carouselSlides', 0);
+
+        return $res;
+    }
+}

@@ -1,0 +1,42 @@
+<?php declare(strict_types=1);
+/**
+ * @copyright (c) JTL-Software-GmbH
+ * @license       http://jtl-url.de/jtlshoplicense
+ */
+
+namespace scc\renderers;
+
+use scc\ComponentRendererTrait;
+use Smarty\JTLSmartyTemplateClass;
+
+/**
+ * Class TabsRenderer
+ *
+ * @package scc\renderers
+ */
+class TabsRenderer extends BlockRenderer
+{
+    use ComponentRendererTrait;
+
+    /**
+     * @inheritdoc
+     */
+    public function render(array $params, ...$args): string
+    {
+        $content = $args[0];
+        if ($content === null) {
+            return '';
+        }
+        /** @var JTLSmartyTemplateClass $tpl */
+        $tpl    = $args[1];
+        $smarty = $tpl->smarty;
+        $params = $this->mergeParams($this->component->getParams(), $params);
+
+        return $tpl->assign('params', $params)
+                   ->assign('blockContent', $content)
+                   ->assign('tabContents', $smarty->getTemplateVars('tabContents'))
+                   ->assign('tabIDs', $smarty->getTemplateVars('tabIDs'))
+                   ->assign('parentSmarty', $smarty)
+                   ->fetch($this->component->getTemplate());
+    }
+}

@@ -1,0 +1,21 @@
+{
+  "name": "f.moche/scc",
+  "description": "Smarty component collection",
+  "homepage": "https://www.jtl-software.de/",
+  "keywords": ["jtl-shop"],
+  "license": "MIT",
+  "authors": [
+    {
+      "name": "Felix Moche",
+      "email": "felix.moche@jtl-software.com",
+      "homepage": "https://www.jtl-software.de/"
+    }
+  ],
+  "require": {
+    "php": ">=7.1",
+    "myclabs/php-enum": "^1.5"
+  },
+  "autoload": {
+    "psr-4": { "scc\\": "src/scc" }
+  }
+}
