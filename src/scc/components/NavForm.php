@@ -13,6 +13,21 @@ namespace scc\components;
  */
 class NavForm extends AbstractBlockComponent
 {
+    public function __construct()
+    {
+        $prop = new ComponentProperty();
+        $prop->setName('action');
+        $prop->setType(new ComponentPropertyType(ComponentPropertyType::TYPE_STRING));
+        $prop->setDefaultValue('');
+        $params[] = $prop;
+
+        $prop = new ComponentProperty();
+        $prop->setName('method');
+        $prop->setType(new ComponentPropertyType(ComponentPropertyType::TYPE_STRING));
+        $prop->setDefaultValue('POST');
+        $params[] = $prop;
+    }
+
     /**
      * @inheritdoc
      */

@@ -40,10 +40,21 @@ class DropDownItem extends AbstractBlockComponent
         $this->params[] = $prop;
 
         $prop = new ComponentProperty();
+        $prop->setName('rel');
+        $prop->setType(new ComponentPropertyType(ComponentPropertyType::TYPE_STRING));
+        $params[] = $prop;
+
+        $prop = new ComponentProperty();
         $prop->setName('activeClass');
         $prop->setType(new ComponentPropertyType(ComponentPropertyType::TYPE_STRING));
-        $prop->setDefaultValue('acitve');
+        $prop->setDefaultValue('active');
         $this->params[] = $prop;
+
+        $prop = new ComponentProperty();
+        $prop->setName('tag');
+        $prop->setType(new ComponentPropertyType(ComponentPropertyType::TYPE_STRING));
+        $prop->setDefaultValue('a');
+        $params[] = $prop;
 
         $prop = new ComponentProperty();
         $prop->setName('active');
