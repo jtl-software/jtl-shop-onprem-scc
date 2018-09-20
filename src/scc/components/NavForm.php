@@ -15,6 +15,8 @@ class NavForm extends AbstractBlockComponent
 {
     public function __construct()
     {
+        parent::__construct();
+
         $prop = new ComponentProperty();
         $prop->setName('action');
         $prop->setType(new ComponentPropertyType(ComponentPropertyType::TYPE_STRING));
