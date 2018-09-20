@@ -24,13 +24,13 @@ class NavForm extends AbstractBlockComponent
         $prop->setName('action');
         $prop->setType(new ComponentPropertyType(ComponentPropertyType::TYPE_STRING));
         $prop->setDefaultValue('');
-        $params[] = $prop;
+        $this->params[] = $prop;
 
         $prop = new ComponentProperty();
         $prop->setName('method');
         $prop->setType(new ComponentPropertyType(ComponentPropertyType::TYPE_STRING));
         $prop->setDefaultValue('POST');
-        $params[] = $prop;
+        $this->params[] = $prop;
     }
 
     /**
