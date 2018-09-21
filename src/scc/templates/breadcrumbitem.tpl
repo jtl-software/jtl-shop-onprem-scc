@@ -3,7 +3,7 @@
 {if $params.style->hasValue()}style="{$params.style->getValue()}"{/if}
 class="breadcrumb-item{if $params.class->hasValue()} {$params.class->getValue()}{/if}"
 >
-<{$params.routerTag->getValue()} class="nav-link
+<{$params.routerTag->getValue()} class="breadcrumb-link
 {if $params.active->getValue() === true} {$params.activeClass->getValue()}{/if}
 {if $params.disabled->getValue() === true} disabled{/if}"
 {if $params.nofollow->getValue() === true} rel="nofollow"{/if}
