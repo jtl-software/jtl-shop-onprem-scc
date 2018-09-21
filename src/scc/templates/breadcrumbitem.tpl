@@ -1,7 +1,7 @@
 <{$params.tag->getValue()}
 {if $params.id->hasValue()}id="{$params.id->getValue()}"{/if}
 {if $params.style->hasValue()}style="{$params.style->getValue()}"{/if}
-class="nav-item{if $params.class->hasValue()} {$params.class->getValue()}{/if}"
+class="breadcrumb-item{if $params.class->hasValue()} {$params.class->getValue()}{/if}"
 >
 <{$params.routerTag->getValue()} class="nav-link
 {if $params.active->getValue() === true} {$params.activeClass->getValue()}{/if}
