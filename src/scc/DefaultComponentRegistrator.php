@@ -8,6 +8,8 @@ namespace scc;
 
 use scc\components\Alert;
 use scc\components\Badge;
+use scc\components\Breadcrumb;
+use scc\components\BreadcrumbItem;
 use scc\components\Button;
 use scc\components\ButtonGroup;
 use scc\components\ButtonToolbar;
