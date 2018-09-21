@@ -150,5 +150,7 @@ class DefaultComponentRegistrator
         $this->renderer->registerComponent(new NavbarToggle());
         $this->renderer->registerComponent(new Collapse());
         $this->renderer->registerComponent(new Progress());
+        $this->renderer->registerComponent(new Breadcrumb());
+        $this->renderer->registerComponent(new BreadcrumbItem());
     }
 }
