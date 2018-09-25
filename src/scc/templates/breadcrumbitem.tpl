@@ -15,6 +15,7 @@ class="breadcrumb-item{if $params.class->hasValue()} {$params.class->getValue()}
 {if $params.title->hasValue() === true} title="{$params.title->getValue()}"{/if}
 target="{$params.target->getValue()}"
 {if $params.href->hasValue()}href="{$params.href->getValue()}"{/if}
+{if $params.routerTagItemprop->hasValue()}itemprop="{$params.routerTagItemprop->getValue()}"{/if}
 >
 {$blockContent}
 </{$params.routerTag->getValue()}>
