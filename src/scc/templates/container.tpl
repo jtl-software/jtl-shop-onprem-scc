@@ -3,7 +3,7 @@ class="container{if $params.fluid->getValue() === true}-fluid{/if} {$params.clas
 {if $params.style->hasValue()}style="{$params.style->getValue()}"{/if}
 {if $params.id->hasValue()}id="{$params.id->getValue()}"{/if}
 {if $params.itemprop->hasValue()}itemprop="{$params.itemprop->getValue()}"{/if}
-{if $params.itemscope->getValue() === true}itemscope{/if}
+{if $params.itemscope->getValue() === true}itemscope {/if}
 {if $params.itemtype->hasValue()}itemtype="{$params.itemtype->getValue()}"{/if}>
 {$blockContent}
 </{$params.tag->getValue()}>
