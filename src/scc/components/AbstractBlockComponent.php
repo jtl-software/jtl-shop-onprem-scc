@@ -48,6 +48,21 @@ abstract class AbstractBlockComponent implements ComponentInterface
         $prop->setName('style');
         $prop->setType(new ComponentPropertyType(ComponentPropertyType::TYPE_STRING));
         $this->params[] = $prop;
+        
+        $prop = new ComponentProperty();
+        $prop->setName('itemprop');
+        $prop->setType(new ComponentPropertyType(ComponentPropertyType::TYPE_STRING));
+        $this->params[] = $prop;
+        
+        $prop = new ComponentProperty();
+        $prop->setName('itemscope');
+        $prop->setType(new ComponentPropertyType(ComponentPropertyType::TYPE_STRING));
+        $this->params[] = $prop;
+        
+        $prop = new ComponentProperty();
+        $prop->setName('itemtype');
+        $prop->setType(new ComponentPropertyType(ComponentPropertyType::TYPE_STRING));
+        $this->params[] = $prop;
     }
 
     /**
