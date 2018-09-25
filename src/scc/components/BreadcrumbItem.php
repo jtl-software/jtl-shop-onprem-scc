@@ -58,6 +58,11 @@ class BreadcrumbItem extends AbstractBlockComponent
         $this->params[] = $prop;
 
         $prop = new ComponentProperty();
+        $prop->setName('router-tag-itemprop');
+        $prop->setType(new ComponentPropertyType(ComponentPropertyType::TYPE_STRING));
+        $this->params[] = $prop;
+
+        $prop = new ComponentProperty();
         $prop->setName('exact-active-class');
         $prop->setType(new ComponentPropertyType(ComponentPropertyType::TYPE_STRING));
         $prop->setDefaultValue('active');
