@@ -57,6 +57,11 @@ class Select extends AbstractBlockComponent
         $prop->setType(new ComponentPropertyType(ComponentPropertyType::TYPE_INT));
         $prop->setDefaultValue(0);
         $this->params[] = $prop;
+        
+        $prop = new ComponentProperty();
+        $prop->setName('autocomplete');
+        $prop->setType(new ComponentPropertyType(ComponentPropertyType::TYPE_STRING));
+        $this->params[] = $prop;
     }
 
     /**
