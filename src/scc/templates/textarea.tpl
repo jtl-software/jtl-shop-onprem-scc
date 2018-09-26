@@ -6,4 +6,5 @@
     {if $params.style->hasValue()}style="{$params.style->getValue()}"{/if}
     {if $params.disabled->getValue() === true}disabled{/if}
     {if $params.name->hasValue()}name="{$params.name->getValue()}"{/if}
+    {if $params.required->getValue() === true} required{/if}
 >{$blockContent}</textarea>
