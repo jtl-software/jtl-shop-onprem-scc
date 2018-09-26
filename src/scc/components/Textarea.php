@@ -88,6 +88,11 @@ class Textarea extends AbstractBlockComponent
         $prop->setType(new ComponentPropertyType(ComponentPropertyType::TYPE_STRING));
         $prop->setDefaultValue('soft');
         $this->params[] = $prop;
+        
+        $prop = new ComponentProperty();
+        $prop->setName('name');
+        $prop->setType(new ComponentPropertyType(ComponentPropertyType::TYPE_STRING));
+        $this->params[] = $prop;
     }
 
     /**
