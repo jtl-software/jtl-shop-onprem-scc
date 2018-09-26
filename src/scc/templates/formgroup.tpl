@@ -37,7 +37,7 @@
                     {$params.label->getValue()}
                 </legend>
             {/if}
-            <div class="{if $params.horizontal->getValue() === true}col-{$breakPoint}-{12 - $params.labelCols->getValue()}{/if}">
+            <div{if $params.horizontal->getValue() === true} class="col-{$breakPoint}-{12 - $params.labelCols->getValue()}"{/if}>
                 {$blockContent}
                 {if $params.description->hasValue()}
                     <small id="form-group-description-{$id}" class="form-text text-muted">{$params.description->getValue()}</small>
