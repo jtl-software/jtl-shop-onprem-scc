@@ -10,7 +10,7 @@
 {*IDs:<br>*}
 {*{$parentSmarty->getTemplateVars('tabIDs')|var_dump}*}
 
-<div class="tab-content" id="myTabContent">
+<div class="tab-content"{if $params.id->hasValue()} id="tab-content-{$params.id->getValue()}"{/if}>
     {foreach $tabContents as $i => $tab}
         <div class="tab-pane fade{if $tab@index === 0} show active{/if}"
              id="tab-{$tabIDs[$i]}"
