@@ -11,6 +11,6 @@
          aria-valuenow="{$params.now->getValue()}"
          aria-valuemin="{$params.min->getValue()}"
          aria-valuemax="{$params.max->getValue()}">
-
+        {if $params.title->hasValue()}{$params.title->getValue()}{/if}
     </div>
 </div>
