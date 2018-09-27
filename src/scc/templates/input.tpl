@@ -3,6 +3,7 @@
     class="form-control {$params.class->getValue()}{if $params.size->hasValue()} form-control-{$params.size->getValue()}{/if}"
     {if $params.placeholder->hasValue()}placeholder="{$params.placeholder->getValue()}"{/if}
     {if $params.readonly->getValue() === true} readonly{/if}
+    {if $params.id->hasValue()} id="{$params.id->getValue()}"{/if}
     {if $params.required->getValue() === true} required{/if}
     {if $params.disabled->getValue() === true} disabled{/if}
     {if $params.style->hasValue()}style="{$params.style->getValue()}"{/if}
