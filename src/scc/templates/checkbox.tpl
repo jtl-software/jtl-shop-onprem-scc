@@ -13,7 +13,6 @@
     {assign var=buttons value=$parentBlockParams.buttons->getValue()}
 {/if}
 {$params.required->getValue()|@var_dump}
-{$parentBlockParams.required->getValue()|@var_dump}
 {if $buttons === false}
     <div class="
             {if $plain === false}
