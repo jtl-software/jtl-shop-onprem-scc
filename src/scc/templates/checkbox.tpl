@@ -26,6 +26,7 @@
                 id="{$id}"
                 {if $params.name->hasValue()}name="{$params.name->getValue()}"{/if}
                 {if $params.disabled->getValue() === true}disabled{/if}
+                {if $params.required->getValue() === true}required{/if}
         >
         {if !empty($blockContent)}
             <label for="{$id}" class="{if $plain === false}custom-control-label{else}form-check-label{/if}">
@@ -39,7 +40,8 @@
                 id="{$id}"
                 type="checkbox"
                 {if $params.name->hasValue()}name="{$params.name->getValue()}"{/if}
-                class=""
+                {if $params.required->getValue() === true}required{/if}
+                class="{$params.class->getValue()}"
         >
         <span><span>{$blockContent}</span></span>
     </label>
