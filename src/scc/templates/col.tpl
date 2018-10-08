@@ -1,4 +1,7 @@
 {$class = 'col '|cat:$params.class->getValue()}
+{if $params.offset->hasValue()}
+    {$class = "{$class} offset-{$params.offset->getValue()}"}
+{/if}
 {if $params.offsetSm->hasValue()}
     {$class = "{$class} offset-sm-{$params.offsetSm->getValue()}"}
 {/if}
