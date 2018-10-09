@@ -17,6 +17,8 @@
     {if $params.right->getValue() === true} float-right{/if}
     {if $params.center->getValue() === true} mx-auto d-block{/if}
     "
+    {if $params.id->hasValue()}id="{$params.id->getValue()}"{/if}
+    {if $params.alt->hasValue()}alt="{$params.alt->getValue()}"{/if}
     {if $params.width->hasValue()}width="{$params.width->getValue()}"{/if}
     {if $params.height->hasValue()}height="{$params.height->getValue()}"{/if}
     {if $params.style->hasValue()}style="{$params.style->getValue()}"{/if}
