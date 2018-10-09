@@ -67,6 +67,11 @@ class Select extends AbstractBlockComponent
         $prop->setName('name');
         $prop->setType(new ComponentPropertyType(ComponentPropertyType::TYPE_STRING));
         $this->params[] = $prop;
+        
+        $prop = new ComponentProperty();
+        $prop->setName('title');
+        $prop->setType(new ComponentPropertyType(ComponentPropertyType::TYPE_STRING));
+        $this->params[] = $prop;
     }
 
     /**
