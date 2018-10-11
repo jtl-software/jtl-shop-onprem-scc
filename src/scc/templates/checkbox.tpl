@@ -19,7 +19,12 @@
                 {if $stacked === false} custom-control-inline{/if}
             {else}
                 form-check{if $stacked === false} form-check-inline{/if}
-            {/if}">
+            {/if}"
+        {if $params.itemprop->hasValue()}itemprop="{$params.itemprop->getValue()}"{/if}
+        {if $params.itemscope->getValue() === true}itemscope {/if}
+        {if $params.itemtype->hasValue()}itemtype="{$params.itemtype->getValue()}"{/if}
+        {if $params.itemid->hasValue()}itemid="{$params.itemid->getValue()}"{/if}
+    >
         <input
                 class="{if $plain === false}custom-control-input{else}form-check-input{/if} {$params.class->getValue()}"
                 type="checkbox"
@@ -35,7 +40,12 @@
         {/if}
     </div>
 {else}
-    <label class="btn btn-{$parentBlockParams.buttonVariant->getValue()} btn-{$parentBlockParams.size->getValue()}{if $params.disabled->getValue() === true} disabled{/if}">
+    <label class="btn btn-{$parentBlockParams.buttonVariant->getValue()} btn-{$parentBlockParams.size->getValue()}{if $params.disabled->getValue() === true} disabled{/if}"
+        {if $params.itemprop->hasValue()}itemprop="{$params.itemprop->getValue()}"{/if}
+        {if $params.itemscope->getValue() === true}itemscope {/if}
+        {if $params.itemtype->hasValue()}itemtype="{$params.itemtype->getValue()}"{/if}
+        {if $params.itemid->hasValue()}itemid="{$params.itemid->getValue()}"{/if}
+    >
         <input
                 id="{$id}"
                 type="checkbox"
