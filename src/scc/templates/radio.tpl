@@ -16,29 +16,39 @@
 {/if}
 {if $buttons === false}
     <div class="
-            {if $plain === false}
-                custom-control custom-radio
-                {if $stacked === false} custom-control-inline{/if}
-            {else}
-                form-check{if $stacked === false} form-check-inline{/if}
-            {/if}">
-            <input
-                class="{if $plain === false}custom-control-input{else}form-check-input{/if} {$params.class->getValue()}"
-                type="radio"
-                id="{$id}"
-                {if $params.name->hasValue()}name="{$params.name->getValue()}"{/if}
-                {if $params.value->hasValue()}name="{$params.value->getValue()}"{/if}
-                {if $params.disabled->getValue() === true}disabled{/if}
-            >
-            {if !empty($blockContent)}
-                <label for="{$id}" class="{if $plain === false}custom-control-label{else}form-check-label{/if}">
-                    {$blockContent}
-                </label>
-            {/if}
+        {if $plain === false}
+            custom-control custom-radio
+            {if $stacked === false} custom-control-inline{/if}
+        {else}
+            form-check{if $stacked === false} form-check-inline{/if}
+        {/if}"
+        {if $params.itemprop->hasValue()}itemprop="{$params.itemprop->getValue()}"{/if}
+        {if $params.itemscope->getValue() === true}itemscope {/if}
+        {if $params.itemtype->hasValue()}itemtype="{$params.itemtype->getValue()}"{/if}
+        {if $params.itemid->hasValue()}itemid="{$params.itemid->getValue()}"{/if}
+    >
+        <input
+            class="{if $plain === false}custom-control-input{else}form-check-input{/if} {$params.class->getValue()}"
+            type="radio"
+            id="{$id}"
+            {if $params.name->hasValue()}name="{$params.name->getValue()}"{/if}
+            {if $params.value->hasValue()}name="{$params.value->getValue()}"{/if}
+            {if $params.disabled->getValue() === true}disabled{/if}
+        >
+        {if !empty($blockContent)}
+            <label for="{$id}" class="{if $plain === false}custom-control-label{else}form-check-label{/if}">
+                {$blockContent}
+            </label>
+        {/if}
     </div>
 {else}
     <label
-        class="btn btn-{$parentBlockParams.buttonVariant->getValue()} btn-{$parentBlockParams.size->getValue()}{if $params.disabled->getValue() === true} disabled{/if}">
+        class="btn btn-{$parentBlockParams.buttonVariant->getValue()} btn-{$parentBlockParams.size->getValue()}{if $params.disabled->getValue() === true} disabled{/if}"
+        {if $params.itemprop->hasValue()}itemprop="{$params.itemprop->getValue()}"{/if}
+        {if $params.itemscope->getValue() === true}itemscope {/if}
+        {if $params.itemtype->hasValue()}itemtype="{$params.itemtype->getValue()}"{/if}
+        {if $params.itemid->hasValue()}itemid="{$params.itemid->getValue()}"{/if}
+    >
         <input
             autocomplete="off"
             id="{$id}"
