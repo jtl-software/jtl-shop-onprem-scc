@@ -32,6 +32,7 @@
                 {if $params.name->hasValue()}name="{$params.name->getValue()}"{/if}
                 {if $params.disabled->getValue() === true}disabled{/if}
                 {if $params.required->getValue() === true}required{/if}
+                {if $params.checked->getValue() === true}checked{/if}
         >
         {if !empty($blockContent)}
             <label for="{$id}" class="{if $plain === false}custom-control-label{else}form-check-label{/if}">
@@ -51,6 +52,7 @@
                 type="checkbox"
                 {if $params.name->hasValue()}name="{$params.name->getValue()}"{/if}
                 {if $params.required->getValue() === true}required{/if}
+                {if $params.checked->getValue() === true}checked{/if}
                 class="{$params.class->getValue()}"
         >
         <span><span>{$blockContent}</span></span>
