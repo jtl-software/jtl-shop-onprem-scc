@@ -40,6 +40,12 @@ class Checkbox extends AbstractBlockComponent
         $prop->setType(new ComponentPropertyType(ComponentPropertyType::TYPE_BOOL));
         $prop->setDefaultValue(false);
         $this->params[] = $prop;
+        
+        $prop = new ComponentProperty();
+        $prop->setName('checked');
+        $prop->setType(new ComponentPropertyType(ComponentPropertyType::TYPE_BOOL));
+        $prop->setDefaultValue(false);
+        $this->params[] = $prop;
 
         $prop = new ComponentProperty();
         $prop->setName('button-variant');
