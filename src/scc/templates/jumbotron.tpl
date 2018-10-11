@@ -5,7 +5,12 @@
     {if $params.borderVariant->hasValue()} border border-{$params.borderVariant->getValue()}{/if}
 "
     {if $params.id->hasValue()}id="{$params.id->getValue()}"{/if}
-    {if $params.style->hasValue()}style="{$params.style->getValue()}"{/if}>
+    {if $params.style->hasValue()}style="{$params.style->getValue()}"{/if}
+    {if $params.itemprop->hasValue()}itemprop="{$params.itemprop->getValue()}"{/if}
+    {if $params.itemscope->getValue() === true}itemscope {/if}
+    {if $params.itemtype->hasValue()}itemtype="{$params.itemtype->getValue()}"{/if}
+    {if $params.itemid->hasValue()}itemid="{$params.itemid->getValue()}"{/if}
+>
 {if $params.header->hasValue()}
     <{$params.headerTag} class="display-4">
         {$params.header->getValue()}
