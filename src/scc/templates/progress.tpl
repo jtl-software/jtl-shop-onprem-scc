@@ -2,7 +2,11 @@
     {if $params.style->hasValue() || $params.height->hasValue()}style="{$params.style->getValue()}{if $params.height->hasValue()}; height: {$params.height->getValue()}{/if}" {/if}
     {if $params.id->hasValue()}id="{$params.id->getValue()}" {/if}
     {if $params.class->hasValue() || $params.height->hasValue()}class="{$params.class->getValue()}" {/if}
-    >
+    {if $params.itemprop->hasValue()}itemprop="{$params.itemprop->getValue()}"{/if}
+    {if $params.itemscope->getValue() === true}itemscope {/if}
+    {if $params.itemtype->hasValue()}itemtype="{$params.itemtype->getValue()}"{/if}
+    {if $params.itemid->hasValue()}itemid="{$params.itemid->getValue()}"{/if}
+>
     <div class="progress-bar{if $params.type->hasValue()} bg-{$params.type->getValue()}{/if}
          {if $params.striped->getValue() === true} progress-bar-striped{/if}
          {if $params.animated->getValue() === true} progress-bar-animated{/if}"
