@@ -13,4 +13,8 @@
     {if $params.step->hasValue()}step="{$params.step->getValue()}"{/if}
     {if $params.name->hasValue()}name="{$params.name->getValue()}"{/if}
     {if $params.autocomplete->hasValue()}autocomplete="{$params.autocomplete->getValue()}"{/if}
+    {if $params.itemprop->hasValue()}itemprop="{$params.itemprop->getValue()}"{/if}
+    {if $params.itemscope->getValue() === true}itemscope {/if}
+    {if $params.itemtype->hasValue()}itemtype="{$params.itemtype->getValue()}"{/if}
+    {if $params.itemid->hasValue()}itemid="{$params.itemid->getValue()}"{/if}
 >
