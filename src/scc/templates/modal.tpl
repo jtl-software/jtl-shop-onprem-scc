@@ -12,7 +12,12 @@
 {*{$blockContent}*}
 {*</button>*}
 
-<div class="modal {$params.class->getValue()}" tabindex="-1" role="dialog"{if $params.id->hasValue()} id="{$params.id->getValue()}"{/if}>
+<div class="modal {$params.class->getValue()}" tabindex="-1" role="dialog"{if $params.id->hasValue()} id="{$params.id->getValue()}"{/if}
+    {if $params.itemprop->hasValue()}itemprop="{$params.itemprop->getValue()}"{/if}
+    {if $params.itemscope->getValue() === true}itemscope {/if}
+    {if $params.itemtype->hasValue()}itemtype="{$params.itemtype->getValue()}"{/if}
+    {if $params.itemid->hasValue()}itemid="{$params.itemid->getValue()}"{/if}
+>
     <div class="modal-dialog{if $params.centered->getValue() === true} modal-dialog-centered{/if}" role="document">
         <div class="modal-content">
             <div class="modal-header">
