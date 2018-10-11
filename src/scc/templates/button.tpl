@@ -12,6 +12,10 @@
     {if $params.title->hasValue()}title="{$params.title->getValue()}" {/if}
     {if $params.disabled->getValue() === true}disabled{/if}
     {if $params.dataToggle->hasValue()}data-toggle="{$params.dataToggle->getValue()}"{/if}
-    {if $params.dataTarget->hasValue()}data-target="{$params.dataTarget->getValue()}"{/if}>
+    {if $params.dataTarget->hasValue()}data-target="{$params.dataTarget->getValue()}"{/if}
+    {if $params.itemprop->hasValue()}itemprop="{$params.itemprop->getValue()}"{/if}
+    {if $params.itemscope->getValue() === true}itemscope {/if}
+    {if $params.itemtype->hasValue()}itemtype="{$params.itemtype->getValue()}"{/if}
+    {if $params.itemid->hasValue()}itemid="{$params.itemid->getValue()}"{/if}>
 {$blockContent}
 </button>
