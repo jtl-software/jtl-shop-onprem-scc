@@ -3,7 +3,12 @@
 {assign var=id value=$params.id->getValue()|default:uniqid()}
 {assign var=breakPoint value=$params.breakpoint->getValue()}
 {if $params.labelFor->hasValue()}
-    <div id="{$id}" role="group" aria-labelledby="form-group-label-{$id}" class="form-group">
+    <div id="{$id}" role="group" aria-labelledby="form-group-label-{$id}" class="form-group" 
+        {if $params.itemprop->hasValue()}itemprop="{$params.itemprop->getValue()}"{/if}
+        {if $params.itemscope->getValue() === true}itemscope {/if}
+        {if $params.itemtype->hasValue()}itemtype="{$params.itemtype->getValue()}"{/if}
+        {if $params.itemid->hasValue()}itemid="{$params.itemid->getValue()}"{/if}
+    >
         {if $params.horizontal->getValue() === true}
             <div class="form-row">
         {/if}
@@ -26,6 +31,10 @@
         class="form-group {$params.class->getValue()}"
         id="{$id}"
         {if $params.label->hasValue()}aria-labelledby="label-{$id}" {/if}
+        {if $params.itemprop->hasValue()}itemprop="{$params.itemprop->getValue()}"{/if}
+        {if $params.itemscope->getValue() === true}itemscope {/if}
+        {if $params.itemtype->hasValue()}itemtype="{$params.itemtype->getValue()}"{/if}
+        {if $params.itemid->hasValue()}itemid="{$params.itemid->getValue()}"{/if}
     >
         {if $params.horizontal->getValue() === true}
             <div class="form-row">
