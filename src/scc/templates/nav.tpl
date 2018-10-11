@@ -7,6 +7,10 @@
     {if $params.fill->getValue() === true} nav-fill{/if}
     {if $params.pills->getValue() === true} nav-pills{/if}
     {if $params.tabs->getValue() === true} nav-tabs{/if}"
+    {if $params.itemprop->hasValue()}itemprop="{$params.itemprop->getValue()}"{/if}
+    {if $params.itemscope->getValue() === true}itemscope {/if}
+    {if $params.itemtype->hasValue()}itemtype="{$params.itemtype->getValue()}"{/if}
+    {if $params.itemid->hasValue()}itemid="{$params.itemid->getValue()}"{/if}
 >
-{$blockContent}
+    {$blockContent}
 </{$params.tag->getValue()}>
