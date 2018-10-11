@@ -2,6 +2,10 @@
     class="input-group-{if $params.append->getValue() === true}append{else}prepend{/if} {$params.class->getValue()}"
     {if $params.style->hasValue()}style="{$params.style->getValue()}"{/if}
     {if $params.id->hasValue()}id="{$params.id->getValue()}"{/if}
+    {if $params.itemprop->hasValue()}itemprop="{$params.itemprop->getValue()}"{/if}
+    {if $params.itemscope->getValue() === true}itemscope {/if}
+    {if $params.itemtype->hasValue()}itemtype="{$params.itemtype->getValue()}"{/if}
+    {if $params.itemid->hasValue()}itemid="{$params.itemid->getValue()}"{/if}
 >
     {if $params.isText->getValue() === true}
         {inputgrouptext}{$blockContent}{/inputgrouptext}
