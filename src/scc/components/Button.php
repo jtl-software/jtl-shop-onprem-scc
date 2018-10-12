@@ -55,6 +55,17 @@ class Button extends AbstractBlockComponent
         $prop->setName('target');
         $prop->setType(new ComponentPropertyType(ComponentPropertyType::TYPE_STRING));
         $this->params[] = $prop;
+        
+        $prop = new ComponentProperty();
+        $prop->setName('name');
+        $prop->setType(new ComponentPropertyType(ComponentPropertyType::TYPE_STRING));
+        $this->params[] = $prop;
+
+        $prop = new ComponentProperty();
+        $prop->setName('value');
+        $prop->setType(new ComponentPropertyType(ComponentPropertyType::TYPE_STRING));
+        $this->params[] = $prop;
+
 
         $prop = new ComponentProperty();
         $prop->setName('size');
