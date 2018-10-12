@@ -33,7 +33,7 @@
             id="{$id}"
             {if $params.name->hasValue()}name="{$params.name->getValue()}"{/if}
             {if $params.dataSelected->getValue() === true}data-selected="{$params.dataSelected->getValue()}"{/if}
-            {if $params.value->hasValue()}name="{$params.value->getValue()}"{/if}
+            {if $params.value->hasValue()}value="{$params.value->getValue()}"{/if}
             {if $params.disabled->getValue() === true}disabled{/if}
         >
         {if !empty($blockContent)}
@@ -57,7 +57,7 @@
             {if $params.name->hasValue()}name="{$params.name->getValue()}"{/if}
             {if $params.dataSelected->getValue() === true}data-selected="{$params.dataSelected->getValue()}"{/if}
             class=""
-            {if $params.value->hasValue()}name="{$params.value->getValue()}"{/if}
+            {if $params.value->hasValue()}value="{$params.value->getValue()}"{/if}
         >
         <span><span>{$blockContent}</span></span>
     </label>
