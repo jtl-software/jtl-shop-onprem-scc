@@ -10,6 +10,8 @@
     {if $params.href->hasValue()}href="{$params.href->getValue()}"{/if}
     {if $params.style->hasValue()}style="{$params.style->getValue()}"{/if}
     {if $params.title->hasValue()}title="{$params.title->getValue()}" {/if}
+    {if $params.name->hasValue()}name="{$params.name->getValue()}" {/if}
+    {if $params.value->hasValue()}value="{$params.value->getValue()}" {/if}
     {if $params.disabled->getValue() === true}disabled{/if}
     {if $params.dataToggle->hasValue()}data-toggle="{$params.dataToggle->getValue()}"{/if}
     {if $params.dataTarget->hasValue()}data-target="{$params.dataTarget->getValue()}"{/if}
