@@ -30,7 +30,7 @@
                 type="checkbox"
                 id="{$id}"
                 {if $params.name->hasValue()}name="{$params.name->getValue()}"{/if}
-                {if $params.dataSelected->hasValue()}data-selected="{$params.dataSelected->getValue()}"{/if}
+                {if $params.dataSelected->getValue() === true}data-selected="{$params.dataSelected->getValue()}"{/if}
                 {if $params.disabled->getValue() === true}disabled{/if}
                 {if $params.required->getValue() === true}required{/if}
                 {if $params.checked->getValue() === true}checked{/if}
@@ -52,7 +52,7 @@
                 id="{$id}"
                 type="checkbox"
                 {if $params.name->hasValue()}name="{$params.name->getValue()}"{/if}
-                {if $params.dataSelected->hasValue()}data-selected="{$params.dataSelected->getValue()}"{/if}
+                {if $params.dataSelected->getValue() === true}data-selected="{$params.dataSelected->getValue()}"{/if}
                 {if $params.disabled->getValue() === true}disabled{/if}
                 {if $params.required->getValue() === true}required{/if}
                 {if $params.checked->getValue() === true}checked{/if}
