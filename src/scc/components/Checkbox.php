@@ -61,6 +61,11 @@ class Checkbox extends AbstractBlockComponent
         $prop->setName('size');
         $prop->setType(new ComponentPropertyType(ComponentPropertyType::TYPE_STRING));
         $this->params[] = $prop;
+        
+        $prop = new ComponentProperty();
+        $prop->setName('data-selected');
+        $prop->setType(new ComponentPropertyType(ComponentPropertyType::TYPE_STRING));
+        $this->params[] = $prop;
 
         $prop = new ComponentProperty();
         $prop->setName('plain');
