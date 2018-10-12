@@ -32,6 +32,7 @@
             type="radio"
             id="{$id}"
             {if $params.name->hasValue()}name="{$params.name->getValue()}"{/if}
+            {if $params.dataSelected->getValue() === true}data-selected="{$params.dataSelected->getValue()}"{/if}
             {if $params.value->hasValue()}name="{$params.value->getValue()}"{/if}
             {if $params.disabled->getValue() === true}disabled{/if}
         >
@@ -54,6 +55,7 @@
             id="{$id}"
             type="radio"
             {if $params.name->hasValue()}name="{$params.name->getValue()}"{/if}
+            {if $params.dataSelected->getValue() === true}data-selected="{$params.dataSelected->getValue()}"{/if}
             class=""
             {if $params.value->hasValue()}name="{$params.value->getValue()}"{/if}
         >
