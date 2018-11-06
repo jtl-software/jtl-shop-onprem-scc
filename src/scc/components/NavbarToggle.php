@@ -28,11 +28,6 @@ class NavbarToggle extends AbstractBlockComponent
         $prop->setType(new ComponentPropertyType(ComponentPropertyType::TYPE_STRING));
         $prop->setDefaultValue('Toggle navigation');
         $this->params[] = $prop;
-
-        $prop = new ComponentProperty();
-        $prop->setName('target');
-        $prop->setType(new ComponentPropertyType(ComponentPropertyType::TYPE_STRING));
-        $this->params[] = $prop;
     }
 
     /**

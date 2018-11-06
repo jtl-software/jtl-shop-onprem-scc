@@ -32,7 +32,9 @@
             type="radio"
             id="{$id}"
             {if $params.name->hasValue()}name="{$params.name->getValue()}"{/if}
-            {if $params.dataSelected->getValue() === true}data-selected="{$params.dataSelected->getValue()}"{/if}
+            {if $params.role->hasValue()}role="{$params.role->getValue()}"{/if}
+            {if $params.aria->hasValue()}{foreach $params.aria->getValue() as $ariaKey => $ariaVal}aria-{$ariaKey}="{$ariaVal}"{/foreach}{/if}
+            {if $params.data->hasValue()}{foreach $params.data->getValue() as $dataKey => $dataVal}data-{$dataKey}="{$dataVal}"{/foreach}{/if}
             {if $params.value->hasValue()}value="{$params.value->getValue()}"{/if}
             {if $params.disabled->getValue() === true}disabled{/if}
         >
@@ -55,7 +57,9 @@
             id="{$id}"
             type="radio"
             {if $params.name->hasValue()}name="{$params.name->getValue()}"{/if}
-            {if $params.dataSelected->getValue() === true}data-selected="{$params.dataSelected->getValue()}"{/if}
+            {if $params.role->hasValue()}role="{$params.role->getValue()}"{/if}
+            {if $params.aria->hasValue()}{foreach $params.aria->getValue() as $ariaKey => $ariaVal}aria-{$ariaKey}="{$ariaVal}"{/foreach}{/if}
+            {if $params.data->hasValue()}{foreach $params.data->getValue() as $dataKey => $dataVal}data-{$dataKey}="{$dataVal}"{/foreach}{/if}
             class=""
             {if $params.value->hasValue()}value="{$params.value->getValue()}"{/if}
         >

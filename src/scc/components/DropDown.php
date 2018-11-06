@@ -65,12 +65,6 @@ class DropDown extends AbstractBlockComponent
         $this->params[] = $prop;
 
         $prop = new ComponentProperty();
-        $prop->setName('role');
-        $prop->setType(new ComponentPropertyType(ComponentPropertyType::TYPE_STRING));
-        $prop->setDefaultValue('menu');
-        $this->params[] = $prop;
-
-        $prop = new ComponentProperty();
         $prop->setName('variant');
         $prop->setType(new ComponentPropertyType(ComponentPropertyType::TYPE_STRING));
         $prop->setDefaultValue('secondary');

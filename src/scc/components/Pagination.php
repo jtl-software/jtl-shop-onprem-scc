@@ -60,12 +60,6 @@ class Pagination extends AbstractBlockComponent
         $this->params[] = $prop;
 
         $prop = new ComponentProperty();
-        $prop->setName('aria-label');
-        $prop->setType(new ComponentPropertyType(ComponentPropertyType::TYPE_STRING));
-        $prop->setDefaultValue('Pagination');
-        $this->params[] = $prop;
-
-        $prop = new ComponentProperty();
         $prop->setName('label-first-page');
         $prop->setType(new ComponentPropertyType(ComponentPropertyType::TYPE_STRING));
         $prop->setDefaultValue('Go to first page');
@@ -123,11 +117,6 @@ class Pagination extends AbstractBlockComponent
         $prop->setName('ellipsis-text');
         $prop->setType(new ComponentPropertyType(ComponentPropertyType::TYPE_STRING));
         $prop->setDefaultValue('&hellip;');
-        $this->params[] = $prop;
-
-        $prop = new ComponentProperty();
-        $prop->setName('aria-controls');
-        $prop->setType(new ComponentPropertyType(ComponentPropertyType::TYPE_STRING));
         $this->params[] = $prop;
 
         $prop = new ComponentProperty();

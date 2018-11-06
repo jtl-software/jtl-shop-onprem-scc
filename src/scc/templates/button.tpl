@@ -13,11 +13,12 @@
     {if $params.name->hasValue()}name="{$params.name->getValue()}" {/if}
     {if $params.value->hasValue()}value="{$params.value->getValue()}" {/if}
     {if $params.disabled->getValue() === true}disabled{/if}
-    {if $params.dataToggle->hasValue()}data-toggle="{$params.dataToggle->getValue()}"{/if}
-    {if $params.dataTarget->hasValue()}data-target="{$params.dataTarget->getValue()}"{/if}
     {if $params.itemprop->hasValue()}itemprop="{$params.itemprop->getValue()}"{/if}
     {if $params.itemscope->getValue() === true}itemscope {/if}
     {if $params.itemtype->hasValue()}itemtype="{$params.itemtype->getValue()}"{/if}
-    {if $params.itemid->hasValue()}itemid="{$params.itemid->getValue()}"{/if}>
+    {if $params.itemid->hasValue()}itemid="{$params.itemid->getValue()}"{/if}
+    {if $params.role->hasValue()}role="{$params.role->getValue()}"{/if}
+    {if $params.aria->hasValue()}{foreach $params.aria->getValue() as $ariaKey => $ariaVal}aria-{$ariaKey}="{$ariaVal}"{/foreach}{/if}
+    {if $params.data->hasValue()}{foreach $params.data->getValue() as $dataKey => $dataVal}data-{$dataKey}="{$dataVal}"{/foreach}{/if}>
 {$blockContent}
 </button>
