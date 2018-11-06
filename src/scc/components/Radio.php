@@ -52,12 +52,6 @@ class Radio extends AbstractBlockComponent
         $prop->setName('button-variant');
         $prop->setType(new ComponentPropertyType(ComponentPropertyType::TYPE_STRING));
         $this->params[] = $prop;
-        
-        $prop = new ComponentProperty();
-        $prop->setName('data-selected');
-        $prop->setType(new ComponentPropertyType(ComponentPropertyType::TYPE_BOOL));
-        $prop->setDefaultValue(false);
-        $this->params[] = $prop;
 
         $prop = new ComponentProperty();
         $prop->setName('name');

@@ -66,7 +66,6 @@ class Button extends AbstractBlockComponent
         $prop->setType(new ComponentPropertyType(ComponentPropertyType::TYPE_STRING));
         $this->params[] = $prop;
 
-
         $prop = new ComponentProperty();
         $prop->setName('size');
         $prop->setType(new ComponentPropertyType(ComponentPropertyType::TYPE_STRING));
@@ -76,16 +75,6 @@ class Button extends AbstractBlockComponent
         $prop->setName('variant');
         $prop->setType(new ComponentPropertyType(ComponentPropertyType::TYPE_STRING));
         $prop->setDefaultValue('secondary');
-        $this->params[] = $prop;
-
-        $prop = new ComponentProperty();
-        $prop->setName('data-target');
-        $prop->setType(new ComponentPropertyType(ComponentPropertyType::TYPE_STRING));
-        $this->params[] = $prop;
-
-        $prop = new ComponentProperty();
-        $prop->setName('data-toggle');
-        $prop->setType(new ComponentPropertyType(ComponentPropertyType::TYPE_STRING));
         $this->params[] = $prop;
         
         $prop = new ComponentProperty();

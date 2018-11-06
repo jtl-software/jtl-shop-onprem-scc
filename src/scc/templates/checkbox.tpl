@@ -31,10 +31,12 @@
                 id="{$id}"
                 {if $params.value->hasValue()}value="{$params.value->getValue()}"{/if}
                 {if $params.name->hasValue()}name="{$params.name->getValue()}"{/if}
-                {if $params.dataSelected->getValue() === true}data-selected="{$params.dataSelected->getValue()}"{/if}
                 {if $params.disabled->getValue() === true}disabled{/if}
                 {if $params.required->getValue() === true}required{/if}
                 {if $params.checked->getValue() === true}checked{/if}
+                {if $params.role->hasValue()}role="{$params.role->getValue()}"{/if}
+                {if $params.aria->hasValue()}{foreach $params.aria->getValue() as $ariaKey => $ariaVal}aria-{$ariaKey}="{$ariaVal}"{/foreach}{/if}
+                {if $params.data->hasValue()}{foreach $params.data->getValue() as $dataKey => $dataVal}data-{$dataKey}="{$dataVal}"{/foreach}{/if}
         >
         {if !empty($blockContent)}
             <label for="{$id}" class="{if $plain === false}custom-control-label{else}form-check-label{/if}">
@@ -54,11 +56,13 @@
                 type="checkbox"
                 {if $params.value->hasValue()}value="{$params.value->getValue()}"{/if}
                 {if $params.name->hasValue()}name="{$params.name->getValue()}"{/if}
-                {if $params.dataSelected->getValue() === true}data-selected="{$params.dataSelected->getValue()}"{/if}
                 {if $params.disabled->getValue() === true}disabled{/if}
                 {if $params.required->getValue() === true}required{/if}
                 {if $params.checked->getValue() === true}checked{/if}
                 class="{$params.class->getValue()}"
+                {if $params.role->hasValue()}role="{$params.role->getValue()}"{/if}
+                {if $params.aria->hasValue()}{foreach $params.aria->getValue() as $ariaKey => $ariaVal}aria-{$ariaKey}="{$ariaVal}"{/foreach}{/if}
+                {if $params.data->hasValue()}{foreach $params.data->getValue() as $dataKey => $dataVal}data-{$dataKey}="{$dataVal}"{/foreach}{/if}
         >
         <span><span>{$blockContent}</span></span>
     </label>

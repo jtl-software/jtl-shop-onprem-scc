@@ -29,11 +29,6 @@ class Collapse extends AbstractBlockComponent
         $this->params[] = $prop;
 
         $prop = new ComponentProperty();
-        $prop->setName('data-parent');
-        $prop->setType(new ComponentPropertyType(ComponentPropertyType::TYPE_STRING));
-        $this->params[] = $prop;
-
-        $prop = new ComponentProperty();
         $prop->setName('tag');
         $prop->setType(new ComponentPropertyType(ComponentPropertyType::TYPE_STRING));
         $prop->setDefaultValue('div');

@@ -3,11 +3,14 @@
 {assign var=id value=$params.id->getValue()|default:uniqid()}
 {assign var=breakPoint value=$params.breakpoint->getValue()}
 {if $params.labelFor->hasValue()}
-    <div id="{$id}" role="group" aria-labelledby="form-group-label-{$id}" class="form-group" 
+    <div id="{$id}" aria-labelledby="form-group-label-{$id}" class="form-group"
         {if $params.itemprop->hasValue()}itemprop="{$params.itemprop->getValue()}"{/if}
         {if $params.itemscope->getValue() === true}itemscope {/if}
         {if $params.itemtype->hasValue()}itemtype="{$params.itemtype->getValue()}"{/if}
         {if $params.itemid->hasValue()}itemid="{$params.itemid->getValue()}"{/if}
+        role="{if $params.role->hasValue()}{$params.role->getValue()}{else}group{/if}"
+        {if $params.aria->hasValue()}{foreach $params.aria->getValue() as $ariaKey => $ariaVal}aria-{$ariaKey}="{$ariaVal}"{/foreach}{/if}
+        {if $params.data->hasValue()}{foreach $params.data->getValue() as $dataKey => $dataVal}data-{$dataKey}="{$dataVal}"{/foreach}{/if}
     >
         {if $params.horizontal->getValue() === true}
             <div class="form-row">
@@ -26,15 +29,16 @@
         {/if}
     </div>
 {else}
-    <fieldset
-        role="group"
-        class="form-group {$params.class->getValue()}"
+    <fieldset class="form-group {$params.class->getValue()}"
         id="{$id}"
-        {if $params.label->hasValue()}aria-labelledby="label-{$id}" {/if}
+        {if $params.label->hasValue()}aria-labelledby="form-group-label-{$id}" {/if}
         {if $params.itemprop->hasValue()}itemprop="{$params.itemprop->getValue()}"{/if}
         {if $params.itemscope->getValue() === true}itemscope {/if}
         {if $params.itemtype->hasValue()}itemtype="{$params.itemtype->getValue()}"{/if}
         {if $params.itemid->hasValue()}itemid="{$params.itemid->getValue()}"{/if}
+        role="{if $params.role->hasValue()}{$params.role->getValue()}{else}group{/if}"
+        {if $params.aria->hasValue()}{foreach $params.aria->getValue() as $ariaKey => $ariaVal}aria-{$ariaKey}="{$ariaVal}"{/foreach}{/if}
+        {if $params.data->hasValue()}{foreach $params.data->getValue() as $dataKey => $dataVal}data-{$dataKey}="{$dataVal}"{/foreach}{/if}
     >
         {if $params.horizontal->getValue() === true}
             <div class="form-row">

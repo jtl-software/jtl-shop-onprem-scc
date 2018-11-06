@@ -48,27 +48,41 @@ abstract class AbstractBlockComponent implements ComponentInterface
         $prop->setName('style');
         $prop->setType(new ComponentPropertyType(ComponentPropertyType::TYPE_STRING));
         $this->params[] = $prop;
-        
+
         $prop = new ComponentProperty();
         $prop->setName('itemprop');
         $prop->setType(new ComponentPropertyType(ComponentPropertyType::TYPE_STRING));
         $this->params[] = $prop;
-        
+
         $prop = new ComponentProperty();
         $prop->setName('itemscope');
         $prop->setType(new ComponentPropertyType(ComponentPropertyType::TYPE_BOOL));
         $this->params[] = $prop;
-        
+
         $prop = new ComponentProperty();
         $prop->setName('itemtype');
         $prop->setType(new ComponentPropertyType(ComponentPropertyType::TYPE_STRING));
         $this->params[] = $prop;
-        
+
         $prop = new ComponentProperty();
         $prop->setName('itemid');
         $prop->setType(new ComponentPropertyType(ComponentPropertyType::TYPE_STRING));
         $this->params[] = $prop;
 
+        $prop = new ComponentProperty();
+        $prop->setName('role');
+        $prop->setType(new ComponentPropertyType(ComponentPropertyType::TYPE_STRING));
+        $this->params[] = $prop;
+
+        $prop = new ComponentProperty();
+        $prop->setName('aria');
+        $prop->setType(new ComponentPropertyType(ComponentPropertyType::TYPE_ARRAY));
+        $this->params[] =$prop;
+
+        $prop = new ComponentProperty();
+        $prop->setName('data');
+        $prop->setType(new ComponentPropertyType(ComponentPropertyType::TYPE_ARRAY));
+        $this->params[] =$prop;
     }
 
     /**

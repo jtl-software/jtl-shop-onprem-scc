@@ -34,12 +34,6 @@ class ButtonToolbar extends AbstractBlockComponent
         $prop->setType(new ComponentPropertyType(ComponentPropertyType::TYPE_BOOL));
         $prop->setDefaultValue(false);
         $this->params[] = $prop;
-
-        $prop = new ComponentProperty();
-        $prop->setName('aria-label');
-        $prop->setType(new ComponentPropertyType(ComponentPropertyType::TYPE_BOOL));
-        $prop->setDefaultValue(false);
-        $this->params[] = $prop;
     }
 
     /**

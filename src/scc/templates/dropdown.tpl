@@ -1,6 +1,6 @@
 <div class="btn-group dropdown {if $params.dropup->getValue() === true} dropup{/if} {$params.class->getValue()}"
     {if $params.style->hasValue()} style="{$params.style->getValue()}"{/if}
-    {if $params.id->hasValue()} aria-labelledby="{$params.id->getValue()}"{/if}
+    {if $params.id->hasValue()} id="{$params.id->getValue()}"{/if}
     {if $params.itemprop->hasValue()}itemprop="{$params.itemprop->getValue()}"{/if}
     {if $params.itemscope->getValue() === true}itemscope {/if}
     {if $params.itemtype->hasValue()}itemtype="{$params.itemtype->getValue()}"{/if}
@@ -11,9 +11,13 @@
         type="button"
         data-toggle="dropdown"
         aria-haspopup="true"
-        aria-expanded="false">
+        aria-expanded="false"
+        {if $params.id->hasValue()} aria-labelledby="{$params.id->getValue()}"{/if}
+        {if $params.role->hasValue()}role="{$params.role->getValue()}"{/if}
+        {if $params.aria->hasValue()}{foreach $params.aria->getValue() as $ariaKey => $ariaVal}aria-{$ariaKey}="{$ariaVal}"{/foreach}{/if}
+        {if $params.data->hasValue()}{foreach $params.data->getValue() as $dataKey => $dataVal}data-{$dataKey}="{$dataVal}"{/foreach}{/if}>
         {$params.text->getValue()}</button>
-    <div role="{$params.role->getValue()}" class="dropdown-menu">
+    <div class="dropdown-menu">
         {$blockContent}
     </div>
 </div>

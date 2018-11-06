@@ -51,12 +51,6 @@ class NavItemDropdown extends AbstractBlockComponent
         $this->params[] = $prop;
 
         $prop = new ComponentProperty();
-        $prop->setName('role');
-        $prop->setType(new ComponentPropertyType(ComponentPropertyType::TYPE_STRING));
-        $prop->setDefaultValue('menu');
-        $this->params[] = $prop;
-
-        $prop = new ComponentProperty();
         $prop->setName('dropup');
         $prop->setType(new ComponentPropertyType(ComponentPropertyType::TYPE_BOOL));
         $prop->setDefaultValue(false);
