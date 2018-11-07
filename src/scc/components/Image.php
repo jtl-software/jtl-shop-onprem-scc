@@ -62,6 +62,12 @@ class Image extends AbstractFunctionComponent
         $this->params[] = $prop;
 
         $prop = new ComponentProperty();
+        $prop->setName('lazy');
+        $prop->setType(new ComponentPropertyType(ComponentPropertyType::TYPE_BOOL));
+        $prop->setDefaultValue(false);
+        $this->params[] = $prop;
+
+        $prop = new ComponentProperty();
         $prop->setName('rounded');
         $prop->setType(new ComponentPropertyType(ComponentPropertyType::TYPE_BOOL));
         $prop->setDefaultValue(false);
