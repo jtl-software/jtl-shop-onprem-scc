@@ -64,6 +64,11 @@ class NavItem extends AbstractBlockComponent
         $this->params[] = $prop;
 
         $prop = new ComponentProperty();
+        $prop->setName('router-class');
+        $prop->setType(new ComponentPropertyType(ComponentPropertyType::TYPE_STRING));
+        $this->params[] = $prop;
+
+        $prop = new ComponentProperty();
         $prop->setName('active');
         $prop->setType(new ComponentPropertyType(ComponentPropertyType::TYPE_BOOL));
         $prop->setDefaultValue(false);
