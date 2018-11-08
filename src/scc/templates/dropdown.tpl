@@ -1,4 +1,4 @@
-<div class="btn-group dropdown {if $params.dropup->getValue() === true} dropup{/if} {$params.class->getValue()}"
+<div class="dropdown {if $params.dropup->getValue() === true} dropup{/if} {$params.class->getValue()}"
     {if $params.style->hasValue()} style="{$params.style->getValue()}"{/if}
     {if $params.id->hasValue()} id="{$params.id->getValue()}"{/if}
     {if $params.itemprop->hasValue()}itemprop="{$params.itemprop->getValue()}"{/if}
