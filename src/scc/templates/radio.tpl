@@ -37,6 +37,8 @@
             {if $params.data->hasValue()}{foreach $params.data->getValue() as $dataKey => $dataVal}data-{$dataKey}="{$dataVal}"{/foreach}{/if}
             {if $params.value->hasValue()}value="{$params.value->getValue()}"{/if}
             {if $params.disabled->getValue() === true}disabled{/if}
+            {if $params.required->getValue() === true}required{/if}
+            {if $params.checked->getValue() === true}checked{/if}
         >
         {if !empty($blockContent)}
             <label for="{$id}" class="{if $plain === false}custom-control-label{else}form-check-label{/if}">
@@ -62,6 +64,9 @@
             {if $params.data->hasValue()}{foreach $params.data->getValue() as $dataKey => $dataVal}data-{$dataKey}="{$dataVal}"{/foreach}{/if}
             class=""
             {if $params.value->hasValue()}value="{$params.value->getValue()}"{/if}
+            {if $params.disabled->getValue() === true}disabled{/if}
+            {if $params.required->getValue() === true}required{/if}
+            {if $params.checked->getValue() === true}checked{/if}
         >
         <span><span>{$blockContent}</span></span>
     </label>

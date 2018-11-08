@@ -51,6 +51,16 @@ class Input extends AbstractFunctionComponent
         $this->params[] = $prop;
 
         $prop = new ComponentProperty();
+        $prop->setName('size');
+        $prop->setType(new ComponentPropertyType(ComponentPropertyType::TYPE_NUMERIC));
+        $this->params[] = $prop;
+
+        $prop = new ComponentProperty();
+        $prop->setName('maxlength');
+        $prop->setType(new ComponentPropertyType(ComponentPropertyType::TYPE_NUMERIC));
+        $this->params[] = $prop;
+
+        $prop = new ComponentProperty();
         $prop->setName('step');
         $prop->setType(new ComponentPropertyType(ComponentPropertyType::TYPE_NUMERIC));
         $this->params[] = $prop;

@@ -28,6 +28,16 @@ class Image extends AbstractFunctionComponent
         $this->params[] = $prop;
 
         $prop = new ComponentProperty();
+        $prop->setName('srcset');
+        $prop->setType(new ComponentPropertyType(ComponentPropertyType::TYPE_STRING));
+        $this->params[] = $prop;
+
+        $prop = new ComponentProperty();
+        $prop->setName('sizes');
+        $prop->setType(new ComponentPropertyType(ComponentPropertyType::TYPE_STRING));
+        $this->params[] = $prop;
+
+        $prop = new ComponentProperty();
         $prop->setName('alt');
         $prop->setType(new ComponentPropertyType(ComponentPropertyType::TYPE_INT));
         $prop->setDefaultValue('');

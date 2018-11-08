@@ -53,6 +53,16 @@ class Form extends AbstractBlockComponent
         $prop->setDefaultValue('POST');
         $this->params[] = $prop;
 
+        $prop = new ComponentProperty();
+        $prop->setName('target');
+        $prop->setType(new ComponentPropertyType(ComponentPropertyType::TYPE_STRING));
+        $prop->setDefaultValue('_self');
+        $this->params[] = $prop;
+
+        $prop = new ComponentProperty();
+        $prop->setName('enctype');
+        $prop->setType(new ComponentPropertyType(ComponentPropertyType::TYPE_STRING));
+        $this->params[] = $prop;
     }
 
     /**

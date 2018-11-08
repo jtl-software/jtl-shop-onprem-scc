@@ -10,6 +10,8 @@
     {if $params.value->hasValue()}value="{$params.value->getValue()}"{/if}
     {if $params.min->hasValue()}min="{$params.min->getValue()}"{/if}
     {if $params.max->hasValue()}max="{$params.max->getValue()}"{/if}
+    {if $params.size->hasValue()}size="{$params.size->getValue()}"{/if}
+    {if $params.maxlength->hasValue()}maxlength="{$params.maxlength->getValue()}"{/if}
     {if $params.step->hasValue()}step="{$params.step->getValue()}"{/if}
     {if $params.name->hasValue()}name="{$params.name->getValue()}"{/if}
     {if $params.autocomplete->hasValue()}autocomplete="{$params.autocomplete->getValue()}"{/if}

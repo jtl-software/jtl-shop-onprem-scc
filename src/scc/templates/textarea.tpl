@@ -7,6 +7,7 @@
     {if $params.disabled->getValue() === true}disabled{/if}
     {if $params.name->hasValue()}name="{$params.name->getValue()}"{/if}
     {if $params.required->getValue() === true} required{/if}
+    {if $params.readonly->getValue() === true} readonly{/if}
     {if $params.itemprop->hasValue()}itemprop="{$params.itemprop->getValue()}"{/if}
     {if $params.itemscope->getValue() === true}itemscope {/if}
     {if $params.itemtype->hasValue()}itemtype="{$params.itemtype->getValue()}"{/if}
