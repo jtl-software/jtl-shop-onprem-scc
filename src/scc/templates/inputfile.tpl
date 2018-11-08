@@ -5,6 +5,7 @@
     {if $params.required->getValue() === true} required{/if}
     {if $params.disabled->getValue() === true} disabled{/if}
     {if $params.style->hasValue()}style="{$params.style->getValue()}"{/if}
+    {if $params.accept->hasValue()}accept="{$params.accept->getValue()}"{/if}
     {if $params.name->hasValue()}name="{$params.name->getValue()}"{/if}
     {if $params.itemprop->hasValue()}itemprop="{$params.itemprop->getValue()}"{/if}
     {if $params.itemscope->getValue() === true}itemscope {/if}
