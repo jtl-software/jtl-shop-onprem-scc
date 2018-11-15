@@ -17,5 +17,6 @@
         <span aria-hidden="true">&times;</span>
     </button>
 {/if}
-{$blockContent}
+    {if $params.variant->hasValue()}<div class="sr-only">{lang key="{$params.variant->getValue()}" section="aria"}</div>{/if}
+    {$blockContent}
 </div>

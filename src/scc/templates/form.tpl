@@ -5,7 +5,7 @@
     {if $params.id->hasValue()}id="{$params.id->getValue()}"{/if}
     {if $params.action->hasValue()}action="{$params.action->getValue()}"{/if}
     method="{$params.method->getValue()}"
-    {if $params.enctype->hasValue() && $params.method->getValue() === 'POST'}enctype="{$params.enctype->getValue()}"{/if}
+    {if $params.enctype->hasValue() && strtoupper($params.method->getValue()) === 'POST'}enctype="{$params.enctype->getValue()}"{/if}
     {if $params.style->hasValue()}style="{$params.style->getValue()}"{/if}
     {if $params.itemprop->hasValue()}itemprop="{$params.itemprop->getValue()}"{/if}
     {if $params.itemscope->getValue() === true}itemscope {/if}

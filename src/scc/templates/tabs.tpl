@@ -17,7 +17,7 @@
     {if $params.itemid->hasValue()}itemid="{$params.itemid->getValue()}"{/if}
 >
     {foreach $tabContents as $i => $tab}
-        <div class="tab-pane fade{if $tab@index === 0} show active{/if}"
+        <div class="tab-pane fade pt-3 {if $tab@index === 0} show active{/if}"
              id="tab-{$tabIDs[$i]}"
              role="tabpanel"
              aria-labelledby="tab-link-{$tabIDs[$i]}">
