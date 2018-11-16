@@ -17,6 +17,8 @@
     {if $params.title->hasValue() === true} title="{$params.title->getValue()}"{/if}
     target="{$params.target->getValue()}"
     {if $params.href->hasValue()}href="{$params.href->getValue()}"{/if}
+    {if $params.routerAria->hasValue()}{foreach $params.routerAria->getValue() as $ariaKey => $ariaVal}aria-{$ariaKey}="{$ariaVal}"{/foreach}{/if}
+    {if $params.routerData->hasValue()}{foreach $params.routerData->getValue() as $dataKey => $dataVal}data-{$dataKey}="{$dataVal}"{/foreach}{/if}
     >
     {$blockContent}
     </{$params.routerTag->getValue()}>
