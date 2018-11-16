@@ -44,6 +44,16 @@ class NavItemDropdown extends AbstractBlockComponent
         $prop->setName('extra-toggle-classes');
         $prop->setType(new ComponentPropertyType(ComponentPropertyType::TYPE_STRING));
         $this->params[] = $prop;
+        
+        $prop = new ComponentProperty();
+        $prop->setName('router-data');
+        $prop->setType(new ComponentPropertyType(ComponentPropertyType::TYPE_ARRAY));
+        $this->params[] = $prop;
+        
+        $prop = new ComponentProperty();
+        $prop->setName('router-aria');
+        $prop->setType(new ComponentPropertyType(ComponentPropertyType::TYPE_ARRAY));
+        $this->params[] = $prop;
 
         $prop = new ComponentProperty();
         $prop->setName('extra-menu-classes');
