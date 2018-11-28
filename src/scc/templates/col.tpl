@@ -37,6 +37,18 @@
 {if $params.order->hasValue()}
     {$class = "{$class} order-{$params.order->getValue()}"}
 {/if}
+{if $params.orderSm->hasValue()}
+    {$class = "{$class} order-sm-{$params.orderSm->getValue()}"}
+{/if}
+{if $params.orderMd->hasValue()}
+    {$class = "{$class} order-md-{$params.orderMd->getValue()}"}
+{/if}
+{if $params.orderLg->hasValue()}
+    {$class = "{$class} order-lg-{$params.orderLg->getValue()}"}
+{/if}
+{if $params.orderXl->hasValue()}
+    {$class = "{$class} order-xl-{$params.orderXl->getValue()}"}
+{/if}
 {if $params.cols->hasValue()}
     {$class = "{$class} col-{$params.cols->getValue()}"}
 {/if}
