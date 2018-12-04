@@ -62,6 +62,12 @@ class Tab extends AbstractBlockComponent
         $prop->setName('title-link-class');
         $prop->setType(new ComponentPropertyType(ComponentPropertyType::TYPE_STRING));
         $this->params[] = $prop;
+        
+        $prop = new ComponentProperty();
+        $prop->setName('swipeable');
+        $prop->setType(new ComponentPropertyType(ComponentPropertyType::TYPE_BOOL));
+        $prop->setDefaultValue(false);
+        $this->params[] = $prop;
     }
 
     /**
