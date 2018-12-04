@@ -9,15 +9,22 @@
     {if $params.aria->hasValue()}{foreach $params.aria->getValue() as $ariaKey => $ariaVal}aria-{$ariaKey}="{$ariaVal}"{/foreach}{/if}
     {if $params.data->hasValue()}{foreach $params.data->getValue() as $dataKey => $dataVal}data-{$dataKey}="{$dataVal}"{/foreach}{/if}
 >
-    <a class="nav-link{if $params.active->getValue() === true} active{/if}{if $params.disabled->getValue() === true} disabled{/if}"
-       href="#tab-{$params.id->getValue()}"
-       data-toggle="tab"
-       role="tab"
-       aria-controls="tab-{$params.id->getValue()}"
-       id="tab-link-{$params.id->getValue()}"
-    >
-        {$params.title->getValue()}
-    </a>
+    {if $params.swipeable->getValue() === true}
+        <div class="nav-link{if $params.active->getValue() === true} active{/if}{if $params.disabled->getValue() === true} disabled{/if}"
+           id="tab-link-{$params.id->getValue()}">
+            {$params.title->getValue()}
+        </div>
+    {else}
+        <a class="nav-link{if $params.active->getValue() === true} active{/if}{if $params.disabled->getValue() === true} disabled{/if}"
+           href="#tab-{$params.id->getValue()}"
+           data-toggle="tab"
+           role="tab"
+           aria-controls="tab-{$params.id->getValue()}"
+           id="tab-link-{$params.id->getValue()}"
+        >
+            {$params.title->getValue()}
+        </a>
+    {/if}
 </{$params.tag}>
 
 {$tmp = $parentSmarty->getTemplateVars('tabContents')|default:[]}
