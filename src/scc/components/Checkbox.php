@@ -6,13 +6,8 @@
 
 namespace scc\components;
 
-use scc\ComponentInterface;
 use scc\ComponentProperty;
-use scc\ComponentPropertyInterface;
-use scc\ComponentRendererInterface;
 use scc\ComponentPropertyType;
-use scc\ComponentType;
-use scc\renderers\BlockRenderer;
 use scc\renderers\NestedBlockRenderer;
 
 /**
@@ -28,6 +23,7 @@ class Checkbox extends AbstractBlockComponent
     public function __construct()
     {
         parent::__construct();
+        $this->setTemplate('checkbox.tpl');
 
         $prop = new ComponentProperty();
         $prop->setName('disabled');
@@ -40,7 +36,7 @@ class Checkbox extends AbstractBlockComponent
         $prop->setType(new ComponentPropertyType(ComponentPropertyType::TYPE_BOOL));
         $prop->setDefaultValue(false);
         $this->params[] = $prop;
-        
+
         $prop = new ComponentProperty();
         $prop->setName('checked');
         $prop->setType(new ComponentPropertyType(ComponentPropertyType::TYPE_BOOL));
@@ -61,7 +57,7 @@ class Checkbox extends AbstractBlockComponent
         $prop->setName('size');
         $prop->setType(new ComponentPropertyType(ComponentPropertyType::TYPE_STRING));
         $this->params[] = $prop;
-        
+
         $prop = new ComponentProperty();
         $prop->setName('value');
         $prop->setType(new ComponentPropertyType(ComponentPropertyType::TYPE_STRING));
@@ -72,22 +68,8 @@ class Checkbox extends AbstractBlockComponent
         $prop->setType(new ComponentPropertyType(ComponentPropertyType::TYPE_BOOL));
         $prop->setDefaultValue(false);
         $this->params[] = $prop;
-    }
 
-    /**
-     * @inheritdoc
-     */
-    public function getTemplate(): string
-    {
-        return 'checkbox.tpl';
-    }
-
-    /**
-     * @inheritdoc
-     */
-    public function getRenderer(): ComponentRendererInterface
-    {
-        return new NestedBlockRenderer($this);
+        $this->setRenderer(new NestedBlockRenderer($this));
     }
 
     /**

@@ -22,6 +22,7 @@ class Input extends AbstractFunctionComponent
     public function __construct()
     {
         parent::__construct();
+        $this->setTemplate('input.tpl');
 
         $prop = new ComponentProperty();
         $prop->setName('type');
@@ -97,14 +98,6 @@ class Input extends AbstractFunctionComponent
         $prop->setName('autocomplete');
         $prop->setType(new ComponentPropertyType(ComponentPropertyType::TYPE_STRING));
         $this->params[] = $prop;
-    }
-
-    /**
-     * @inheritdoc
-     */
-    public function getTemplate(): string
-    {
-        return 'input.tpl';
     }
 
     /**

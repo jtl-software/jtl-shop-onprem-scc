@@ -21,6 +21,7 @@ class Container extends AbstractBlockComponent
     public function __construct()
     {
         parent::__construct();
+        $this->setTemplate('container.tpl');
 
         $prop = new ComponentProperty();
         $prop->setName('fluid');
@@ -33,14 +34,6 @@ class Container extends AbstractBlockComponent
         $prop->setType(new ComponentPropertyType(ComponentPropertyType::TYPE_STRING));
         $prop->setDefaultValue('div');
         $this->params[] = $prop;
-    }
-
-    /**
-     * @inheritdoc
-     */
-    public function getTemplate(): string
-    {
-        return 'container.tpl';
     }
 
     /**

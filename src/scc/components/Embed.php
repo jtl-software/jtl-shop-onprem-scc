@@ -22,6 +22,7 @@ class Embed extends AbstractBlockComponent
     public function __construct()
     {
         parent::__construct();
+        $this->setTemplate('embed.tpl');
 
         $prop = new ComponentProperty();
         $prop->setName('src');
@@ -100,14 +101,6 @@ class Embed extends AbstractBlockComponent
         $prop->setName('type');
         $prop->setType(new ComponentPropertyType(ComponentPropertyType::TYPE_STRING));
         $this->params[] = $prop;
-    }
-
-    /**
-     * @inheritdoc
-     */
-    public function getTemplate(): string
-    {
-        return 'embed.tpl';
     }
 
     /**

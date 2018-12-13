@@ -22,6 +22,7 @@ class DropDownItem extends AbstractBlockComponent
     public function __construct()
     {
         parent::__construct();
+        $this->setTemplate('dropdownitem.tpl');
 
         $prop = new ComponentProperty();
         $prop->setName('target');
@@ -67,14 +68,6 @@ class DropDownItem extends AbstractBlockComponent
         $prop->setType(new ComponentPropertyType(ComponentPropertyType::TYPE_BOOL));
         $prop->setDefaultValue(false);
         $this->params[] = $prop;
-    }
-
-    /**
-     * @inheritdoc
-     */
-    public function getTemplate(): string
-    {
-        return 'dropdownitem.tpl';
     }
 
     /**

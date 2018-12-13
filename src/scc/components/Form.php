@@ -22,6 +22,7 @@ class Form extends AbstractBlockComponent
     public function __construct()
     {
         parent::__construct();
+        $this->setTemplate('form.tpl');
 
         $prop = new ComponentProperty();
         $prop->setName('inline');
@@ -63,14 +64,6 @@ class Form extends AbstractBlockComponent
         $prop->setName('enctype');
         $prop->setType(new ComponentPropertyType(ComponentPropertyType::TYPE_STRING));
         $this->params[] = $prop;
-    }
-
-    /**
-     * @inheritdoc
-     */
-    public function getTemplate(): string
-    {
-        return 'form.tpl';
     }
 
     /**

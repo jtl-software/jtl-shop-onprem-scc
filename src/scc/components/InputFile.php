@@ -22,6 +22,7 @@ class InputFile extends AbstractFunctionComponent
     public function __construct()
     {
         parent::__construct();
+        $this->setTemplate('inputfile.tpl');
 
         $prop = new ComponentProperty();
         $prop->setName('name');
@@ -79,14 +80,6 @@ class InputFile extends AbstractFunctionComponent
         $prop->setType(new ComponentPropertyType(ComponentPropertyType::TYPE_BOOL));
         $prop->setDefaultValue(false);
         $this->params[] = $prop;
-    }
-
-    /**
-     * @inheritdoc
-     */
-    public function getTemplate(): string
-    {
-        return 'inputfile.tpl';
     }
 
     /**

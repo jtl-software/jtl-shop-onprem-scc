@@ -22,6 +22,7 @@ class Button extends AbstractBlockComponent
     public function __construct()
     {
         parent::__construct();
+        $this->setTemplate('button.tpl');
 
         $prop = new ComponentProperty();
         $prop->setName('type');
@@ -87,14 +88,6 @@ class Button extends AbstractBlockComponent
         $prop->setType(new ComponentPropertyType(ComponentPropertyType::TYPE_BOOL));
         $prop->setDefaultValue(false);
         $this->params[] = $prop;
-    }
-
-    /**
-     * @inheritdoc
-     */
-    public function getTemplate(): string
-    {
-        return 'button.tpl';
     }
 
     /**

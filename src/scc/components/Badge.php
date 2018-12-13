@@ -22,6 +22,7 @@ class Badge extends AbstractBlockComponent
     public function __construct()
     {
         parent::__construct();
+        $this->setTemplate('badge.tpl');
 
         $prop = new ComponentProperty();
         $prop->setName('active');
@@ -52,14 +53,6 @@ class Badge extends AbstractBlockComponent
         $prop->setType(new ComponentPropertyType(ComponentPropertyType::TYPE_STRING));
         $prop->setDefaultValue('secondary');
         $this->params[] = $prop;
-    }
-
-    /**
-     * @inheritdoc
-     */
-    public function getTemplate(): string
-    {
-        return 'badge.tpl';
     }
 
     /**

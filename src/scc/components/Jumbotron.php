@@ -21,6 +21,7 @@ class Jumbotron extends AbstractBlockComponent
     public function __construct()
     {
         parent::__construct();
+        $this->setTemplate('jumbotron.tpl');
 
         $prop = new ComponentProperty();
         $prop->setName('fluid');
@@ -82,14 +83,6 @@ class Jumbotron extends AbstractBlockComponent
         $prop->setName('text-variant');
         $prop->setType(new ComponentPropertyType(ComponentPropertyType::TYPE_STRING));
         $this->params[] = $prop;
-    }
-
-    /**
-     * @inheritdoc
-     */
-    public function getTemplate(): string
-    {
-        return 'jumbotron.tpl';
     }
 
     /**

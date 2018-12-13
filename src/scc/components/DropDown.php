@@ -21,6 +21,7 @@ class DropDown extends AbstractBlockComponent
     public function __construct()
     {
         parent::__construct();
+        $this->setTemplate('dropdown.tpl');
 
         $prop = new ComponentProperty();
         $prop->setName('disabled');
@@ -86,14 +87,6 @@ class DropDown extends AbstractBlockComponent
         $prop->setType(new ComponentPropertyType(ComponentPropertyType::TYPE_STRING));
         $prop->setDefaultValue('');
         $this->params[] = $prop;
-    }
-
-    /**
-     * @inheritdoc
-     */
-    public function getTemplate(): string
-    {
-        return 'dropdown.tpl';
     }
 
     /**

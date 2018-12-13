@@ -6,13 +6,8 @@
 
 namespace scc\components;
 
-use scc\ComponentInterface;
 use scc\ComponentProperty;
-use scc\ComponentPropertyInterface;
-use scc\ComponentRendererInterface;
 use scc\ComponentPropertyType;
-use scc\ComponentType;
-use scc\renderers\BlockRenderer;
 
 /**
  * Class ButtonGroup
@@ -26,6 +21,7 @@ class ButtonGroup extends AbstractBlockComponent
     public function __construct()
     {
         parent::__construct();
+        $this->setTemplate('buttongroup.tpl');
 
         $prop = new ComponentProperty();
         $prop->setName('tag');
@@ -43,14 +39,6 @@ class ButtonGroup extends AbstractBlockComponent
         $prop->setType(new ComponentPropertyType(ComponentPropertyType::TYPE_BOOL));
         $prop->setDefaultValue(false);
         $this->params[] = $prop;
-    }
-
-    /**
-     * @inheritdoc
-     */
-    public function getTemplate(): string
-    {
-        return 'buttongroup.tpl';
     }
 
     /**

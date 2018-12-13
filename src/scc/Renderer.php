@@ -6,6 +6,8 @@
 
 namespace scc;
 
+use Smarty\JTLSmarty;
+
 /**
  * Class Renderer
  *
@@ -20,9 +22,9 @@ class Renderer implements RendererInterface
 
     /**
      * Renderer constructor.
-     * @param \JTLSmarty $smarty
+     * @param JTLSmarty $smarty
      */
-    public function __construct(\JTLSmarty $smarty)
+    public function __construct(JTLSmarty $smarty)
     {
         $this->smarty = $smarty;
         $this->smarty->addTemplateDir(__DIR__ . '/templates', __NAMESPACE__);

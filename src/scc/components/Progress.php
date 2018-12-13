@@ -21,6 +21,7 @@ class Progress extends AbstractFunctionComponent
     public function __construct()
     {
         parent::__construct();
+        $this->setTemplate('progress.tpl');
 
         $prop = new ComponentProperty();
         $prop->setName('min');
@@ -65,14 +66,6 @@ class Progress extends AbstractFunctionComponent
         $prop->setName('title');
         $prop->setType(new ComponentPropertyType(ComponentPropertyType::TYPE_STRING));
         $this->params[] = $prop;
-    }
-
-    /**
-     * @inheritdoc
-     */
-    public function getTemplate(): string
-    {
-        return 'progress.tpl';
     }
 
     /**

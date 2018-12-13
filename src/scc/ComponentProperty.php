@@ -39,7 +39,7 @@ class ComponentProperty implements ComponentPropertyInterface
     private $value;
 
     /**
-     * @return mixed
+     * @inheritdoc
      */
     public function getDefaultValue()
     {
@@ -47,7 +47,7 @@ class ComponentProperty implements ComponentPropertyInterface
     }
 
     /**
-     * @param mixed $value
+     * @inheritdoc
      */
     public function setDefaultValue($value): void
     {
@@ -63,7 +63,7 @@ class ComponentProperty implements ComponentPropertyInterface
     }
 
     /**
-     * @param bool $required
+     * @inheritdoc
      */
     public function setIsRequired(bool $required): void
     {
@@ -79,9 +79,9 @@ class ComponentProperty implements ComponentPropertyInterface
     }
 
     /**
-     * @param ComponentPropertyType $type
+     * @inheritdoc
      */
-    public function setType(ComponentPropertyType $type)
+    public function setType(ComponentPropertyType $type): void
     {
         $this->type = $type;
     }
@@ -95,7 +95,7 @@ class ComponentProperty implements ComponentPropertyInterface
     }
 
     /**
-     * @param string $name
+     * @inheritdoc
      */
     public function setName(string $name): void
     {

@@ -21,6 +21,7 @@ class Image extends AbstractFunctionComponent
     public function __construct()
     {
         parent::__construct();
+        $this->setTemplate('image.tpl');
 
         $prop = new ComponentProperty();
         $prop->setName('src');
@@ -112,16 +113,6 @@ class Image extends AbstractFunctionComponent
         $prop->setType(new ComponentPropertyType(ComponentPropertyType::TYPE_BOOL));
         $prop->setDefaultValue(false);
         $this->params[] = $prop;
-
-        $this->params = $this->params;
-    }
-
-    /**
-     * @inheritdoc
-     */
-    public function getTemplate(): string
-    {
-        return 'image.tpl';
     }
 
     /**

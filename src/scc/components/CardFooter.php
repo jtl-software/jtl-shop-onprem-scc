@@ -22,6 +22,7 @@ class CardFooter extends AbstractBlockComponent
     public function __construct()
     {
         parent::__construct();
+        $this->setTemplate('cardfooter.tpl');
 
         $prop = new ComponentProperty();
         $prop->setName('footer');
@@ -53,14 +54,6 @@ class CardFooter extends AbstractBlockComponent
         $prop->setName('footer-class');
         $prop->setType(new ComponentPropertyType(ComponentPropertyType::TYPE_STRING));
         $this->params[] = $prop;
-    }
-
-    /**
-     * @inheritdoc
-     */
-    public function getTemplate(): string
-    {
-        return 'cardfooter.tpl';
     }
 
     /**

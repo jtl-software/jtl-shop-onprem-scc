@@ -19,9 +19,19 @@ interface ComponentPropertyInterface
     public function getIsRequired(): bool;
 
     /**
+     * @param bool $required
+     */
+    public function setIsRequired(bool $required): void;
+
+    /**
      * @return ComponentPropertyType
      */
     public function getType(): ComponentPropertyType;
+
+    /**
+     * @param ComponentPropertyType $type
+     */
+    public function setType(ComponentPropertyType $type): void;
 
     /**
      * @return mixed
@@ -29,9 +39,19 @@ interface ComponentPropertyInterface
     public function getDefaultValue();
 
     /**
+     * @param mixed $value
+     */
+    public function setDefaultValue($value): void;
+
+    /**
      * @return string
      */
     public function getName(): string;
+
+    /**
+     * @param string $name
+     */
+    public function setName(string $name): void;
 
     /**
      * @return mixed

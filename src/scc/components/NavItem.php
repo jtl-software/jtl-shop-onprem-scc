@@ -22,6 +22,7 @@ class NavItem extends AbstractBlockComponent
     public function __construct()
     {
         parent::__construct();
+        $this->setTemplate('navitem.tpl');
 
         $prop = new ComponentProperty();
         $prop->setName('href');
@@ -113,14 +114,6 @@ class NavItem extends AbstractBlockComponent
         $prop->setType(new ComponentPropertyType(ComponentPropertyType::TYPE_BOOL));
         $prop->setDefaultValue(false);
         $this->params[] = $prop;
-    }
-
-    /**
-     * @inheritdoc
-     */
-    public function getTemplate(): string
-    {
-        return 'navitem.tpl';
     }
 
     /**

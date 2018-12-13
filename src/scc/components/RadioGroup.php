@@ -13,12 +13,10 @@ namespace scc\components;
  */
 class RadioGroup extends CheckboxGroup
 {
-    /**
-     * @inheritdoc
-     */
-    public function getTemplate(): string
+    public function __construct()
     {
-        return 'radiogroup.tpl';
+        parent::__construct();
+        $this->setTemplate('radiogroup.tpl');
     }
 
     /**

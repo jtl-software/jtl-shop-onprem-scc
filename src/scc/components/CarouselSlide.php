@@ -22,6 +22,7 @@ class CarouselSlide extends AbstractBlockComponent
     public function __construct()
     {
         parent::__construct();
+        $this->setTemplate('carouselslide.tpl');
 
         $prop = new ComponentProperty();
         $prop->setName('caption-text');
@@ -99,14 +100,6 @@ class CarouselSlide extends AbstractBlockComponent
         $prop->setName('background');
         $prop->setType(new ComponentPropertyType(ComponentPropertyType::TYPE_STRING));
         $this->params[] = $prop;
-    }
-
-    /**
-     * @inheritdoc
-     */
-    public function getTemplate(): string
-    {
-        return 'carouselslide.tpl';
     }
 
     /**

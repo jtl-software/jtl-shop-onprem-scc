@@ -24,6 +24,7 @@ class Tabs extends AbstractBlockComponent
     public function __construct()
     {
         parent::__construct();
+        $this->setTemplate('tabs.tpl');
 
         $prop = new ComponentProperty();
         $prop->setName('tag');
@@ -69,22 +70,8 @@ class Tabs extends AbstractBlockComponent
         $prop->setType(new ComponentPropertyType(ComponentPropertyType::TYPE_BOOL));
         $prop->setDefaultValue(false);
         $this->params[] = $prop;
-    }
 
-    /**
-     * @inheritdoc
-     */
-    public function getTemplate(): string
-    {
-        return 'tabs.tpl';
-    }
-
-    /**
-     * @inheritdoc
-     */
-    public function getRenderer(): ComponentRendererInterface
-    {
-        return new TabsRenderer($this);
+        $this->setRenderer(new TabsRenderer($this));
     }
 
     /**

@@ -8,7 +8,6 @@ namespace scc\components;
 
 use scc\ComponentProperty;
 use scc\ComponentPropertyType;
-use scc\ComponentRendererInterface;
 use scc\renderers\NestedBlockRenderer;
 
 /**
@@ -24,6 +23,7 @@ class Radio extends AbstractBlockComponent
     public function __construct()
     {
         parent::__construct();
+        $this->setTemplate('radio.tpl');
 
         $prop = new ComponentProperty();
         $prop->setName('disabled');
@@ -57,22 +57,8 @@ class Radio extends AbstractBlockComponent
         $prop->setName('name');
         $prop->setType(new ComponentPropertyType(ComponentPropertyType::TYPE_STRING));
         $this->params[] = $prop;
-    }
 
-    /**
-     * @inheritdoc
-     */
-    public function getTemplate(): string
-    {
-        return 'radio.tpl';
-    }
-
-    /**
-     * @inheritdoc
-     */
-    public function getRenderer(): ComponentRendererInterface
-    {
-        return new NestedBlockRenderer($this);
+        $this->setRenderer(new NestedBlockRenderer($this));
     }
 
     /**

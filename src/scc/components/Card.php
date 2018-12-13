@@ -22,6 +22,7 @@ class Card extends AbstractBlockComponent
     public function __construct()
     {
         parent::__construct();
+        $this->setTemplate('card.tpl');
 
         $prop = new ComponentProperty();
         $prop->setName('img-src');
@@ -191,14 +192,6 @@ class Card extends AbstractBlockComponent
         $prop->setName('align');
         $prop->setType(new ComponentPropertyType(ComponentPropertyType::TYPE_STRING));
         $this->params[] = $prop;
-    }
-
-    /**
-     * @inheritdoc
-     */
-    public function getTemplate(): string
-    {
-        return 'card.tpl';
     }
 
     /**

@@ -22,6 +22,7 @@ class Select extends AbstractBlockComponent
     public function __construct()
     {
         parent::__construct();
+        $this->setTemplate('select.tpl');
 
         $prop = new ComponentProperty();
         $prop->setName('disabled');
@@ -72,14 +73,6 @@ class Select extends AbstractBlockComponent
         $prop->setName('title');
         $prop->setType(new ComponentPropertyType(ComponentPropertyType::TYPE_STRING));
         $this->params[] = $prop;
-    }
-
-    /**
-     * @inheritdoc
-     */
-    public function getTemplate(): string
-    {
-        return 'select.tpl';
     }
 
     /**

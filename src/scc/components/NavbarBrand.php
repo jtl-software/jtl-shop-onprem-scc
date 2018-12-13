@@ -22,6 +22,7 @@ class NavbarBrand extends AbstractBlockComponent
     public function __construct()
     {
         parent::__construct();
+        $this->setTemplate('navbarbrand.tpl');
 
         $prop = new ComponentProperty();
         $prop->setName('tag');
@@ -92,14 +93,6 @@ class NavbarBrand extends AbstractBlockComponent
         $prop->setType(new ComponentPropertyType(ComponentPropertyType::TYPE_BOOL));
         $prop->setDefaultValue(false);
         $this->params[] = $prop;
-    }
-
-    /**
-     * @inheritdoc
-     */
-    public function getTemplate(): string
-    {
-        return 'navbarbrand.tpl';
     }
 
     /**

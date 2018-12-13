@@ -22,6 +22,7 @@ class Modal extends AbstractBlockComponent
     public function __construct()
     {
         parent::__construct();
+        $this->setTemplate('modal.tpl');
 
         $prop = new ComponentProperty();
         $prop->setName('title');
@@ -38,14 +39,6 @@ class Modal extends AbstractBlockComponent
         $prop->setType(new ComponentPropertyType(ComponentPropertyType::TYPE_BOOL));
         $prop->setDefaultValue(false);
         $this->params[] = $prop;
-    }
-
-    /**
-     * @inheritdoc
-     */
-    public function getTemplate(): string
-    {
-        return 'modal.tpl';
     }
 
     /**

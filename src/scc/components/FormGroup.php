@@ -21,6 +21,7 @@ class FormGroup extends AbstractBlockComponent
     public function __construct()
     {
         parent::__construct();
+        $this->setTemplate('formgroup.tpl');
 
         $prop = new ComponentProperty();
         $prop->setName('label-cols');
@@ -75,14 +76,6 @@ class FormGroup extends AbstractBlockComponent
         $prop->setName('description');
         $prop->setType(new ComponentPropertyType(ComponentPropertyType::TYPE_STRING));
         $this->params[] = $prop;
-    }
-
-    /**
-     * @inheritdoc
-     */
-    public function getTemplate(): string
-    {
-        return 'formgroup.tpl';
     }
 
     /**

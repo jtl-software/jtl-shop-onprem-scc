@@ -7,7 +7,7 @@
 namespace scc\renderers;
 
 use scc\ComponentRendererTrait;
-use Smarty\JTLSmartyTemplateClass;
+use Smarty\JTLSmarty;
 
 /**
  * Class TabsRenderer
@@ -27,7 +27,7 @@ class TabsRenderer extends BlockRenderer
         if ($content === null) {
             return '';
         }
-        /** @var JTLSmartyTemplateClass $tpl */
+        /** @var JTLSmarty $tpl */
         $tpl    = $args[1];
         $smarty = $tpl->smarty;
         $params = $this->mergeParams($this->component->getParams(), $params);

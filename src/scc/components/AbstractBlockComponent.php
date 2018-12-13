@@ -6,11 +6,8 @@
 
 namespace scc\components;
 
-use scc\ComponentInterface;
 use scc\ComponentProperty;
-use scc\ComponentPropertyInterface;
 use scc\ComponentPropertyType;
-use scc\ComponentRendererInterface;
 use scc\ComponentType;
 use scc\renderers\BlockRenderer;
 
@@ -18,18 +15,11 @@ use scc\renderers\BlockRenderer;
  * Class AbstractBlockComponent
  * @package scc\components
  */
-abstract class AbstractBlockComponent implements ComponentInterface
+abstract class AbstractBlockComponent extends AbstractBaseComponent
 {
     /**
-     * @var string|null
+     * AbstractBlockComponent constructor.
      */
-    protected $content;
-
-    /**
-     * @var ComponentPropertyInterface[]
-     */
-    protected $params;
-
     public function __construct()
     {
         $this->params = [];
@@ -77,35 +67,14 @@ abstract class AbstractBlockComponent implements ComponentInterface
         $prop = new ComponentProperty();
         $prop->setName('aria');
         $prop->setType(new ComponentPropertyType(ComponentPropertyType::TYPE_ARRAY));
-        $this->params[] =$prop;
+        $this->params[] = $prop;
 
         $prop = new ComponentProperty();
         $prop->setName('data');
         $prop->setType(new ComponentPropertyType(ComponentPropertyType::TYPE_ARRAY));
-        $this->params[] =$prop;
-    }
+        $this->params[] = $prop;
 
-    /**
-     * @inheritdoc
-     */
-    public function getParams(): array
-    {
-        return $this->params;
-    }
-
-    /**
-     * @inheritdoc
-     */
-    public function getRenderer(): ComponentRendererInterface
-    {
-        return new BlockRenderer($this);
-    }
-
-    /**
-     * @return ComponentType
-     */
-    public function getType(): ComponentType
-    {
-        return new ComponentType(ComponentType::TYPE_BLOCK);
+        $this->setType(new ComponentType(ComponentType::TYPE_BLOCK));
+        $this->setRenderer(new BlockRenderer($this));
     }
 }

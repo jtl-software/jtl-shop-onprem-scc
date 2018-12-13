@@ -22,6 +22,7 @@ class ButtonToolbar extends AbstractBlockComponent
     public function __construct()
     {
         parent::__construct();
+        $this->setTemplate('buttontoolbar.tpl');
 
         $prop = new ComponentProperty();
         $prop->setName('justify');
@@ -34,14 +35,6 @@ class ButtonToolbar extends AbstractBlockComponent
         $prop->setType(new ComponentPropertyType(ComponentPropertyType::TYPE_BOOL));
         $prop->setDefaultValue(false);
         $this->params[] = $prop;
-    }
-
-    /**
-     * @inheritdoc
-     */
-    public function getTemplate(): string
-    {
-        return 'buttontoolbar.tpl';
     }
 
     /**

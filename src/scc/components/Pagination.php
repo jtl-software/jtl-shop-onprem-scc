@@ -22,6 +22,7 @@ class Pagination extends AbstractBlockComponent
     public function __construct()
     {
         parent::__construct();
+        $this->setTemplate('pagination.tpl');
 
         $prop = new ComponentProperty();
         $prop->setName('value');
@@ -130,14 +131,6 @@ class Pagination extends AbstractBlockComponent
         $prop->setType(new ComponentPropertyType(ComponentPropertyType::TYPE_INT));
         $prop->setDefaultValue(20);
         $this->params[] = $prop;
-    }
-
-    /**
-     * @inheritdoc
-     */
-    public function getTemplate(): string
-    {
-        return 'pagination.tpl';
     }
 
     /**

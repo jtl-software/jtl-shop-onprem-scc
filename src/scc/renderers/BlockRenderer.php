@@ -9,6 +9,7 @@ namespace scc\renderers;
 use scc\ComponentInterface;
 use scc\ComponentRendererInterface;
 use scc\ComponentRendererTrait;
+use Smarty\JTLSmarty;
 
 /**
  * Class BlockRenderer
@@ -39,10 +40,10 @@ class BlockRenderer implements ComponentRendererInterface
      */
     public function render(array $params, ...$args): string
     {
-        $content = $args[0];
-        $tpl     = $args[1];
-        $params  = $this->mergeParams($this->component->getParams(), $params);
+        [$content, $tpl] = $args;
+        $params          = $this->mergeParams($this->component->getParams(), $params);
         if ($content === null) {
+            /** @var JTLSmarty $smarty */
             $smarty = $tpl->smarty;
             $smarty->assign('parentBlockParams', $params);
 

@@ -6,13 +6,9 @@
 
 namespace scc\components;
 
-use scc\ComponentInterface;
 use scc\ComponentProperty;
-use scc\ComponentPropertyInterface;
-use scc\ComponentRendererInterface;
 use scc\ComponentPropertyType;
-use scc\ComponentType;
-use scc\renderers\BlockRenderer;
+use scc\ComponentRendererInterface;
 use scc\renderers\CarouselRenderer;
 
 /**
@@ -28,6 +24,7 @@ class Carousel extends AbstractBlockComponent
     public function __construct()
     {
         parent::__construct();
+        $this->setTemplate('carousel.tpl');
 
         $prop = new ComponentProperty();
         $prop->setName('disabled');
@@ -97,14 +94,6 @@ class Carousel extends AbstractBlockComponent
         $prop->setType(new ComponentPropertyType(ComponentPropertyType::TYPE_INT));
         $prop->setDefaultValue(0);
         $this->params[] = $prop;
-    }
-
-    /**
-     * @inheritdoc
-     */
-    public function getTemplate(): string
-    {
-        return 'carousel.tpl';
     }
 
     /**

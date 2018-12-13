@@ -22,6 +22,7 @@ class CheckboxGroup extends AbstractBlockComponent
     public function __construct()
     {
         parent::__construct();
+        $this->setTemplate('checkboxgroup.tpl');
 
         $prop = new ComponentProperty();
         $prop->setName('disabled');
@@ -92,16 +93,6 @@ class CheckboxGroup extends AbstractBlockComponent
         $prop->setType(new ComponentPropertyType(ComponentPropertyType::TYPE_STRING));
         $prop->setDefaultValue('secondary');
         $this->params[] = $prop;
-
-        $this->params = $this->params;
-    }
-
-    /**
-     * @inheritdoc
-     */
-    public function getTemplate(): string
-    {
-        return 'checkboxgroup.tpl';
     }
 
     /**

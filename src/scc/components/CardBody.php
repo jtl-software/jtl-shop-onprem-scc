@@ -22,6 +22,8 @@ class CardBody extends AbstractBlockComponent
     public function __construct()
     {
         parent::__construct();
+        $this->setTemplate('cardbody.tpl');
+
         $prop = new ComponentProperty();
         $prop->setName('footer');
         $prop->setType(new ComponentPropertyType(ComponentPropertyType::TYPE_STRING));
@@ -52,14 +54,6 @@ class CardBody extends AbstractBlockComponent
         $prop->setName('footer-class');
         $prop->setType(new ComponentPropertyType(ComponentPropertyType::TYPE_STRING));
         $this->params[] = $prop;
-    }
-
-    /**
-     * @inheritdoc
-     */
-    public function getTemplate(): string
-    {
-        return 'cardbody.tpl';
     }
 
     /**

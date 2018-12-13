@@ -6,9 +6,7 @@
 
 namespace scc\components;
 
-use scc\ComponentInterface;
 use scc\ComponentProperty;
-use scc\ComponentPropertyInterface;
 use scc\ComponentPropertyType;
 use scc\ComponentRendererInterface;
 use scc\ComponentType;
@@ -18,18 +16,11 @@ use scc\renderers\FunctionRenderer;
  * Class AbstractBlockComponent
  * @package scc\components
  */
-abstract class AbstractFunctionComponent implements ComponentInterface
+abstract class AbstractFunctionComponent extends AbstractBaseComponent
 {
     /**
-     * @var string|null
+     * AbstractFunctionComponent constructor.
      */
-    protected $content;
-
-    /**
-     * @var ComponentPropertyInterface[]
-     */
-    protected $params;
-
     public function __construct()
     {
         $this->params = [];
@@ -48,22 +39,22 @@ abstract class AbstractFunctionComponent implements ComponentInterface
         $prop->setName('style');
         $prop->setType(new ComponentPropertyType(ComponentPropertyType::TYPE_STRING));
         $this->params[] = $prop;
-        
+
         $prop = new ComponentProperty();
         $prop->setName('itemprop');
         $prop->setType(new ComponentPropertyType(ComponentPropertyType::TYPE_STRING));
         $this->params[] = $prop;
-        
+
         $prop = new ComponentProperty();
         $prop->setName('itemscope');
         $prop->setType(new ComponentPropertyType(ComponentPropertyType::TYPE_BOOL));
         $this->params[] = $prop;
-        
+
         $prop = new ComponentProperty();
         $prop->setName('itemtype');
         $prop->setType(new ComponentPropertyType(ComponentPropertyType::TYPE_STRING));
         $this->params[] = $prop;
-        
+
         $prop = new ComponentProperty();
         $prop->setName('itemid');
         $prop->setType(new ComponentPropertyType(ComponentPropertyType::TYPE_STRING));
@@ -77,35 +68,14 @@ abstract class AbstractFunctionComponent implements ComponentInterface
         $prop = new ComponentProperty();
         $prop->setName('aria');
         $prop->setType(new ComponentPropertyType(ComponentPropertyType::TYPE_ARRAY));
-        $this->params[] =$prop;
+        $this->params[] = $prop;
 
         $prop = new ComponentProperty();
         $prop->setName('data');
         $prop->setType(new ComponentPropertyType(ComponentPropertyType::TYPE_ARRAY));
-        $this->params[] =$prop;
-    }
+        $this->params[] = $prop;
 
-    /**
-     * @inheritdoc
-     */
-    public function getParams(): array
-    {
-        return $this->params;
-    }
-
-    /**
-     * @inheritdoc
-     */
-    public function getRenderer(): ComponentRendererInterface
-    {
-        return new FunctionRenderer($this);
-    }
-
-    /**
-     * @return ComponentType
-     */
-    public function getType(): ComponentType
-    {
-        return new ComponentType(ComponentType::TYPE_FUNCTION);
+        $this->setRenderer(new FunctionRenderer($this));
+        $this->setType(new ComponentType(ComponentType::TYPE_FUNCTION));
     }
 }

@@ -22,6 +22,7 @@ class Col extends AbstractBlockComponent
     public function __construct()
     {
         parent::__construct();
+        $this->setTemplate('col.tpl');
 
         $prop = new ComponentProperty();
         $prop->setName('col');
@@ -118,14 +119,6 @@ class Col extends AbstractBlockComponent
         $prop->setName('align-self');
         $prop->setType(new ComponentPropertyType(ComponentPropertyType::TYPE_STRING));
         $this->params[] = $prop;
-    }
-
-    /**
-     * @inheritdoc
-     */
-    public function getTemplate(): string
-    {
-        return 'col.tpl';
     }
 
     /**

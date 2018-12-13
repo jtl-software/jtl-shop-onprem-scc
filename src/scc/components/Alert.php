@@ -21,6 +21,7 @@ class Alert extends AbstractBlockComponent
     public function __construct()
     {
         parent::__construct();
+        $this->setTemplate('alert.tpl');
 
         $prop = new ComponentProperty();
         $prop->setName('variant');
@@ -45,14 +46,6 @@ class Alert extends AbstractBlockComponent
         $prop->setType(new ComponentPropertyType(ComponentPropertyType::TYPE_STRING));
         $prop->setDefaultValue('Close');
         $this->params[] = $prop;
-    }
-
-    /**
-     * @inheritdoc
-     */
-    public function getTemplate(): string
-    {
-        return 'alert.tpl';
     }
 
     /**

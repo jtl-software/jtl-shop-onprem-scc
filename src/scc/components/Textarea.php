@@ -22,6 +22,7 @@ class Textarea extends AbstractBlockComponent
     public function __construct()
     {
         parent::__construct();
+        $this->setTemplate('textarea.tpl');
 
         $prop = new ComponentProperty();
         $prop->setName('disabled');
@@ -93,14 +94,6 @@ class Textarea extends AbstractBlockComponent
         $prop->setName('name');
         $prop->setType(new ComponentPropertyType(ComponentPropertyType::TYPE_STRING));
         $this->params[] = $prop;
-    }
-
-    /**
-     * @inheritdoc
-     */
-    public function getTemplate(): string
-    {
-        return 'textarea.tpl';
     }
 
     /**

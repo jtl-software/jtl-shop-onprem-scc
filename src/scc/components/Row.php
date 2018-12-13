@@ -22,6 +22,7 @@ class Row extends AbstractBlockComponent
     public function __construct()
     {
         parent::__construct();
+        $this->setTemplate('row.tpl');
 
         $prop = new ComponentProperty();
         $prop->setName('no-gutters');
@@ -49,14 +50,6 @@ class Row extends AbstractBlockComponent
         $prop->setName('align-content');
         $prop->setType(new ComponentPropertyType(ComponentPropertyType::TYPE_STRING));
         $this->params[] = $prop;
-    }
-
-    /**
-     * @inheritdoc
-     */
-    public function getTemplate(): string
-    {
-        return 'row.tpl';
     }
 
     /**
