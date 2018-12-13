@@ -23,27 +23,17 @@ class NavItemDropdown extends AbstractBlockComponent
     {
         parent::__construct();
         $this->setTemplate('navitemdropdown.tpl');
+        $this->setName('navitemdropdown');
 
-        $prop = new ComponentProperty();
-        $prop->setName('text');
-        $prop->setType(new ComponentPropertyType(ComponentPropertyType::TYPE_STRING));
-        $this->params[] = $prop;
-
-        $prop = new ComponentProperty();
-        $prop->setName('tag');
-        $prop->setType(new ComponentPropertyType(ComponentPropertyType::TYPE_INT));
-        $prop->setDefaultValue('li');
-        $this->params[] = $prop;
+        $this->params[] = new ComponentProperty('text');
+        $this->params[] = new ComponentProperty('tag', 'li');
+        $this->params[] = new ComponentProperty('extra-toggle-classes');
+        $this->params[] = new ComponentProperty('extra-menu-classes');
 
         $prop = new ComponentProperty();
         $prop->setName('offset');
         $prop->setType(new ComponentPropertyType(ComponentPropertyType::TYPE_INT));
         $prop->setDefaultValue(0);
-        $this->params[] = $prop;
-
-        $prop = new ComponentProperty();
-        $prop->setName('extra-toggle-classes');
-        $prop->setType(new ComponentPropertyType(ComponentPropertyType::TYPE_STRING));
         $this->params[] = $prop;
         
         $prop = new ComponentProperty();
@@ -54,11 +44,6 @@ class NavItemDropdown extends AbstractBlockComponent
         $prop = new ComponentProperty();
         $prop->setName('router-aria');
         $prop->setType(new ComponentPropertyType(ComponentPropertyType::TYPE_ARRAY));
-        $this->params[] = $prop;
-
-        $prop = new ComponentProperty();
-        $prop->setName('extra-menu-classes');
-        $prop->setType(new ComponentPropertyType(ComponentPropertyType::TYPE_STRING));
         $this->params[] = $prop;
 
         $prop = new ComponentProperty();
@@ -90,13 +75,5 @@ class NavItemDropdown extends AbstractBlockComponent
         $prop->setType(new ComponentPropertyType(ComponentPropertyType::TYPE_BOOL));
         $prop->setDefaultValue(false);
         $this->params[] = $prop;
-    }
-
-    /**
-     * @return string
-     */
-    public function getName(): string
-    {
-        return 'navitemdropdown';
     }
 }

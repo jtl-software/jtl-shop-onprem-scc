@@ -23,18 +23,13 @@ class Tab extends AbstractBlockComponent
     {
         parent::__construct();
         $this->setTemplate('tab.tpl');
+        $this->setName('tab');
 
-        $prop = new ComponentProperty();
-        $prop->setName('tag');
-        $prop->setType(new ComponentPropertyType(ComponentPropertyType::TYPE_STRING));
-        $prop->setDefaultValue('li');
-        $this->params[] = $prop;
-
-        $prop = new ComponentProperty();
-        $prop->setName('title');
-        $prop->setType(new ComponentPropertyType(ComponentPropertyType::TYPE_STRING));
-        $prop->setIsRequired(true);
-        $this->params[] = $prop;
+        $this->params[] = new ComponentProperty('tag', 'li');
+        $this->params[] = new ComponentProperty('title');
+        $this->params[] = new ComponentProperty('title-item-class');
+        $this->params[] = new ComponentProperty('title-link-class');
+        $this->params[] = new ComponentProperty('href', '#');
 
         $prop = new ComponentProperty();
         $prop->setName('active');
@@ -47,35 +42,11 @@ class Tab extends AbstractBlockComponent
         $prop->setType(new ComponentPropertyType(ComponentPropertyType::TYPE_BOOL));
         $prop->setDefaultValue(false);
         $this->params[] = $prop;
-
-        $prop = new ComponentProperty();
-        $prop->setName('href');
-        $prop->setType(new ComponentPropertyType(ComponentPropertyType::TYPE_STRING));
-        $prop->setDefaultValue('#');
-        $this->params[] = $prop;
-
-        $prop = new ComponentProperty();
-        $prop->setName('title-item-class');
-        $prop->setType(new ComponentPropertyType(ComponentPropertyType::TYPE_STRING));
-        $this->params[] = $prop;
-
-        $prop = new ComponentProperty();
-        $prop->setName('title-link-class');
-        $prop->setType(new ComponentPropertyType(ComponentPropertyType::TYPE_STRING));
-        $this->params[] = $prop;
         
         $prop = new ComponentProperty();
         $prop->setName('swipeable');
         $prop->setType(new ComponentPropertyType(ComponentPropertyType::TYPE_BOOL));
         $prop->setDefaultValue(false);
         $this->params[] = $prop;
-    }
-
-    /**
-     * @return string
-     */
-    public function getName(): string
-    {
-        return 'tab';
     }
 }

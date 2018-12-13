@@ -24,6 +24,7 @@ class Radio extends AbstractBlockComponent
     {
         parent::__construct();
         $this->setTemplate('radio.tpl');
+        $this->setName('radio');
 
         $prop = new ComponentProperty();
         $prop->setName('disabled');
@@ -43,29 +44,10 @@ class Radio extends AbstractBlockComponent
         $prop->setDefaultValue(false);
         $this->params[] = $prop;
 
-        $prop = new ComponentProperty();
-        $prop->setName('value');
-        $prop->setType(new ComponentPropertyType(ComponentPropertyType::TYPE_STRING));
-        $this->params[] = $prop;
-
-        $prop = new ComponentProperty();
-        $prop->setName('button-variant');
-        $prop->setType(new ComponentPropertyType(ComponentPropertyType::TYPE_STRING));
-        $this->params[] = $prop;
-
-        $prop = new ComponentProperty();
-        $prop->setName('name');
-        $prop->setType(new ComponentPropertyType(ComponentPropertyType::TYPE_STRING));
-        $this->params[] = $prop;
+        $this->params[] = new ComponentProperty('value');
+        $this->params[] = new ComponentProperty('button-variant');
+        $this->params[] = new ComponentProperty('name');
 
         $this->setRenderer(new NestedBlockRenderer($this));
-    }
-
-    /**
-     * @return string
-     */
-    public function getName(): string
-    {
-        return 'radio';
     }
 }

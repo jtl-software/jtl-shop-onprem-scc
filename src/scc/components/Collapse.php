@@ -23,17 +23,10 @@ class Collapse extends AbstractBlockComponent
     {
         parent::__construct();
         $this->setTemplate('collapse.tpl');
+        $this->setName('collapse');
 
-        $prop = new ComponentProperty();
-        $prop->setName('accordion');
-        $prop->setType(new ComponentPropertyType(ComponentPropertyType::TYPE_STRING));
-        $this->params[] = $prop;
-
-        $prop = new ComponentProperty();
-        $prop->setName('tag');
-        $prop->setType(new ComponentPropertyType(ComponentPropertyType::TYPE_STRING));
-        $prop->setDefaultValue('div');
-        $this->params[] = $prop;
+        $this->params[] = new ComponentProperty('accordion');
+        $this->params[] = new ComponentProperty('tag', 'div');
 
         $prop = new ComponentProperty();
         $prop->setName('visible');
@@ -46,13 +39,5 @@ class Collapse extends AbstractBlockComponent
         $prop->setType(new ComponentPropertyType(ComponentPropertyType::TYPE_BOOL));
         $prop->setDefaultValue(false);
         $this->params[] = $prop;
-    }
-
-    /**
-     * @return string
-     */
-    public function getName(): string
-    {
-        return 'collapse';
     }
 }

@@ -19,6 +19,7 @@ class InputGroupAppend extends InputGroupAddon
     public function __construct()
     {
         parent::__construct();
+        $this->setName('inputgroupappend');
 
         foreach ($this->params as $param) {
             if ($param->getName() === 'append') {
@@ -27,13 +28,5 @@ class InputGroupAppend extends InputGroupAddon
                 break;
             }
         }
-    }
-
-    /**
-     * @return string
-     */
-    public function getName(): string
-    {
-        return 'inputgroupappend';
     }
 }

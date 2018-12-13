@@ -23,17 +23,10 @@ class CardImg extends AbstractFunctionComponent
     {
         parent::__construct();
         $this->setTemplate('cardimg.tpl');
+        $this->setName('cardimg');
 
-        $prop = new ComponentProperty();
-        $prop->setName('src');
-        $prop->setType(new ComponentPropertyType(ComponentPropertyType::TYPE_STRING));
-        $this->params[] = $prop;
-
-        $prop = new ComponentProperty();
-        $prop->setName('alt');
-        $prop->setType(new ComponentPropertyType(ComponentPropertyType::TYPE_STRING));
-        $prop->setDefaultValue('');
-        $this->params[] = $prop;
+        $this->params[] = new ComponentProperty('src');
+        $this->params[] = new ComponentProperty('alt', '');
 
         $prop = new ComponentProperty();
         $prop->setName('top');
@@ -52,13 +45,5 @@ class CardImg extends AbstractFunctionComponent
         $prop->setType(new ComponentPropertyType(ComponentPropertyType::TYPE_BOOL));
         $prop->setDefaultValue(false);
         $this->params[] = $prop;
-    }
-
-    /**
-     * @return string
-     */
-    public function getName(): string
-    {
-        return 'cardimg';
     }
 }

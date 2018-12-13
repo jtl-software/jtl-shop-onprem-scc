@@ -25,12 +25,9 @@ class Tabs extends AbstractBlockComponent
     {
         parent::__construct();
         $this->setTemplate('tabs.tpl');
+        $this->setName('tabs');
 
-        $prop = new ComponentProperty();
-        $prop->setName('tag');
-        $prop->setType(new ComponentPropertyType(ComponentPropertyType::TYPE_STRING));
-        $prop->setDefaultValue('ul');
-        $this->params[] = $prop;
+        $this->params[] = new ComponentProperty('tag', 'ul');
 
         $prop = new ComponentProperty();
         $prop->setName('card');
@@ -50,19 +47,12 @@ class Tabs extends AbstractBlockComponent
         $prop->setDefaultValue(false);
         $this->params[] = $prop;
 
-        $prop = new ComponentProperty();
-        $prop->setName('nav-class');
-        $prop->setType(new ComponentPropertyType(ComponentPropertyType::TYPE_STRING));
-        $this->params[] = $prop;
+        $this->params[] = new ComponentProperty('nav-class');
+        $this->params[] = new ComponentProperty('content-class');
 
         $prop = new ComponentProperty();
         $prop->setName('tabs');
         $prop->setType(new ComponentPropertyType(ComponentPropertyType::TYPE_ARRAY));
-        $this->params[] = $prop;
-
-        $prop = new ComponentProperty();
-        $prop->setName('content-class');
-        $prop->setType(new ComponentPropertyType(ComponentPropertyType::TYPE_STRING));
         $this->params[] = $prop;
         
         $prop = new ComponentProperty();
@@ -72,13 +62,5 @@ class Tabs extends AbstractBlockComponent
         $this->params[] = $prop;
 
         $this->setRenderer(new TabsRenderer($this));
-    }
-
-    /**
-     * @return string
-     */
-    public function getName(): string
-    {
-        return 'tabs';
     }
 }

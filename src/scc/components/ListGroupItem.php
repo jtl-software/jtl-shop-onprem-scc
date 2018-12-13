@@ -23,22 +23,11 @@ class ListGroupItem extends AbstractBlockComponent
     {
         parent::__construct();
         $this->setTemplate('listgroupitem.tpl');
+        $this->setName('listgroupitem');
 
-        $prop = new ComponentProperty();
-        $prop->setName('tag');
-        $prop->setType(new ComponentPropertyType(ComponentPropertyType::TYPE_STRING));
-        $prop->setDefaultValue('div');
-        $this->params[] = $prop;
-
-        $prop = new ComponentProperty();
-        $prop->setName('variant');
-        $prop->setType(new ComponentPropertyType(ComponentPropertyType::TYPE_STRING));
-        $this->params[] = $prop;
-
-        $prop = new ComponentProperty();
-        $prop->setName('href');
-        $prop->setType(new ComponentPropertyType(ComponentPropertyType::TYPE_STRING));
-        $this->params[] = $prop;
+        $this->params[] = new ComponentProperty('tag', 'div');
+        $this->params[] = new ComponentProperty('variant');
+        $this->params[] = new ComponentProperty('href');
 
         $prop = new ComponentProperty();
         $prop->setName('active');
@@ -51,13 +40,5 @@ class ListGroupItem extends AbstractBlockComponent
         $prop->setType(new ComponentPropertyType(ComponentPropertyType::TYPE_BOOL));
         $prop->setDefaultValue(false);
         $this->params[] = $prop;
-    }
-
-    /**
-     * @return string
-     */
-    public function getName(): string
-    {
-        return 'listgroupitem';
     }
 }

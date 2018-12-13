@@ -22,40 +22,17 @@ class Link extends AbstractBlockComponent
     {
         parent::__construct();
         $this->setTemplate('link.tpl');
+        $this->setName('link');
 
-        $prop = new ComponentProperty();
-        $prop->setName('title');
-        $prop->setType(new ComponentPropertyType(ComponentPropertyType::TYPE_STRING));
-        $this->params[] = $prop;
-
-        $prop = new ComponentProperty();
-        $prop->setName('rel');
-        $prop->setType(new ComponentPropertyType(ComponentPropertyType::TYPE_STRING));
-        $this->params[] = $prop;
-
-        $prop = new ComponentProperty();
-        $prop->setName('href');
-        $prop->setType(new ComponentPropertyType(ComponentPropertyType::TYPE_STRING));
-        $prop->setDefaultValue('#');
-        $this->params[] = $prop;
-
-        $prop = new ComponentProperty();
-        $prop->setName('target');
-        $prop->setType(new ComponentPropertyType(ComponentPropertyType::TYPE_STRING));
-        $this->params[] = $prop;
+        $this->params[] = new ComponentProperty('title');
+        $this->params[] = new ComponentProperty('rel');
+        $this->params[] = new ComponentProperty('target');
+        $this->params[] = new ComponentProperty('href', '#');
 
         $prop = new ComponentProperty();
         $prop->setName('name');
         $prop->setType(new ComponentPropertyType(ComponentPropertyType::TYPE_STRING));
         $prop->setIsRequired(true);
         $this->params[] = $prop;
-    }
-
-    /**
-     * @inheritdoc
-     */
-    public function getName(): string
-    {
-        return 'link';
     }
 }

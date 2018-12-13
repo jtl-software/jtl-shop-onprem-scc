@@ -23,19 +23,8 @@ class NavText extends AbstractBlockComponent
     {
         parent::__construct();
         $this->setTemplate('navtext.tpl');
+        $this->setName('navtext');
 
-        $prop = new ComponentProperty();
-        $prop->setName('tag');
-        $prop->setType(new ComponentPropertyType(ComponentPropertyType::TYPE_STRING));
-        $prop->setDefaultValue('span');
-        $this->params[] = $prop;
-    }
-
-    /**
-     * @return string
-     */
-    public function getName(): string
-    {
-        return 'navtext';
+        $this->params[] = new ComponentProperty('tag', 'span');
     }
 }

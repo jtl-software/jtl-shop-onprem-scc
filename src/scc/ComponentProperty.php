@@ -39,6 +39,27 @@ class ComponentProperty implements ComponentPropertyInterface
     private $value;
 
     /**
+     * ComponentProperty constructor.
+     * @param string|null                $name
+     * @param null                       $defaultValue
+     * @param ComponentPropertyType|null $type
+     */
+    public function __construct(string $name = null, $defaultValue = null, ComponentPropertyType $type = null)
+    {
+        if ($name !== null) {
+            $this->setName($name);
+        }
+        if ($defaultValue !== null) {
+            $this->setDefaultValue($defaultValue);
+        }
+        if ($type !== null) {
+            $this->setType($type);
+        } else {
+            $this->setType(new ComponentPropertyType(ComponentPropertyType::TYPE_STRING));
+        }
+    }
+
+    /**
      * @inheritdoc
      */
     public function getDefaultValue()

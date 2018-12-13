@@ -23,44 +23,13 @@ class CardFooter extends AbstractBlockComponent
     {
         parent::__construct();
         $this->setTemplate('cardfooter.tpl');
+        $this->setName('cardfooter');
 
-        $prop = new ComponentProperty();
-        $prop->setName('footer');
-        $prop->setType(new ComponentPropertyType(ComponentPropertyType::TYPE_STRING));
-        $this->params[] = $prop;
-
-        $prop = new ComponentProperty();
-        $prop->setName('footer-tag');
-        $prop->setType(new ComponentPropertyType(ComponentPropertyType::TYPE_STRING));
-        $prop->setDefaultValue('div');
-        $this->params[] = $prop;
-
-        $prop = new ComponentProperty();
-        $prop->setName('footer-bg-variant');
-        $prop->setType(new ComponentPropertyType(ComponentPropertyType::TYPE_STRING));
-        $this->params[] = $prop;
-
-        $prop = new ComponentProperty();
-        $prop->setName('footer-border-variant');
-        $prop->setType(new ComponentPropertyType(ComponentPropertyType::TYPE_STRING));
-        $this->params[] = $prop;
-
-        $prop = new ComponentProperty();
-        $prop->setName('footer-text-variant');
-        $prop->setType(new ComponentPropertyType(ComponentPropertyType::TYPE_STRING));
-        $this->params[] = $prop;
-
-        $prop = new ComponentProperty();
-        $prop->setName('footer-class');
-        $prop->setType(new ComponentPropertyType(ComponentPropertyType::TYPE_STRING));
-        $this->params[] = $prop;
-    }
-
-    /**
-     * @return string
-     */
-    public function getName(): string
-    {
-        return 'cardfooter';
+        $this->params[] = new ComponentProperty('footer');
+        $this->params[] = new ComponentProperty('footer-tag', 'div');
+        $this->params[] = new ComponentProperty('footer-bg-variant');
+        $this->params[] = new ComponentProperty('footer-border-variant');
+        $this->params[] = new ComponentProperty('footer-text-variant');
+        $this->params[] = new ComponentProperty('footer-class');
     }
 }

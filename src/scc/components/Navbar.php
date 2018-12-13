@@ -23,33 +23,13 @@ class Navbar extends AbstractBlockComponent
     {
         parent::__construct();
         $this->setTemplate('navbar.tpl');
+        $this->setName('navbar');
 
-        $prop = new ComponentProperty();
-        $prop->setName('tag');
-        $prop->setType(new ComponentPropertyType(ComponentPropertyType::TYPE_STRING));
-        $prop->setDefaultValue('nav');
-        $this->params[] = $prop;
-
-        $prop = new ComponentProperty();
-        $prop->setName('type');
-        $prop->setType(new ComponentPropertyType(ComponentPropertyType::TYPE_STRING));
-        $prop->setDefaultValue('light');
-        $this->params[] = $prop;
-
-        $prop = new ComponentProperty();
-        $prop->setName('variant');
-        $prop->setType(new ComponentPropertyType(ComponentPropertyType::TYPE_STRING));
-        $this->params[] = $prop;
-
-        $prop = new ComponentProperty();
-        $prop->setName('toggle-breakpoint');
-        $prop->setType(new ComponentPropertyType(ComponentPropertyType::TYPE_STRING));
-        $this->params[] = $prop;
-
-        $prop = new ComponentProperty();
-        $prop->setName('fixed');
-        $prop->setType(new ComponentPropertyType(ComponentPropertyType::TYPE_STRING));
-        $this->params[] = $prop;
+        $this->params[] = new ComponentProperty('tag', 'nav');
+        $this->params[] = new ComponentProperty('type', 'light');
+        $this->params[] = new ComponentProperty('variant');
+        $this->params[] = new ComponentProperty('toggle-breakpoint');
+        $this->params[] = new ComponentProperty('fixed');
 
         $prop = new ComponentProperty();
         $prop->setName('toggleable');
@@ -62,13 +42,5 @@ class Navbar extends AbstractBlockComponent
         $prop->setType(new ComponentPropertyType(ComponentPropertyType::TYPE_BOOL));
         $prop->setDefaultValue(false);
         $this->params[] = $prop;
-    }
-
-    /**
-     * @return string
-     */
-    public function getName(): string
-    {
-        return 'navbar';
     }
 }

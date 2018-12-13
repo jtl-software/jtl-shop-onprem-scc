@@ -23,19 +23,8 @@ class Breadcrumb extends AbstractBlockComponent
     {
         parent::__construct();
         $this->setTemplate('breadcrumb.tpl');
+        $this->setName('breadcrumb');
 
-        $prop = new ComponentProperty();
-        $prop->setName('tag');
-        $prop->setType(new ComponentPropertyType(ComponentPropertyType::TYPE_STRING));
-        $prop->setDefaultValue('ol');
-        $this->params[] = $prop;
-    }
-
-    /**
-     * @return string
-     */
-    public function getName(): string
-    {
-        return 'breadcrumb';
+        $this->params[] = new ComponentProperty('tag', 'ol');
     }
 }

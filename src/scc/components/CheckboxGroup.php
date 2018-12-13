@@ -23,6 +23,7 @@ class CheckboxGroup extends AbstractBlockComponent
     {
         parent::__construct();
         $this->setTemplate('checkboxgroup.tpl');
+        $this->setName('checkboxgroup');
 
         $prop = new ComponentProperty();
         $prop->setName('disabled');
@@ -36,33 +37,11 @@ class CheckboxGroup extends AbstractBlockComponent
         $prop->setDefaultValue(false);
         $this->params[] = $prop;
 
-        $prop = new ComponentProperty();
-        $prop->setName('name');
-        $prop->setType(new ComponentPropertyType(ComponentPropertyType::TYPE_STRING));
-        $this->params[] = $prop;
-
-        $prop = new ComponentProperty();
-        $prop->setName('size');
-        $prop->setType(new ComponentPropertyType(ComponentPropertyType::TYPE_STRING));
-        $this->params[] = $prop;
-
-        $prop = new ComponentProperty();
-        $prop->setName('value-field');
-        $prop->setType(new ComponentPropertyType(ComponentPropertyType::TYPE_STRING));
-        $prop->setDefaultValue('value');
-        $this->params[] = $prop;
-
-        $prop = new ComponentProperty();
-        $prop->setName('text-field');
-        $prop->setType(new ComponentPropertyType(ComponentPropertyType::TYPE_STRING));
-        $prop->setDefaultValue('text');
-        $this->params[] = $prop;
-
-        $prop = new ComponentProperty();
-        $prop->setName('disabled-field');
-        $prop->setType(new ComponentPropertyType(ComponentPropertyType::TYPE_STRING));
-        $prop->setDefaultValue('disabled');
-        $this->params[] = $prop;
+        $this->params[] = new ComponentProperty('name');
+        $this->params[] = new ComponentProperty('size');
+        $this->params[] = new ComponentProperty('value-field', 'value');
+        $this->params[] = new ComponentProperty('text-field', 'text');
+        $this->params[] = new ComponentProperty('disabled-field', 'disabled');
 
         $prop = new ComponentProperty();
         $prop->setName('plain');
@@ -88,18 +67,6 @@ class CheckboxGroup extends AbstractBlockComponent
         $prop->setDefaultValue(false);
         $this->params[] = $prop;
 
-        $prop = new ComponentProperty();
-        $prop->setName('button-variant');
-        $prop->setType(new ComponentPropertyType(ComponentPropertyType::TYPE_STRING));
-        $prop->setDefaultValue('secondary');
-        $this->params[] = $prop;
-    }
-
-    /**
-     * @return string
-     */
-    public function getName(): string
-    {
-        return 'checkboxgroup';
+        $this->params[] = new ComponentProperty('button-variant', 'secondary');
     }
 }

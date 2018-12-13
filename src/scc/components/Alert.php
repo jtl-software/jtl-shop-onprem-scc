@@ -22,37 +22,19 @@ class Alert extends AbstractBlockComponent
     {
         parent::__construct();
         $this->setTemplate('alert.tpl');
+        $this->setName('alert');
 
-        $prop = new ComponentProperty();
-        $prop->setName('variant');
-        $prop->setType(new ComponentPropertyType(ComponentPropertyType::TYPE_STRING));
-        $prop->setDefaultValue('info');
-        $this->params[] = $prop;
-
-        $prop = new ComponentProperty();
-        $prop->setName('dismissible');
-        $prop->setType(new ComponentPropertyType(ComponentPropertyType::TYPE_BOOL));
-        $prop->setDefaultValue(false);
-        $this->params[] = $prop;
-
-        $prop = new ComponentProperty();
-        $prop->setName('show');
-        $prop->setType(new ComponentPropertyType(ComponentPropertyType::TYPE_BOOL));
-        $prop->setDefaultValue(false);
-        $this->params[] = $prop;
-
-        $prop = new ComponentProperty();
-        $prop->setName('dismiss-label');
-        $prop->setType(new ComponentPropertyType(ComponentPropertyType::TYPE_STRING));
-        $prop->setDefaultValue('Close');
-        $this->params[] = $prop;
-    }
-
-    /**
-     * @return string
-     */
-    public function getName(): string
-    {
-        return 'alert';
+        $this->params[] = new ComponentProperty('variant', 'info');
+        $this->params[] = new ComponentProperty(
+            'dismissible',
+            false,
+            new ComponentPropertyType(ComponentPropertyType::TYPE_BOOL)
+        );
+        $this->params[] = new ComponentProperty(
+            'show',
+            false,
+            new ComponentPropertyType(ComponentPropertyType::TYPE_BOOL)
+        );
+        $this->params[] = new ComponentProperty('dismiss-label', 'Close');
     }
 }

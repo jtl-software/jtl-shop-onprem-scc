@@ -23,21 +23,11 @@ class InputFile extends AbstractFunctionComponent
     {
         parent::__construct();
         $this->setTemplate('inputfile.tpl');
+        $this->setName('inputfile');
 
-        $prop = new ComponentProperty();
-        $prop->setName('name');
-        $prop->setType(new ComponentPropertyType(ComponentPropertyType::TYPE_STRING));
-        $this->params[] = $prop;
-
-        $prop = new ComponentProperty();
-        $prop->setName('placeholder');
-        $prop->setType(new ComponentPropertyType(ComponentPropertyType::TYPE_STRING));
-        $this->params[] = $prop;
-
-        $prop = new ComponentProperty();
-        $prop->setName('accept');
-        $prop->setType(new ComponentPropertyType(ComponentPropertyType::TYPE_STRING));
-        $this->params[] = $prop;
+        $this->params[] = new ComponentProperty('name');
+        $this->params[] = new ComponentProperty('placeholder');
+        $this->params[] = new ComponentProperty('accept');
 
         $prop = new ComponentProperty();
         $prop->setName('disabled');
@@ -80,13 +70,5 @@ class InputFile extends AbstractFunctionComponent
         $prop->setType(new ComponentPropertyType(ComponentPropertyType::TYPE_BOOL));
         $prop->setDefaultValue(false);
         $this->params[] = $prop;
-    }
-
-    /**
-     * @inheritdoc
-     */
-    public function getName(): string
-    {
-        return 'inputfile';
     }
 }

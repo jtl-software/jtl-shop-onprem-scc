@@ -7,6 +7,7 @@
 namespace scc\components;
 
 use scc\ComponentInterface;
+use scc\ComponentProperty;
 use scc\ComponentPropertyInterface;
 use scc\ComponentRendererInterface;
 use scc\ComponentType;
@@ -31,6 +32,11 @@ abstract class AbstractBaseComponent implements ComponentInterface
      * @var string
      */
     protected $template;
+
+    /**
+     * @var string
+     */
+    protected $name;
 
     /**
      * @var ComponentRendererInterface
@@ -61,6 +67,14 @@ abstract class AbstractBaseComponent implements ComponentInterface
     /**
      * @inheritdoc
      */
+    public function addParam(ComponentProperty $param): void
+    {
+        $this->params[] = $param;
+    }
+
+    /**
+     * @inheritdoc
+     */
     public function getTemplate(): string
     {
         return $this->template;
@@ -72,6 +86,22 @@ abstract class AbstractBaseComponent implements ComponentInterface
     public function setTemplate(string $template): void
     {
         $this->template = $template;
+    }
+
+    /**
+     * @inheritdoc
+     */
+    public function getName(): string
+    {
+        return $this->name;
+    }
+
+    /**
+     * @inheritdoc
+     */
+    public function setName(string $name): void
+    {
+        $this->name = $name;
     }
 
     /**

@@ -23,6 +23,7 @@ class Col extends AbstractBlockComponent
     {
         parent::__construct();
         $this->setTemplate('col.tpl');
+        $this->setName('col');
 
         $prop = new ComponentProperty();
         $prop->setName('col');
@@ -30,11 +31,7 @@ class Col extends AbstractBlockComponent
         $prop->setDefaultValue(false);
         $this->params[] = $prop;
 
-        $prop = new ComponentProperty();
-        $prop->setName('tag');
-        $prop->setType(new ComponentPropertyType(ComponentPropertyType::TYPE_STRING));
-        $prop->setDefaultValue('div');
-        $this->params[] = $prop;
+        $this->params[] = new ComponentProperty('tag', 'div');
 
         $prop = new ComponentProperty();
         $prop->setName('cols');
@@ -59,73 +56,30 @@ class Col extends AbstractBlockComponent
 
         $prop = new ComponentProperty();
         $prop->setName('md');
-        $prop->setType(new ComponentPropertyType(ComponentPropertyType::TYPE_STRING));
+        $prop->setType(new ComponentPropertyType(ComponentPropertyType::TYPE_BOOL));
         $prop->setDefaultValue(false);
         $this->params[] = $prop;
 
         $prop = new ComponentProperty();
         $prop->setName('lg');
-        $prop->setType(new ComponentPropertyType(ComponentPropertyType::TYPE_STRING));
+        $prop->setType(new ComponentPropertyType(ComponentPropertyType::TYPE_BOOL));
         $prop->setDefaultValue(false);
         $this->params[] = $prop;
 
         $prop = new ComponentProperty();
         $prop->setName('xl');
-        $prop->setType(new ComponentPropertyType(ComponentPropertyType::TYPE_STRING));
+        $prop->setType(new ComponentPropertyType(ComponentPropertyType::TYPE_BOOL));
         $prop->setDefaultValue(false);
         $this->params[] = $prop;
 
-        $prop = new ComponentProperty();
-        $prop->setName('offset-sm');
-        $prop->setType(new ComponentPropertyType(ComponentPropertyType::TYPE_STRING));
-        $this->params[] = $prop;
-
-        $prop = new ComponentProperty();
-        $prop->setName('offset-md');
-        $prop->setType(new ComponentPropertyType(ComponentPropertyType::TYPE_STRING));
-        $this->params[] = $prop;
-
-        $prop = new ComponentProperty();
-        $prop->setName('offset-lg');
-        $prop->setType(new ComponentPropertyType(ComponentPropertyType::TYPE_STRING));
-        $this->params[] = $prop;
-
-        $prop = new ComponentProperty();
-        $prop->setName('offset-xl');
-        $prop->setType(new ComponentPropertyType(ComponentPropertyType::TYPE_STRING));
-        $this->params[] = $prop;
-
-        $prop = new ComponentProperty();
-        $prop->setName('order-sm');
-        $prop->setType(new ComponentPropertyType(ComponentPropertyType::TYPE_STRING));
-        $this->params[] = $prop;
-
-        $prop = new ComponentProperty();
-        $prop->setName('order-md');
-        $prop->setType(new ComponentPropertyType(ComponentPropertyType::TYPE_STRING));
-        $this->params[] = $prop;
-
-        $prop = new ComponentProperty();
-        $prop->setName('order-lg');
-        $prop->setType(new ComponentPropertyType(ComponentPropertyType::TYPE_STRING));
-        $this->params[] = $prop;
-
-        $prop = new ComponentProperty();
-        $prop->setName('order-xl');
-        $prop->setType(new ComponentPropertyType(ComponentPropertyType::TYPE_STRING));
-        $this->params[] = $prop;
-
-        $prop = new ComponentProperty();
-        $prop->setName('align-self');
-        $prop->setType(new ComponentPropertyType(ComponentPropertyType::TYPE_STRING));
-        $this->params[] = $prop;
-    }
-
-    /**
-     * @return string
-     */
-    public function getName(): string
-    {
-        return 'col';
+        $this->params[] = new ComponentProperty('offset-sm');
+        $this->params[] = new ComponentProperty('offset-md');
+        $this->params[] = new ComponentProperty('offset-lg');
+        $this->params[] = new ComponentProperty('offset-xl');
+        $this->params[] = new ComponentProperty('order-sm');
+        $this->params[] = new ComponentProperty('order-md');
+        $this->params[] = new ComponentProperty('order-lg');
+        $this->params[] = new ComponentProperty('order-xl');
+        $this->params[] = new ComponentProperty('align-self');
     }
 }

@@ -8,7 +8,6 @@ namespace scc\components;
 
 use scc\ComponentProperty;
 use scc\ComponentPropertyType;
-use scc\ComponentRendererInterface;
 use scc\renderers\CarouselRenderer;
 
 /**
@@ -25,6 +24,7 @@ class Carousel extends AbstractBlockComponent
     {
         parent::__construct();
         $this->setTemplate('carousel.tpl');
+        $this->setName('carousel');
 
         $prop = new ComponentProperty();
         $prop->setName('disabled');
@@ -32,29 +32,10 @@ class Carousel extends AbstractBlockComponent
         $prop->setDefaultValue(false);
         $this->params[] = $prop;
 
-        $prop = new ComponentProperty();
-        $prop->setName('label-prev');
-        $prop->setType(new ComponentPropertyType(ComponentPropertyType::TYPE_STRING));
-        $prop->setDefaultValue('Previous slide');
-        $this->params[] = $prop;
-
-        $prop = new ComponentProperty();
-        $prop->setName('label-next');
-        $prop->setType(new ComponentPropertyType(ComponentPropertyType::TYPE_STRING));
-        $prop->setDefaultValue('Next slide');
-        $this->params[] = $prop;
-
-        $prop = new ComponentProperty();
-        $prop->setName('label-goto-slide');
-        $prop->setType(new ComponentPropertyType(ComponentPropertyType::TYPE_STRING));
-        $prop->setDefaultValue('Go to slide');
-        $this->params[] = $prop;
-
-        $prop = new ComponentProperty();
-        $prop->setName('label-indicators');
-        $prop->setType(new ComponentPropertyType(ComponentPropertyType::TYPE_STRING));
-        $prop->setDefaultValue('Select a slide to display');
-        $this->params[] = $prop;
+        $this->params[] = new ComponentProperty('label-prev', 'Previous slide');
+        $this->params[] = new ComponentProperty('label-next', 'Next slide');
+        $this->params[] = new ComponentProperty('label-goto-slide', 'Go to slide');
+        $this->params[] = new ComponentProperty('label-indicators', 'Select a slide to display');
 
         $prop = new ComponentProperty();
         $prop->setName('interval');
@@ -84,31 +65,14 @@ class Carousel extends AbstractBlockComponent
         $prop->setType(new ComponentPropertyType(ComponentPropertyType::TYPE_NUMERIC));
         $this->params[] = $prop;
 
-        $prop = new ComponentProperty();
-        $prop->setName('background');
-        $prop->setType(new ComponentPropertyType(ComponentPropertyType::TYPE_STRING));
-        $this->params[] = $prop;
+        $this->params[] = new ComponentProperty('background');
 
         $prop = new ComponentProperty();
         $prop->setName('value');
         $prop->setType(new ComponentPropertyType(ComponentPropertyType::TYPE_INT));
         $prop->setDefaultValue(0);
         $this->params[] = $prop;
-    }
 
-    /**
-     * @inheritdoc
-     */
-    public function getRenderer(): ComponentRendererInterface
-    {
-        return new CarouselRenderer($this);
-    }
-
-    /**
-     * @return string
-     */
-    public function getName(): string
-    {
-        return 'carousel';
+        $this->setRenderer(new CarouselRenderer($this));
     }
 }

@@ -23,51 +23,16 @@ class BreadcrumbItem extends AbstractBlockComponent
     {
         parent::__construct();
         $this->setTemplate('breadcrumbitem.tpl');
+        $this->setName('breadcrumbitem');
 
-        $prop = new ComponentProperty();
-        $prop->setName('href');
-        $prop->setType(new ComponentPropertyType(ComponentPropertyType::TYPE_STRING));
-        $this->params[] = $prop;
-
-        $prop = new ComponentProperty();
-        $prop->setName('title');
-        $prop->setType(new ComponentPropertyType(ComponentPropertyType::TYPE_STRING));
-        $this->params[] = $prop;
-
-        $prop = new ComponentProperty();
-        $prop->setName('tag');
-        $prop->setType(new ComponentPropertyType(ComponentPropertyType::TYPE_STRING));
-        $prop->setDefaultValue('li');
-        $this->params[] = $prop;
-
-        $prop = new ComponentProperty();
-        $prop->setName('target');
-        $prop->setType(new ComponentPropertyType(ComponentPropertyType::TYPE_STRING));
-        $prop->setDefaultValue('_self');
-        $this->params[] = $prop;
-
-        $prop = new ComponentProperty();
-        $prop->setName('active-class');
-        $prop->setType(new ComponentPropertyType(ComponentPropertyType::TYPE_STRING));
-        $prop->setDefaultValue('active');
-        $this->params[] = $prop;
-
-        $prop = new ComponentProperty();
-        $prop->setName('router-tag');
-        $prop->setType(new ComponentPropertyType(ComponentPropertyType::TYPE_STRING));
-        $prop->setDefaultValue('a');
-        $this->params[] = $prop;
-
-        $prop = new ComponentProperty();
-        $prop->setName('router-tag-itemprop');
-        $prop->setType(new ComponentPropertyType(ComponentPropertyType::TYPE_STRING));
-        $this->params[] = $prop;
-
-        $prop = new ComponentProperty();
-        $prop->setName('exact-active-class');
-        $prop->setType(new ComponentPropertyType(ComponentPropertyType::TYPE_STRING));
-        $prop->setDefaultValue('active');
-        $this->params[] = $prop;
+        $this->params[] = new ComponentProperty('href');
+        $this->params[] = new ComponentProperty('title');
+        $this->params[] = new ComponentProperty('tag', 'li');
+        $this->params[] = new ComponentProperty('target', '_self');
+        $this->params[] = new ComponentProperty('active-class', 'active');
+        $this->params[] = new ComponentProperty('router-tag', 'a');
+        $this->params[] = new ComponentProperty('router-tag-itemprop');
+        $this->params[] = new ComponentProperty('exact-active-class', 'active');
 
         $prop = new ComponentProperty();
         $prop->setName('active');
@@ -104,13 +69,5 @@ class BreadcrumbItem extends AbstractBlockComponent
         $prop->setType(new ComponentPropertyType(ComponentPropertyType::TYPE_BOOL));
         $prop->setDefaultValue(false);
         $this->params[] = $prop;
-    }
-
-    /**
-     * @return string
-     */
-    public function getName(): string
-    {
-        return 'breadcrumbitem';
     }
 }

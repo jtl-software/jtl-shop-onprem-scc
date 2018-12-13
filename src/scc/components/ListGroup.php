@@ -23,19 +23,8 @@ class ListGroup extends AbstractBlockComponent
     {
         parent::__construct();
         $this->setTemplate('listgroup.tpl');
+        $this->setName('listgroup');
 
-        $prop = new ComponentProperty();
-        $prop->setName('tag');
-        $prop->setType(new ComponentPropertyType(ComponentPropertyType::TYPE_STRING));
-        $prop->setDefaultValue('div');
-        $this->params[] = $prop;
-    }
-
-    /**
-     * @return string
-     */
-    public function getName(): string
-    {
-        return 'listgroup';
+        $this->params[] = new ComponentProperty('tag', 'div');
     }
 }

@@ -22,6 +22,7 @@ class Jumbotron extends AbstractBlockComponent
     {
         parent::__construct();
         $this->setTemplate('jumbotron.tpl');
+        $this->setName('jumbotron');
 
         $prop = new ComponentProperty();
         $prop->setName('fluid');
@@ -35,61 +36,19 @@ class Jumbotron extends AbstractBlockComponent
         $prop->setDefaultValue(false);
         $this->params[] = $prop;
 
-        $prop = new ComponentProperty();
-        $prop->setName('header');
-        $prop->setType(new ComponentPropertyType(ComponentPropertyType::TYPE_STRING));
-        $this->params[] = $prop;
-
-        $prop = new ComponentProperty();
-        $prop->setName('header-tag');
-        $prop->setType(new ComponentPropertyType(ComponentPropertyType::TYPE_STRING));
-        $prop->setDefaultValue('h1');
-        $this->params[] = $prop;
+        $this->params[] = new ComponentProperty('header');
+        $this->params[] = new ComponentProperty('header-tag', 'h1');
+        $this->params[] = new ComponentProperty('lead');
+        $this->params[] = new ComponentProperty('lead-tag', 'p');
+        $this->params[] = new ComponentProperty('tag', 'div');
+        $this->params[] = new ComponentProperty('bg-variant');
+        $this->params[] = new ComponentProperty('border-variant');
+        $this->params[] = new ComponentProperty('text-variant');
 
         $prop = new ComponentProperty();
         $prop->setName('header-level');
         $prop->setType(new ComponentPropertyType(ComponentPropertyType::TYPE_NUMERIC));
         $prop->setDefaultValue(3);
         $this->params[] = $prop;
-
-        $prop = new ComponentProperty();
-        $prop->setName('lead');
-        $prop->setType(new ComponentPropertyType(ComponentPropertyType::TYPE_STRING));
-        $this->params[] = $prop;
-
-        $prop = new ComponentProperty();
-        $prop->setName('lead-tag');
-        $prop->setType(new ComponentPropertyType(ComponentPropertyType::TYPE_STRING));
-        $prop->setDefaultValue('p');
-        $this->params[] = $prop;
-
-        $prop = new ComponentProperty();
-        $prop->setName('tag');
-        $prop->setType(new ComponentPropertyType(ComponentPropertyType::TYPE_STRING));
-        $prop->setDefaultValue('div');
-        $this->params[] = $prop;
-
-        $prop = new ComponentProperty();
-        $prop->setName('bg-variant');
-        $prop->setType(new ComponentPropertyType(ComponentPropertyType::TYPE_STRING));
-        $this->params[] = $prop;
-
-        $prop = new ComponentProperty();
-        $prop->setName('border-variant');
-        $prop->setType(new ComponentPropertyType(ComponentPropertyType::TYPE_STRING));
-        $this->params[] = $prop;
-
-        $prop = new ComponentProperty();
-        $prop->setName('text-variant');
-        $prop->setType(new ComponentPropertyType(ComponentPropertyType::TYPE_STRING));
-        $this->params[] = $prop;
-    }
-
-    /**
-     * @return string
-     */
-    public function getName(): string
-    {
-        return 'jumbotron';
     }
 }

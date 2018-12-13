@@ -23,12 +23,9 @@ class CardGroup extends AbstractBlockComponent
     {
         parent::__construct();
         $this->setTemplate('cardgroup.tpl');
+        $this->setName('cardgroup');
 
-        $prop = new ComponentProperty();
-        $prop->setName('tag');
-        $prop->setType(new ComponentPropertyType(ComponentPropertyType::TYPE_STRING));
-        $prop->setDefaultValue('div');
-        $this->params[] = $prop;
+        $this->params[] = new ComponentProperty('tag', 'div');
 
         $prop = new ComponentProperty();
         $prop->setName('deck');
@@ -41,13 +38,5 @@ class CardGroup extends AbstractBlockComponent
         $prop->setType(new ComponentPropertyType(ComponentPropertyType::TYPE_BOOL));
         $prop->setDefaultValue(false);
         $this->params[] = $prop;
-    }
-
-    /**
-     * @return string
-     */
-    public function getName(): string
-    {
-        return 'cardgroup';
     }
 }

@@ -22,6 +22,7 @@ class DropDown extends AbstractBlockComponent
     {
         parent::__construct();
         $this->setTemplate('dropdown.tpl');
+        $this->setName('dropdown');
 
         $prop = new ComponentProperty();
         $prop->setName('disabled');
@@ -65,35 +66,9 @@ class DropDown extends AbstractBlockComponent
         $prop->setDefaultValue(false);
         $this->params[] = $prop;
 
-        $prop = new ComponentProperty();
-        $prop->setName('variant');
-        $prop->setType(new ComponentPropertyType(ComponentPropertyType::TYPE_STRING));
-        $prop->setDefaultValue('secondary');
-        $this->params[] = $prop;
-
-        $prop = new ComponentProperty();
-        $prop->setName('toggleText');
-        $prop->setType(new ComponentPropertyType(ComponentPropertyType::TYPE_STRING));
-        $prop->setDefaultValue('Toggle Dropdown');
-        $this->params[] = $prop;
-
-        $prop = new ComponentProperty();
-        $prop->setName('size');
-        $prop->setType(new ComponentPropertyType(ComponentPropertyType::TYPE_STRING));
-        $this->params[] = $prop;
-
-        $prop = new ComponentProperty();
-        $prop->setName('text');
-        $prop->setType(new ComponentPropertyType(ComponentPropertyType::TYPE_STRING));
-        $prop->setDefaultValue('');
-        $this->params[] = $prop;
-    }
-
-    /**
-     * @return string
-     */
-    public function getName(): string
-    {
-        return 'dropdown';
+        $this->params[] = new ComponentProperty('variant', 'secondary');
+        $this->params[] = new ComponentProperty('toggleText', 'Toggle dropdown');
+        $this->params[] = new ComponentProperty('size');
+        $this->params[] = new ComponentProperty('text', '');
     }
 }

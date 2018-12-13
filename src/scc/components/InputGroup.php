@@ -22,34 +22,11 @@ class InputGroup extends AbstractBlockComponent
     {
         parent::__construct();
         $this->setTemplate('inputgroup.tpl');
+        $this->setName('inputgroup');
 
-        $prop = new ComponentProperty();
-        $prop->setName('size');
-        $prop->setType(new ComponentPropertyType(ComponentPropertyType::TYPE_STRING));
-        $this->params[] = $prop;
-
-        $prop = new ComponentProperty();
-        $prop->setName('prepend');
-        $prop->setType(new ComponentPropertyType(ComponentPropertyType::TYPE_STRING));
-        $this->params[] = $prop;
-
-        $prop = new ComponentProperty();
-        $prop->setName('append');
-        $prop->setType(new ComponentPropertyType(ComponentPropertyType::TYPE_STRING));
-        $this->params[] = $prop;
-
-        $prop = new ComponentProperty();
-        $prop->setName('tag');
-        $prop->setType(new ComponentPropertyType(ComponentPropertyType::TYPE_STRING));
-        $prop->setDefaultValue('div');
-        $this->params[] = $prop;
-    }
-
-    /**
-     * @return string
-     */
-    public function getName(): string
-    {
-        return 'inputgroup';
+        $this->params[] = new ComponentProperty('size');
+        $this->params[] = new ComponentProperty('prepend');
+        $this->params[] = new ComponentProperty('append');
+        $this->params[] = new ComponentProperty('tag', 'div');
     }
 }

@@ -22,19 +22,8 @@ class FormRow extends AbstractBlockComponent
     {
         parent::__construct();
         $this->setTemplate('formrow.tpl');
+        $this->setName('formrow');
 
-        $prop = new ComponentProperty();
-        $prop->setName('tag');
-        $prop->setType(new ComponentPropertyType(ComponentPropertyType::TYPE_STRING));
-        $prop->setDefaultValue('div');
-        $this->params[] = $prop;
-    }
-
-    /**
-     * @return string
-     */
-    public function getName(): string
-    {
-        return 'formrow';
+        $this->params[] = new ComponentProperty('tag', 'div');
     }
 }

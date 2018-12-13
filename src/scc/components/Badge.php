@@ -23,43 +23,24 @@ class Badge extends AbstractBlockComponent
     {
         parent::__construct();
         $this->setTemplate('badge.tpl');
+        $this->setName('badge');
 
-        $prop = new ComponentProperty();
-        $prop->setName('active');
-        $prop->setType(new ComponentPropertyType(ComponentPropertyType::TYPE_BOOL));
-        $prop->setDefaultValue(false);
-        $this->params[] = $prop;
-
-        $prop = new ComponentProperty();
-        $prop->setName('disabled');
-        $prop->setType(new ComponentPropertyType(ComponentPropertyType::TYPE_BOOL));
-        $prop->setDefaultValue(false);
-        $this->params[] = $prop;
-
-        $prop = new ComponentProperty();
-        $prop->setName('pill');
-        $prop->setType(new ComponentPropertyType(ComponentPropertyType::TYPE_BOOL));
-        $prop->setDefaultValue(false);
-        $this->params[] = $prop;
-
-        $prop = new ComponentProperty();
-        $prop->setName('tag');
-        $prop->setType(new ComponentPropertyType(ComponentPropertyType::TYPE_STRING));
-        $prop->setDefaultValue('span');
-        $this->params[] = $prop;
-
-        $prop = new ComponentProperty();
-        $prop->setName('variant');
-        $prop->setType(new ComponentPropertyType(ComponentPropertyType::TYPE_STRING));
-        $prop->setDefaultValue('secondary');
-        $this->params[] = $prop;
-    }
-
-    /**
-     * @return string
-     */
-    public function getName(): string
-    {
-        return 'badge';
+        $this->params[] = new ComponentProperty(
+            'active',
+            false,
+            new ComponentPropertyType(ComponentPropertyType::TYPE_BOOL)
+        );
+        $this->params[] = new ComponentProperty(
+            'disabled',
+            false,
+            new ComponentPropertyType(ComponentPropertyType::TYPE_BOOL)
+        );
+        $this->params[] = new ComponentProperty(
+            'pill',
+            false,
+            new ComponentPropertyType(ComponentPropertyType::TYPE_BOOL)
+        );
+        $this->params[] = new ComponentProperty('tag', 'span');
+        $this->params[] = new ComponentProperty('variant', 'secondary');
     }
 }

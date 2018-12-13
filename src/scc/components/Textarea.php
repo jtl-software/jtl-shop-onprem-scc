@@ -23,6 +23,7 @@ class Textarea extends AbstractBlockComponent
     {
         parent::__construct();
         $this->setTemplate('textarea.tpl');
+        $this->setName('textarea');
 
         $prop = new ComponentProperty();
         $prop->setName('disabled');
@@ -54,25 +55,12 @@ class Textarea extends AbstractBlockComponent
         $prop->setDefaultValue(false);
         $this->params[] = $prop;
 
-        $prop = new ComponentProperty();
-        $prop->setName('size');
-        $prop->setType(new ComponentPropertyType(ComponentPropertyType::TYPE_STRING));
-        $this->params[] = $prop;
-
-        $prop = new ComponentProperty();
-        $prop->setName('value');
-        $prop->setType(new ComponentPropertyType(ComponentPropertyType::TYPE_STRING));
-        $this->params[] = $prop;
-
-        $prop = new ComponentProperty();
-        $prop->setName('autocomplete');
-        $prop->setType(new ComponentPropertyType(ComponentPropertyType::TYPE_STRING));
-        $this->params[] = $prop;
-
-        $prop = new ComponentProperty();
-        $prop->setName('placeholder');
-        $prop->setType(new ComponentPropertyType(ComponentPropertyType::TYPE_STRING));
-        $this->params[] = $prop;
+        $this->params[] = new ComponentProperty('size');
+        $this->params[] = new ComponentProperty('value');
+        $this->params[] = new ComponentProperty('autocomplete');
+        $this->params[] = new ComponentProperty('placeholder');
+        $this->params[] = new ComponentProperty('name');
+        $this->params[] = new ComponentProperty('wrap', 'soft');
 
         $prop = new ComponentProperty();
         $prop->setName('rows');
@@ -83,24 +71,5 @@ class Textarea extends AbstractBlockComponent
         $prop->setName('max-rows');
         $prop->setType(new ComponentPropertyType(ComponentPropertyType::TYPE_INT));
         $this->params[] = $prop;
-
-        $prop = new ComponentProperty();
-        $prop->setName('wrap');
-        $prop->setType(new ComponentPropertyType(ComponentPropertyType::TYPE_STRING));
-        $prop->setDefaultValue('soft');
-        $this->params[] = $prop;
-        
-        $prop = new ComponentProperty();
-        $prop->setName('name');
-        $prop->setType(new ComponentPropertyType(ComponentPropertyType::TYPE_STRING));
-        $this->params[] = $prop;
-    }
-
-    /**
-     * @return string
-     */
-    public function getName(): string
-    {
-        return 'textarea';
     }
 }

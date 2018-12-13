@@ -23,25 +23,9 @@ class MediaAside extends AbstractBlockComponent
     {
         parent::__construct();
         $this->setTemplate('mediaaside.tpl');
+        $this->setName('mediaaside');
 
-        $prop = new ComponentProperty();
-        $prop->setName('tag');
-        $prop->setType(new ComponentPropertyType(ComponentPropertyType::TYPE_STRING));
-        $prop->setDefaultValue('div');
-        $this->params[] = $prop;
-
-        $prop = new ComponentProperty();
-        $prop->setName('vertical-align');
-        $prop->setType(new ComponentPropertyType(ComponentPropertyType::TYPE_STRING));
-        $prop->setDefaultValue('top');
-        $this->params[] = $prop;
-    }
-
-    /**
-     * @return string
-     */
-    public function getName(): string
-    {
-        return 'mediaaside';
+        $this->params[] = new ComponentProperty('tag', 'div');
+        $this->params[] = new ComponentProperty('vertical-align', 'top');
     }
 }

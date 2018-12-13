@@ -23,6 +23,7 @@ class Select extends AbstractBlockComponent
     {
         parent::__construct();
         $this->setTemplate('select.tpl');
+        $this->setName('select');
 
         $prop = new ComponentProperty();
         $prop->setName('disabled');
@@ -48,38 +49,15 @@ class Select extends AbstractBlockComponent
         $prop->setDefaultValue(false);
         $this->params[] = $prop;
 
-        $prop = new ComponentProperty();
-        $prop->setName('size');
-        $prop->setType(new ComponentPropertyType(ComponentPropertyType::TYPE_STRING));
-        $this->params[] = $prop;
+        $this->params[] = new ComponentProperty('size');
+        $this->params[] = new ComponentProperty('autocomplete');
+        $this->params[] = new ComponentProperty('title');
+        $this->params[] = new ComponentProperty('name');
 
         $prop = new ComponentProperty();
         $prop->setName('select-size');
         $prop->setType(new ComponentPropertyType(ComponentPropertyType::TYPE_INT));
         $prop->setDefaultValue(0);
         $this->params[] = $prop;
-        
-        $prop = new ComponentProperty();
-        $prop->setName('autocomplete');
-        $prop->setType(new ComponentPropertyType(ComponentPropertyType::TYPE_STRING));
-        $this->params[] = $prop;
-        
-        $prop = new ComponentProperty();
-        $prop->setName('name');
-        $prop->setType(new ComponentPropertyType(ComponentPropertyType::TYPE_STRING));
-        $this->params[] = $prop;
-        
-        $prop = new ComponentProperty();
-        $prop->setName('title');
-        $prop->setType(new ComponentPropertyType(ComponentPropertyType::TYPE_STRING));
-        $this->params[] = $prop;
-    }
-
-    /**
-     * @return string
-     */
-    public function getName(): string
-    {
-        return 'select';
     }
 }

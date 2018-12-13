@@ -23,19 +23,8 @@ class DropDownDivider extends AbstractFunctionComponent
     {
         parent::__construct();
         $this->setTemplate('dropdowndivider.tpl');
+        $this->setName('dropdowndivider');
 
-        $prop = new ComponentProperty();
-        $prop->setName('tag');
-        $prop->setType(new ComponentPropertyType(ComponentPropertyType::TYPE_STRING));
-        $prop->setDefaultValue('div');
-        $this->params[] = $prop;
-    }
-
-    /**
-     * @return string
-     */
-    public function getName(): string
-    {
-        return 'dropdowndivider';
+        $this->params[] = new ComponentProperty('tag', 'div');
     }
 }

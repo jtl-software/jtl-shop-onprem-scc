@@ -23,39 +23,14 @@ class DropDownItem extends AbstractBlockComponent
     {
         parent::__construct();
         $this->setTemplate('dropdownitem.tpl');
+        $this->setName('dropdownitem');
 
-        $prop = new ComponentProperty();
-        $prop->setName('target');
-        $prop->setType(new ComponentPropertyType(ComponentPropertyType::TYPE_STRING));
-        $prop->setDefaultValue('_self');
-        $this->params[] = $prop;
-
-        $prop = new ComponentProperty();
-        $prop->setName('variant');
-        $prop->setType(new ComponentPropertyType(ComponentPropertyType::TYPE_STRING));
-        $this->params[] = $prop;
-
-        $prop = new ComponentProperty();
-        $prop->setName('href');
-        $prop->setType(new ComponentPropertyType(ComponentPropertyType::TYPE_STRING));
-        $this->params[] = $prop;
-
-        $prop = new ComponentProperty();
-        $prop->setName('rel');
-        $prop->setType(new ComponentPropertyType(ComponentPropertyType::TYPE_STRING));
-        $this->params[] = $prop;
-
-        $prop = new ComponentProperty();
-        $prop->setName('activeClass');
-        $prop->setType(new ComponentPropertyType(ComponentPropertyType::TYPE_STRING));
-        $prop->setDefaultValue('active');
-        $this->params[] = $prop;
-
-        $prop = new ComponentProperty();
-        $prop->setName('tag');
-        $prop->setType(new ComponentPropertyType(ComponentPropertyType::TYPE_STRING));
-        $prop->setDefaultValue('a');
-        $this->params[] = $prop;
+        $this->params[] = new ComponentProperty('target', '_self');
+        $this->params[] = new ComponentProperty('variant');
+        $this->params[] = new ComponentProperty('href');
+        $this->params[] = new ComponentProperty('rel');
+        $this->params[] = new ComponentProperty('activeClass', 'active');
+        $this->params[] = new ComponentProperty('tag', 'a');
 
         $prop = new ComponentProperty();
         $prop->setName('active');
@@ -68,13 +43,5 @@ class DropDownItem extends AbstractBlockComponent
         $prop->setType(new ComponentPropertyType(ComponentPropertyType::TYPE_BOOL));
         $prop->setDefaultValue(false);
         $this->params[] = $prop;
-    }
-
-    /**
-     * @return string
-     */
-    public function getName(): string
-    {
-        return 'dropdownitem';
     }
 }

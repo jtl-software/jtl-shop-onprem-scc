@@ -23,12 +23,17 @@ class Button extends AbstractBlockComponent
     {
         parent::__construct();
         $this->setTemplate('button.tpl');
+        $this->setName('button');
 
-        $prop = new ComponentProperty();
-        $prop->setName('type');
-        $prop->setType(new ComponentPropertyType(ComponentPropertyType::TYPE_STRING));
-        $prop->setDefaultValue('button');
-        $this->params[] = $prop;
+        $this->params[] = new ComponentProperty('type', 'button');
+        $this->params[] = new ComponentProperty('href');
+        $this->params[] = new ComponentProperty('rel');
+        $this->params[] = new ComponentProperty('target');
+        $this->params[] = new ComponentProperty('name');
+        $this->params[] = new ComponentProperty('value');
+        $this->params[] = new ComponentProperty('size');
+        $this->params[] = new ComponentProperty('title');
+        $this->params[] = new ComponentProperty('variant', 'secondary');
 
         $prop = new ComponentProperty();
         $prop->setName('disabled');
@@ -43,58 +48,9 @@ class Button extends AbstractBlockComponent
         $this->params[] = $prop;
 
         $prop = new ComponentProperty();
-        $prop->setName('href');
-        $prop->setType(new ComponentPropertyType(ComponentPropertyType::TYPE_STRING));
-        $this->params[] = $prop;
-
-        $prop = new ComponentProperty();
-        $prop->setName('rel');
-        $prop->setType(new ComponentPropertyType(ComponentPropertyType::TYPE_STRING));
-        $this->params[] = $prop;
-
-        $prop = new ComponentProperty();
-        $prop->setName('target');
-        $prop->setType(new ComponentPropertyType(ComponentPropertyType::TYPE_STRING));
-        $this->params[] = $prop;
-        
-        $prop = new ComponentProperty();
-        $prop->setName('name');
-        $prop->setType(new ComponentPropertyType(ComponentPropertyType::TYPE_STRING));
-        $this->params[] = $prop;
-
-        $prop = new ComponentProperty();
-        $prop->setName('value');
-        $prop->setType(new ComponentPropertyType(ComponentPropertyType::TYPE_STRING));
-        $this->params[] = $prop;
-
-        $prop = new ComponentProperty();
-        $prop->setName('size');
-        $prop->setType(new ComponentPropertyType(ComponentPropertyType::TYPE_STRING));
-        $this->params[] = $prop;
-
-        $prop = new ComponentProperty();
-        $prop->setName('variant');
-        $prop->setType(new ComponentPropertyType(ComponentPropertyType::TYPE_STRING));
-        $prop->setDefaultValue('secondary');
-        $this->params[] = $prop;
-        
-        $prop = new ComponentProperty();
-        $prop->setName('title');
-        $prop->setType(new ComponentPropertyType(ComponentPropertyType::TYPE_STRING));
-        $this->params[] = $prop;
-
-        $prop = new ComponentProperty();
         $prop->setName('formnovalidate');
         $prop->setType(new ComponentPropertyType(ComponentPropertyType::TYPE_BOOL));
         $prop->setDefaultValue(false);
         $this->params[] = $prop;
-    }
-
-    /**
-     * @return string
-     */
-    public function getName(): string
-    {
-        return 'button';
     }
 }

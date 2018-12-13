@@ -23,44 +23,13 @@ class CardHeader extends AbstractBlockComponent
     {
         parent::__construct();
         $this->setTemplate('cardheader.tpl');
+        $this->setName('cardheader');
 
-        $prop = new ComponentProperty();
-        $prop->setName('header');
-        $prop->setType(new ComponentPropertyType(ComponentPropertyType::TYPE_STRING));
-        $this->params[] = $prop;
-
-        $prop = new ComponentProperty();
-        $prop->setName('header-tag');
-        $prop->setType(new ComponentPropertyType(ComponentPropertyType::TYPE_STRING));
-        $prop->setDefaultValue('div');
-        $this->params[] = $prop;
-
-        $prop = new ComponentProperty();
-        $prop->setName('header-bg-variant');
-        $prop->setType(new ComponentPropertyType(ComponentPropertyType::TYPE_STRING));
-        $this->params[] = $prop;
-
-        $prop = new ComponentProperty();
-        $prop->setName('header-border-variant');
-        $prop->setType(new ComponentPropertyType(ComponentPropertyType::TYPE_STRING));
-        $this->params[] = $prop;
-
-        $prop = new ComponentProperty();
-        $prop->setName('header-text-variant');
-        $prop->setType(new ComponentPropertyType(ComponentPropertyType::TYPE_STRING));
-        $this->params[] = $prop;
-
-        $prop = new ComponentProperty();
-        $prop->setName('header-class');
-        $prop->setType(new ComponentPropertyType(ComponentPropertyType::TYPE_STRING));
-        $this->params[] = $prop;
-    }
-
-    /**
-     * @return string
-     */
-    public function getName(): string
-    {
-        return 'cardheader';
+        $this->params[] = new ComponentProperty('header');
+        $this->params[] = new ComponentProperty('header-tag', 'div');
+        $this->params[] = new ComponentProperty('header-bg-variant');
+        $this->params[] = new ComponentProperty('header-border-variant');
+        $this->params[] = new ComponentProperty('header-text-variant');
+        $this->params[] = new ComponentProperty('header-class');
     }
 }

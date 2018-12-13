@@ -23,19 +23,8 @@ class NavbarToggle extends AbstractBlockComponent
     {
         parent::__construct();
         $this->setTemplate('navbartoggle.tpl');
+        $this->setName('navbartoggle');
 
-        $prop = new ComponentProperty();
-        $prop->setName('label');
-        $prop->setType(new ComponentPropertyType(ComponentPropertyType::TYPE_STRING));
-        $prop->setDefaultValue('Toggle navigation');
-        $this->params[] = $prop;
-    }
-
-    /**
-     * @return string
-     */
-    public function getName(): string
-    {
-        return 'navbartoggle';
+        $this->params[] = new ComponentProperty('label', 'Toggle navigation');
     }
 }

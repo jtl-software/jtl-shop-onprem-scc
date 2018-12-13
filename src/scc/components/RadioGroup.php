@@ -17,13 +17,6 @@ class RadioGroup extends CheckboxGroup
     {
         parent::__construct();
         $this->setTemplate('radiogroup.tpl');
-    }
-
-    /**
-     * @return string
-     */
-    public function getName(): string
-    {
-        return 'radiogroup';
+        $this->setName('radiogroup');
     }
 }

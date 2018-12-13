@@ -22,6 +22,7 @@ class FormGroup extends AbstractBlockComponent
     {
         parent::__construct();
         $this->setTemplate('formgroup.tpl');
+        $this->setName('formgroup');
 
         $prop = new ComponentProperty();
         $prop->setName('label-cols');
@@ -29,31 +30,13 @@ class FormGroup extends AbstractBlockComponent
         $prop->setDefaultValue(3);
         $this->params[] = $prop;
 
-        $prop = new ComponentProperty();
-        $prop->setName('breakpoint');
-        $prop->setType(new ComponentPropertyType(ComponentPropertyType::TYPE_STRING));
-        $prop->setDefaultValue('sm');
-        $this->params[] = $prop;
-
-        $prop = new ComponentProperty();
-        $prop->setName('label-text-align');
-        $prop->setType(new ComponentPropertyType(ComponentPropertyType::TYPE_STRING));
-        $this->params[] = $prop;
-
-        $prop = new ComponentProperty();
-        $prop->setName('label');
-        $prop->setType(new ComponentPropertyType(ComponentPropertyType::TYPE_STRING));
-        $this->params[] = $prop;
-
-        $prop = new ComponentProperty();
-        $prop->setName('label-for');
-        $prop->setType(new ComponentPropertyType(ComponentPropertyType::TYPE_STRING));
-        $this->params[] = $prop;
-
-        $prop = new ComponentProperty();
-        $prop->setName('label-size');
-        $prop->setType(new ComponentPropertyType(ComponentPropertyType::TYPE_STRING));
-        $this->params[] = $prop;
+        $this->params[] = new ComponentProperty('breakpoint', 'sm');
+        $this->params[] = new ComponentProperty('label-text-align');
+        $this->params[] = new ComponentProperty('label');
+        $this->params[] = new ComponentProperty('label-for');
+        $this->params[] = new ComponentProperty('label-size');
+        $this->params[] = new ComponentProperty('label-class');
+        $this->params[] = new ComponentProperty('description');
 
         $prop = new ComponentProperty();
         $prop->setName('label-sr-only');
@@ -66,23 +49,5 @@ class FormGroup extends AbstractBlockComponent
         $prop->setType(new ComponentPropertyType(ComponentPropertyType::TYPE_BOOL));
         $prop->setDefaultValue(false);
         $this->params[] = $prop;
-
-        $prop = new ComponentProperty();
-        $prop->setName('label-class');
-        $prop->setType(new ComponentPropertyType(ComponentPropertyType::TYPE_STRING));
-        $this->params[] = $prop;
-
-        $prop = new ComponentProperty();
-        $prop->setName('description');
-        $prop->setType(new ComponentPropertyType(ComponentPropertyType::TYPE_STRING));
-        $this->params[] = $prop;
-    }
-
-    /**
-     * @return string
-     */
-    public function getName(): string
-    {
-        return 'formgroup';
     }
 }

@@ -23,11 +23,9 @@ class CarouselSlide extends AbstractBlockComponent
     {
         parent::__construct();
         $this->setTemplate('carouselslide.tpl');
+        $this->setName('carouselslide');
 
-        $prop = new ComponentProperty();
-        $prop->setName('caption-text');
-        $prop->setType(new ComponentPropertyType(ComponentPropertyType::TYPE_STRING));
-        $this->params[] = $prop;
+        $this->params[] = new ComponentProperty('caption-text');
 
         $prop = new ComponentProperty();
         $prop->setName('active');
@@ -41,72 +39,16 @@ class CarouselSlide extends AbstractBlockComponent
         $prop->setDefaultValue(false);
         $this->params[] = $prop;
 
-        $prop = new ComponentProperty();
-        $prop->setName('img-blank-color');
-        $prop->setType(new ComponentPropertyType(ComponentPropertyType::TYPE_STRING));
-        $prop->setDefaultValue('transparent');
-        $this->params[] = $prop;
-
-        $prop = new ComponentProperty();
-        $prop->setName('src');
-        $prop->setType(new ComponentPropertyType(ComponentPropertyType::TYPE_STRING));
-        $this->params[] = $prop;
-
-        $prop = new ComponentProperty();
-        $prop->setName('img-src');
-        $prop->setType(new ComponentPropertyType(ComponentPropertyType::TYPE_STRING));
-        $this->params[] = $prop;
-
-        $prop = new ComponentProperty();
-        $prop->setName('img-alt');
-        $prop->setType(new ComponentPropertyType(ComponentPropertyType::TYPE_STRING));
-        $prop->setDefaultValue('');
-        $this->params[] = $prop;
-
-        $prop = new ComponentProperty();
-        $prop->setName('img-width');
-        $prop->setType(new ComponentPropertyType(ComponentPropertyType::TYPE_NUMERIC));
-        $this->params[] = $prop;
-
-        $prop = new ComponentProperty();
-        $prop->setName('img-height');
-        $prop->setType(new ComponentPropertyType(ComponentPropertyType::TYPE_NUMERIC));
-        $this->params[] = $prop;
-
-        $prop = new ComponentProperty();
-        $prop->setName('content-tag');
-        $prop->setType(new ComponentPropertyType(ComponentPropertyType::TYPE_STRING));
-        $prop->setDefaultValue('div');
-        $this->params[] = $prop;
-
-        $prop = new ComponentProperty();
-        $prop->setName('caption');
-        $prop->setType(new ComponentPropertyType(ComponentPropertyType::TYPE_STRING));
-        $this->params[] = $prop;
-
-        $prop = new ComponentProperty();
-        $prop->setName('caption-tag');
-        $prop->setType(new ComponentPropertyType(ComponentPropertyType::TYPE_STRING));
-        $prop->setDefaultValue('h3');
-        $this->params[] = $prop;
-
-        $prop = new ComponentProperty();
-        $prop->setName('caption-text-tag');
-        $prop->setType(new ComponentPropertyType(ComponentPropertyType::TYPE_STRING));
-        $prop->setDefaultValue('p');
-        $this->params[] = $prop;
-
-        $prop = new ComponentProperty();
-        $prop->setName('background');
-        $prop->setType(new ComponentPropertyType(ComponentPropertyType::TYPE_STRING));
-        $this->params[] = $prop;
-    }
-
-    /**
-     * @return string
-     */
-    public function getName(): string
-    {
-        return 'carouselslide';
+        $this->params[] = new ComponentProperty('img-blank-color', 'transparent');
+        $this->params[] = new ComponentProperty('src');
+        $this->params[] = new ComponentProperty('img-src');
+        $this->params[] = new ComponentProperty('img-alt', '');
+        $this->params[] = new ComponentProperty('img-width');
+        $this->params[] = new ComponentProperty('img-height');
+        $this->params[] = new ComponentProperty('content-tag', 'div');
+        $this->params[] = new ComponentProperty('caption');
+        $this->params[] = new ComponentProperty('caption-tag', 'h3');
+        $this->params[] = new ComponentProperty('caption-text-tag', 'p');
+        $this->params[] = new ComponentProperty('background');
     }
 }

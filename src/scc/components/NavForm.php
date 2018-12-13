@@ -20,25 +20,9 @@ class NavForm extends AbstractBlockComponent
     {
         parent::__construct();
         $this->setTemplate('navform.tpl');
+        $this->setName('navform');
 
-        $prop = new ComponentProperty();
-        $prop->setName('action');
-        $prop->setType(new ComponentPropertyType(ComponentPropertyType::TYPE_STRING));
-        $prop->setDefaultValue('');
-        $this->params[] = $prop;
-
-        $prop = new ComponentProperty();
-        $prop->setName('method');
-        $prop->setType(new ComponentPropertyType(ComponentPropertyType::TYPE_STRING));
-        $prop->setDefaultValue('POST');
-        $this->params[] = $prop;
-    }
-
-    /**
-     * @return string
-     */
-    public function getName(): string
-    {
-        return 'navform';
+        $this->params[] = new ComponentProperty('action', '');
+        $this->params[] = new ComponentProperty('method', 'POST');
     }
 }

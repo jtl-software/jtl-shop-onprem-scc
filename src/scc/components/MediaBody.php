@@ -23,19 +23,8 @@ class MediaBody extends AbstractBlockComponent
     {
         parent::__construct();
         $this->setTemplate('mediabody.tpl');
+        $this->setName('mediabody');
 
-        $prop = new ComponentProperty();
-        $prop->setName('tag');
-        $prop->setType(new ComponentPropertyType(ComponentPropertyType::TYPE_STRING));
-        $prop->setDefaultValue('div');
-        $this->params[] = $prop;
-    }
-
-    /**
-     * @return string
-     */
-    public function getName(): string
-    {
-        return 'mediabody';
+        $this->params[] = new ComponentProperty('tag', 'div');
     }
 }

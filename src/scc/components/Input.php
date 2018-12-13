@@ -23,6 +23,7 @@ class Input extends AbstractFunctionComponent
     {
         parent::__construct();
         $this->setTemplate('input.tpl');
+        $this->setName('input');
 
         $prop = new ComponentProperty();
         $prop->setName('type');
@@ -31,10 +32,7 @@ class Input extends AbstractFunctionComponent
         $prop->setIsRequired(true);
         $this->params[] = $prop;
 
-        $prop = new ComponentProperty();
-        $prop->setName('value');
-        $prop->setType(new ComponentPropertyType(ComponentPropertyType::TYPE_STRING));
-        $this->params[] = $prop;
+        $this->params[] = new ComponentProperty('value');
 
         $prop = new ComponentProperty();
         $prop->setName('size');
@@ -70,11 +68,8 @@ class Input extends AbstractFunctionComponent
         $prop->setName('placeholder');
         $prop->setType(new ComponentPropertyType(ComponentPropertyType::TYPE_STRING));
         $this->params[] = $prop;
-
-        $prop = new ComponentProperty();
-        $prop->setName('name');
-        $prop->setType(new ComponentPropertyType(ComponentPropertyType::TYPE_STRING));
-        $this->params[] = $prop;
+        $this->params[] = new ComponentProperty('name');
+        $this->params[] = new ComponentProperty('autocomplete');
 
         $prop = new ComponentProperty();
         $prop->setName('readonly');
@@ -93,18 +88,5 @@ class Input extends AbstractFunctionComponent
         $prop->setType(new ComponentPropertyType(ComponentPropertyType::TYPE_BOOL));
         $prop->setDefaultValue(false);
         $this->params[] = $prop;
-
-        $prop = new ComponentProperty();
-        $prop->setName('autocomplete');
-        $prop->setType(new ComponentPropertyType(ComponentPropertyType::TYPE_STRING));
-        $this->params[] = $prop;
-    }
-
-    /**
-     * @inheritdoc
-     */
-    public function getName(): string
-    {
-        return 'input';
     }
 }

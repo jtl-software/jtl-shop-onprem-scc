@@ -24,19 +24,29 @@ interface ComponentInterface
     public function setTemplate(string $template): void;
 
     /**
-     * @return array
+     * @return ComponentProperty[]
      */
     public function getParams(): array;
 
     /**
-     * @param array $params
+     * @param ComponentProperty[] $params
      */
     public function setParams(array $params): void;
+
+    /**
+     * @param ComponentProperty $param
+     */
+    public function addParam(ComponentProperty $param): void;
 
     /**
      * @return string
      */
     public function getName(): string;
+
+    /**
+     * @param string $name
+     */
+    public function setName(string $name): void;
 
     /**
      * @return ComponentType

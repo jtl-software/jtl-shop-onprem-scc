@@ -23,6 +23,7 @@ class Form extends AbstractBlockComponent
     {
         parent::__construct();
         $this->setTemplate('form.tpl');
+        $this->setName('form');
 
         $prop = new ComponentProperty();
         $prop->setName('inline');
@@ -42,35 +43,9 @@ class Form extends AbstractBlockComponent
         $prop->setDefaultValue(false);
         $this->params[] = $prop;
 
-        $prop = new ComponentProperty();
-        $prop->setName('action');
-        $prop->setType(new ComponentPropertyType(ComponentPropertyType::TYPE_STRING));
-        $prop->setDefaultValue('');
-        $this->params[] = $prop;
-
-        $prop = new ComponentProperty();
-        $prop->setName('method');
-        $prop->setType(new ComponentPropertyType(ComponentPropertyType::TYPE_STRING));
-        $prop->setDefaultValue('POST');
-        $this->params[] = $prop;
-
-        $prop = new ComponentProperty();
-        $prop->setName('target');
-        $prop->setType(new ComponentPropertyType(ComponentPropertyType::TYPE_STRING));
-        $prop->setDefaultValue('_self');
-        $this->params[] = $prop;
-
-        $prop = new ComponentProperty();
-        $prop->setName('enctype');
-        $prop->setType(new ComponentPropertyType(ComponentPropertyType::TYPE_STRING));
-        $this->params[] = $prop;
-    }
-
-    /**
-     * @return string
-     */
-    public function getName(): string
-    {
-        return 'form';
+        $this->params[] = new ComponentProperty('action', '');
+        $this->params[] = new ComponentProperty('method', 'POST');
+        $this->params[] = new ComponentProperty('target', '_self');
+        $this->params[] = new ComponentProperty('enctype');
     }
 }

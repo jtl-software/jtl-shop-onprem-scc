@@ -23,12 +23,9 @@ class Nav extends AbstractBlockComponent
     {
         parent::__construct();
         $this->setTemplate('nav.tpl');
+        $this->setName('nav');
 
-        $prop = new ComponentProperty();
-        $prop->setName('tag');
-        $prop->setType(new ComponentPropertyType(ComponentPropertyType::TYPE_STRING));
-        $prop->setDefaultValue('ul');
-        $this->params[] = $prop;
+        $this->params[] = new ComponentProperty('tag', 'ul');
 
         $prop = new ComponentProperty();
         $prop->setName('fill');
@@ -65,13 +62,5 @@ class Nav extends AbstractBlockComponent
         $prop->setType(new ComponentPropertyType(ComponentPropertyType::TYPE_BOOL));
         $prop->setDefaultValue(false);
         $this->params[] = $prop;
-    }
-
-    /**
-     * @return string
-     */
-    public function getName(): string
-    {
-        return 'nav';
     }
 }

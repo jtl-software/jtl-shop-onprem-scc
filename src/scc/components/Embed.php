@@ -23,38 +23,16 @@ class Embed extends AbstractBlockComponent
     {
         parent::__construct();
         $this->setTemplate('embed.tpl');
+        $this->setName('embed');
 
-        $prop = new ComponentProperty();
-        $prop->setName('src');
-        $prop->setType(new ComponentPropertyType(ComponentPropertyType::TYPE_STRING));
-        $this->params[] = $prop;
-
-        $prop = new ComponentProperty();
-        $prop->setName('type');
-        $prop->setType(new ComponentPropertyType(ComponentPropertyType::TYPE_STRING));
-        $prop->setDefaultValue('iframe');
-        $this->params[] = $prop;
-
-        $prop = new ComponentProperty();
-        $prop->setName('aspect');
-        $prop->setType(new ComponentPropertyType(ComponentPropertyType::TYPE_STRING));
-        $prop->setDefaultValue('16by9');
-        $this->params[] = $prop;
-
-        $prop = new ComponentProperty();
-        $prop->setName('preload');
-        $prop->setType(new ComponentPropertyType(ComponentPropertyType::TYPE_STRING));
-        $this->params[] = $prop;
-
-        $prop = new ComponentProperty();
-        $prop->setName('width');
-        $prop->setType(new ComponentPropertyType(ComponentPropertyType::TYPE_STRING));
-        $this->params[] = $prop;
-
-        $prop = new ComponentProperty();
-        $prop->setName('height');
-        $prop->setType(new ComponentPropertyType(ComponentPropertyType::TYPE_STRING));
-        $this->params[] = $prop;
+        $this->params[] = new ComponentProperty('src');
+        $this->params[] = new ComponentProperty('type', 'iframe');
+        $this->params[] = new ComponentProperty('aspect', '16by9');
+        $this->params[] = new ComponentProperty('preload');
+        $this->params[] = new ComponentProperty('width');
+        $this->params[] = new ComponentProperty('height');
+        $this->params[] = new ComponentProperty('poster');
+        $this->params[] = new ComponentProperty('type');
 
         $prop = new ComponentProperty();
         $prop->setName('allowfullscreen');
@@ -91,23 +69,5 @@ class Embed extends AbstractBlockComponent
         $prop->setType(new ComponentPropertyType(ComponentPropertyType::TYPE_BOOL));
         $prop->setDefaultValue(false);
         $this->params[] = $prop;
-
-        $prop = new ComponentProperty();
-        $prop->setName('poster');
-        $prop->setType(new ComponentPropertyType(ComponentPropertyType::TYPE_STRING));
-        $this->params[] = $prop;
-
-        $prop = new ComponentProperty();
-        $prop->setName('type');
-        $prop->setType(new ComponentPropertyType(ComponentPropertyType::TYPE_STRING));
-        $this->params[] = $prop;
-    }
-
-    /**
-     * @inheritdoc
-     */
-    public function getName(): string
-    {
-        return 'embed';
     }
 }

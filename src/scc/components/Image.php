@@ -22,27 +22,12 @@ class Image extends AbstractFunctionComponent
     {
         parent::__construct();
         $this->setTemplate('image.tpl');
+        $this->setName('image');
 
-        $prop = new ComponentProperty();
-        $prop->setName('src');
-        $prop->setType(new ComponentPropertyType(ComponentPropertyType::TYPE_STRING));
-        $this->params[] = $prop;
-
-        $prop = new ComponentProperty();
-        $prop->setName('srcset');
-        $prop->setType(new ComponentPropertyType(ComponentPropertyType::TYPE_STRING));
-        $this->params[] = $prop;
-
-        $prop = new ComponentProperty();
-        $prop->setName('sizes');
-        $prop->setType(new ComponentPropertyType(ComponentPropertyType::TYPE_STRING));
-        $this->params[] = $prop;
-
-        $prop = new ComponentProperty();
-        $prop->setName('alt');
-        $prop->setType(new ComponentPropertyType(ComponentPropertyType::TYPE_INT));
-        $prop->setDefaultValue('');
-        $this->params[] = $prop;
+        $this->params[] = new ComponentProperty('src');
+        $this->params[] = new ComponentProperty('srcset');
+        $this->params[] = new ComponentProperty('sizes');
+        $this->params[] = new ComponentProperty('alt', '');
 
         $prop = new ComponentProperty();
         $prop->setName('width');
@@ -113,13 +98,5 @@ class Image extends AbstractFunctionComponent
         $prop->setType(new ComponentPropertyType(ComponentPropertyType::TYPE_BOOL));
         $prop->setDefaultValue(false);
         $this->params[] = $prop;
-    }
-
-    /**
-     * @inheritdoc
-     */
-    public function getName(): string
-    {
-        return 'image';
     }
 }
