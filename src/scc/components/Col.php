@@ -50,7 +50,7 @@ class Col extends AbstractBlockComponent
 
         $prop = new ComponentProperty();
         $prop->setName('sm');
-        $prop->setType(new ComponentPropertyType(ComponentPropertyType::TYPE_STRING));
+        $prop->setType(new ComponentPropertyType(ComponentPropertyType::TYPE_BOOL));
         $prop->setDefaultValue(false);
         $this->params[] = $prop;
 

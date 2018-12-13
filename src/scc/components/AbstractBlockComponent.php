@@ -24,44 +24,17 @@ abstract class AbstractBlockComponent extends AbstractBaseComponent
     {
         $this->params = [];
 
-        $prop = new ComponentProperty();
-        $prop->setName('class');
-        $prop->setType(new ComponentPropertyType(ComponentPropertyType::TYPE_STRING));
-        $this->params[] = $prop;
-
-        $prop = new ComponentProperty();
-        $prop->setName('id');
-        $prop->setType(new ComponentPropertyType(ComponentPropertyType::TYPE_STRING));
-        $this->params[] = $prop;
-
-        $prop = new ComponentProperty();
-        $prop->setName('style');
-        $prop->setType(new ComponentPropertyType(ComponentPropertyType::TYPE_STRING));
-        $this->params[] = $prop;
-
-        $prop = new ComponentProperty();
-        $prop->setName('itemprop');
-        $prop->setType(new ComponentPropertyType(ComponentPropertyType::TYPE_STRING));
-        $this->params[] = $prop;
+        $this->params[] = new ComponentProperty('class');
+        $this->params[] = new ComponentProperty('id');
+        $this->params[] = new ComponentProperty('style');
+        $this->params[] = new ComponentProperty('itemprop');
+        $this->params[] = new ComponentProperty('itemtype');
+        $this->params[] = new ComponentProperty('itemid');
+        $this->params[] = new ComponentProperty('role');
 
         $prop = new ComponentProperty();
         $prop->setName('itemscope');
         $prop->setType(new ComponentPropertyType(ComponentPropertyType::TYPE_BOOL));
-        $this->params[] = $prop;
-
-        $prop = new ComponentProperty();
-        $prop->setName('itemtype');
-        $prop->setType(new ComponentPropertyType(ComponentPropertyType::TYPE_STRING));
-        $this->params[] = $prop;
-
-        $prop = new ComponentProperty();
-        $prop->setName('itemid');
-        $prop->setType(new ComponentPropertyType(ComponentPropertyType::TYPE_STRING));
-        $this->params[] = $prop;
-
-        $prop = new ComponentProperty();
-        $prop->setName('role');
-        $prop->setType(new ComponentPropertyType(ComponentPropertyType::TYPE_STRING));
         $this->params[] = $prop;
 
         $prop = new ComponentProperty();

@@ -64,10 +64,7 @@ class Input extends AbstractFunctionComponent
         $prop->setType(new ComponentPropertyType(ComponentPropertyType::TYPE_NUMERIC));
         $this->params[] = $prop;
 
-        $prop = new ComponentProperty();
-        $prop->setName('placeholder');
-        $prop->setType(new ComponentPropertyType(ComponentPropertyType::TYPE_STRING));
-        $this->params[] = $prop;
+        $this->params[] = new ComponentProperty('placeholder');
         $this->params[] = new ComponentProperty('name');
         $this->params[] = new ComponentProperty('autocomplete');
 
