@@ -77,7 +77,7 @@ class DefaultComponentRegistrator
     /**
      * @var RendererInterface
      */
-    private $renderer;
+    protected $renderer;
 
     /**
      * DefaultComponentRegistrator constructor.

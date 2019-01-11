@@ -18,7 +18,7 @@ class Renderer implements RendererInterface
     /**
      * @var \JTLSmarty
      */
-    private $smarty;
+    protected $smarty;
 
     /**
      * Renderer constructor.
