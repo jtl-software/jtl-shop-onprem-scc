@@ -45,6 +45,7 @@
                 arrows:         false,
                 infinite:       false,
                 focusOnSelect:  true,
+                variableWidth:  true,
                 asNavFor:       '#tab-content-product-tabs',
                 responsive:     [
                     {
