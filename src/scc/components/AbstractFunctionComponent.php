@@ -35,17 +35,17 @@ abstract class AbstractFunctionComponent extends AbstractBaseComponent
 
         $prop = new ComponentProperty();
         $prop->setName('itemscope');
-        $prop->setType(new ComponentPropertyType(ComponentPropertyType::TYPE_BOOL));
+        $prop->setType(ComponentPropertyType::TYPE_BOOL);
         $this->params[] = $prop;
 
         $prop = new ComponentProperty();
         $prop->setName('aria');
-        $prop->setType(new ComponentPropertyType(ComponentPropertyType::TYPE_ARRAY));
+        $prop->setType(ComponentPropertyType::TYPE_ARRAY);
         $this->params[] = $prop;
 
         $prop = new ComponentProperty();
         $prop->setName('data');
-        $prop->setType(new ComponentPropertyType(ComponentPropertyType::TYPE_ARRAY));
+        $prop->setType(ComponentPropertyType::TYPE_ARRAY);
         $this->params[] = $prop;
 
         $this->setRenderer(new FunctionRenderer($this));

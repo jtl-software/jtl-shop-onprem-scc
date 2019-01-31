@@ -28,17 +28,17 @@ class Badge extends AbstractBlockComponent
         $this->params[] = new ComponentProperty(
             'active',
             false,
-            new ComponentPropertyType(ComponentPropertyType::TYPE_BOOL)
+            ComponentPropertyType::TYPE_BOOL
         );
         $this->params[] = new ComponentProperty(
             'disabled',
             false,
-            new ComponentPropertyType(ComponentPropertyType::TYPE_BOOL)
+            ComponentPropertyType::TYPE_BOOL
         );
         $this->params[] = new ComponentProperty(
             'pill',
             false,
-            new ComponentPropertyType(ComponentPropertyType::TYPE_BOOL)
+            ComponentPropertyType::TYPE_BOOL
         );
         $this->params[] = new ComponentProperty('tag', 'span');
         $this->params[] = new ComponentProperty('variant', 'secondary');

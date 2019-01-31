@@ -28,7 +28,7 @@ class Carousel extends AbstractBlockComponent
 
         $prop = new ComponentProperty();
         $prop->setName('disabled');
-        $prop->setType(new ComponentPropertyType(ComponentPropertyType::TYPE_BOOL));
+        $prop->setType(ComponentPropertyType::TYPE_BOOL);
         $prop->setDefaultValue(false);
         $this->params[] = $prop;
 
@@ -39,37 +39,37 @@ class Carousel extends AbstractBlockComponent
 
         $prop = new ComponentProperty();
         $prop->setName('interval');
-        $prop->setType(new ComponentPropertyType(ComponentPropertyType::TYPE_INT));
+        $prop->setType(ComponentPropertyType::TYPE_INT);
         $prop->setDefaultValue(5000);
         $this->params[] = $prop;
 
         $prop = new ComponentProperty();
         $prop->setName('indicators');
-        $prop->setType(new ComponentPropertyType(ComponentPropertyType::TYPE_BOOL));
+        $prop->setType(ComponentPropertyType::TYPE_BOOL);
         $prop->setDefaultValue(false);
         $this->params[] = $prop;
 
         $prop = new ComponentProperty();
         $prop->setName('controls');
-        $prop->setType(new ComponentPropertyType(ComponentPropertyType::TYPE_BOOL));
+        $prop->setType(ComponentPropertyType::TYPE_BOOL);
         $prop->setDefaultValue(false);
         $this->params[] = $prop;
 
         $prop = new ComponentProperty();
         $prop->setName('img-width');
-        $prop->setType(new ComponentPropertyType(ComponentPropertyType::TYPE_NUMERIC));
+        $prop->setType(ComponentPropertyType::TYPE_NUMERIC);
         $this->params[] = $prop;
 
         $prop = new ComponentProperty();
         $prop->setName('img-height');
-        $prop->setType(new ComponentPropertyType(ComponentPropertyType::TYPE_NUMERIC));
+        $prop->setType(ComponentPropertyType::TYPE_NUMERIC);
         $this->params[] = $prop;
 
         $this->params[] = new ComponentProperty('background');
 
         $prop = new ComponentProperty();
         $prop->setName('value');
-        $prop->setType(new ComponentPropertyType(ComponentPropertyType::TYPE_INT));
+        $prop->setType(ComponentPropertyType::TYPE_INT);
         $prop->setDefaultValue(0);
         $this->params[] = $prop;
 

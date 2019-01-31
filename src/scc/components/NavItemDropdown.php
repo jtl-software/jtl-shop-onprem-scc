@@ -32,47 +32,47 @@ class NavItemDropdown extends AbstractBlockComponent
 
         $prop = new ComponentProperty();
         $prop->setName('offset');
-        $prop->setType(new ComponentPropertyType(ComponentPropertyType::TYPE_INT));
+        $prop->setType(ComponentPropertyType::TYPE_INT);
         $prop->setDefaultValue(0);
         $this->params[] = $prop;
         
         $prop = new ComponentProperty();
         $prop->setName('router-data');
-        $prop->setType(new ComponentPropertyType(ComponentPropertyType::TYPE_ARRAY));
+        $prop->setType(ComponentPropertyType::TYPE_ARRAY);
         $this->params[] = $prop;
         
         $prop = new ComponentProperty();
         $prop->setName('router-aria');
-        $prop->setType(new ComponentPropertyType(ComponentPropertyType::TYPE_ARRAY));
+        $prop->setType(ComponentPropertyType::TYPE_ARRAY);
         $this->params[] = $prop;
 
         $prop = new ComponentProperty();
         $prop->setName('dropup');
-        $prop->setType(new ComponentPropertyType(ComponentPropertyType::TYPE_BOOL));
+        $prop->setType(ComponentPropertyType::TYPE_BOOL);
         $prop->setDefaultValue(false);
         $this->params[] = $prop;
 
         $prop = new ComponentProperty();
         $prop->setName('disabled');
-        $prop->setType(new ComponentPropertyType(ComponentPropertyType::TYPE_BOOL));
+        $prop->setType(ComponentPropertyType::TYPE_BOOL);
         $prop->setDefaultValue(false);
         $this->params[] = $prop;
 
         $prop = new ComponentProperty();
         $prop->setName('right');
-        $prop->setType(new ComponentPropertyType(ComponentPropertyType::TYPE_BOOL));
+        $prop->setType(ComponentPropertyType::TYPE_BOOL);
         $prop->setDefaultValue(false);
         $this->params[] = $prop;
 
         $prop = new ComponentProperty();
         $prop->setName('no-flip');
-        $prop->setType(new ComponentPropertyType(ComponentPropertyType::TYPE_BOOL));
+        $prop->setType(ComponentPropertyType::TYPE_BOOL);
         $prop->setDefaultValue(false);
         $this->params[] = $prop;
 
         $prop = new ComponentProperty();
         $prop->setName('no-caret');
-        $prop->setType(new ComponentPropertyType(ComponentPropertyType::TYPE_BOOL));
+        $prop->setType(ComponentPropertyType::TYPE_BOOL);
         $prop->setDefaultValue(false);
         $this->params[] = $prop;
     }

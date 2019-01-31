@@ -26,13 +26,13 @@ class Jumbotron extends AbstractBlockComponent
 
         $prop = new ComponentProperty();
         $prop->setName('fluid');
-        $prop->setType(new ComponentPropertyType(ComponentPropertyType::TYPE_BOOL));
+        $prop->setType(ComponentPropertyType::TYPE_BOOL);
         $prop->setDefaultValue(false);
         $this->params[] = $prop;
 
         $prop = new ComponentProperty();
         $prop->setName('container-fluid');
-        $prop->setType(new ComponentPropertyType(ComponentPropertyType::TYPE_BOOL));
+        $prop->setType(ComponentPropertyType::TYPE_BOOL);
         $prop->setDefaultValue(false);
         $this->params[] = $prop;
 
@@ -47,7 +47,7 @@ class Jumbotron extends AbstractBlockComponent
 
         $prop = new ComponentProperty();
         $prop->setName('header-level');
-        $prop->setType(new ComponentPropertyType(ComponentPropertyType::TYPE_NUMERIC));
+        $prop->setType(ComponentPropertyType::TYPE_NUMERIC);
         $prop->setDefaultValue(3);
         $this->params[] = $prop;
     }
