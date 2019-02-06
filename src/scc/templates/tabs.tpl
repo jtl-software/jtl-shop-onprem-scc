@@ -39,7 +39,7 @@
     <script>
         $(window).on('load', function () {
             /*tabs 2 slider*/
-            $('body[data-touchcapable="true"] #product-tabs').slick({
+            $('#product-tabs').slick({
                 slidesToShow:   4,
                 slidesToScroll: 1,
                 arrows:         false,
@@ -62,7 +62,7 @@
                     }
                 ],
             });
-            $('body[data-touchcapable="true"] #tab-content-product-tabs').slick({
+            $('#tab-content-product-tabs').slick({
                 slidesToShow:   1,
                 slidesToScroll: 1,
                 arrows:         false,
