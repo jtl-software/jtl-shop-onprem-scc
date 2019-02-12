@@ -24,14 +24,14 @@ interface ComponentPropertyInterface
     public function setIsRequired(bool $required): void;
 
     /**
-     * @return ComponentPropertyType
+     * @return string
      */
-    public function getType(): ComponentPropertyType;
+    public function getType(): string;
 
     /**
-     * @param ComponentPropertyType $type
+     * @param string $type
      */
-    public function setType(ComponentPropertyType $type): void;
+    public function setType(string $type): void;
 
     /**
      * @return mixed

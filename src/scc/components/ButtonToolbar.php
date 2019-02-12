@@ -27,13 +27,13 @@ class ButtonToolbar extends AbstractBlockComponent
 
         $prop = new ComponentProperty();
         $prop->setName('justify');
-        $prop->setType(new ComponentPropertyType(ComponentPropertyType::TYPE_BOOL));
+        $prop->setType(ComponentPropertyType::TYPE_BOOL);
         $prop->setDefaultValue(false);
         $this->params[] = $prop;
 
         $prop = new ComponentProperty();
         $prop->setName('key-nav');
-        $prop->setType(new ComponentPropertyType(ComponentPropertyType::TYPE_BOOL));
+        $prop->setType(ComponentPropertyType::TYPE_BOOL);
         $prop->setDefaultValue(false);
         $this->params[] = $prop;
     }

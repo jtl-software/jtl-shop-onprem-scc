@@ -24,7 +24,7 @@ class ComponentProperty implements ComponentPropertyInterface
     private $isRequired = false;
 
     /**
-     * @var ComponentPropertyType
+     * @var string
      */
     private $type;
 
@@ -40,11 +40,11 @@ class ComponentProperty implements ComponentPropertyInterface
 
     /**
      * ComponentProperty constructor.
-     * @param string|null                $name
-     * @param null                       $defaultValue
-     * @param ComponentPropertyType|null $type
+     * @param string|null $name
+     * @param null        $defaultValue
+     * @param string|null $type
      */
-    public function __construct(string $name = null, $defaultValue = null, ComponentPropertyType $type = null)
+    public function __construct(string $name = null, $defaultValue = null, string $type = null)
     {
         if ($name !== null) {
             $this->setName($name);
@@ -55,7 +55,7 @@ class ComponentProperty implements ComponentPropertyInterface
         if ($type !== null) {
             $this->setType($type);
         } else {
-            $this->setType(new ComponentPropertyType(ComponentPropertyType::TYPE_STRING));
+            $this->setType(ComponentPropertyType::TYPE_STRING);
         }
     }
 
@@ -92,9 +92,9 @@ class ComponentProperty implements ComponentPropertyInterface
     }
 
     /**
-     * @return ComponentPropertyType
+     * @return string
      */
-    public function getType(): ComponentPropertyType
+    public function getType(): string
     {
         return $this->type;
     }
@@ -102,7 +102,7 @@ class ComponentProperty implements ComponentPropertyInterface
     /**
      * @inheritdoc
      */
-    public function setType(ComponentPropertyType $type): void
+    public function setType(string $type): void
     {
         $this->type = $type;
     }

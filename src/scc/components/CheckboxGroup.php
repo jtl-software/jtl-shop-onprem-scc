@@ -27,13 +27,13 @@ class CheckboxGroup extends AbstractBlockComponent
 
         $prop = new ComponentProperty();
         $prop->setName('disabled');
-        $prop->setType(new ComponentPropertyType(ComponentPropertyType::TYPE_BOOL));
+        $prop->setType(ComponentPropertyType::TYPE_BOOL);
         $prop->setDefaultValue(false);
         $this->params[] = $prop;
 
         $prop = new ComponentProperty();
         $prop->setName('required');
-        $prop->setType(new ComponentPropertyType(ComponentPropertyType::TYPE_BOOL));
+        $prop->setType(ComponentPropertyType::TYPE_BOOL);
         $prop->setDefaultValue(false);
         $this->params[] = $prop;
 
@@ -45,25 +45,25 @@ class CheckboxGroup extends AbstractBlockComponent
 
         $prop = new ComponentProperty();
         $prop->setName('plain');
-        $prop->setType(new ComponentPropertyType(ComponentPropertyType::TYPE_BOOL));
+        $prop->setType(ComponentPropertyType::TYPE_BOOL);
         $prop->setDefaultValue(false);
         $this->params[] = $prop;
 
         $prop = new ComponentProperty();
         $prop->setName('validated');
-        $prop->setType(new ComponentPropertyType(ComponentPropertyType::TYPE_BOOL));
+        $prop->setType(ComponentPropertyType::TYPE_BOOL);
         $prop->setDefaultValue(false);
         $this->params[] = $prop;
 
         $prop = new ComponentProperty();
         $prop->setName('stacked');
-        $prop->setType(new ComponentPropertyType(ComponentPropertyType::TYPE_BOOL));
+        $prop->setType(ComponentPropertyType::TYPE_BOOL);
         $prop->setDefaultValue(false);
         $this->params[] = $prop;
 
         $prop = new ComponentProperty();
         $prop->setName('buttons');
-        $prop->setType(new ComponentPropertyType(ComponentPropertyType::TYPE_BOOL));
+        $prop->setType(ComponentPropertyType::TYPE_BOOL);
         $prop->setDefaultValue(false);
         $this->params[] = $prop;
 

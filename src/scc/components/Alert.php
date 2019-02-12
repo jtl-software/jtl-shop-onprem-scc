@@ -28,12 +28,12 @@ class Alert extends AbstractBlockComponent
         $this->params[] = new ComponentProperty(
             'dismissible',
             false,
-            new ComponentPropertyType(ComponentPropertyType::TYPE_BOOL)
+            ComponentPropertyType::TYPE_BOOL
         );
         $this->params[] = new ComponentProperty(
             'show',
             false,
-            new ComponentPropertyType(ComponentPropertyType::TYPE_BOOL)
+            ComponentPropertyType::TYPE_BOOL
         );
         $this->params[] = new ComponentProperty('dismiss-label', 'Close');
     }

@@ -36,37 +36,37 @@ class Embed extends AbstractBlockComponent
 
         $prop = new ComponentProperty();
         $prop->setName('allowfullscreen');
-        $prop->setType(new ComponentPropertyType(ComponentPropertyType::TYPE_BOOL));
+        $prop->setType(ComponentPropertyType::TYPE_BOOL);
         $prop->setDefaultValue(false);
         $this->params[] = $prop;
 
         $prop = new ComponentProperty();
         $prop->setName('controls');
-        $prop->setType(new ComponentPropertyType(ComponentPropertyType::TYPE_BOOL));
+        $prop->setType(ComponentPropertyType::TYPE_BOOL);
         $prop->setDefaultValue(false);
         $this->params[] = $prop;
 
         $prop = new ComponentProperty();
         $prop->setName('autoplay');
-        $prop->setType(new ComponentPropertyType(ComponentPropertyType::TYPE_BOOL));
+        $prop->setType(ComponentPropertyType::TYPE_BOOL);
         $prop->setDefaultValue(false);
         $this->params[] = $prop;
 
         $prop = new ComponentProperty();
         $prop->setName('autobuffer');
-        $prop->setType(new ComponentPropertyType(ComponentPropertyType::TYPE_BOOL));
+        $prop->setType(ComponentPropertyType::TYPE_BOOL);
         $prop->setDefaultValue(false);
         $this->params[] = $prop;
 
         $prop = new ComponentProperty();
         $prop->setName('loop');
-        $prop->setType(new ComponentPropertyType(ComponentPropertyType::TYPE_BOOL));
+        $prop->setType(ComponentPropertyType::TYPE_BOOL);
         $prop->setDefaultValue(false);
         $this->params[] = $prop;
 
         $prop = new ComponentProperty();
         $prop->setName('muted');
-        $prop->setType(new ComponentPropertyType(ComponentPropertyType::TYPE_BOOL));
+        $prop->setType(ComponentPropertyType::TYPE_BOOL);
         $prop->setDefaultValue(false);
         $this->params[] = $prop;
     }

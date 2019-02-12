@@ -24,7 +24,7 @@ trait ComponentRendererTrait
         foreach ($base as $param) {
             if (isset($dynamic[$param->getName()])) {
                 $param->setValue($dynamic[$param->getName()]);
-            } elseif ($param->getType()->getValue() === ComponentPropertyType::TYPE_UNIQUEID) {
+            } elseif ($param->getType() === ComponentPropertyType::TYPE_UNIQUEID) {
                 $param->setValue(\uniqid('', false));
             } else {
                 $param->setValue($param->getDefaultValue());

@@ -31,71 +31,71 @@ class Image extends AbstractFunctionComponent
 
         $prop = new ComponentProperty();
         $prop->setName('width');
-        $prop->setType(new ComponentPropertyType(ComponentPropertyType::TYPE_NUMERIC));
+        $prop->setType(ComponentPropertyType::TYPE_NUMERIC);
         $this->params[] = $prop;
 
         $prop = new ComponentProperty();
         $prop->setName('height');
-        $prop->setType(new ComponentPropertyType(ComponentPropertyType::TYPE_NUMERIC));
+        $prop->setType(ComponentPropertyType::TYPE_NUMERIC);
         $this->params[] = $prop;
 
         $prop = new ComponentProperty();
         $prop->setName('block');
-        $prop->setType(new ComponentPropertyType(ComponentPropertyType::TYPE_BOOL));
+        $prop->setType(ComponentPropertyType::TYPE_BOOL);
         $prop->setDefaultValue(false);
         $this->params[] = $prop;
 
         $prop = new ComponentProperty();
         $prop->setName('fluid');
-        $prop->setType(new ComponentPropertyType(ComponentPropertyType::TYPE_BOOL));
+        $prop->setType(ComponentPropertyType::TYPE_BOOL);
         $prop->setDefaultValue(false);
         $this->params[] = $prop;
 
         $prop = new ComponentProperty();
         $prop->setName('fluid-grow');
-        $prop->setType(new ComponentPropertyType(ComponentPropertyType::TYPE_BOOL));
+        $prop->setType(ComponentPropertyType::TYPE_BOOL);
         $prop->setDefaultValue(false);
         $this->params[] = $prop;
 
         $prop = new ComponentProperty();
         $prop->setName('lazy');
-        $prop->setType(new ComponentPropertyType(ComponentPropertyType::TYPE_BOOL));
+        $prop->setType(ComponentPropertyType::TYPE_BOOL);
         $prop->setDefaultValue(false);
         $this->params[] = $prop;
 
         $prop = new ComponentProperty();
         $prop->setName('rounded');
-        $prop->setType(new ComponentPropertyType(ComponentPropertyType::TYPE_BOOL));
+        $prop->setType(ComponentPropertyType::TYPE_BOOL);
         $prop->setDefaultValue(false);
         $this->params[] = $prop;
 
         $prop = new ComponentProperty();
         $prop->setName('thumbnail');
-        $prop->setType(new ComponentPropertyType(ComponentPropertyType::TYPE_BOOL));
+        $prop->setType(ComponentPropertyType::TYPE_BOOL);
         $prop->setDefaultValue(false);
         $this->params[] = $prop;
 
         $prop = new ComponentProperty();
         $prop->setName('left');
-        $prop->setType(new ComponentPropertyType(ComponentPropertyType::TYPE_BOOL));
+        $prop->setType(ComponentPropertyType::TYPE_BOOL);
         $prop->setDefaultValue(false);
         $this->params[] = $prop;
 
         $prop = new ComponentProperty();
         $prop->setName('right');
-        $prop->setType(new ComponentPropertyType(ComponentPropertyType::TYPE_BOOL));
+        $prop->setType(ComponentPropertyType::TYPE_BOOL);
         $prop->setDefaultValue(false);
         $this->params[] = $prop;
 
         $prop = new ComponentProperty();
         $prop->setName('center');
-        $prop->setType(new ComponentPropertyType(ComponentPropertyType::TYPE_BOOL));
+        $prop->setType(ComponentPropertyType::TYPE_BOOL);
         $prop->setDefaultValue(false);
         $this->params[] = $prop;
 
         $prop = new ComponentProperty();
         $prop->setName('blank');
-        $prop->setType(new ComponentPropertyType(ComponentPropertyType::TYPE_BOOL));
+        $prop->setType(ComponentPropertyType::TYPE_BOOL);
         $prop->setDefaultValue(false);
         $this->params[] = $prop;
     }

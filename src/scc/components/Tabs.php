@@ -31,19 +31,19 @@ class Tabs extends AbstractBlockComponent
 
         $prop = new ComponentProperty();
         $prop->setName('card');
-        $prop->setType(new ComponentPropertyType(ComponentPropertyType::TYPE_BOOL));
+        $prop->setType(ComponentPropertyType::TYPE_BOOL);
         $prop->setDefaultValue(false);
         $this->params[] = $prop;
 
         $prop = new ComponentProperty();
         $prop->setName('small');
-        $prop->setType(new ComponentPropertyType(ComponentPropertyType::TYPE_BOOL));
+        $prop->setType(ComponentPropertyType::TYPE_BOOL);
         $prop->setDefaultValue(false);
         $this->params[] = $prop;
 
         $prop = new ComponentProperty();
         $prop->setName('pills');
-        $prop->setType(new ComponentPropertyType(ComponentPropertyType::TYPE_BOOL));
+        $prop->setType(ComponentPropertyType::TYPE_BOOL);
         $prop->setDefaultValue(false);
         $this->params[] = $prop;
 
@@ -52,12 +52,12 @@ class Tabs extends AbstractBlockComponent
 
         $prop = new ComponentProperty();
         $prop->setName('tabs');
-        $prop->setType(new ComponentPropertyType(ComponentPropertyType::TYPE_ARRAY));
+        $prop->setType(ComponentPropertyType::TYPE_ARRAY);
         $this->params[] = $prop;
         
         $prop = new ComponentProperty();
         $prop->setName('swipeable');
-        $prop->setType(new ComponentPropertyType(ComponentPropertyType::TYPE_BOOL));
+        $prop->setType(ComponentPropertyType::TYPE_BOOL);
         $prop->setDefaultValue(false);
         $this->params[] = $prop;
 

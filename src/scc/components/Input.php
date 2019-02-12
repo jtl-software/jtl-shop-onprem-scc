@@ -27,7 +27,7 @@ class Input extends AbstractFunctionComponent
 
         $prop = new ComponentProperty();
         $prop->setName('type');
-        $prop->setType(new ComponentPropertyType(ComponentPropertyType::TYPE_STRING));
+        $prop->setType(ComponentPropertyType::TYPE_STRING);
         $prop->setDefaultValue('text');
         $prop->setIsRequired(true);
         $this->params[] = $prop;
@@ -36,32 +36,32 @@ class Input extends AbstractFunctionComponent
 
         $prop = new ComponentProperty();
         $prop->setName('size');
-        $prop->setType(new ComponentPropertyType(ComponentPropertyType::TYPE_INT));
+        $prop->setType(ComponentPropertyType::TYPE_INT);
         $this->params[] = $prop;
 
         $prop = new ComponentProperty();
         $prop->setName('min');
-        $prop->setType(new ComponentPropertyType(ComponentPropertyType::TYPE_NUMERIC));
+        $prop->setType(ComponentPropertyType::TYPE_NUMERIC);
         $this->params[] = $prop;
 
         $prop = new ComponentProperty();
         $prop->setName('max');
-        $prop->setType(new ComponentPropertyType(ComponentPropertyType::TYPE_NUMERIC));
+        $prop->setType(ComponentPropertyType::TYPE_NUMERIC);
         $this->params[] = $prop;
 
         $prop = new ComponentProperty();
         $prop->setName('size');
-        $prop->setType(new ComponentPropertyType(ComponentPropertyType::TYPE_NUMERIC));
+        $prop->setType(ComponentPropertyType::TYPE_NUMERIC);
         $this->params[] = $prop;
 
         $prop = new ComponentProperty();
         $prop->setName('maxlength');
-        $prop->setType(new ComponentPropertyType(ComponentPropertyType::TYPE_NUMERIC));
+        $prop->setType(ComponentPropertyType::TYPE_NUMERIC);
         $this->params[] = $prop;
 
         $prop = new ComponentProperty();
         $prop->setName('step');
-        $prop->setType(new ComponentPropertyType(ComponentPropertyType::TYPE_NUMERIC));
+        $prop->setType(ComponentPropertyType::TYPE_NUMERIC);
         $this->params[] = $prop;
 
         $this->params[] = new ComponentProperty('placeholder');
@@ -70,19 +70,19 @@ class Input extends AbstractFunctionComponent
 
         $prop = new ComponentProperty();
         $prop->setName('readonly');
-        $prop->setType(new ComponentPropertyType(ComponentPropertyType::TYPE_BOOL));
+        $prop->setType(ComponentPropertyType::TYPE_BOOL);
         $prop->setDefaultValue(false);
         $this->params[] = $prop;
 
         $prop = new ComponentProperty();
         $prop->setName('required');
-        $prop->setType(new ComponentPropertyType(ComponentPropertyType::TYPE_BOOL));
+        $prop->setType(ComponentPropertyType::TYPE_BOOL);
         $prop->setDefaultValue(false);
         $this->params[] = $prop;
 
         $prop = new ComponentProperty();
         $prop->setName('disabled');
-        $prop->setType(new ComponentPropertyType(ComponentPropertyType::TYPE_BOOL));
+        $prop->setType(ComponentPropertyType::TYPE_BOOL);
         $prop->setDefaultValue(false);
         $this->params[] = $prop;
     }

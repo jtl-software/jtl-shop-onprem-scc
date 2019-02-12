@@ -27,25 +27,25 @@ class Select extends AbstractBlockComponent
 
         $prop = new ComponentProperty();
         $prop->setName('disabled');
-        $prop->setType(new ComponentPropertyType(ComponentPropertyType::TYPE_BOOL));
+        $prop->setType(ComponentPropertyType::TYPE_BOOL);
         $prop->setDefaultValue(false);
         $this->params[] = $prop;
 
         $prop = new ComponentProperty();
         $prop->setName('required');
-        $prop->setType(new ComponentPropertyType(ComponentPropertyType::TYPE_BOOL));
+        $prop->setType(ComponentPropertyType::TYPE_BOOL);
         $prop->setDefaultValue(false);
         $this->params[] = $prop;
 
         $prop = new ComponentProperty();
         $prop->setName('plain');
-        $prop->setType(new ComponentPropertyType(ComponentPropertyType::TYPE_BOOL));
+        $prop->setType(ComponentPropertyType::TYPE_BOOL);
         $prop->setDefaultValue(false);
         $this->params[] = $prop;
 
         $prop = new ComponentProperty();
         $prop->setName('multiple');
-        $prop->setType(new ComponentPropertyType(ComponentPropertyType::TYPE_BOOL));
+        $prop->setType(ComponentPropertyType::TYPE_BOOL);
         $prop->setDefaultValue(false);
         $this->params[] = $prop;
 
@@ -56,7 +56,7 @@ class Select extends AbstractBlockComponent
 
         $prop = new ComponentProperty();
         $prop->setName('select-size');
-        $prop->setType(new ComponentPropertyType(ComponentPropertyType::TYPE_INT));
+        $prop->setType(ComponentPropertyType::TYPE_INT);
         $prop->setDefaultValue(0);
         $this->params[] = $prop;
     }

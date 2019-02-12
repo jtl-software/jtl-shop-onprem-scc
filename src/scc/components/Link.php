@@ -31,7 +31,7 @@ class Link extends AbstractBlockComponent
 
         $prop = new ComponentProperty();
         $prop->setName('name');
-        $prop->setType(new ComponentPropertyType(ComponentPropertyType::TYPE_STRING));
+        $prop->setType(ComponentPropertyType::TYPE_STRING);
         $prop->setIsRequired(true);
         $this->params[] = $prop;
     }

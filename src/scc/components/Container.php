@@ -26,7 +26,7 @@ class Container extends AbstractBlockComponent
 
         $prop = new ComponentProperty();
         $prop->setName('fluid');
-        $prop->setType(new ComponentPropertyType(ComponentPropertyType::TYPE_BOOL));
+        $prop->setType(ComponentPropertyType::TYPE_BOOL);
         $prop->setDefaultValue(false);
         $this->params[] = $prop;
         $this->params[] = new ComponentProperty('tag', 'div');

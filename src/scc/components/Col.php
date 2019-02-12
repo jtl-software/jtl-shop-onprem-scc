@@ -27,7 +27,7 @@ class Col extends AbstractBlockComponent
 
         $prop = new ComponentProperty();
         $prop->setName('col');
-        $prop->setType(new ComponentPropertyType(ComponentPropertyType::TYPE_BOOL));
+        $prop->setType(ComponentPropertyType::TYPE_BOOL);
         $prop->setDefaultValue(false);
         $this->params[] = $prop;
 
@@ -35,40 +35,40 @@ class Col extends AbstractBlockComponent
 
         $prop = new ComponentProperty();
         $prop->setName('cols');
-        $prop->setType(new ComponentPropertyType(ComponentPropertyType::TYPE_INT));
+        $prop->setType(ComponentPropertyType::TYPE_INT);
         $this->params[] = $prop;
 
         $prop = new ComponentProperty();
         $prop->setName('offset');
-        $prop->setType(new ComponentPropertyType(ComponentPropertyType::TYPE_INT));
+        $prop->setType(ComponentPropertyType::TYPE_INT);
         $this->params[] = $prop;
 
         $prop = new ComponentProperty();
         $prop->setName('order');
-        $prop->setType(new ComponentPropertyType(ComponentPropertyType::TYPE_INT));
+        $prop->setType(ComponentPropertyType::TYPE_INT);
         $this->params[] = $prop;
 
         $prop = new ComponentProperty();
         $prop->setName('sm');
-        $prop->setType(new ComponentPropertyType(ComponentPropertyType::TYPE_BOOL));
+        $prop->setType(ComponentPropertyType::TYPE_BOOL);
         $prop->setDefaultValue(false);
         $this->params[] = $prop;
 
         $prop = new ComponentProperty();
         $prop->setName('md');
-        $prop->setType(new ComponentPropertyType(ComponentPropertyType::TYPE_BOOL));
+        $prop->setType(ComponentPropertyType::TYPE_BOOL);
         $prop->setDefaultValue(false);
         $this->params[] = $prop;
 
         $prop = new ComponentProperty();
         $prop->setName('lg');
-        $prop->setType(new ComponentPropertyType(ComponentPropertyType::TYPE_BOOL));
+        $prop->setType(ComponentPropertyType::TYPE_BOOL);
         $prop->setDefaultValue(false);
         $this->params[] = $prop;
 
         $prop = new ComponentProperty();
         $prop->setName('xl');
-        $prop->setType(new ComponentPropertyType(ComponentPropertyType::TYPE_BOOL));
+        $prop->setType(ComponentPropertyType::TYPE_BOOL);
         $prop->setDefaultValue(false);
         $this->params[] = $prop;
 

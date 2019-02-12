@@ -26,7 +26,7 @@ class FormGroup extends AbstractBlockComponent
 
         $prop = new ComponentProperty();
         $prop->setName('label-cols');
-        $prop->setType(new ComponentPropertyType(ComponentPropertyType::TYPE_INT));
+        $prop->setType(ComponentPropertyType::TYPE_INT);
         $prop->setDefaultValue(3);
         $this->params[] = $prop;
 
@@ -40,13 +40,13 @@ class FormGroup extends AbstractBlockComponent
 
         $prop = new ComponentProperty();
         $prop->setName('label-sr-only');
-        $prop->setType(new ComponentPropertyType(ComponentPropertyType::TYPE_BOOL));
+        $prop->setType(ComponentPropertyType::TYPE_BOOL);
         $prop->setDefaultValue(false);
         $this->params[] = $prop;
 
         $prop = new ComponentProperty();
         $prop->setName('horizontal');
-        $prop->setType(new ComponentPropertyType(ComponentPropertyType::TYPE_BOOL));
+        $prop->setType(ComponentPropertyType::TYPE_BOOL);
         $prop->setDefaultValue(false);
         $this->params[] = $prop;
     }
