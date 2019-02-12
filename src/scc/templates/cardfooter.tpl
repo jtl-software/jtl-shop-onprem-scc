@@ -1,4 +1,4 @@
-<div class="card-footer
+<div class="card-footer{if $params.class->hasValue()} {$params.class->getValue()}{/if}
     {if $params.footerBgVariant->hasValue()} bg-{$params.footerBgVariant->getValue()}{/if}
     {if $params.footerTextVariant->hasValue()} text-{$params.footerBgVariant->getValue()}{/if}
     {if $params.footerBorderVariant->hasValue()} border-{$params.footerBorderVariant->getValue()}{/if}
