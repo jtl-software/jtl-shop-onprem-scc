@@ -42,6 +42,13 @@ class Form extends AbstractBlockComponent
         $prop->setType(ComponentPropertyType::TYPE_BOOL);
         $prop->setDefaultValue(false);
         $this->params[] = $prop;
+        $this->params[] = $prop;
+
+        $prop = new ComponentProperty();
+        $prop->setName('addtoken');
+        $prop->setType(ComponentPropertyType::TYPE_BOOL);
+        $prop->setDefaultValue(true);
+        $this->params[] = $prop;
 
         $this->params[] = new ComponentProperty('action', '');
         $this->params[] = new ComponentProperty('method', 'POST');
