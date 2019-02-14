@@ -26,6 +26,7 @@ use scc\components\CheckboxGroup;
 use scc\components\Col;
 use scc\components\Collapse;
 use scc\components\Container;
+use scc\components\CSRFToken;
 use scc\components\DropDown;
 use scc\components\DropDownDivider;
 use scc\components\DropDownItem;
@@ -154,5 +155,6 @@ class DefaultComponentRegistrator
         $this->renderer->registerComponent(new Progress());
         $this->renderer->registerComponent(new Breadcrumb());
         $this->renderer->registerComponent(new BreadcrumbItem());
+        $this->renderer->registerComponent(new CSRFToken());
     }
 }

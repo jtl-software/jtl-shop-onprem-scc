@@ -7,7 +7,7 @@
 namespace scc;
 
 use scc\exceptions\ComponentAlreadyRegisteredException;
-use Smarty\JTLSmarty;
+use JTL\Smarty\JTLSmarty;
 
 /**
  * Class Renderer
