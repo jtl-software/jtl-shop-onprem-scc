@@ -11,7 +11,6 @@ use scc\ComponentPropertyType;
 
 /**
  * Class CardGroup
- *
  * @package scc\components
  */
 class CardGroup extends AbstractBlockComponent

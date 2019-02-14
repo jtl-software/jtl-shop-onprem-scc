@@ -11,7 +11,6 @@ use scc\ComponentPropertyType;
 
 /**
  * Class CardImg
- *
  * @package scc\components
  */
 class CardImg extends AbstractFunctionComponent

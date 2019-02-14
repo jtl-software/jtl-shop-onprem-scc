@@ -8,7 +8,6 @@ namespace scc\components;
 
 /**
  * Class InputGroupPrepend
- *
  * @package scc\components
  */
 class InputGroupPrepend extends InputGroupAddon

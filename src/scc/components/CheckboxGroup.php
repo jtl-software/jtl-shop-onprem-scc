@@ -10,8 +10,7 @@ use scc\ComponentProperty;
 use scc\ComponentPropertyType;
 
 /**
- * Class CheckCheckboxGroupbox
- *
+ * Class CheckboxGroup
  * @package scc\components
  */
 class CheckboxGroup extends AbstractBlockComponent

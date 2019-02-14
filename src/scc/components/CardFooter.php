@@ -11,7 +11,6 @@ use scc\ComponentPropertyType;
 
 /**
  * Class CardFooter
- *
  * @package scc\components
  */
 class CardFooter extends AbstractBlockComponent

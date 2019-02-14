@@ -11,7 +11,6 @@ use scc\ComponentPropertyType;
 
 /**
  * Class InputFile
- *
  * @package scc\components
  */
 class InputFile extends AbstractFunctionComponent

@@ -11,7 +11,6 @@ use scc\ComponentPropertyType;
 
 /**
  * Class Collapse
- *
  * @package scc\components
  */
 class Collapse extends AbstractBlockComponent

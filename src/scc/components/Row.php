@@ -11,7 +11,6 @@ use scc\ComponentPropertyType;
 
 /**
  * Class Row
- *
  * @package scc\components
  */
 class Row extends AbstractBlockComponent

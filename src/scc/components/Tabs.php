@@ -13,7 +13,6 @@ use scc\renderers\TabsRenderer;
 
 /**
  * Class Tabs
- *
  * @package scc\components
  */
 class Tabs extends AbstractBlockComponent

@@ -13,7 +13,7 @@ use scc\ComponentType;
 use scc\renderers\FunctionRenderer;
 
 /**
- * Class AbstractBlockComponent
+ * Class AbstractFunctionComponent
  * @package scc\components
  */
 abstract class AbstractFunctionComponent extends AbstractBaseComponent

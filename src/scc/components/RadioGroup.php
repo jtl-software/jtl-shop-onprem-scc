@@ -8,7 +8,6 @@ namespace scc\components;
 
 /**
  * Class RadioGroup
- *
  * @package scc\components
  */
 class RadioGroup extends CheckboxGroup

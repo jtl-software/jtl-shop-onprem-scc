@@ -11,7 +11,6 @@ use scc\ComponentPropertyType;
 
 /**
  * Class Badge
- *
  * @package scc\components
  */
 class Badge extends AbstractBlockComponent

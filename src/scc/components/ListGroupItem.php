@@ -11,7 +11,6 @@ use scc\ComponentPropertyType;
 
 /**
  * Class ListGroupItem
- *
  * @package scc\components
  */
 class ListGroupItem extends AbstractBlockComponent

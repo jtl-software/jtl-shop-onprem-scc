@@ -12,7 +12,6 @@ use scc\renderers\CarouselRenderer;
 
 /**
  * Class Carousel
- *
  * @package scc\components
  */
 class Carousel extends AbstractBlockComponent

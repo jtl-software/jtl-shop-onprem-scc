@@ -11,7 +11,6 @@ use scc\ComponentPropertyType;
 
 /**
  * Class MediaBody
- *
  * @package scc\components
  */
 class MediaBody extends AbstractBlockComponent

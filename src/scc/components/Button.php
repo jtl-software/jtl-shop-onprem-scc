@@ -11,7 +11,6 @@ use scc\ComponentPropertyType;
 
 /**
  * Class Button
- *
  * @package scc\components
  */
 class Button extends AbstractBlockComponent

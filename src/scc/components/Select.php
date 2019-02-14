@@ -11,7 +11,6 @@ use scc\ComponentPropertyType;
 
 /**
  * Class Select
- *
  * @package scc\components
  */
 class Select extends AbstractBlockComponent

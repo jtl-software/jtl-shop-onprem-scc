@@ -12,7 +12,6 @@ use scc\renderers\NestedBlockRenderer;
 
 /**
  * Class Checkbox
- *
  * @package scc\components
  */
 class Checkbox extends AbstractBlockComponent

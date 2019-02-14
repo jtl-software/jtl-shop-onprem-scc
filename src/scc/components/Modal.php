@@ -11,7 +11,6 @@ use scc\ComponentPropertyType;
 
 /**
  * Class Modal
- *
  * @package scc\components
  */
 class Modal extends AbstractBlockComponent

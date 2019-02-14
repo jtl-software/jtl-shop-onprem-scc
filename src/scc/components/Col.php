@@ -11,7 +11,6 @@ use scc\ComponentPropertyType;
 
 /**
  * Class Col
- *
  * @package scc\components
  */
 class Col extends AbstractBlockComponent

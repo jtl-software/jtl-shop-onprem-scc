@@ -11,7 +11,6 @@ use scc\ComponentPropertyType;
 
 /**
  * Class BreadcrumbItem
- *
  * @package scc\components
  */
 class BreadcrumbItem extends AbstractBlockComponent

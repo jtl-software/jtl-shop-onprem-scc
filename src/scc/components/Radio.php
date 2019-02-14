@@ -12,7 +12,6 @@ use scc\renderers\NestedBlockRenderer;
 
 /**
  * Class Radio
- *
  * @package scc\components
  */
 class Radio extends AbstractBlockComponent

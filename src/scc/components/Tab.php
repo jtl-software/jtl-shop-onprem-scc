@@ -11,7 +11,6 @@ use scc\ComponentPropertyType;
 
 /**
  * Class Tab
- *
  * @package scc\components
  */
 class Tab extends AbstractBlockComponent

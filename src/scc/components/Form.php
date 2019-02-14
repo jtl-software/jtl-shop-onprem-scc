@@ -11,7 +11,6 @@ use scc\ComponentPropertyType;
 
 /**
  * Class Form
- *
  * @package scc\components
  */
 class Form extends AbstractBlockComponent

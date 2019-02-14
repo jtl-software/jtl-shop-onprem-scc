@@ -11,7 +11,6 @@ use scc\ComponentPropertyType;
 
 /**
  * Class DropDownDivider
- *
  * @package scc\components
  */
 class DropDownDivider extends AbstractFunctionComponent

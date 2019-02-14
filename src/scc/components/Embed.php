@@ -11,7 +11,6 @@ use scc\ComponentPropertyType;
 
 /**
  * Class Embed
- *
  * @package scc\components
  */
 class Embed extends AbstractBlockComponent

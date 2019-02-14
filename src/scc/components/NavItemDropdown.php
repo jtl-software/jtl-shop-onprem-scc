@@ -11,7 +11,6 @@ use scc\ComponentPropertyType;
 
 /**
  * Class NavItemDropdown
- *
  * @package scc\components
  */
 class NavItemDropdown extends AbstractBlockComponent

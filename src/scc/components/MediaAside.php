@@ -11,7 +11,6 @@ use scc\ComponentPropertyType;
 
 /**
  * Class MediaAside
- *
  * @package scc\components
  */
 class MediaAside extends AbstractBlockComponent

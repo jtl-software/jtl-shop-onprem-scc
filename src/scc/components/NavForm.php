@@ -11,7 +11,6 @@ use scc\ComponentPropertyType;
 
 /**
  * Class NavForm
- *
  * @package scc\components
  */
 class NavForm extends AbstractBlockComponent

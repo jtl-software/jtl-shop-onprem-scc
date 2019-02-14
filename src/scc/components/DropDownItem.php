@@ -11,7 +11,6 @@ use scc\ComponentPropertyType;
 
 /**
  * Class DropDownItem
- *
  * @package scc\components
  */
 class DropDownItem extends AbstractBlockComponent

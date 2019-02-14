@@ -11,7 +11,6 @@ use scc\ComponentPropertyType;
 
 /**
  * Class CarouselSlide
- *
  * @package scc\components
  */
 class CarouselSlide extends AbstractBlockComponent

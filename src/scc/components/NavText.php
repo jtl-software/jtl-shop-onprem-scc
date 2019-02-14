@@ -11,7 +11,6 @@ use scc\ComponentPropertyType;
 
 /**
  * Class NavText
- *
  * @package scc\components
  */
 class NavText extends AbstractBlockComponent

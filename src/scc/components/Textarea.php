@@ -11,7 +11,6 @@ use scc\ComponentPropertyType;
 
 /**
  * Class Textarea
- *
  * @package scc\components
  */
 class Textarea extends AbstractBlockComponent

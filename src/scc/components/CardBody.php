@@ -10,8 +10,7 @@ use scc\ComponentProperty;
 use scc\ComponentPropertyType;
 
 /**
- * Class CardFooter
- *
+ * Class CardBody
  * @package scc\components
  */
 class CardBody extends AbstractBlockComponent

@@ -11,7 +11,6 @@ use scc\ComponentPropertyType;
 
 /**
  * Class Pagination
- *
  * @package scc\components
  */
 class Pagination extends AbstractBlockComponent
