@@ -15,6 +15,6 @@
     {if $params.aria->hasValue()}{foreach $params.aria->getValue() as $ariaKey => $ariaVal}aria-{$ariaKey}="{$ariaVal}"{/foreach}{/if}
     {if $params.data->hasValue()}{foreach $params.data->getValue() as $dataKey => $dataVal}data-{$dataKey}="{$dataVal}"{/foreach}{/if}
 >
-	{if $params.addtoken}{csrf_token}{/if}
+	{if $params.addtoken->getValue()}{csrf_token}{/if}
     {$blockContent}
 </form>
