@@ -12,7 +12,6 @@ use scc\ComponentRendererTrait;
 
 /**
  * Class FunctionRenderer
- *
  * @package scc\renderers
  */
 class FunctionRenderer implements ComponentRendererInterface

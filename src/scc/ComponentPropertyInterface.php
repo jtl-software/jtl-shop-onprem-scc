@@ -8,7 +8,6 @@ namespace scc;
 
 /**
  * Interface ComponentPropertyInterface
- *
  * @package scc
  */
 interface ComponentPropertyInterface

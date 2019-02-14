@@ -8,7 +8,6 @@ namespace scc;
 
 /**
  * Trait ComponentRendererTrait
- *
  * @package scc
  */
 trait ComponentRendererTrait

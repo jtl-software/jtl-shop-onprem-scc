@@ -8,7 +8,6 @@ namespace scc;
 
 /**
  * Interface ComponentRendererInterface
- *
  * @package scc
  */
 interface ComponentRendererInterface

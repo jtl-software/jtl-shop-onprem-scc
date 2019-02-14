@@ -11,7 +11,6 @@ use JTL\Smarty\JTLSmarty;
 
 /**
  * Class Renderer
- *
  * @package scc
  */
 class Renderer implements RendererInterface

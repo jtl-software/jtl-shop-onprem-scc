@@ -10,7 +10,6 @@ use MyCLabs\Enum\Enum;
 
 /**
  * Class ComponentType
- *
  * @package scc
  */
 class ComponentType extends Enum

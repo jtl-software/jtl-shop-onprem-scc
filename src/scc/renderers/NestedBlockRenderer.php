@@ -12,7 +12,6 @@ use scc\ComponentRendererTrait;
 
 /**
  * Class NestedBlockRenderer
- *
  * @package scc\renderers
  */
 class NestedBlockRenderer implements ComponentRendererInterface

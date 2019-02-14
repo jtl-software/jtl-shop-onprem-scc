@@ -10,7 +10,6 @@ use scc\exceptions\ComponentAlreadyRegisteredException;
 
 /**
  * Interface RendererInterface
- *
  * @package scc
  */
 interface RendererInterface

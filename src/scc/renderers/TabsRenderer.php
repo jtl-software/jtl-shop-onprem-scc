@@ -11,7 +11,6 @@ use Smarty\JTLSmarty;
 
 /**
  * Class TabsRenderer
- *
  * @package scc\renderers
  */
 class TabsRenderer extends BlockRenderer

@@ -13,7 +13,6 @@ use Smarty\JTLSmarty;
 
 /**
  * Class BlockRenderer
- *
  * @package scc\renderers
  */
 class BlockRenderer implements ComponentRendererInterface
