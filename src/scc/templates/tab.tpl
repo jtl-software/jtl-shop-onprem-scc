@@ -1,4 +1,4 @@
-<{$params.tag} class="{$params.class->getValue()}"
+<{$params.tag} class="nav-item {$params.class->getValue()}"
     {if $params.id->hasValue()}id="label-{$params.id->getValue()}"{/if}
     {if $params.style->hasValue()}style="{$params.style->getValue()}"{/if}
     {if $params.itemprop->hasValue()}itemprop="{$params.itemprop->getValue()}"{/if}

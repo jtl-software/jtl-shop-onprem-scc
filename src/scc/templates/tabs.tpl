@@ -1,5 +1,5 @@
 <{$params.tag}
-    class="{$params.class->getValue()}{if $params.pills->getValue() === true} nav-pills{/if}"
+    class="nav nav-tabs {$params.class->getValue()}{if $params.pills->getValue() === true} nav-pills{/if}"
     {if $params.swipeable->getValue() === false}role="tablist"{/if}
     {if $params.id->hasValue()}id="{$params.id->getValue()}"{/if}
     {if $params.style->hasValue()}style="{$params.style}"{/if}
