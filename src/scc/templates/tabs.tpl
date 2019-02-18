@@ -6,11 +6,6 @@
 >
     {$blockContent}
 </{$params.tag}>
-{*Content:<br>*}
-{*{$parentSmarty->getTemplateVars('tabContents')|var_dump}*}
-{*IDs:<br>*}
-{*{$parentSmarty->getTemplateVars('tabIDs')|var_dump}*}
-
 <div class="tab-content"{if $params.id->hasValue()} id="tab-content-{$params.id->getValue()}"{/if}
     {if $params.itemprop->hasValue()}itemprop="{$params.itemprop->getValue()}"{/if}
     {if $params.itemscope->getValue() === true}itemscope {/if}

@@ -6,8 +6,8 @@
     {if $params.itemtype->hasValue()}itemtype="{$params.itemtype->getValue()}"{/if}
     {if $params.itemid->hasValue()}itemid="{$params.itemid->getValue()}"{/if}
     role="{if $params.role->hasValue()}{$params.role->getValue()}{else}presentation{/if}"
-    {if $params.aria->hasValue()}{foreach $params.aria->getValue() as $ariaKey => $ariaVal}aria-{$ariaKey}="{$ariaVal}"{/foreach}{/if}
-    {if $params.data->hasValue()}{foreach $params.data->getValue() as $dataKey => $dataVal}data-{$dataKey}="{$dataVal}"{/foreach}{/if}
+    {if $params.aria->hasValue()}{foreach $params.aria->getValue() as $ariaKey => $ariaVal}aria-{$ariaKey}="{$ariaVal}" {/foreach}{/if}
+    {if $params.data->hasValue()}{foreach $params.data->getValue() as $dataKey => $dataVal}data-{$dataKey}="{$dataVal}" {/foreach}{/if}
 >
     {if $params.swipeable->getValue() === true}
         <div class="nav-link{if $params.active->getValue() === true} active{/if}{if $params.disabled->getValue() === true} disabled{/if}"

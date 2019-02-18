@@ -11,8 +11,8 @@
          {if $params.striped->getValue() === true} progress-bar-striped{/if}
          {if $params.animated->getValue() === true} progress-bar-animated{/if}"
          role="{if $params.role->hasValue()}{$params.role->getValue()}{else}progressbar{/if}"
-         {if $params.aria->hasValue()}{foreach $params.aria->getValue() as $ariaKey => $ariaVal}aria-{$ariaKey}="{$ariaVal}"{/foreach}{/if}
-         {if $params.data->hasValue()}{foreach $params.data->getValue() as $dataKey => $dataVal}data-{$dataKey}="{$dataVal}"{/foreach}{/if}
+         {if $params.aria->hasValue()}{foreach $params.aria->getValue() as $ariaKey => $ariaVal}aria-{$ariaKey}="{$ariaVal}" {/foreach}{/if}
+         {if $params.data->hasValue()}{foreach $params.data->getValue() as $dataKey => $dataVal}data-{$dataKey}="{$dataVal}" {/foreach}{/if}
          style="width: {$params.now->getValue()}%"
          aria-valuenow="{$params.now->getValue()}"
          aria-valuemin="{$params.min->getValue()}"

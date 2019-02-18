@@ -7,11 +7,10 @@
     {if $params.itemtype->hasValue()}itemtype="{$params.itemtype->getValue()}"{/if}
     {if $params.itemid->hasValue()}itemid="{$params.itemid->getValue()}"{/if}
     role="{if $params.role->hasValue()}{$params.role->getValue()}{else}group{/if}"
-    {if $params.aria->hasValue()}{foreach $params.aria->getValue() as $ariaKey => $ariaVal}aria-{$ariaKey}="{$ariaVal}"{/foreach}{/if}
-    {if $params.data->hasValue()}{foreach $params.data->getValue() as $dataKey => $dataVal}data-{$dataKey}="{$dataVal}"{/foreach}{/if}
+    {if $params.aria->hasValue()}{foreach $params.aria->getValue() as $ariaKey => $ariaVal}aria-{$ariaKey}="{$ariaVal}" {/foreach}{/if}
+    {if $params.data->hasValue()}{foreach $params.data->getValue() as $dataKey => $dataVal}data-{$dataKey}="{$dataVal}" {/foreach}{/if}
 >
     {if $params.prepend->hasValue()}
-        {*{inputgroupaddon append=false is-text=true}{$params.prepend->getValue()}{/inputgroupaddon}*}
         <div class="input-group-prepend">
             <div class="input-group-text">{$params.prepend->getValue()}</div>
         </div>
@@ -19,8 +18,5 @@
     {$blockContent}
     {if $params.append->hasValue()}
         {inputgroupaddon append=true is-text=true}{$params.append->getValue()}{/inputgroupaddon}
-        {*<div class="input-group-append">*}
-            {*<div class="input-group-text">{$params.append->getValue()}</div>*}
-        {*</div>*}
     {/if}
 </{$params.tag->getValue()}>

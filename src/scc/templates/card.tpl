@@ -10,10 +10,10 @@
     {if $params.itemid->hasValue()}itemid="{$params.itemid->getValue()}"{/if}
     {if $params.role->hasValue()}role="{$params.role->getValue()}"{/if}
     {if $params.aria->hasValue()}
-        {foreach $params.aria->getValue() as $ariaKey => $ariaVal}aria-{$ariaKey}="{$ariaVal}"{/foreach}
+        {foreach $params.aria->getValue() as $ariaKey => $ariaVal}aria-{$ariaKey}="{$ariaVal}" {/foreach}
     {/if}
     {if $params.data->hasValue()}
-        {foreach $params.data->getValue() as $dataKey => $dataVal}data-{$dataKey}="{$dataVal}"{/foreach}
+        {foreach $params.data->getValue() as $dataKey => $dataVal}data-{$dataKey}="{$dataVal}" {/foreach}
     {/if}
 >
     {if $params.imgSrc->hasValue()}
@@ -40,9 +40,6 @@
             </{$params.subtitleTag->getValue()}>
     {/if}
     {$blockContent|default:''}
-    {*{foreach $params.links as $link}*}
-        {*<a href="#" class="card-link">{$link}</a>*}
-    {*{/foreach}*}
     {if $params.noBody->getValue() === false}
         </div>
     {/if}

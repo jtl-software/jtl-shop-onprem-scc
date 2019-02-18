@@ -1,25 +1,11 @@
-{*{if $params.variant->hasValue()}*}
-    {*{assign var=class value=$params.class|cat:' btn-'|cat:$params.variant}*}
-{*{else}*}
-    {*{assign var=class value=$params.class}*}
-{*{/if}*}
-{*<button*}
-    {*type="{$params.type}"*}
-    {*class="{$class}{if $params.size->hasValue()} btn-{$params.size}{/if}"*}
-
-    {*{if $params.style->hasValue()}style="{$params.style}"{/if}*}
-    {*{if $params.disabled->getValue() === true}disabled{/if}>*}
-{*{$blockContent}*}
-{*</button>*}
-
 <div class="modal {$params.class->getValue()}" tabindex="-1" {if $params.id->hasValue()} id="{$params.id->getValue()}"{/if}
     {if $params.itemprop->hasValue()}itemprop="{$params.itemprop->getValue()}"{/if}
     {if $params.itemscope->getValue() === true}itemscope {/if}
     {if $params.itemtype->hasValue()}itemtype="{$params.itemtype->getValue()}"{/if}
     {if $params.itemid->hasValue()}itemid="{$params.itemid->getValue()}"{/if}
     role="{if $params.role->hasValue()}{$params.role->getValue()}{else}dialog{/if}"
-    {if $params.aria->hasValue()}{foreach $params.aria->getValue() as $ariaKey => $ariaVal}aria-{$ariaKey}="{$ariaVal}"{/foreach}{/if}
-    {if $params.data->hasValue()}{foreach $params.data->getValue() as $dataKey => $dataVal}data-{$dataKey}="{$dataVal}"{/foreach}{/if}
+    {if $params.aria->hasValue()}{foreach $params.aria->getValue() as $ariaKey => $ariaVal}aria-{$ariaKey}="{$ariaVal}" {/foreach}{/if}
+    {if $params.data->hasValue()}{foreach $params.data->getValue() as $dataKey => $dataVal}data-{$dataKey}="{$dataVal}" {/foreach}{/if}
 >
     <div class="modal-dialog{if $params.centered->getValue() === true} modal-dialog-centered{/if}" role="document">
         <div class="modal-content">
