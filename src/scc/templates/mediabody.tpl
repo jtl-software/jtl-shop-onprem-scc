@@ -1,5 +1,5 @@
 <{$params.tag->getValue()}
-    class="media{if $params.noBody === false}-body{/if} ml-3 {$params.class->getValue()}"
+    class="media-body ml-3 {$params.class->getValue()}"
     {if $params.itemprop->hasValue()}itemprop="{$params.itemprop->getValue()}"{/if}
     {if $params.itemscope->getValue() === true}itemscope {/if}
     {if $params.itemtype->hasValue()}itemtype="{$params.itemtype->getValue()}"{/if}
