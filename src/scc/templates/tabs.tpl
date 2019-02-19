@@ -1,6 +1,6 @@
 <{$params.tag}
     class="nav nav-tabs {$params.class->getValue()}{if $params.pills->getValue() === true} nav-pills{/if}"
-    {if $params.swipeable->getValue() === false}role="tablist"{/if}
+    {*{if $params.swipeable->getValue() === false}*}role="tablist"{*{/if}*}
     {if $params.id->hasValue()}id="{$params.id->getValue()}"{/if}
     {if $params.style->hasValue()}style="{$params.style}"{/if}
 >
@@ -13,23 +13,23 @@
     {if $params.itemid->hasValue()}itemid="{$params.itemid->getValue()}"{/if}
 >
     {foreach $tabContents as $i => $tab}
-        {if $params.swipeable->getValue() === true}
+        {*{if $params.swipeable->getValue() === true}
             <div class="pt-3"
                  id="tab-{$tabIDs[$i]}"
                  aria-labelledby="tab-link-{$tabIDs[$i]}">
                 {$tab}
             </div>
-        {else}
+        {else}*}
             <div class="tab-pane fade pt-3{if $tab@index === 0} show active{/if}"
                  id="tab-{$tabIDs[$i]}"
                  role="tabpanel"
                  aria-labelledby="tab-link-{$tabIDs[$i]}">
                 {$tab}
             </div>
-        {/if}
+        {*{/if}*}
     {/foreach}
 </div>
-
+{*
 {if $params.swipeable->getValue() === true}
     <script>
         $(window).on('load', function () {
@@ -67,4 +67,4 @@
             });
         });
     </script>
-{/if}
+{/if}*}
