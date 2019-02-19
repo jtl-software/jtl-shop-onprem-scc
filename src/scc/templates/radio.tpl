@@ -1,16 +1,18 @@
 {assign var=id value=$params.id->getValue()|default:uniqid()}
-{if isset($parentBlockParams.stacked)}
-    {assign var=stacked value=$parentBlockParams.stacked->getValue()}
+{$parentParams = $parentSmarty->getTemplateVars('pbp')|default:$parentBlockParams}
+
+{if isset($parentParams.stacked)}
+    {assign var=stacked value=$parentParams.stacked->getValue()}
 {else}
     {assign var=stacked value=false}
 {/if}
-{if isset($parentBlockParams.plain)}
-    {assign var=plain value=$parentBlockParams.plain->getValue()}
+{if isset($parentParams.plain)}
+    {assign var=plain value=$parentParams.plain->getValue()}
 {else}
     {assign var=plain value=false}
 {/if}
-{if isset($parentBlockParams.buttons)}
-    {assign var=buttons value=$parentBlockParams.buttons->getValue()}
+{if isset($parentParams.buttons)}
+    {assign var=buttons value=$parentParams.buttons->getValue()}
 {else}
     {assign var=buttons value=false}
 {/if}
@@ -48,7 +50,7 @@
     </div>
 {else}
     <label
-        class="btn btn-{$parentBlockParams.buttonVariant->getValue()} btn-{$parentBlockParams.size->getValue()}{if $params.disabled->getValue() === true} disabled{/if}"
+        class="btn btn-{$parentParams.buttonVariant->getValue()} btn-{$parentParams.size->getValue()}{if $params.disabled->getValue() === true} disabled{/if}"
         {if $params.itemprop->hasValue()}itemprop="{$params.itemprop->getValue()}"{/if}
         {if $params.itemscope->getValue() === true}itemscope {/if}
         {if $params.itemtype->hasValue()}itemtype="{$params.itemtype->getValue()}"{/if}
