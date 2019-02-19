@@ -10,12 +10,12 @@
     {if $params.aria->hasValue()}{foreach $params.aria->getValue() as $ariaKey => $ariaVal}aria-{$ariaKey}="{$ariaVal}" {/foreach}{/if}
     {if $params.data->hasValue()}{foreach $params.data->getValue() as $dataKey => $dataVal}data-{$dataKey}="{$dataVal}" {/foreach}{/if}
 >
-    {if $params.swipeable->getValue() === true}
+   {* {if $params.swipeable->getValue() === true}
         <div class="nav-link{if $params.active->getValue() === true} active{/if}{if $params.disabled->getValue() === true} disabled{/if}"
            id="tab-link-{$id}">
             {$params.title->getValue()}
         </div>
-    {else}
+    {else}*}
         <a class="nav-link{if $params.active->getValue() === true} active{/if}{if $params.disabled->getValue() === true} disabled{/if}"
            href="#tab-{$id}"
            data-toggle="tab"
@@ -25,7 +25,7 @@
         >
             {$params.title->getValue()}
         </a>
-    {/if}
+    {*{/if}*}
 </{$params.tag}>
 
 {$tmp = $parentSmarty->getTemplateVars('tabContents')|default:[]}
