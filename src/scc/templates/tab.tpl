@@ -1,5 +1,6 @@
+{$id = $params.id->getValue()|default:uniqid()}
 <{$params.tag} class="nav-item {$params.class->getValue()}"
-    {if $params.id->hasValue()}id="label-{$params.id->getValue()}"{/if}
+    {if $params.id->hasValue()}id="label-{$id}"{/if}
     {if $params.style->hasValue()}style="{$params.style->getValue()}"{/if}
     {if $params.itemprop->hasValue()}itemprop="{$params.itemprop->getValue()}"{/if}
     {if $params.itemscope->getValue() === true}itemscope {/if}
@@ -11,16 +12,16 @@
 >
     {if $params.swipeable->getValue() === true}
         <div class="nav-link{if $params.active->getValue() === true} active{/if}{if $params.disabled->getValue() === true} disabled{/if}"
-           id="tab-link-{$params.id->getValue()}">
+           id="tab-link-{$id}">
             {$params.title->getValue()}
         </div>
     {else}
         <a class="nav-link{if $params.active->getValue() === true} active{/if}{if $params.disabled->getValue() === true} disabled{/if}"
-           href="#tab-{$params.id->getValue()}"
+           href="#tab-{$id}"
            data-toggle="tab"
            role="tab"
-           aria-controls="tab-{$params.id->getValue()}"
-           id="tab-link-{$params.id->getValue()}"
+           aria-controls="tab-{$id}"
+           id="tab-link-{$id}"
         >
             {$params.title->getValue()}
         </a>
@@ -31,5 +32,5 @@
 {$tmp[] = $blockContent}
 {$x = $parentSmarty->assign('tabContents', $tmp)}
 {$tmp = $parentSmarty->getTemplateVars('tabIDs')|default:[]}
-{$tmp[] = $params.id->getValue()}
+{$tmp[] = $id}
 {$x = $parentSmarty->assign('tabIDs', $tmp)}
