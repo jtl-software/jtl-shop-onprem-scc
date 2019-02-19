@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
 	<meta charset="utf-8">
-	<title>Testing</title>
+	<title>Smarty component collection demo</title>
 	<meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1,shrink-to-fit=no">
 	<meta name="msapplication-starturl" content="/">
 	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.0/css/bootstrap.min.css" integrity="sha384-9gVQ4dYFwwWSjIDZnLEWnxCjeSWFphJiwGPXr1jddIhOegiu1FwO5qRGvFXOdJZ4" crossorigin="anonymous">
@@ -29,9 +29,10 @@
 <div id="app" class="container">
 	<h2 class="mt-4">Progress</h2>
 	{progress now=25 min=0 max=100 animated=true striped=true}<br>
-	{progress now=50 min=0 max=100 animated=true striped=false type='danger'}<br>
-	{progress now=75 min=0 max=100 animated=true striped=true type='success'}<br>
-	{progress now=85 min=0 max=100 animated=true striped=true type='info' height="50px"}<br>
+	{progress now=50 min=0 max=100 animated=true striped=false type="danger"}<br>
+	{progress now=75 min=0 max=100 animated=true striped=true type="success"}<br>
+	{progress now=85 min=0 max=100 animated=false striped=true type="info" height="50px"}<br>
+
 
 	<h2 class="mt-4">Embed</h2>
 	<h3 class="mt-4">Youtube via iframe</h3>
@@ -75,21 +76,20 @@
 	{table fields=['id' => ['label' => '#'], 'name' => ['label' => 'Vorname'], 'age' => ['label' => 'Alter'], 'address' => ['label' => 'PLZ', 'key' => 'plz']] items=$table1 striped=true hover=true bordered=true dark=true}
 
 
-	<h2 class="mt-4">Pagination</h2>
-	<h6>Default</h6>
-	{pagination size="md" total-rows=100 per-page=10}
-	{/pagination}
-	<br>
+	{*<h2 class="mt-4">Pagination</h2>*}
+	{*<h6>Default</h6>*}
+	{*{pagination size="md" total-rows=100 per-page=10}*}
+	{*{/pagination}*}
+	{*<br>*}
 
-	<h6>Small</h6>
-	{pagination size="sm" total-rows=100 per-page=10}
-	{/pagination}
-	<br>
+	{*<h6>Small</h6>*}
+	{*{pagination size="sm" total-rows=100 per-page=10}*}
+	{*{/pagination}*}
+	{*<br>*}
 
-	<h6>Large</h6>
-	{pagination size="lg" total-rows=100 per-page=10}
-	{/pagination}
-
+	{*<h6>Large</h6>*}
+	{*{pagination size="lg" total-rows=100 per-page=10}*}
+	{*{/pagination}*}
 
 	<h2 class="mt-4">Grid</h2>
 	<h3 class="mt-4">Equal width</h3>
@@ -701,8 +701,8 @@
 
 	}
 	{carouselslide caption="First slide"
-	caption='Textcaption1'
-	caption-text='Lorem ipsum caption text'
+	caption="Textcaption1"
+	caption-text="Lorem ipsum caption text"
 	content="Nulla vitae elit libero, a pharetra augue mollis interdum."
 	img-src="https://lorempixel.com/800/400/technics/1/"
 	img-alt="Bild zwei"
@@ -710,22 +710,22 @@
 		<h1>Bild eins!</h1>
 	{/carouselslide}
 	{carouselslide
-	caption='Textcaption2'
-	caption-text='Lorem ipsum2'
+	caption="Textcaption2"
+	caption-text="Lorem ipsum2"
 	img-src="https://lorempixel.com/800/400/technics/3/"
 	img-alt="Bild zwei"}
 		<h1>Bild zwei!</h1>
 	{/carouselslide}
 	{carouselslide
-	caption='Textcaption3'
-	caption-text='Lorem ipsum3'
+	caption="Textcaption3"
+	caption-text="Lorem ipsum3"
 	img-alt="Bild drei"
 	img-src="https://lorempixel.com/800/400/technics/5/"}
 		<h1>Bild drei!</h1>
 	{/carouselslide}
 	{carouselslide
-	caption='Textcaption4'
-	caption-text='Lorem ipsum4'
+	caption="Textcaption4"
+	caption-text="Lorem ipsum4"
 	img-alt="Bild vier"
 	img-src="https://lorempixel.com/800/400/technics/7/"}
 		<h1>Bild vier!</h1>
@@ -734,38 +734,38 @@
 
 	<h2 class="mt-4">Buttongroup</h2>
 	{buttongroup}
-	{button variant='primary'}Button 1{/button}
-	{button variant='primary'}Button 2{/button}
-	{button variant='danger'}Button 3{/button}
-	{button variant='warning'}Button 3{/button}
+	{button variant="primary"}Button 1{/button}
+	{button variant="primary"}Button 2{/button}
+	{button variant="danger"}Button 3{/button}
+	{button variant="warning"}Button 3{/button}
 	{/buttongroup}
 	<h3>Vertical</h3>
 
 	{buttongroup vertical=true}
-	{button variant='info'}Button 1{/button}
-	{button variant='light'}Button 2{/button}
-	{button variant='dark'}Button 3{/button}
-	{button variant='warning'}Button 3{/button}
+	{button variant="info"}Button 1{/button}
+	{button variant="light"}Button 2{/button}
+	{button variant="dark"}Button 3{/button}
+	{button variant="warning"}Button 3{/button}
 	{/buttongroup}
 
 	<h2 class="mt-4">Dropdown</h2>
 
 	{dropdown description="Dropdown Button"}
-	{dropdownitem href='#'}
+	{dropdownitem href="#"}
 		Item1
 	{/dropdownitem}
-	{dropdownitem href='#'}
+	{dropdownitem href="#"}
 		Item2
 	{/dropdownitem}
-	{dropdownitem href='#'}
+	{dropdownitem href="#"}
 		Item3
 	{/dropdownitem}
 	{/dropdown}
 
 	<h2 class="mt-4">Jumbotron</h2>
 	{jumbotron
-	header='Jumbotron Header!'
-	lead='This is the lead.'
+	header="Jumbotron Header!"
+	lead="This is the lead."
 	}
 		<hr class="my-4">
 		<p>
@@ -773,12 +773,12 @@
 		</p>
 		<p>At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet.
 		</p>
-	{button variant='primary'}Great stuff{/button}
+	{button variant="primary"}Great stuff{/button}
 	{/jumbotron}
 
-	{jumbotron bg-variant='info' text-variant='white' border-variant='dark'
-	header='Jumbotron Header!'
-	lead='This is the lead.'
+	{jumbotron bg-variant="info" text-variant="white" border-variant="dark"
+	header="Jumbotron Header!"
+	lead="This is the lead."
 	}
 		<hr class="my-4">
 		<p>
@@ -791,10 +791,10 @@
 
 	<h2 class="mt-4">Tabs</h2>
 	{tabs}
-	{tab title='Tab 1' active=true}content1{/tab}
-	{tab title='Tab 2'}content2{/tab}
-	{tab title='Tab 3'}content3{/tab}
-	{tab title='Tab 4 disabled' disabled=true}content4{/tab}
+	{tab title="Tab 1" active=true}content1{/tab}
+	{tab title="Tab 2"}content2{/tab}
+	{tab title="Tab 3"}content3{/tab}
+	{tab title="Tab 4 disabled" disabled=true}content4{/tab}
 	{/tabs}
 	<br>
 
@@ -834,29 +834,29 @@
 	</div>
 
 	<br>
-	{image src='https://lorempixel.com/60/60/' rounded=true alt='rounded' class='m-1'}
-	{image src='https://lorempixel.com/60/60/' rounded='top' alt='top' class='m-1'}
-	{image src='https://lorempixel.com/60/60/' rounded='right' alt='top' class='m-1'}
-	{image src='https://lorempixel.com/60/60/' rounded='left' alt='left' class='m-1'}
-	{image src='https://lorempixel.com/60/60/' rounded='circle' alt='circle' class='m-1'}
-	{image src='https://lorempixel.com/60/60/' rounded='0' alt='0' class='m-1'}
+	{image src="https://lorempixel.com/60/60/" rounded=true alt="rounded" class="m-1"}
+	{image src="https://lorempixel.com/60/60/" rounded="top" alt="top" class="m-1"}
+	{image src="https://lorempixel.com/60/60/" rounded="right" alt="top" class="m-1"}
+	{image src="https://lorempixel.com/60/60/" rounded="left" alt="left" class="m-1"}
+	{image src="https://lorempixel.com/60/60/" rounded="circle" alt="circle" class="m-1"}
+	{image src="https://lorempixel.com/60/60/" rounded="0" alt="0" class="m-1"}
 
 
 	<h3>Alignment</h3>
 	<div class="clearfix">
-		{image src='https://lorempixel.com/201/201/' height=200 width=200 left=true alt='Left'}
-		{image src='https://lorempixel.com/202/202/' height=200 width=200 right=true alt='Right'}
+		{image src="https://lorempixel.com/201/201/" height=200 width=200 left=true alt="Left"}
+		{image src="https://lorempixel.com/202/202/" height=200 width=200 right=true alt="Right"}
 	</div>
 	<br>
 
-	{image src='https://lorempixel.com/200/200/' center=true alt='Center'}
+	{image src="https://lorempixel.com/200/200/" center=true alt="Center"}
 
 	<br>
 
 
 	<h3>Height/Width</h3>
 
-	{image src='https://lorempixel.com/400/400/' height=300 width=250 alt='300x250'}
+	{image src="https://lorempixel.com/400/400/" height=300 width=250 alt="300x250"}
 
 
 	<h2 class="mt-4">Alerts</h2>
@@ -885,15 +885,15 @@
 	{alert show=true dismissible=true variant="dark"}Dark Alert dismissable{/alert}
 
 	<h2 class="mt-4">Input</h2>
-	{input type='number' placeholder='Number, 3 step!' min=3 max=33 step=3 size=40 style='width:250px'}
-	{input type='text' placeholder='Text!' size=40 style='width:250px'}
+	{input type="number" placeholder="Number, 3 step!" min=3 max=33 step=3 size=40 style="width:250px"}
+	{input type="text" placeholder="Text!" size=40 style="width:250px"}
 	<h2 class="mt-4">Link</h2>
-	{link href='https://shop5.moches.de/' rel='noopener'}This is a link with rel=noopen!!{/link}
-	{link href='https://shop5.moches.de/' target='_blank'}'This is a link with target=_blank!'{/link}
+	{link href="https://shop5.moches.de/" rel="noopener"}This is a link with rel=noopen!!{/link}
+	{link href="https://shop5.moches.de/" target="_blank"}This is a link with target=_blank!{/link}
 	<h2 class="mt-4">Card</h2>
 	{card
-	title='Card mit Bild!'
-	subtitle='Some subtitle...'
+	title="Card mit Bild!"
+	subtitle="Some subtitle..."
 	img-src="https://shop5.moches.de/media/image/product/15511/sm/sonderpreis-bei-einem-lagernden-artikel-sonderpreis-gilt-bis-lagerbestand-10.jpg"
 	img-alt="Image"
 	tag="article"
@@ -908,11 +908,11 @@
 	{/card}
 	<br>
 	{card
-	title='Card mit Header/Footer und Footer-Tag'
-	header='This is the header'
-	footer-tag='footer'
-	footer='This is the footer'
-	subtitle='Some subtitle...'
+	title="Card mit Header/Footer und Footer-Tag"
+	header="This is the header"
+	footer-tag="footer"
+	footer="This is the footer"
+	subtitle="Some subtitle..."
 	tag="article"
 	style="max-width: 20rem;"
 	links=['link nummer 1', 'link nummer 2']
@@ -927,16 +927,16 @@
 	{badge}Testbadge{/badge}
 	{badge active=true}Testbadge active{/badge}
 	{badge disabled=true}Testbadge disabled{/badge}
-	{badge variant='primary'}Primary{/badge}
-	{badge variant='primary' disabled=true}Testbadge primary disabled{/badge}
-	{badge variant='secondary'}Secondary{/badge}
-	{badge variant='success'}Success{/badge}
-	{badge variant='warning'}Warning{/badge}
-	{badge variant='danger'}Danger{/badge}
-	{badge variant='warning'}Warning{/badge}
-	{badge variant='info'}Info{/badge}
-	{badge variant='light'}Light{/badge}
-	{badge variant='dark'}Dark{/badge}
+	{badge variant="primary"}Primary{/badge}
+	{badge variant="primary" disabled=true}Testbadge primary disabled{/badge}
+	{badge variant="secondary"}Secondary{/badge}
+	{badge variant="success"}Success{/badge}
+	{badge variant="warning"}Warning{/badge}
+	{badge variant="danger"}Danger{/badge}
+	{badge variant="warning"}Warning{/badge}
+	{badge variant="info"}Info{/badge}
+	{badge variant="light"}Light{/badge}
+	{badge variant="dark"}Dark{/badge}
 	<h2 class="mt-4">ListGroup</h2>
 	{listgroup}
 	{listgroupitem id='el1'}Element 1 mit id{/listgroupitem}
@@ -945,31 +945,31 @@
 	{/listgroup}
 	<br>
 	{listgroup}
-	{listgroupitem tag='button'}Element 1 als Button{/listgroupitem}
-	{listgroupitem tag='button'}Element 2 als Button{/listgroupitem}
-	{listgroupitem tag='button'}Noch eins{/listgroupitem}
+	{listgroupitem tag="button"}Element 1 als Button{/listgroupitem}
+	{listgroupitem tag="button"}Element 2 als Button{/listgroupitem}
+	{listgroupitem tag="button"}Noch eins{/listgroupitem}
 	{/listgroup}
 	<br>
 	{listgroup}
-	{listgroupitem variant='primary'}Element primary{/listgroupitem}
-	{listgroupitem variant='secondary'}Element secondary{/listgroupitem}
-	{listgroupitem variant='success'}Element success{/listgroupitem}
-	{listgroupitem variant='danger'}Element danger{/listgroupitem}
-	{listgroupitem variant='warning'}Element warning{/listgroupitem}
-	{listgroupitem variant='info'}Element info{/listgroupitem}
-	{listgroupitem variant='light'}Element light{/listgroupitem}
-	{listgroupitem variant='dark'}Element dark{/listgroupitem}
+	{listgroupitem variant="primary"}Element primary{/listgroupitem}
+	{listgroupitem variant="secondary"}Element secondary{/listgroupitem}
+	{listgroupitem variant="success"}Element success{/listgroupitem}
+	{listgroupitem variant="danger"}Element danger{/listgroupitem}
+	{listgroupitem variant="warning"}Element warning{/listgroupitem}
+	{listgroupitem variant="info"}Element info{/listgroupitem}
+	{listgroupitem variant="light"}Element light{/listgroupitem}
+	{listgroupitem variant="dark"}Element dark{/listgroupitem}
 	{/listgroup}
 	<br>
-	{listgroup tag='ul'}
-	{listgroupitem tag='li'}Element 1 - li{/listgroupitem}
-	{listgroupitem tag='li' active=true}Element 2 - li active{/listgroupitem}
-	{listgroupitem tag='li'}Noch eins - li{/listgroupitem}
-	{listgroupitem tag='li' disabled=true}disabled li{/listgroupitem}
+	{listgroup tag="ul"}
+	{listgroupitem tag="li"}Element 1 - li{/listgroupitem}
+	{listgroupitem tag="li" active=true}Element 2 - li active{/listgroupitem}
+	{listgroupitem tag="li"}Noch eins - li{/listgroupitem}
+	{listgroupitem tag="li" disabled=true}disabled li{/listgroupitem}
 	{/listgroup}
 
 	{card
-	header='Card with listgroup'
+	header="Card with listgroup"
 	tag="article"
 	style="max-width: 20rem;"
 	hasBody=false
@@ -983,10 +983,10 @@
 	{/card}
 
 	<h2 class="mt-4">Modal</h2>
-	{modal title='Titel des Modals' id='exampleModal' centered=true}
-		Dies ist der Inhalt des Modals mitsamt einem Input {input type='text' value='Beispiel'}
+	{modal title="Titel des Modals" id="exampleModal" centered=true}
+		Dies ist der Inhalt des Modals mitsamt einem Input {input type="text" value="Beispiel"}
 	{/modal}
-	{button variant='primary' data=['toggle'=>'modal', 'target'=>'#exampleModal']}Open modal dialog{/button}
+	{button variant="primary" data=['toggle'=>'modal', 'target'=>'#exampleModal']}Open modal dialog{/button}
 	<hr>
 
 </div>
