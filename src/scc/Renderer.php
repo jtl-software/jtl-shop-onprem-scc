@@ -7,7 +7,6 @@
 namespace scc;
 
 use scc\exceptions\ComponentAlreadyRegisteredException;
-use JTL\Smarty\JTLSmarty;
 
 /**
  * Class Renderer
@@ -16,7 +15,7 @@ use JTL\Smarty\JTLSmarty;
 class Renderer implements RendererInterface
 {
     /**
-     * @var \JTLSmarty
+     * @var JTL\Smarty\JTLSmarty|\Smarty
      */
     protected $smarty;
 
