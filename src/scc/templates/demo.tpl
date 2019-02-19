@@ -31,8 +31,7 @@
 	{progress now=25 min=0 max=100 animated=true striped=true}<br>
 	{progress now=50 min=0 max=100 animated=true striped=false type='danger'}<br>
 	{progress now=75 min=0 max=100 animated=true striped=true type='success'}<br>
-	{progress now=85 min=0 max=100 animated=false striped=true type='info' height="50px"}<br>
-
+	{progress now=85 min=0 max=100 animated=true striped=true type='info' height="50px"}<br>
 
 	<h2 class="mt-4">Embed</h2>
 	<h3 class="mt-4">Youtube via iframe</h3>
