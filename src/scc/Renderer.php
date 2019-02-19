@@ -20,6 +20,8 @@ class Renderer implements RendererInterface
      */
     protected $smarty;
 
+    protected const TEMPLATES_DIR = __DIR__ . '/' . 'templates';
+
     /**
      * Renderer constructor.
      * @param JTLSmarty $smarty
@@ -27,7 +29,7 @@ class Renderer implements RendererInterface
     public function __construct(JTLSmarty $smarty)
     {
         $this->smarty = $smarty;
-        $this->smarty->addTemplateDir(__DIR__ . '/templates', __NAMESPACE__);
+        $this->smarty->addTemplateDir(self::TEMPLATES_DIR, __NAMESPACE__);
     }
 
     /**
