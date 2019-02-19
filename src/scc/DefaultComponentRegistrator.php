@@ -66,6 +66,7 @@ use scc\components\RadioGroup;
 use scc\components\Row;
 use scc\components\Select;
 use scc\components\Tab;
+use scc\components\Table;
 use scc\components\Tabs;
 use scc\components\Textarea;
 
@@ -156,5 +157,6 @@ class DefaultComponentRegistrator
         $this->renderer->registerComponent(new Breadcrumb());
         $this->renderer->registerComponent(new BreadcrumbItem());
         $this->renderer->registerComponent(new CSRFToken());
+        $this->renderer->registerComponent(new Table());
     }
 }

@@ -1,5 +1,4 @@
 <ul
-    aria-label="{$params.ariaLabel->getValue()}"
     class="pagination pagination-{$params.size->getValue()} justify-content-{$params.align->getValue()}"
     {if $params.itemprop->hasValue()}itemprop="{$params.itemprop->getValue()}"{/if}
     {if $params.itemscope->getValue() === true}itemscope {/if}
