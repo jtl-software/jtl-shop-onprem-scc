@@ -38,11 +38,12 @@ class NestedBlockRenderer implements ComponentRendererInterface
      */
     public function render(array $params, ...$args): string
     {
-        $content = $args[0];
+        [$content, $tpl] = $args;
         if ($content === null) {
+            $tpl->smarty->assign('parentBlockParams', $params);
+
             return '';
         }
-        $tpl    = $args[1];
         $params = $this->mergeParams($this->component->getParams(), $params);
 
         return $tpl->assign('params', $params)
