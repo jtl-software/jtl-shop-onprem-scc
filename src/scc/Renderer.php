@@ -23,9 +23,9 @@ class Renderer implements RendererInterface
 
     /**
      * Renderer constructor.
-     * @param JTLSmarty $smarty
+     * @param JTL\Smarty\JTLSmarty|\Smarty $smarty
      */
-    public function __construct(JTLSmarty $smarty)
+    public function __construct($smarty)
     {
         $this->smarty = $smarty;
         $this->smarty->addTemplateDir(self::TEMPLATES_DIR, __NAMESPACE__);
