@@ -27,6 +27,42 @@
 	}
 </style>
 <div id="app" class="container">
+
+	<h2 class="mt-4">Nav</h2>
+	<div>
+		{navbar toggleable="lg" type="dark" variant="info"}
+			{navbarbrand href="#"}NavBar{/navbarbrand}
+
+			{navbartoggle target="nav_collapse"}
+
+			{collapse is-nav=true id="nav_collapse"}
+				{navbarnav}
+					{navitem href="#"}Link{/navitem}
+					{navitem href="#" disabled=true}Disabled{/navitem}
+				{/navbarnav}
+				{navbarnav class="ml-auto"}
+					{navitemdropdown text="Lang" right=true}
+						{dropdownitem href="#"}EN{/dropdownitem}
+						{dropdownitem href="#"}ES{/dropdownitem}
+						{dropdownitem href="#"}RU{/dropdownitem}
+						{dropdownitem href="#"}FA{/dropdownitem}
+					{/navitemdropdown}
+
+					{navitemdropdown text="User" right=true}
+						{dropdownitem href="#"}Profile{/dropdownitem}
+						{dropdownitem href="#"}Signout{/dropdownitem}
+					{/navitemdropdown}
+				{/navbarnav}
+				{navform}
+					{input size="sm" class="mr-sm-2" type="text" placeholder="Search"}
+					{button size="sm" class="my-2 my-sm-0" type="submit"}
+						Search
+					{/button}
+				{/navform}
+			{/collapse}
+		{/navbar}
+	</div>
+
 	<h2 class="mt-4">Progress</h2>
 	{progress now=25 min=0 max=100 animated=true striped=true}<br>
 	{progress now=50 min=0 max=100 animated=true striped=false type="danger"}<br>
