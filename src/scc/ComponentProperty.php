@@ -25,7 +25,7 @@ class ComponentProperty implements ComponentPropertyInterface
     /**
      * @var string
      */
-    private $type;
+    private $type = ComponentPropertyType::TYPE_STRING;
 
     /**
      * @var string
@@ -53,8 +53,6 @@ class ComponentProperty implements ComponentPropertyInterface
         }
         if ($type !== null) {
             $this->setType($type);
-        } else {
-            $this->setType(ComponentPropertyType::TYPE_STRING);
         }
     }
 

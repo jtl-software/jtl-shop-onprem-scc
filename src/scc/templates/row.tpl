@@ -1,9 +1,9 @@
 {$class = "row {$params.class->getValue()}"}
-{if $params.alignH->hasValue()}
-    {$class = "{$class} justify-content-{$params.alignH->getValue()}"}
+{if $params['align-h']->hasValue()}
+    {$class = "{$class} justify-content-{$params['align-h']->getValue()}"}
 {/if}
-{if $params.alignV->hasValue()}
-    {$class = "{$class} align-items-{$params.alignV->getValue()}"}
+{if $params['align-v']->hasValue()}
+    {$class = "{$class} align-items-{$params['align-v']->getValue()}"}
 {/if}
 
 <{$params.tag->getValue()}

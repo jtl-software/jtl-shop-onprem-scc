@@ -14,7 +14,7 @@
     {if $params.sizes->hasValue()}sizes="{$params.sizes->getValue()}"{/if}
     class="{$params.class->getValue()} {$rounded}
         {if $params.fluid->getValue() === true} img-fluid{/if}
-        {if $params.fluidGrow->getValue() === true} img-fluid w-100{/if}
+        {if $params['fluid-grow']->getValue() === true} img-fluid w-100{/if}
         {if $params.thumbnail->getValue() === true} img-thumbnail{/if}
         {if $params.left->getValue() === true} float-left{/if}
         {if $params.right->getValue() === true} float-right{/if}

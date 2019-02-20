@@ -1,5 +1,5 @@
 <{$params.tag->getValue()}
-    class="d-flex align-self-{$params.verticalAlign->getValue()}"
+    class="d-flex align-self-{$params['vertical-align']->getValue()}"
     {if $params.itemprop->hasValue()}itemprop="{$params.itemprop->getValue()}"{/if}
     {if $params.itemscope->getValue() === true}itemscope {/if}
     {if $params.itemtype->hasValue()}itemtype="{$params.itemtype->getValue()}"{/if}

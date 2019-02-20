@@ -13,7 +13,7 @@
     {if $params.aria->hasValue()}{foreach $params.aria->getValue() as $ariaKey => $ariaVal}aria-{$ariaKey}="{$ariaVal}" {/foreach}{/if}
     {if $params.data->hasValue()}{foreach $params.data->getValue() as $dataKey => $dataVal}data-{$dataKey}="{$dataVal}" {/foreach}{/if}>
 {if $params.dismissible->getValue() === true}
-    <button type="button" aria-label="{$params.dismissLabel->getValue()}" class="close" data-dismiss="alert">
+    <button type="button" aria-label="{$params['dismiss-label']->getValue()}" class="close" data-dismiss="alert">
         <span aria-hidden="true">&times;</span>
     </button>
 {/if}

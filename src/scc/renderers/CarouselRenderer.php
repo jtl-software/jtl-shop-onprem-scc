@@ -6,16 +6,12 @@
 
 namespace scc\renderers;
 
-use scc\ComponentRendererTrait;
-
 /**
  * Class CarouselRenderer
  * @package scc\renderers
  */
 class CarouselRenderer extends BlockRenderer
 {
-    use ComponentRendererTrait;
-
     /**
      * @inheritdoc
      */

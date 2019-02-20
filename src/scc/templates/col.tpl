@@ -2,17 +2,17 @@
 {if $params.offset->hasValue()}
     {$class = "{$class} offset-{$params.offset->getValue()}"}
 {/if}
-{if $params.offsetSm->hasValue()}
-    {$class = "{$class} offset-sm-{$params.offsetSm->getValue()}"}
+{if $params['offset-sm']->hasValue()}
+    {$class = "{$class} offset-sm-{$params['offset-sm']->getValue()}"}
 {/if}
-{if $params.offsetMd->hasValue()}
-    {$class = "{$class} offset-md-{$params.offsetMd->getValue()}"}
+{if $params['offset-md']->hasValue()}
+    {$class = "{$class} offset-md-{$params['offset-md']->getValue()}"}
 {/if}
-{if $params.offsetLg->hasValue()}
-    {$class = "{$class} offset-lg-{$params.offsetLg->getValue()}"}
+{if $params['offset-lg']->hasValue()}
+    {$class = "{$class} offset-lg-{$params['offset-lg']->getValue()}"}
 {/if}
-{if $params.offsetXl->hasValue()}
-    {$class = "{$class} offset-xl-{$params.offsetXl->getValue()}"}
+{if $params['offset-xl']->hasValue()}
+    {$class = "{$class} offset-xl-{$params['offset-xl']->getValue()}"}
 {/if}
 {if $params.sm->getValue() === true}
     {$class = "{$class} col-sm"}
@@ -37,23 +37,23 @@
 {if $params.order->hasValue()}
     {$class = "{$class} order-{$params.order->getValue()}"}
 {/if}
-{if $params.orderSm->hasValue()}
-    {$class = "{$class} order-sm-{$params.orderSm->getValue()}"}
+{if $params['order-sm']->hasValue()}
+    {$class = "{$class} order-sm-{$params['order-sm']->getValue()}"}
 {/if}
-{if $params.orderMd->hasValue()}
-    {$class = "{$class} order-md-{$params.orderMd->getValue()}"}
+{if $params['order-md']->hasValue()}
+    {$class = "{$class} order-md-{$params['order-md']->getValue()}"}
 {/if}
-{if $params.orderLg->hasValue()}
-    {$class = "{$class} order-lg-{$params.orderLg->getValue()}"}
+{if $params['order-lg']->hasValue()}
+    {$class = "{$class} order-lg-{$params['order-lg']->getValue()}"}
 {/if}
-{if $params.orderXl->hasValue()}
-    {$class = "{$class} order-xl-{$params.orderXl->getValue()}"}
+{if $params['order-xl']->hasValue()}
+    {$class = "{$class} order-xl-{$params['order-xl']->getValue()}"}
 {/if}
 {if $params.cols->hasValue()}
     {$class = "{$class} col-{$params.cols->getValue()}"}
 {/if}
-{if $params.alignSelf->hasValue()}
-    {$class = "{$class} align-self-{$params.alignSelf->getValue()}"}
+{if $params['align-self']->hasValue()}
+    {$class = "{$class} align-self-{$params['align-self']->getValue()}"}
 {/if}
 
 <{$params.tag->getValue()}

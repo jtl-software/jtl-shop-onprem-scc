@@ -8,7 +8,7 @@ namespace scc\renderers;
 
 use scc\ComponentInterface;
 use scc\ComponentRendererInterface;
-use scc\ComponentRendererTrait;
+use scc\ComponentPropertyType;
 
 /**
  * Class BlockRenderer
@@ -16,8 +16,6 @@ use scc\ComponentRendererTrait;
  */
 class BlockRenderer implements ComponentRendererInterface
 {
-    use ComponentRendererTrait;
-
     /**
      * @var ComponentInterface
      */
@@ -51,5 +49,28 @@ class BlockRenderer implements ComponentRendererInterface
                    ->assign('blockContent', $content)
                    ->assign('parentSmarty', $tpl->smarty)
                    ->fetch($this->component->getTemplate());
+    }
+
+    /**
+     * @param ComponentPropertyInterface[] $base
+     * @param array                        $dynamic
+     * @return ComponentPropertyInterface[]
+     */
+    protected function mergeParams(array $base, array $dynamic): array
+    {
+        $merged = [];
+        foreach ($base as $param) {
+            $name = $param->getName();
+            if (isset($dynamic[$name])) {
+                $param->setValue($dynamic[$name]);
+            } elseif ($param->getType() === ComponentPropertyType::TYPE_UNIQUEID) {
+                $param->setValue(\uniqid('', false));
+            } else {
+                $param->setValue($param->getDefaultValue());
+            }
+            $merged[$name] = $param;
+        }
+
+        return $merged;
     }
 }

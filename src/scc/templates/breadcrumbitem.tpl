@@ -10,15 +10,15 @@
 	{if $params.aria->hasValue()}{foreach $params.aria->getValue() as $ariaKey => $ariaVal}aria-{$ariaKey}="{$ariaVal}" {/foreach}{/if}
 	{if $params.data->hasValue()}{foreach $params.data->getValue() as $dataKey => $dataVal}data-{$dataKey}="{$dataVal}" {/foreach}{/if}
 	>
-	<{$params.routerTag->getValue()} class="breadcrumb-link
-	{if $params.active->getValue() === true} {$params.activeClass->getValue()}{/if}
+	<{$params['router-tag']->getValue()} class="breadcrumb-link
+	{if $params.active->getValue() === true} {$params['active-class']->getValue()}{/if}
 	{if $params.disabled->getValue() === true} disabled{/if}"
 	{if $params.nofollow->getValue() === true} rel="nofollow"{/if}
 	{if $params.title->hasValue() === true} title="{$params.title->getValue()}"{/if}
 	target="{$params.target->getValue()}"
 	{if $params.href->hasValue()}href="{$params.href->getValue()}"{/if}
-	{if $params.routerTagItemprop->hasValue()}itemprop="{$params.routerTagItemprop->getValue()}"{/if}
+	{if $params['router-tag-itemprop']->hasValue()}itemprop="{$params['router-tag-itemprop']->getValue()}"{/if}
 >
 {$blockContent}
-</{$params.routerTag->getValue()}>
+</{$params['router-tag']->getValue()}>
 </{$params.tag->getValue()}>

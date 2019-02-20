@@ -8,31 +8,13 @@ namespace scc\renderers;
 
 use scc\ComponentInterface;
 use scc\ComponentRendererInterface;
-use scc\ComponentRendererTrait;
 
 /**
  * Class NestedBlockRenderer
  * @package scc\renderers
  */
-class NestedBlockRenderer implements ComponentRendererInterface
+class NestedBlockRenderer extends BlockRenderer
 {
-    use ComponentRendererTrait;
-
-    /**
-     * @var ComponentInterface
-     */
-    protected $component;
-
-    /**
-     * BlockRenderer constructor.
-     *
-     * @param ComponentInterface $component
-     */
-    public function __construct(ComponentInterface $component)
-    {
-        $this->component = $component;
-    }
-
     /**
      * @inheritdoc
      */

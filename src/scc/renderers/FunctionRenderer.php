@@ -8,31 +8,13 @@ namespace scc\renderers;
 
 use scc\ComponentInterface;
 use scc\ComponentRendererInterface;
-use scc\ComponentRendererTrait;
 
 /**
  * Class FunctionRenderer
  * @package scc\renderers
  */
-class FunctionRenderer implements ComponentRendererInterface
+class FunctionRenderer extends BlockRenderer
 {
-    use ComponentRendererTrait;
-
-    /**
-     * @var ComponentInterface
-     */
-    protected $component;
-
-    /**
-     * FunctionRenderer constructor.
-     *
-     * @param ComponentInterface $component
-     */
-    public function __construct(ComponentInterface $component)
-    {
-        $this->component = $component;
-    }
-
     /**
      * @inheritdoc
      */

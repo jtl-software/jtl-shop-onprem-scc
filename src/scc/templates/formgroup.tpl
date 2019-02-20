@@ -2,7 +2,7 @@
 {*If an input ID is provided to the label-for prop, then a <div> with <label> will be rendered.*}
 {assign var=id value=$params.id->getValue()|default:uniqid()}
 {assign var=breakPoint value=$params.breakpoint->getValue()}
-{if $params.labelFor->hasValue()}
+{if $params['label-for']->hasValue()}
     <div id="{$id}" aria-labelledby="form-group-label-{$id}" class="form-group"
         {if $params.itemprop->hasValue()}itemprop="{$params.itemprop->getValue()}"{/if}
         {if $params.itemscope->getValue() === true}itemscope {/if}
@@ -15,10 +15,10 @@
         {if $params.horizontal->getValue() === true}
             <div class="form-row">
         {/if}
-        <label id="form-group-label-{$id}" for="{$params.labelFor->getValue()}" class="col-form-label pt-0{if $params.horizontal->getValue() === true} col-{$breakPoint}-{$params.labelCols->getValue()}{/if}{if $params.labelSize->hasValue()} col-form-label-{$params.labelSize->getValue()}{/if}">
+        <label id="form-group-label-{$id}" for="{$params['label-for']->getValue()}" class="col-form-label pt-0{if $params.horizontal->getValue() === true} col-{$breakPoint}-{$params['label-cols']->getValue()}{/if}{if $params['label-size']->hasValue()} col-form-label-{$params['label-size']->getValue()}{/if}">
             {$params.label->getValue()}
         </label>
-        <div class="{if $params.horizontal->getValue() === true}col-{$breakPoint}-{12 - $params.labelCols->getValue()}{/if}">
+        <div class="{if $params.horizontal->getValue() === true}col-{$breakPoint}-{12 - $params['label-cols']->getValue()}{/if}">
             {$blockContent}
             {if $params.description->hasValue()}
                 <small id="form-group-description-{$id}" class="form-text text-muted">{$params.description->getValue()}</small>
@@ -46,11 +46,11 @@
             {if $params.label->hasValue()}
                 <legend
                         id="form-group-label-{$id}"
-                        class="col-form-label{if $params.horizontal->getValue() === true} col-{$breakPoint}-{$params.labelCols->getValue()}{/if}{if $params.labelSize->hasValue()} col-form-label-{$params.labelSize->getValue()}{/if} pt-0">
+                        class="col-form-label{if $params.horizontal->getValue() === true} col-{$breakPoint}-{$params['label-cols']->getValue()}{/if}{if $params['label-size']->hasValue()} col-form-label-{$params['label-size']->getValue()}{/if} pt-0">
                     {$params.label->getValue()}
                 </legend>
             {/if}
-            <div{if $params.horizontal->getValue() === true} class="col-{$breakPoint}-{12 - $params.labelCols->getValue()}"{/if}>
+            <div{if $params.horizontal->getValue() === true} class="col-{$breakPoint}-{12 - $params['label-cols']->getValue()}"{/if}>
                 {$blockContent}
                 {if $params.description->hasValue()}
                     <small id="form-group-description-{$id}" class="form-text text-muted">{$params.description->getValue()}</small>

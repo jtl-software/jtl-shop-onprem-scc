@@ -10,15 +10,15 @@
     {if $params.data->hasValue()}{foreach $params.data->getValue() as $dataKey => $dataVal}data-{$dataKey}="{$dataVal}" {/foreach}{/if}
 >
     <a class="nav-link nav-link-custom
-        {if $params.noCaret->getValue() === false} dropdown-toggle{/if}
+        {if $params['no-caret']->getValue() === false} dropdown-toggle{/if}
         {if $params.disabled->getValue() === true} disabled{/if}"
         href="#"
         data-toggle="dropdown"
         aria-haspopup="true"
         aria-expanded="false"
         role="{if $params.role->hasValue()}{$params.role->getValue()}{else}button{/if}"
-        {if $params.routerAria->hasValue()}{foreach $params.routerAria->getValue() as $ariaKey => $ariaVal}aria-{$ariaKey}="{$ariaVal}" {/foreach}{/if}
-        {if $params.routerData->hasValue()}{foreach $params.routerData->getValue() as $dataKey => $dataVal}data-{$dataKey}="{$dataVal}" {/foreach}{/if}
+        {if $params['router-aria']->hasValue()}{foreach $params['router-aria']->getValue() as $ariaKey => $ariaVal}aria-{$ariaKey}="{$ariaVal}" {/foreach}{/if}
+        {if $params['router-data']->hasValue()}{foreach $params['router-data']->getValue() as $dataKey => $dataVal}data-{$dataKey}="{$dataVal}" {/foreach}{/if}
     >
         {$params.text->getValue()}
     </a>

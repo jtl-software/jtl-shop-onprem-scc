@@ -50,7 +50,7 @@
     </div>
 {else}
     <label
-        class="btn btn-{$parentParams.buttonVariant->getValue()} btn-{$parentParams.size->getValue()}{if $params.disabled->getValue() === true} disabled{/if}"
+        class="btn btn-{$parentParams['button-variant']->getValue()} btn-{$parentParams.size->getValue()}{if $params.disabled->getValue() === true} disabled{/if}"
         {if $params.itemprop->hasValue()}itemprop="{$params.itemprop->getValue()}"{/if}
         {if $params.itemscope->getValue() === true}itemscope {/if}
         {if $params.itemtype->hasValue()}itemtype="{$params.itemtype->getValue()}"{/if}

@@ -10,16 +10,16 @@
     {if $params.aria->hasValue()}{foreach $params.aria->getValue() as $ariaKey => $ariaVal}aria-{$ariaKey}="{$ariaVal}" {/foreach}{/if}
     {if $params.data->hasValue()}{foreach $params.data->getValue() as $dataKey => $dataVal}data-{$dataKey}="{$dataVal}" {/foreach}{/if}
 >
-    {if $params.imgSrc->hasValue()}
-        <img class="d-block w-100" src="{$params.imgSrc->getValue()}" alt="{$params.imgAlt->getValue()}">
+    {if $params['img-src']->hasValue()}
+        <img class="d-block w-100" src="{$params['img-src']->getValue()}" alt="{$params['img-alt']->getValue()}">
         {if $params.caption->hasValue()}
         <div class="carousel-caption d-none d-md-block">
-            <{$params.captionTag->getValue()}>
+            <{$params['caption-tag']->getValue()}>
                 {$params.caption->getValue()}
-            </{$params.captionTag->getValue()}>
-            <{$params.captionTextTag->getValue()}>
-                {$params.captionText->getValue()}
-            </{$params.captionTextTag->getValue()}>
+            </{$params['caption-tag']->getValue()}>
+            <{$params['caption-text-tag']->getValue()}>
+                {$params['caption-text']->getValue()}
+            </{$params['caption-text-tag']->getValue()}>
         </div>
         {/if}
     {/if}
