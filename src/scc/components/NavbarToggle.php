@@ -13,7 +13,7 @@ use scc\ComponentPropertyType;
  * Class NavbarToggle
  * @package scc\components
  */
-class NavbarToggle extends AbstractBlockComponent
+class NavbarToggle extends AbstractFunctionComponent
 {
     /**
      * NavbarToggle constructor.
