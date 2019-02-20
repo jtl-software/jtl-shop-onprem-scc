@@ -28,6 +28,51 @@
 </style>
 <div id="app" class="container">
 
+	<h2 class="mt-4">Collapse</h2>
+
+	{button href="#test-collapse" data=["toggle"=>"collapse"] role="button" aria=["expanded"=>"true","controls"=>"test-collapse"]}
+		Toggle 1
+	{/button}
+	{collapse id="test-collapse" class="mt-2"}
+		{card}Hallo Welt!{/card}
+	{/collapse}
+	<hr>
+	{button href="#test-collapse2" data=["toggle"=>"collapse"] role="button" aria=["expanded"=>"true","controls"=>"test-collapse"]}
+		Toggle 2
+	{/button}
+	{collapse id="test-collapse2" class="mt-2" visible=true}
+	{card}Shown per default!{/card}
+	{/collapse}
+
+	<h3 class="mt-4">Accordion</h3>
+	<div class="accordion" id="accordion">
+
+	{card no-body=true}
+		{cardheader id="tab-1-head" data=["toggle" => "collapse", "target"=>"#tab-1"]}First{/cardheader}
+		{collapse id="tab-1" class="mb-2" visible=true data=["parent"=>"#accordion"] aria=["labelledby"=>"tab-1-head"]}
+			{cardbody}Does everybody know that pig named Lorem Ipsum? She's a disgusting pig, right? I write the best placeholder text, and I'm the biggest developer on the web by far... While that's mock-ups and this is politics, are they really so different?
+			{/cardbody}
+		{/collapse}
+	{/card}
+	{card no-body=true}
+		{cardheader id="tab-3-head" data=["toggle" => "collapse", "target"=>"#tab-2"]}Second{/cardheader}
+		{collapse id="tab-2" class="mb-2" data=["parent"=>"#accordion"] aria=["labelledby"=>"tab-2-head"]}
+			{cardbody}
+				I think the only difference between me and the other placeholder text is that I’m more honest and my words are more beautiful. I'm speaking with myself, number one, because I have a very good brain and I've said a lot of things. Look at that text! Would anyone use that? Can you imagine that, the text of your next webpage?! This placeholder text is gonna be HUGE.
+			{/cardbody}
+		{/collapse}
+	{/card}
+
+	{card no-body=true}
+		{cardheader id="tab-3-head" data=["toggle" => "collapse", "target"=>"#tab-3"]}Third{/cardheader}
+		{collapse id="tab-3" class="mb-2" data=["parent"=>"#accordion"] aria=["labelledby"=>"tab-3-head"]}
+			{cardbody}
+				All of the words in Lorem Ipsum have flirted with me - consciously or unconsciously. That's to be expected. Does everybody know that pig named Lorem Ipsum? She's a disgusting pig, right? Despite the constant negative ipsum covfefe. We have so many things that we have to do better... and certainly ipsum is one of them. An 'extremely credible source' has called my office and told me that Lorem Ipsum's birth certificate is a fraud.
+			{/cardbody}
+		{/collapse}
+	{/card}
+	</div>
+
 	<h2 class="mt-4">Nav</h2>
 	<div>
 		{navbar toggleable="lg" type="dark" variant="info"}
@@ -68,6 +113,7 @@
 	{progress now=50 min=0 max=100 animated=true striped=false type="danger"}<br>
 	{progress now=75 min=0 max=100 animated=true striped=true type="success"}<br>
 	{progress now=85 min=0 max=100 animated=false striped=true type="info" height="50px"}<br>
+
 
 
 	<h2 class="mt-4">Embed</h2>
