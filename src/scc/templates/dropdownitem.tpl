@@ -7,7 +7,6 @@ class="dropdown-item {$params.class}{if $params.active->getValue() === true} act
     {if $params.style->hasValue()} style="{$params.style->getValue()}"{/if}
     {if $params.id->hasValue()} id="{$params.id->getValue()}"{/if}
     {if $params.disabled->getValue() === true} aria-disabled="true"{/if}
-    {if $params.href->hasValue()} href="{$params.href->getValue()}"{/if}
     {if $params.rel->hasValue()}rel="{$params.rel->getValue()}" {/if}
     {if $params.itemprop->hasValue()}itemprop="{$params.itemprop->getValue()}"{/if}
     {if $params.itemscope->getValue() === true}itemscope {/if}
