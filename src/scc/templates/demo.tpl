@@ -50,7 +50,10 @@
 	{card no-body=true}
 		{cardheader id="tab-1-head" data=["toggle" => "collapse", "target"=>"#tab-1"]}First{/cardheader}
 		{collapse id="tab-1" class="mb-2" visible=true data=["parent"=>"#accordion"] aria=["labelledby"=>"tab-1-head"]}
-			{cardbody}Does everybody know that pig named Lorem Ipsum? She's a disgusting pig, right? I write the best placeholder text, and I'm the biggest developer on the web by far... While that's mock-ups and this is politics, are they really so different?
+			{cardbody}
+				Does everybody know that pig named Lorem Ipsum? She's a disgusting pig, right?
+				I write the best placeholder text, and I'm the biggest developer on the web by far...
+				While that's mock-ups and this is politics, are they really so different?
 			{/cardbody}
 		{/collapse}
 	{/card}
@@ -58,7 +61,9 @@
 		{cardheader id="tab-3-head" data=["toggle" => "collapse", "target"=>"#tab-2"]}Second{/cardheader}
 		{collapse id="tab-2" class="mb-2" data=["parent"=>"#accordion"] aria=["labelledby"=>"tab-2-head"]}
 			{cardbody}
-				I think the only difference between me and the other placeholder text is that I’m more honest and my words are more beautiful. I'm speaking with myself, number one, because I have a very good brain and I've said a lot of things. Look at that text! Would anyone use that? Can you imagine that, the text of your next webpage?! This placeholder text is gonna be HUGE.
+				I think the only difference between me and the other placeholder text is that I’m more honest and my words are more beautiful.
+				I'm speaking with myself, number one, because I have a very good brain and I've said a lot of things.
+				Look at that text! Would anyone use that? Can you imagine that, the text of your next webpage?! This placeholder text is gonna be HUGE.
 			{/cardbody}
 		{/collapse}
 	{/card}
@@ -67,7 +72,10 @@
 		{cardheader id="tab-3-head" data=["toggle" => "collapse", "target"=>"#tab-3"]}Third{/cardheader}
 		{collapse id="tab-3" class="mb-2" data=["parent"=>"#accordion"] aria=["labelledby"=>"tab-3-head"]}
 			{cardbody}
-				All of the words in Lorem Ipsum have flirted with me - consciously or unconsciously. That's to be expected. Does everybody know that pig named Lorem Ipsum? She's a disgusting pig, right? Despite the constant negative ipsum covfefe. We have so many things that we have to do better... and certainly ipsum is one of them. An 'extremely credible source' has called my office and told me that Lorem Ipsum's birth certificate is a fraud.
+				All of the words in Lorem Ipsum have flirted with me - consciously or unconsciously.
+				That's to be expected. Does everybody know that pig named Lorem Ipsum? She's a disgusting pig, right?
+				Despite the constant negative ipsum covfefe. We have so many things that we have to do better... and certainly ipsum is one of them.
+				An 'extremely credible source' has called my office and told me that Lorem Ipsum's birth certificate is a fraud.
 			{/cardbody}
 		{/collapse}
 	{/card}
@@ -114,8 +122,6 @@
 	{progress now=75 min=0 max=100 animated=true striped=true type="success"}<br>
 	{progress now=85 min=0 max=100 animated=false striped=true type="info" height="50px"}<br>
 
-
-
 	<h2 class="mt-4">Embed</h2>
 	<h3 class="mt-4">Youtube via iframe</h3>
 	{embed type="iframe"
@@ -152,10 +158,12 @@
 	{table fields=['id', 'name', 'age'] items=$table1 striped=true small=true caption="Small table without heading" responsive=true}
 
 	<h6 class="mt-4">Labels</h6>
-	{table fields=['id' => ['label' => '#'], 'name' => ['label' => 'Vorname'], 'age' => ['label' => 'Alter']] items=$table1 striped=true hover=true bordered=true caption="With labels" responsive="sm"}
+	{table fields=['id' => ['label' => '#'], 'name' => ['label' => 'Vorname'], 'age' => ['label' => 'Alter']]
+		items=$table1 striped=true hover=true bordered=true caption="With labels" responsive="sm"}
 
 	<h6 class="mt-4">Labels</h6>
-	{table fields=['id' => ['label' => '#'], 'name' => ['label' => 'Vorname'], 'age' => ['label' => 'Alter'], 'address' => ['label' => 'PLZ', 'key' => 'plz']] items=$table1 striped=true hover=true bordered=true dark=true}
+	{table fields=['id' => ['label' => '#'], 'name' => ['label' => 'Vorname'], 'age' => ['label' => 'Alter'], 'address' => ['label' => 'PLZ', 'key' => 'plz']]
+		items=$table1 striped=true hover=true bordered=true dark=true}
 
 
 	{*<h2 class="mt-4">Pagination</h2>*}
@@ -366,82 +374,68 @@
 
 	<h2 class="mt-4">Form</h2>
 	{form id="sampleform" action='https://shop5.moches.de' method='post'}
-	{formgroup id="exampleInputGroup1"
-	label="Email address:"
-	label-for="exampleInput1"
-	description="We'll never share your email with anyone else."}
-	{input id="exampleInput1"
-	type="email"
-	required=true
-	placeholder="Enter email"}
-	{/formgroup}
-	{formgroup id="exampleInputGroup2"
-	label="Your Name:"
-	label-for="exampleInput2"}
-	{input id="exampleInput2"
-	type="text"
-	required=true
-	placeholder="Enter name"}
-	{/formgroup}
-	{formgroup id="exampleInputGroup3"
-	label="Food:"
-	label-for="exampleInput3"}
-	{select id="exampleInput3"
-	required=true}
-		<option value="carrot">Carrot</option>
-		<option value="strawberry">Strawberry</option>
-		<option value="raspberry">Respberry</option>
-	{/select}
-	{/formgroup}
-	{formgroup id="exampleGroup4"}
-	{checkboxgroup id="exampleChecks"}
-	{checkbox value="me"}Check me out{/checkbox}
-	{checkbox value="that"}Check that out{/checkbox}
-	{/checkboxgroup}
-	{/formgroup}
-	{button type="submit" variant="primary"}Submit{/button}
-	{button type="reset" variant="danger"}Reset{/button}
+		{formgroup id="exampleInputGroup1" label="Email address:" label-for="exampleInput1" description="We'll never share your email with anyone else."}
+			{input id="exampleInput1" type="email" required=true placeholder="Enter email"}
+		{/formgroup}
+		{formgroup id="exampleInputGroup2" label="Your Name:" label-for="exampleInput2"}
+			{input id="exampleInput2" type="text" required=true placeholder="Enter name"}
+		{/formgroup}
+		{formgroup id="exampleInputGroup3" label="Food:" label-for="exampleInput3"}
+			{select id="exampleInput3" required=true}
+				<option value="carrot">Carrot</option>
+				<option value="strawberry">Strawberry</option>
+				<option value="raspberry">Respberry</option>
+			{/select}
+		{/formgroup}
+		{formgroup id="exampleGroup4"}
+			{checkboxgroup id="exampleChecks"}
+				{checkbox value="me"}Check me out{/checkbox}
+				{checkbox value="that"}Check that out{/checkbox}
+			{/checkboxgroup}
+		{/formgroup}
+		{button type="submit" variant="primary"}Submit{/button}
+		{button type="reset" variant="danger"}Reset{/button}
 	{/form}
 	<h3 class="mb-4">Inline form</h3>
 	{form inline=true}
 		<label class="sr-only" for="inlineFormInputName2">Name</label>
-	{input class="mb-2 mr-sm-2 mb-sm-0" id="inlineFormInputName2" placeholder="Jane Doe"}
+		{input class="mb-2 mr-sm-2 mb-sm-0" id="inlineFormInputName2" placeholder="Jane Doe"}
 		<label class="sr-only" for="inlineFormInputGroupUsername2">Username</label>
-	{inputgroup left="@" class="mb-2 mr-sm-2 mb-sm-0"}
-	{input id="inlineFormInputGroupUsername2" placeholder="Username"}
-	{/inputgroup}
-	{checkbox class="mb-2 mr-sm-2 mb-sm-0"}Remember me{/checkbox}
-	{button variant="primary"}Save{/button}
+		{inputgroup left="@" class="mb-2 mr-sm-2 mb-sm-0"}
+			{input id="inlineFormInputGroupUsername2" placeholder="Username"}
+		{/inputgroup}
+		{checkbox class="mb-2 mr-sm-2 mb-sm-0"}Remember me{/checkbox}
+		{button variant="primary"}Save{/button}
 	{/form}
 
 	<h2 class="mb-4">Input-Groups</h2>
 	{inputgroup}
-	{inputgroupprepend}
-	{button variant="outline-info"}Button{/button}
-	{/inputgroupprepend}
-
-	{input type="number" min="0.00"}
-
-	{inputgroupappend}
-	{button variant="outline-secondary"}Button{/button}
-	{button variant="outline-secondary"}Button{/button}
-	{/inputgroupappend}
+		{inputgroupprepend}
+			{button variant="outline-info"}Button{/button}
+		{/inputgroupprepend}
+		{input type="number" min="0.00"}
+		{inputgroupappend}
+			{button variant="outline-secondary"}Button{/button}
+			{button variant="outline-secondary"}Button{/button}
+		{/inputgroupappend}
 	{/inputgroup}
 	<h3 class="mb-4">Sizing</h3>
 	{foreach ['sm','','lg'] as $si}
 		{inputgroup size=$si class="mb-3"}
-		{inputgroupprepend is-text=true}Label{/inputgroupprepend}
-		{input}
-		{inputgroupappend}
-		{button size=$si text="Button" variant="success"}Button{/button}
-		{/inputgroupappend}
+			{inputgroupprepend is-text=true}Label{/inputgroupprepend}
+			{input}
+			{inputgroupappend}
+				{button size=$si text="Button" variant="success"}Button{/button}
+			{/inputgroupappend}
 		{/inputgroup}
 	{/foreach}
+
+	{input type="number" placeholder="Number, 3 step!" min=3 max=33 step=3 size=40 style="width:250px"}
+	{input type="text" placeholder="Text!" size=40 style="width:250px"}
 
 	<h2 class="mt-4">Textarea</h2>
 	{textarea class='mb-3' rows=4 placeholder='Enter something in these 4 rows'}{/textarea}
 	{textarea class='mb-3' placeholder='You cannot enter anything' disabled=true}{/textarea}
-
 
 	<h2 class="mt-4">Select</h2>
 
@@ -456,73 +450,60 @@
 		<option name="op3">Option 3</option>
 	{/select}
 
-
 	<h2 class="mt-4">Radio</h2>
 	{formgroup label="Radios using sub-components"}
-	{radiogroup id="radios1" name="radioSubComponent"}
-	{radio name="rg1" value="first"}Toggle this custom radio{/radio}
-	{radio name="rg1" value="second"}Or toggle this other custom radio{/radio}
-	{radio name="rg1" value="third" disabled=true}This one is disabled{/radio}
-	{radio name="rg1" value="fourth"}Fourth radio{/radio}
-	{/radiogroup}
+		{radiogroup id="radios1" name="radioSubComponent"}
+			{radio name="rg1" value="first"}Toggle this custom radio{/radio}
+			{radio name="rg1" value="second"}Or toggle this other custom radio{/radio}
+			{radio name="rg1" value="third" disabled=true}This one is disabled{/radio}
+			{radio name="rg1" value="fourth"}Fourth radio{/radio}
+		{/radiogroup}
 	{/formgroup}
 
 	{formgroup label="Radios using sub-components - stacked"}
-	{radiogroup id="radios1s" stacked=true name="radioSubComponentStacked"}
-	{radio name="rg1s" value="first"}Toggle this custom radio{/radio}
-	{radio name="rg1s" value="second"}Or toggle this other custom radio{/radio}
-	{radio name="rg1s" value="third" disabled=true}This one is disabled{/radio}
-	{radio name="rg1s" value="fourth"}Fourth radio{/radio}
-	{/radiogroup}
+		{radiogroup id="radios1s" stacked=true name="radioSubComponentStacked"}
+			{radio name="rg1s" value="first"}Toggle this custom radio{/radio}
+			{radio name="rg1s" value="second"}Or toggle this other custom radio{/radio}
+			{radio name="rg1s" value="third" disabled=true}This one is disabled{/radio}
+			{radio name="rg1s" value="fourth"}Fourth radio{/radio}
+		{/radiogroup}
 	{/formgroup}
 
 	{formgroup label="Radios using sub-components - plain"}
-	{radiogroup id="radios2" name="radioSubComponent2" plain=true}
-	{radio name="rg2" value="first"}Toggle this custom radio{/radio}
-	{radio name="rg2" value="second"}Or toggle this other custom radio{/radio}
-	{radio name="rg2" value="third" disabled=true}This one is disabled{/radio}
-	{radio name="rg2" value="fourth"}Fourth radio{/radio}
-	{/radiogroup}
+		{radiogroup id="radios2" name="radioSubComponent2" plain=true}
+			{radio name="rg2" value="first"}Toggle this custom radio{/radio}
+			{radio name="rg2" value="second"}Or toggle this other custom radio{/radio}
+			{radio name="rg2" value="third" disabled=true}This one is disabled{/radio}
+			{radio name="rg2" value="fourth"}Fourth radio{/radio}
+		{/radiogroup}
 	{/formgroup}
 
 	{formgroup label="Radios using sub-components - stacked plain"}
-	{radiogroup id="radios1sp"  plain=true stacked=true name="radioSubComponentStackedPlain"}
-	{radio name="rg1sp" value="first"}Toggle this custom radio{/radio}
-	{radio name="rg1sp" value="second"}Or toggle this other custom radio{/radio}
-	{radio name="rg1sp" value="third" disabled=true}This one is disabled{/radio}
-	{radio name="rg1sp" value="fourth"}Fourth radio{/radio}
-	{/radiogroup}
+		{radiogroup id="radios1sp"  plain=true stacked=true name="radioSubComponentStackedPlain"}
+			{radio name="rg1sp" value="first"}Toggle this custom radio{/radio}
+			{radio name="rg1sp" value="second"}Or toggle this other custom radio{/radio}
+			{radio name="rg1sp" value="third" disabled=true}This one is disabled{/radio}
+			{radio name="rg1sp" value="fourth"}Fourth radio{/radio}
+		{/radiogroup}
 	{/formgroup}
 
 
 	{formgroup label="Radios in button style"}
-	{radiogroup
-	id="radios2"
-	name="radioSubComponentButtons"
-	button-variant="outline-primary"
-	buttons=true
-	size='lg'
-	}
-	{radio name="rg2b" value="first"}Toggle this custom radio{/radio}
-	{radio name="rg2b" value="second"}Or toggle this other custom radio{/radio}
-	{radio name="rg2b" value="third" disabled=true}This one is disabled{/radio}
-	{radio name="rg2b" value="fourth"}Fourth radio{/radio}
-	{/radiogroup}
+		{radiogroup id="radios2" name="radioSubComponentButtons" button-variant="outline-primary" buttons=true size='lg'}
+			{radio name="rg2b" value="first"}Toggle this custom radio{/radio}
+			{radio name="rg2b" value="second"}Or toggle this other custom radio{/radio}
+			{radio name="rg2b" value="third" disabled=true}This one is disabled{/radio}
+			{radio name="rg2b" value="fourth"}Fourth radio{/radio}
+		{/radiogroup}
 	{/formgroup}
 
 	{formgroup label="Radios in button style stacked"}
-	{radiogroup
-	id="radiobuttonsstacked"
-	name="radioSubComponentButtonsStacked"
-	buttons=true
-	stacked=true
-	size='lg'
-	}
-	{radio name="rg2bs" value="first"}Toggle this custom radio{/radio}
-	{radio name="rg2bs" value="second"}Or toggle this other custom radio{/radio}
-	{radio name="rg2bs" value="third" disabled=true}This one is disabled{/radio}
-	{radio name="rg2bs" value="fourth"}Fourth radio{/radio}
-	{/radiogroup}
+		{radiogroup id="radiobuttonsstacked" name="radioSubComponentButtonsStacked" buttons=true stacked=true size='lg'}
+			{radio name="rg2bs" value="first"}Toggle this custom radio{/radio}
+			{radio name="rg2bs" value="second"}Or toggle this other custom radio{/radio}
+			{radio name="rg2bs" value="third" disabled=true}This one is disabled{/radio}
+			{radio name="rg2bs" value="fourth"}Fourth radio{/radio}
+		{/radiogroup}
 	{/formgroup}
 
 	<h2 class="mt-4">Inputs</h2>
@@ -562,50 +543,50 @@
 
 	<h2 class="mt-4">Grouped checkboxes</h2>
 	{checkboxgroup id="checkboxes2" name="flavour2"}
-	{checkbox value="orange"}Orange{/checkbox}
-	{checkbox value="apple"}Apple{/checkbox}
-	{checkbox value="pineapple"}Pinepple{/checkbox}
-	{checkbox value="grape"}Grape{/checkbox}
+		{checkbox value="orange"}Orange{/checkbox}
+		{checkbox value="apple"}Apple{/checkbox}
+		{checkbox value="pineapple"}Pinepple{/checkbox}
+		{checkbox value="grape"}Grape{/checkbox}
 	{/checkboxgroup}
 
 	<h3>Stacked</h3>
 	{checkboxgroup id="checkboxes2" name="flavour2" stacked=true}
-	{checkbox value="orange"}Orange{/checkbox}
-	{checkbox value="apple"}Apple{/checkbox}
-	{checkbox value="pineapple"}Pinepple{/checkbox}
-	{checkbox value="grape"}Grape{/checkbox}
+		{checkbox value="orange"}Orange{/checkbox}
+		{checkbox value="apple"}Apple{/checkbox}
+		{checkbox value="pineapple"}Pinepple{/checkbox}
+		{checkbox value="grape"}Grape{/checkbox}
 	{/checkboxgroup}
 
 	<h3>Plain inline</h3>
 	{checkboxgroup id="checkboxes3" name="flavour3" stacked=false plain=true}
-	{checkbox value="orange"}Orange{/checkbox}
-	{checkbox value="apple"}Apple{/checkbox}
-	{checkbox value="pineapple"}Pinepple{/checkbox}
-	{checkbox value="grape"}Grape{/checkbox}
+		{checkbox value="orange"}Orange{/checkbox}
+		{checkbox value="apple"}Apple{/checkbox}
+		{checkbox value="pineapple"}Pinepple{/checkbox}
+		{checkbox value="grape"}Grape{/checkbox}
 	{/checkboxgroup}
 
 	<h3>Plain stacked</h3>
 	{checkboxgroup id="checkboxes4" name="flavour4" stacked=true plain=true}
-	{checkbox value="orange"}Orange{/checkbox}
-	{checkbox value="apple"}Apple{/checkbox}
-	{checkbox value="pineapple"}Pinepple{/checkbox}
-	{checkbox value="grape"}Grape{/checkbox}
+		{checkbox value="orange"}Orange{/checkbox}
+		{checkbox value="apple"}Apple{/checkbox}
+		{checkbox value="pineapple"}Pinepple{/checkbox}
+		{checkbox value="grape"}Grape{/checkbox}
 	{/checkboxgroup}
 
 	<h3>Buttons primary lg</h3>
 	{checkboxgroup id="checkboxes5" name="flavour5" buttons=true button-variant='primary' size='lg'}
-	{checkbox value="orange"}Orange{/checkbox}
-	{checkbox value="apple"}Apple{/checkbox}
-	{checkbox value="pineapple"}Pinepple{/checkbox}
-	{checkbox value="grape"}Grape{/checkbox}
+		{checkbox value="orange"}Orange{/checkbox}
+		{checkbox value="apple"}Apple{/checkbox}
+		{checkbox value="pineapple"}Pinepple{/checkbox}
+		{checkbox value="grape"}Grape{/checkbox}
 	{/checkboxgroup}
 
 	<h3>Buttons secondary sm stacked</h3>
 	{checkboxgroup id="checkboxes6" name="flavour6" stacked=true buttons=true button-variant='secondary' size='sm'}
-	{checkbox value="orange"}Orange{/checkbox}
-	{checkbox value="apple"}Apple{/checkbox}
-	{checkbox value="pineapple"}Pinepple{/checkbox}
-	{checkbox value="grape"}Grape{/checkbox}
+		{checkbox value="orange"}Orange{/checkbox}
+		{checkbox value="apple"}Apple{/checkbox}
+		{checkbox value="pineapple"}Pinepple{/checkbox}
+		{checkbox value="grape"}Grape{/checkbox}
 	{/checkboxgroup}
 
 	<h2 class="mt-4">FormGroup</h2>
@@ -615,7 +596,7 @@
 	label="Enter your name"
 	label-for="input1"
 	}
-	{input id="input1"}
+		{input id="input1"}
 	{/formgroup}
 
 	<h3 class="mt-1">horizontal</h3>
@@ -626,7 +607,7 @@
 	description="Let us know your name."
 	label="Enter your name"
 	label-for="inputHorizontal"}
-	{input id="inputHorizontal"}
+		{input id="inputHorizontal"}
 	{/formgroup}
 
 	<h3 class="mt-1">Label size</h3>
@@ -635,7 +616,7 @@
 	label-size="sm"
 	label="Small"
 	label-for="input_sm"}
-	{input id="input_sm" size="sm"}
+		{input id="input_sm" size="sm"}
 	{/formgroup}
 	{formgroup horizontal=true
 	label-cols="2"
@@ -648,235 +629,223 @@
 	label-size="lg"
 	label="Large"
 	label-for="input_lg"}
-	{input id="input_lg" size="lg"}
+		{input id="input_lg" size="lg"}
 	{/formgroup}
-
 
 	<h3 class="mt-1">Nested</h3>
 	{card bg-variant="light"}
-	{formgroup horizontal=true
-	breakpoint="lg"
-	label="Shipping Address"
-	label-size="lg"
-	label-class="font-weight-bold pt-0"
-	class="mb-0"}
-	{formgroup horizontal=true
-	label="Street:"
-	label-class="text-sm-right"
-	label-for="nestedStreet"}
-	{input id="nestedStreet"}
-	{/formgroup}
-	{formgroup horizontal=true
-	label="City:"
-	label-class="text-sm-right"
-	label-for="nestedCity"}
-	{input id="nestedCity"}
-	{/formgroup}
-	{formgroup horizontal=true
-	label="State:"
-	label-class="text-sm-right"
-	label-for="nestedState"}
-	{input id="nestedState"}
-	{/formgroup}
-	{formgroup horizontal=true
-	label="Country:"
-	label-class="text-sm-right"
-	label-for="nestedCountry"}
-	{input id="nestedCountry"}
-	{/formgroup}
-	{formgroup horizontal=true
-	label="Ship via:"
-	label-class="text-sm-right"
-	class="mb-0"}
-		<b-form-radio-group class="pt-2" :options="['Air', 'Courier', 'Mail']" />
-	{/formgroup}
-	{/formgroup}
+		{formgroup horizontal=true
+		breakpoint="lg"
+		label="Shipping Address"
+		label-size="lg"
+		label-class="font-weight-bold pt-0"
+		class="mb-0"}
+			{formgroup horizontal=true
+			label="Street:"
+			label-class="text-sm-right"
+			label-for="nestedStreet"}
+				{input id="nestedStreet"}
+			{/formgroup}
+			{formgroup horizontal=true
+			label="City:"
+			label-class="text-sm-right"
+			label-for="nestedCity"}
+				{input id="nestedCity"}
+			{/formgroup}
+			{formgroup horizontal=true
+			label="State:"
+			label-class="text-sm-right"
+			label-for="nestedState"}
+				{input id="nestedState"}
+			{/formgroup}
+			{formgroup horizontal=true
+			label="Country:"
+			label-class="text-sm-right"
+			label-for="nestedCountry"}
+				{input id="nestedCountry"}
+			{/formgroup}
+		{/formgroup}
 	{/card}
-
-
 
 	<h2 class="mt-4">Media</h2>
 	{media id='media-test-id-1'}
-	{mediaaside}
-	{image src="https://lorempixel.com/128/240/" alt="Asideimage"}
-	{/mediaaside}
-	{mediabody}
-		<h5 class="mt-0">Media Title</h5>
-		<p>
-			Cras sit amet nibh libero, in gravida nulla. Nulla vel metus scelerisque ante
-			sollicitudin. Cras purus odio, vestibulum in vulputate at, tempus viverra turpis.
-			Fusce condimentum nunc ac nisi vulputate fringilla. Donec lacinia congue felis
-			in faucibus.
-		</p>
-		<p>
-			Donec sed odio dui. Nullam quis eget urna mollis ornare vel eu leo. Cum
-			sociis natoque penatibus et magnis dis parturient montes, tempus ridiculus mus.
-		</p>
-		<p class="mb-0">
-			Donec sed odio dui. Nullam quis risus eget urna mollis ornare vel eu leo. Cum
-			sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus.
-		</p>
-	{/mediabody}
+		{mediaaside}
+			{image src="https://lorempixel.com/128/240/" alt="Asideimage"}
+		{/mediaaside}
+		{mediabody}
+			<h5 class="mt-0">Media Title</h5>
+			<p>
+				You’re disgusting. My text is long and beautiful, as, it has been well documented, are various other parts of my website.
+				That other text? Sadly, it’s no longer a 10. I think the only card she has is the Lorem card.
+				My placeholder text, I think, is going to end up being very good with women.
+			</p>
+			<p>Lorem Ipsum better hope that there are no "tapes" of our conversations before he starts leaking to the press!</p>
+			<p class="mb-0">
+				This placeholder text is gonna be HUGE. Some people have an ability to write placeholder text...
+				It's an art you're basically born with. You either have it or you don't.
+				The other thing with Lorem Ipsum is that you have to take out its family.
+				I'm speaking with myself, number one, because I have a very good brain and I've said a lot of things.
+			</p>
+		{/mediabody}
 	{/media}
 	<h3 class="mt-1">Nested media</h3>
 	{media no-body=true}
-	{mediaaside}
-	{image src="https://lorempixel.com/128/230/" alt="Asideimage 2"}
-	{/mediaaside}
-	{mediabody class="ml-3"}
-		<h5 class="mt-0">Media Title</h5>
-		<p>
-			Cras sit amet nibh libero, in gravida nulla. Nulla vel metus scelerisque ante
-			sollicitudin. Cras purus odio, vestibulum in vulputate at, tempus viverra turpis.
-			Fusce condimentum nunc ac nisi vulputate fringilla. Donec lacinia congue felis
-			in faucibus.
-		</p>
-		<p class="mb-0">
-			Donec sed odio dui. Nullam quis risus eget urna mollis ornare vel eu leo. Cum
-			sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus.
-		</p>
-	{media}
-	{mediaaside}
-	{image src="https://lorempixel.com/64/64/" alt="Asideimage"}
-	{/mediaaside}
-	{mediabody}
-		<h5 class="mt-0">Nested Media</h5>
-		Fusce condimentum nunc ac nisi vulputate fringilla. Donec lacinia congue
-		felis in faucibus.
-	{/mediabody}
-	{/media}
-	{/mediabody}
+		{mediaaside}
+			{image src="https://lorempixel.com/128/230/" alt="Asideimage 2"}
+		{/mediaaside}
+		{mediabody class="ml-3"}
+			<h5 class="mt-0">Media Title</h5>
+			<p>
+				An ‘extremely credible source’ has called my office and told me that Barack Obama’s placeholder text is a fraud.
+				I’m the best thing that ever happened to placeholder text. Be careful, or I will spill the beans on your placeholder text.
+				This placeholder text is gonna be HUGE.
+				You have so many different things placeholder text has to be able to do, and I don't believe Lorem Ipsum has the stamina.
+			</p>
+			<p class="mb-0">
+				I think the only card she has is the Lorem card.
+				An 'extremely credible source' has called my office and told me that Lorem Ipsum's birth certificate is a fraud.
+			</p>
+			{media}
+				{mediaaside}
+					{image src="https://lorempixel.com/64/64/" alt="Asideimage"}
+				{/mediaaside}
+				{mediabody}
+					<h5 class="mt-0">Nested Media</h5>
+					If Trump Ipsum weren’t my own words, perhaps I’d be dating it.
+					Lorem Ipsum's father was with Lee Harvey Oswald prior to Oswald's being, you know, shot.
+				{/mediabody}
+			{/media}
+		{/mediabody}
 	{/media}
 
 	<h2 class="mt-4">Carousel</h2>
 	{carousel}
-	{carouselslide caption="First slide"
-	caption='Textcaption1'
-	caption-text='Lorem ipsum1'
-	content="Nulla vitae elit libero, a pharetra augue mollis interdum."
-	img-src="https://lorempixel.com/1024/480/technics/2/"
-	img-alt="Bild zwei"
-	active=true}
-	{/carouselslide}
-	{carouselslide
-	caption='Textcaption2'
-	caption-text='Lorem ipsum2'
-	img-src="https://lorempixel.com/1024/480/technics/4/"
-	img-alt="Bild zwei"}
-		<h1>Hello world!</h1>
-	{/carouselslide}
-	{carouselslide
-	caption='Textcaption3'
-	caption-text='Lorem ipsum3'
-	img-alt="Bild drei"
-	img-src="https://lorempixel.com/1024/480/technics/6/"}
-		<h1>Hello world!</h1>
-	{/carouselslide}
+		{carouselslide caption="First slide"
+		caption='Textcaption1'
+		caption-text='Lorem ipsum1'
+		content="Nulla vitae elit libero, a pharetra augue mollis interdum."
+		img-src="https://lorempixel.com/1024/480/technics/2/"
+		img-alt="Bild zwei"
+		active=true}
+		{/carouselslide}
+		{carouselslide
+		caption='Textcaption2'
+		caption-text='Lorem ipsum2'
+		img-src="https://lorempixel.com/1024/480/technics/4/"
+		img-alt="Bild zwei"}
+			<h1>Hello world!</h1>
+		{/carouselslide}
+		{carouselslide
+		caption='Textcaption3'
+		caption-text='Lorem ipsum3'
+		img-alt="Bild drei"
+		img-src="https://lorempixel.com/1024/480/technics/6/"}
+			<h1>Hello world!</h1>
+		{/carouselslide}
 	{/carousel}
 	<h3>Indicators</h3>
-	{carousel
-	indicators=true
-	controls=true
-	background="#ff0000"
-	img-width=800
-	img-height=400
-
-	}
-	{carouselslide caption="First slide"
-	caption="Textcaption1"
-	caption-text="Lorem ipsum caption text"
-	content="Nulla vitae elit libero, a pharetra augue mollis interdum."
-	img-src="https://lorempixel.com/800/400/technics/1/"
-	img-alt="Bild zwei"
-	active=true}
-		<h1>Bild eins!</h1>
-	{/carouselslide}
-	{carouselslide
-	caption="Textcaption2"
-	caption-text="Lorem ipsum2"
-	img-src="https://lorempixel.com/800/400/technics/3/"
-	img-alt="Bild zwei"}
-		<h1>Bild zwei!</h1>
-	{/carouselslide}
-	{carouselslide
-	caption="Textcaption3"
-	caption-text="Lorem ipsum3"
-	img-alt="Bild drei"
-	img-src="https://lorempixel.com/800/400/technics/5/"}
-		<h1>Bild drei!</h1>
-	{/carouselslide}
-	{carouselslide
-	caption="Textcaption4"
-	caption-text="Lorem ipsum4"
-	img-alt="Bild vier"
-	img-src="https://lorempixel.com/800/400/technics/7/"}
-		<h1>Bild vier!</h1>
-	{/carouselslide}
+	{carousel indicators=true controls=true background="#ff0000" img-width=800 img-height=400}
+		{carouselslide caption="First slide"
+		caption="Textcaption1"
+		caption-text="Lorem ipsum caption text"
+		content="Nulla vitae elit libero, a pharetra augue mollis interdum."
+		img-src="https://lorempixel.com/800/400/technics/1/"
+		img-alt="Bild zwei"
+		active=true}
+			<h1>Bild eins!</h1>
+		{/carouselslide}
+		{carouselslide
+		caption="Textcaption2"
+		caption-text="Lorem ipsum2"
+		img-src="https://lorempixel.com/800/400/technics/3/"
+		img-alt="Bild zwei"}
+			<h1>Bild zwei!</h1>
+		{/carouselslide}
+		{carouselslide
+		caption="Textcaption3"
+		caption-text="Lorem ipsum3"
+		img-alt="Bild drei"
+		img-src="https://lorempixel.com/800/400/technics/5/"}
+			<h1>Bild drei!</h1>
+		{/carouselslide}
+		{carouselslide
+		caption="Textcaption4"
+		caption-text="Lorem ipsum4"
+		img-alt="Bild vier"
+		img-src="https://lorempixel.com/800/400/technics/7/"}
+			<h1>Bild vier!</h1>
+		{/carouselslide}
 	{/carousel}
 
 	<h2 class="mt-4">Buttongroup</h2>
 	{buttongroup}
-	{button variant="primary"}Button 1{/button}
-	{button variant="primary"}Button 2{/button}
-	{button variant="danger"}Button 3{/button}
-	{button variant="warning"}Button 3{/button}
+		{button variant="primary"}Button 1{/button}
+		{button variant="primary"}Button 2{/button}
+		{button variant="danger"}Button 3{/button}
+		{button variant="warning"}Button 3{/button}
 	{/buttongroup}
 	<h3>Vertical</h3>
 
 	{buttongroup vertical=true}
-	{button variant="info"}Button 1{/button}
-	{button variant="light"}Button 2{/button}
-	{button variant="dark"}Button 3{/button}
-	{button variant="warning"}Button 3{/button}
+		{button variant="info"}Button 1{/button}
+		{button variant="light"}Button 2{/button}
+		{button variant="dark"}Button 3{/button}
+		{button variant="warning"}Button 3{/button}
 	{/buttongroup}
 
 	<h2 class="mt-4">Dropdown</h2>
 
 	{dropdown description="Dropdown Button"}
-	{dropdownitem href="#"}
-		Item1
-	{/dropdownitem}
-	{dropdownitem href="#"}
-		Item2
-	{/dropdownitem}
-	{dropdownitem href="#"}
-		Item3
-	{/dropdownitem}
+		{dropdownitem href="#"}
+			Item1
+		{/dropdownitem}
+		{dropdownitem href="#"}
+			Item2
+		{/dropdownitem}
+		{dropdownitem href="#"}
+			Item3
+		{/dropdownitem}
 	{/dropdown}
 
 	<h2 class="mt-4">Jumbotron</h2>
-	{jumbotron
-	header="Jumbotron Header!"
-	lead="This is the lead."
-	}
+	{jumbotron header="Jumbotron Header!" lead="This is the lead."}
 		<hr class="my-4">
-		<p>
-			Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua.
-		</p>
-		<p>At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet.
-		</p>
-	{button variant="primary"}Great stuff{/button}
+		<p>He’s not a word hero. He’s a word hero because he was captured. I like text that wasn’t captured.</p>
+		<p>I think my strongest asset maybe by far is my temperament. I have a placeholding temperament.</p>
+		{button variant="primary"}Great stuff{/button}
 	{/jumbotron}
 
-	{jumbotron bg-variant="info" text-variant="white" border-variant="dark"
-	header="Jumbotron Header!"
-	lead="This is the lead."
-	}
+	{jumbotron bg-variant="info" text-variant="white" border-variant="dark" header="Jumbotron Header!" lead="This is the lead."}
 		<hr class="my-4">
-		<p>
-			Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua.
-		</p>
-		<p>
-			Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua.
-		</p>
+		<p>All of the words in Lorem Ipsum have flirted with me - consciously or unconsciously. That's to be expected.</p>
+		<p>That other text? Sadly, it’s no longer a 10.
+			I think the only difference between me and the other placeholder text is that I’m more honest and my words are more beautiful.
+			I think the only difference between me and the other placeholder text is that I’m more honest and my words are more beautiful.</p>
 	{/jumbotron}
 
 	<h2 class="mt-4">Tabs</h2>
 	{tabs}
-	{tab title="Tab 1" active=true}content1{/tab}
-	{tab title="Tab 2"}content2{/tab}
-	{tab title="Tab 3"}content3{/tab}
-	{tab title="Tab 4 disabled" disabled=true}content4{/tab}
+		{tab title="Tab 1" active=true}
+			I think my strongest asset maybe by far is my temperament. I have a placeholding temperament.
+			Lorem Ipsum is unattractive, both inside and out. I fully understand why it’s former users left it for something else.
+			They made a good decision. My text is long and beautiful, as, it has been well documented, are various other parts of my website.
+			Be careful, or I will spill the beans on your placeholder text. All of the words in Lorem Ipsum have flirted with me - consciously or unconsciously.
+			That's to be expected
+		{/tab}
+		{tab title="Tab 2"}
+			All of the words in Lorem Ipsum have flirted with me - consciously or unconsciously. That's to be expected.
+		{/tab}
+		{tab title="Tab 3"}
+			Despite the constant negative ipsum covfefe. When other websites give you text, they’re not sending the best.
+			They’re not sending you, they’re sending words that have lots of problems and they’re bringing those problems with us.
+			They’re bringing mistakes. They’re bringing misspellings. They’re typists… And some, I assume, are good words.
+		{/tab}
+		{tab title="Tab 4 disabled" disabled=true}
+			Lorem Ipsum's father was with Lee Harvey Oswald prior to Oswald's being, you know, shot. He’s not a word hero.
+			He’s a word hero because he was captured. I like text that wasn’t captured.
+			My placeholder text, I think, is going to end up being very good with women.
+			We are going to make placeholder text great again. Greater than ever before.
+		{/tab}
 	{/tabs}
 	<br>
 
@@ -887,7 +856,6 @@
 		<h5 class="my-3">Small image with <code>fluid-grow</code>:</h5>
 		{image src="https://lorempixel.com/300/150/" fluid-grow=true alt="Fluid-Grow image"}
 	</div>
-
 	<br>
 
 	<div class="bd-example vue-example vue-example-b-img-thumbnail">
@@ -923,23 +891,18 @@
 	{image src="https://lorempixel.com/60/60/" rounded="circle" alt="circle" class="m-1"}
 	{image src="https://lorempixel.com/60/60/" rounded="0" alt="0" class="m-1"}
 
-
 	<h3>Alignment</h3>
 	<div class="clearfix">
 		{image src="https://lorempixel.com/201/201/" height=200 width=200 left=true alt="Left"}
 		{image src="https://lorempixel.com/202/202/" height=200 width=200 right=true alt="Right"}
 	</div>
 	<br>
-
 	{image src="https://lorempixel.com/200/200/" center=true alt="Center"}
-
 	<br>
 
 
 	<h3>Height/Width</h3>
-
 	{image src="https://lorempixel.com/400/400/" height=300 width=250 alt="300x250"}
-
 
 	<h2 class="mt-4">Alerts</h2>
 	<div>
@@ -966,9 +929,6 @@
 	{alert show=true dismissible=true variant="light"}Light Alert dismissable{/alert}
 	{alert show=true dismissible=true variant="dark"}Dark Alert dismissable{/alert}
 
-	<h2 class="mt-4">Input</h2>
-	{input type="number" placeholder="Number, 3 step!" min=3 max=33 step=3 size=40 style="width:250px"}
-	{input type="text" placeholder="Text!" size=40 style="width:250px"}
 	<h2 class="mt-4">Link</h2>
 	{link href="https://shop5.moches.de/" rel="noopener"}This is a link with rel=noopen!!{/link}
 	{link href="https://shop5.moches.de/" target="_blank"}This is a link with target=_blank!{/link}
@@ -1005,6 +965,7 @@
 		</p>
 		<p>{input type='number' placeholder='Placeholder!'}</p>
 	{/card}
+
 	<h2 class="mt-4">Badge</h2>
 	{badge}Testbadge{/badge}
 	{badge active=true}Testbadge active{/badge}
@@ -1019,49 +980,44 @@
 	{badge variant="info"}Info{/badge}
 	{badge variant="light"}Light{/badge}
 	{badge variant="dark"}Dark{/badge}
+
 	<h2 class="mt-4">ListGroup</h2>
 	{listgroup}
-	{listgroupitem id='el1'}Element 1 mit id{/listgroupitem}
-	{listgroupitem}Element 2{/listgroupitem}
-	{listgroupitem}Noch eins{/listgroupitem}
+		{listgroupitem id='el1'}Element 1 mit id{/listgroupitem}
+		{listgroupitem}Element 2{/listgroupitem}
+		{listgroupitem}Noch eins{/listgroupitem}
 	{/listgroup}
 	<br>
 	{listgroup}
-	{listgroupitem tag="button"}Element 1 als Button{/listgroupitem}
-	{listgroupitem tag="button"}Element 2 als Button{/listgroupitem}
-	{listgroupitem tag="button"}Noch eins{/listgroupitem}
+		{listgroupitem tag="button"}Element 1 als Button{/listgroupitem}
+		{listgroupitem tag="button"}Element 2 als Button{/listgroupitem}
+		{listgroupitem tag="button"}Noch eins{/listgroupitem}
 	{/listgroup}
 	<br>
 	{listgroup}
-	{listgroupitem variant="primary"}Element primary{/listgroupitem}
-	{listgroupitem variant="secondary"}Element secondary{/listgroupitem}
-	{listgroupitem variant="success"}Element success{/listgroupitem}
-	{listgroupitem variant="danger"}Element danger{/listgroupitem}
-	{listgroupitem variant="warning"}Element warning{/listgroupitem}
-	{listgroupitem variant="info"}Element info{/listgroupitem}
-	{listgroupitem variant="light"}Element light{/listgroupitem}
-	{listgroupitem variant="dark"}Element dark{/listgroupitem}
+		{listgroupitem variant="primary"}Element primary{/listgroupitem}
+		{listgroupitem variant="secondary"}Element secondary{/listgroupitem}
+		{listgroupitem variant="success"}Element success{/listgroupitem}
+		{listgroupitem variant="danger"}Element danger{/listgroupitem}
+		{listgroupitem variant="warning"}Element warning{/listgroupitem}
+		{listgroupitem variant="info"}Element info{/listgroupitem}
+		{listgroupitem variant="light"}Element light{/listgroupitem}
+		{listgroupitem variant="dark"}Element dark{/listgroupitem}
 	{/listgroup}
 	<br>
 	{listgroup tag="ul"}
-	{listgroupitem tag="li"}Element 1 - li{/listgroupitem}
-	{listgroupitem tag="li" active=true}Element 2 - li active{/listgroupitem}
-	{listgroupitem tag="li"}Noch eins - li{/listgroupitem}
-	{listgroupitem tag="li" disabled=true}disabled li{/listgroupitem}
+		{listgroupitem tag="li"}Element 1 - li{/listgroupitem}
+		{listgroupitem tag="li" active=true}Element 2 - li active{/listgroupitem}
+		{listgroupitem tag="li"}Noch eins - li{/listgroupitem}
+		{listgroupitem tag="li" disabled=true}disabled li{/listgroupitem}
 	{/listgroup}
 
-	{card
-	header="Card with listgroup"
-	tag="article"
-	style="max-width: 20rem;"
-	hasBody=false
-	class="mt-4 mb-4"
-	}
-	{listgroup class='list-group-flush'}
-	{listgroupitem href='https://shop5.moches.de'}Element 1 - mit Link{/listgroupitem}
-	{listgroupitem}Element 2 - no link{/listgroupitem}
-	{listgroupitem href='#'}Noch eins - li mit Badge{badge variant='info'}Info{/badge}{/listgroupitem}
-	{/listgroup}
+	{card header="Card with listgroup" tag="article" style="max-width: 20rem;" hasBody=false class="mt-4 mb-4"}
+		{listgroup class='list-group-flush'}
+			{listgroupitem href='https://shop5.moches.de'}Element 1 - mit Link{/listgroupitem}
+			{listgroupitem}Element 2 - no link{/listgroupitem}
+			{listgroupitem href='#'}Noch eins - li mit Badge{badge variant='info'}Info{/badge}{/listgroupitem}
+		{/listgroup}
 	{/card}
 
 	<h2 class="mt-4">Modal</h2>
