@@ -6,9 +6,6 @@
 
 namespace scc\renderers;
 
-use scc\ComponentInterface;
-use scc\ComponentRendererInterface;
-
 /**
  * Class FunctionRenderer
  * @package scc\renderers
