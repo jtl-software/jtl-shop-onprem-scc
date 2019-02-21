@@ -24,48 +24,18 @@ class CheckboxGroup extends AbstractBlockComponent
         $this->setTemplate('checkboxgroup.tpl');
         $this->setName('checkboxgroup');
 
-        $prop = new ComponentProperty();
-        $prop->setName('disabled');
-        $prop->setType(ComponentPropertyType::TYPE_BOOL);
-        $prop->setDefaultValue(false);
-        $this->params[] = $prop;
+        $this->addParam(new ComponentProperty('required', false, ComponentPropertyType::TYPE_BOOL));
+        $this->addParam(new ComponentProperty('disabled', false, ComponentPropertyType::TYPE_BOOL));
+        $this->addParam(new ComponentProperty('plain', false, ComponentPropertyType::TYPE_BOOL));
+        $this->addParam(new ComponentProperty('validated', false, ComponentPropertyType::TYPE_BOOL));
+        $this->addParam(new ComponentProperty('stacked', false, ComponentPropertyType::TYPE_BOOL));
+        $this->addParam(new ComponentProperty('buttons', false, ComponentPropertyType::TYPE_BOOL));
+        $this->addParam(new ComponentProperty('name'));
+        $this->addParam(new ComponentProperty('size'));
+        $this->addParam(new ComponentProperty('value-field', 'value'));
+        $this->addParam(new ComponentProperty('text-field', 'text'));
+        $this->addParam(new ComponentProperty('disabled-field', 'disabled'));
 
-        $prop = new ComponentProperty();
-        $prop->setName('required');
-        $prop->setType(ComponentPropertyType::TYPE_BOOL);
-        $prop->setDefaultValue(false);
-        $this->params[] = $prop;
-
-        $this->params[] = new ComponentProperty('name');
-        $this->params[] = new ComponentProperty('size');
-        $this->params[] = new ComponentProperty('value-field', 'value');
-        $this->params[] = new ComponentProperty('text-field', 'text');
-        $this->params[] = new ComponentProperty('disabled-field', 'disabled');
-
-        $prop = new ComponentProperty();
-        $prop->setName('plain');
-        $prop->setType(ComponentPropertyType::TYPE_BOOL);
-        $prop->setDefaultValue(false);
-        $this->params[] = $prop;
-
-        $prop = new ComponentProperty();
-        $prop->setName('validated');
-        $prop->setType(ComponentPropertyType::TYPE_BOOL);
-        $prop->setDefaultValue(false);
-        $this->params[] = $prop;
-
-        $prop = new ComponentProperty();
-        $prop->setName('stacked');
-        $prop->setType(ComponentPropertyType::TYPE_BOOL);
-        $prop->setDefaultValue(false);
-        $this->params[] = $prop;
-
-        $prop = new ComponentProperty();
-        $prop->setName('buttons');
-        $prop->setType(ComponentPropertyType::TYPE_BOOL);
-        $prop->setDefaultValue(false);
-        $this->params[] = $prop;
-
-        $this->params[] = new ComponentProperty('button-variant', 'secondary');
+        $this->addParam(new ComponentProperty('button-variant', 'secondary'));
     }
 }

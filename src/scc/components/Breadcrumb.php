@@ -24,6 +24,6 @@ class Breadcrumb extends AbstractBlockComponent
         $this->setTemplate('breadcrumb.tpl');
         $this->setName('breadcrumb');
 
-        $this->params[] = new ComponentProperty('tag', 'ol');
+        $this->addParam(new ComponentProperty('tag', 'ol'));
     }
 }

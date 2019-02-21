@@ -24,7 +24,7 @@ class MediaAside extends AbstractBlockComponent
         $this->setTemplate('mediaaside.tpl');
         $this->setName('mediaaside');
 
-        $this->params[] = new ComponentProperty('tag', 'div');
-        $this->params[] = new ComponentProperty('vertical-align', 'top');
+        $this->addParam(new ComponentProperty('tag', 'div'));
+        $this->addParam(new ComponentProperty('vertical-align', 'top'));
     }
 }

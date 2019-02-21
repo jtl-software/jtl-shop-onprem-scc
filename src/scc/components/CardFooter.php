@@ -24,11 +24,11 @@ class CardFooter extends AbstractBlockComponent
         $this->setTemplate('cardfooter.tpl');
         $this->setName('cardfooter');
 
-        $this->params[] = new ComponentProperty('footer');
-        $this->params[] = new ComponentProperty('footer-tag', 'div');
-        $this->params[] = new ComponentProperty('footer-bg-variant');
-        $this->params[] = new ComponentProperty('footer-border-variant');
-        $this->params[] = new ComponentProperty('footer-text-variant');
-        $this->params[] = new ComponentProperty('footer-class');
+        $this->addParam(new ComponentProperty('footer'));
+        $this->addParam(new ComponentProperty('footer-tag', 'div'));
+        $this->addParam(new ComponentProperty('footer-bg-variant'));
+        $this->addParam(new ComponentProperty('footer-border-variant'));
+        $this->addParam(new ComponentProperty('footer-text-variant'));
+        $this->addParam(new ComponentProperty('footer-class'));
     }
 }

@@ -24,42 +24,12 @@ class Nav extends AbstractBlockComponent
         $this->setTemplate('nav.tpl');
         $this->setName('nav');
 
-        $this->params[] = new ComponentProperty('tag', 'ul');
-
-        $prop = new ComponentProperty();
-        $prop->setName('fill');
-        $prop->setType(ComponentPropertyType::TYPE_BOOL);
-        $prop->setDefaultValue(false);
-        $this->params[] = $prop;
-
-        $prop = new ComponentProperty();
-        $prop->setName('justified');
-        $prop->setType(ComponentPropertyType::TYPE_BOOL);
-        $prop->setDefaultValue(false);
-        $this->params[] = $prop;
-
-        $prop = new ComponentProperty();
-        $prop->setName('tabs');
-        $prop->setType(ComponentPropertyType::TYPE_BOOL);
-        $prop->setDefaultValue(false);
-        $this->params[] = $prop;
-
-        $prop = new ComponentProperty();
-        $prop->setName('pills');
-        $prop->setType(ComponentPropertyType::TYPE_BOOL);
-        $prop->setDefaultValue(false);
-        $this->params[] = $prop;
-
-        $prop = new ComponentProperty();
-        $prop->setName('vertical');
-        $prop->setType(ComponentPropertyType::TYPE_BOOL);
-        $prop->setDefaultValue(false);
-        $this->params[] = $prop;
-
-        $prop = new ComponentProperty();
-        $prop->setName('is-nav-bar');
-        $prop->setType(ComponentPropertyType::TYPE_BOOL);
-        $prop->setDefaultValue(false);
-        $this->params[] = $prop;
+        $this->addParam(new ComponentProperty('tag', 'ul'));
+        $this->addParam(new ComponentProperty('fill', false, ComponentPropertyType::TYPE_BOOL));
+        $this->addParam(new ComponentProperty('justified', false, ComponentPropertyType::TYPE_BOOL));
+        $this->addParam(new ComponentProperty('tabs', false, ComponentPropertyType::TYPE_BOOL));
+        $this->addParam(new ComponentProperty('pills', false, ComponentPropertyType::TYPE_BOOL));
+        $this->addParam(new ComponentProperty('vertical', false, ComponentPropertyType::TYPE_BOOL));
+        $this->addParam(new ComponentProperty('is-nav-bar', false, ComponentPropertyType::TYPE_BOOL));
     }
 }

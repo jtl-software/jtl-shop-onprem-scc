@@ -24,49 +24,19 @@ class Embed extends AbstractBlockComponent
         $this->setTemplate('embed.tpl');
         $this->setName('embed');
 
-        $this->params[] = new ComponentProperty('src');
-        $this->params[] = new ComponentProperty('type', 'iframe');
-        $this->params[] = new ComponentProperty('aspect', '16by9');
-        $this->params[] = new ComponentProperty('preload');
-        $this->params[] = new ComponentProperty('width');
-        $this->params[] = new ComponentProperty('height');
-        $this->params[] = new ComponentProperty('poster');
-        $this->params[] = new ComponentProperty('type');
-
-        $prop = new ComponentProperty();
-        $prop->setName('allowfullscreen');
-        $prop->setType(ComponentPropertyType::TYPE_BOOL);
-        $prop->setDefaultValue(false);
-        $this->params[] = $prop;
-
-        $prop = new ComponentProperty();
-        $prop->setName('controls');
-        $prop->setType(ComponentPropertyType::TYPE_BOOL);
-        $prop->setDefaultValue(false);
-        $this->params[] = $prop;
-
-        $prop = new ComponentProperty();
-        $prop->setName('autoplay');
-        $prop->setType(ComponentPropertyType::TYPE_BOOL);
-        $prop->setDefaultValue(false);
-        $this->params[] = $prop;
-
-        $prop = new ComponentProperty();
-        $prop->setName('autobuffer');
-        $prop->setType(ComponentPropertyType::TYPE_BOOL);
-        $prop->setDefaultValue(false);
-        $this->params[] = $prop;
-
-        $prop = new ComponentProperty();
-        $prop->setName('loop');
-        $prop->setType(ComponentPropertyType::TYPE_BOOL);
-        $prop->setDefaultValue(false);
-        $this->params[] = $prop;
-
-        $prop = new ComponentProperty();
-        $prop->setName('muted');
-        $prop->setType(ComponentPropertyType::TYPE_BOOL);
-        $prop->setDefaultValue(false);
-        $this->params[] = $prop;
+        $this->addParam(new ComponentProperty('src'));
+        $this->addParam(new ComponentProperty('type', 'iframe'));
+        $this->addParam(new ComponentProperty('aspect', '16by9'));
+        $this->addParam(new ComponentProperty('preload'));
+        $this->addParam(new ComponentProperty('width'));
+        $this->addParam(new ComponentProperty('height'));
+        $this->addParam(new ComponentProperty('poster'));
+        $this->addParam(new ComponentProperty('type'));
+        $this->addParam(new ComponentProperty('allowfullscreen', false, ComponentPropertyType::TYPE_BOOL));
+        $this->addParam(new ComponentProperty('controls', false, ComponentPropertyType::TYPE_BOOL));
+        $this->addParam(new ComponentProperty('autoplay', false, ComponentPropertyType::TYPE_BOOL));
+        $this->addParam(new ComponentProperty('autobuffer', false, ComponentPropertyType::TYPE_BOOL));
+        $this->addParam(new ComponentProperty('loop', false, ComponentPropertyType::TYPE_BOOL));
+        $this->addParam(new ComponentProperty('muted', false, ComponentPropertyType::TYPE_BOOL));
     }
 }

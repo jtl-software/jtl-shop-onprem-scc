@@ -25,34 +25,14 @@ class Checkbox extends AbstractBlockComponent
         $this->setTemplate('checkbox.tpl');
         $this->setName('checkbox');
 
-        $prop = new ComponentProperty();
-        $prop->setName('disabled');
-        $prop->setType(ComponentPropertyType::TYPE_BOOL);
-        $prop->setDefaultValue(false);
-        $this->params[] = $prop;
-
-        $prop = new ComponentProperty();
-        $prop->setName('required');
-        $prop->setType(ComponentPropertyType::TYPE_BOOL);
-        $prop->setDefaultValue(false);
-        $this->params[] = $prop;
-
-        $prop = new ComponentProperty();
-        $prop->setName('checked');
-        $prop->setType(ComponentPropertyType::TYPE_BOOL);
-        $prop->setDefaultValue(false);
-        $this->params[] = $prop;
-
-        $this->params[] = new ComponentProperty('button-variant');
-        $this->params[] = new ComponentProperty('name');
-        $this->params[] = new ComponentProperty('size');
-        $this->params[] = new ComponentProperty('value');
-
-        $prop = new ComponentProperty();
-        $prop->setName('plain');
-        $prop->setType(ComponentPropertyType::TYPE_BOOL);
-        $prop->setDefaultValue(false);
-        $this->params[] = $prop;
+        $this->addParam(new ComponentProperty('checked', false, ComponentPropertyType::TYPE_BOOL));
+        $this->addParam(new ComponentProperty('required', false, ComponentPropertyType::TYPE_BOOL));
+        $this->addParam(new ComponentProperty('disabled', false, ComponentPropertyType::TYPE_BOOL));
+        $this->addParam(new ComponentProperty('plain', false, ComponentPropertyType::TYPE_BOOL));
+        $this->addParam(new ComponentProperty('button-variant'));
+        $this->addParam(new ComponentProperty('name'));
+        $this->addParam(new ComponentProperty('size'));
+        $this->addParam(new ComponentProperty('value'));
 
         $this->setRenderer(new NestedBlockRenderer($this));
     }

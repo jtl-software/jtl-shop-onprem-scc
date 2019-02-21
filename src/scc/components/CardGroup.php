@@ -24,18 +24,8 @@ class CardGroup extends AbstractBlockComponent
         $this->setTemplate('cardgroup.tpl');
         $this->setName('cardgroup');
 
-        $this->params[] = new ComponentProperty('tag', 'div');
-
-        $prop = new ComponentProperty();
-        $prop->setName('deck');
-        $prop->setType(ComponentPropertyType::TYPE_BOOL);
-        $prop->setDefaultValue(false);
-        $this->params[] = $prop;
-
-        $prop = new ComponentProperty();
-        $prop->setName('columns');
-        $prop->setType(ComponentPropertyType::TYPE_BOOL);
-        $prop->setDefaultValue(false);
-        $this->params[] = $prop;
+        $this->addParam(new ComponentProperty('tag', 'div'));
+        $this->addParam(new ComponentProperty('deck', false, ComponentPropertyType::TYPE_BOOL));
+        $this->addParam(new ComponentProperty('columns', false, ComponentPropertyType::TYPE_BOOL));
     }
 }

@@ -8,6 +8,7 @@ namespace scc\components;
 
 use scc\ComponentInterface;
 use scc\ComponentProperty;
+use scc\ComponentPropertyType;
 use scc\ComponentPropertyInterface;
 use scc\ComponentRendererInterface;
 use scc\ComponentType;
@@ -49,6 +50,23 @@ abstract class AbstractBaseComponent implements ComponentInterface
     protected $type;
 
     /**
+     * AbstractBaseComponent constructor.
+     */
+    public function __construct()
+    {
+        $this->addParam(new ComponentProperty('class'));
+        $this->addParam(new ComponentProperty('id'));
+        $this->addParam(new ComponentProperty('style'));
+        $this->addParam(new ComponentProperty('itemprop'));
+        $this->addParam(new ComponentProperty('itemtype'));
+        $this->addParam(new ComponentProperty('itemid'));
+        $this->addParam(new ComponentProperty('role'));
+        $this->addParam(new ComponentProperty('itemscope', null, ComponentPropertyType::TYPE_BOOL));
+        $this->addParam(new ComponentProperty('aria', null, ComponentPropertyType::TYPE_ARRAY));
+        $this->addParam(new ComponentProperty('data', null, ComponentPropertyType::TYPE_ARRAY));
+    }
+
+    /**
      * @inheritdoc
      */
     public function getParams(): array
@@ -69,7 +87,7 @@ abstract class AbstractBaseComponent implements ComponentInterface
      */
     public function addParam(ComponentProperty $param): void
     {
-        $this->params[] = $param;
+        $this->params[$param->getName()] = $param;
     }
 
     /**

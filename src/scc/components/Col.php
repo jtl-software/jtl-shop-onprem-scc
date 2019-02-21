@@ -24,61 +24,23 @@ class Col extends AbstractBlockComponent
         $this->setTemplate('col.tpl');
         $this->setName('col');
 
-        $prop = new ComponentProperty();
-        $prop->setName('col');
-        $prop->setType(ComponentPropertyType::TYPE_BOOL);
-        $prop->setDefaultValue(false);
-        $this->params[] = $prop;
-
-        $this->params[] = new ComponentProperty('tag', 'div');
-
-        $prop = new ComponentProperty();
-        $prop->setName('cols');
-        $prop->setType(ComponentPropertyType::TYPE_INT);
-        $this->params[] = $prop;
-
-        $prop = new ComponentProperty();
-        $prop->setName('offset');
-        $prop->setType(ComponentPropertyType::TYPE_INT);
-        $this->params[] = $prop;
-
-        $prop = new ComponentProperty();
-        $prop->setName('order');
-        $prop->setType(ComponentPropertyType::TYPE_INT);
-        $this->params[] = $prop;
-
-        $prop = new ComponentProperty();
-        $prop->setName('sm');
-        $prop->setType(ComponentPropertyType::TYPE_BOOL);
-        $prop->setDefaultValue(false);
-        $this->params[] = $prop;
-
-        $prop = new ComponentProperty();
-        $prop->setName('md');
-        $prop->setType(ComponentPropertyType::TYPE_BOOL);
-        $prop->setDefaultValue(false);
-        $this->params[] = $prop;
-
-        $prop = new ComponentProperty();
-        $prop->setName('lg');
-        $prop->setType(ComponentPropertyType::TYPE_BOOL);
-        $prop->setDefaultValue(false);
-        $this->params[] = $prop;
-
-        $prop = new ComponentProperty();
-        $prop->setName('xl');
-        $prop->setType(ComponentPropertyType::TYPE_BOOL);
-        $prop->setDefaultValue(false);
-        $this->params[] = $prop;
-
-        $this->params[] = new ComponentProperty('offset-sm');
-        $this->params[] = new ComponentProperty('offset-md');
-        $this->params[] = new ComponentProperty('offset-lg');
-        $this->params[] = new ComponentProperty('offset-xl');
-        $this->params[] = new ComponentProperty('order-sm');
-        $this->params[] = new ComponentProperty('order-md');
-        $this->params[] = new ComponentProperty('order-lg');
-        $this->params[] = new ComponentProperty('order-xl');
-        $this->params[] = new ComponentProperty('align-self');
+        $this->addParam(new ComponentProperty('tag', 'div'));
+        $this->addParam(new ComponentProperty('cols', null, ComponentPropertyType::TYPE_INT));
+        $this->addParam(new ComponentProperty('offset', null, ComponentPropertyType::TYPE_INT));
+        $this->addParam(new ComponentProperty('order', null, ComponentPropertyType::TYPE_INT));
+        $this->addParam(new ComponentProperty('sm', false, ComponentPropertyType::TYPE_BOOL));
+        $this->addParam(new ComponentProperty('md', false, ComponentPropertyType::TYPE_BOOL));
+        $this->addParam(new ComponentProperty('lg', false, ComponentPropertyType::TYPE_BOOL));
+        $this->addParam(new ComponentProperty('xl', false, ComponentPropertyType::TYPE_BOOL));
+        $this->addParam(new ComponentProperty('col', false, ComponentPropertyType::TYPE_BOOL));
+        $this->addParam(new ComponentProperty('offset-sm'));
+        $this->addParam(new ComponentProperty('offset-md'));
+        $this->addParam(new ComponentProperty('offset-lg'));
+        $this->addParam(new ComponentProperty('offset-xl'));
+        $this->addParam(new ComponentProperty('order-sm'));
+        $this->addParam(new ComponentProperty('order-md'));
+        $this->addParam(new ComponentProperty('order-lg'));
+        $this->addParam(new ComponentProperty('order-xl'));
+        $this->addParam(new ComponentProperty('align-self'));
     }
 }

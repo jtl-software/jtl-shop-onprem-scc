@@ -24,30 +24,15 @@ class FormGroup extends AbstractBlockComponent
         $this->setTemplate('formgroup.tpl');
         $this->setName('formgroup');
 
-        $prop = new ComponentProperty();
-        $prop->setName('label-cols');
-        $prop->setType(ComponentPropertyType::TYPE_INT);
-        $prop->setDefaultValue(3);
-        $this->params[] = $prop;
-
-        $this->params[] = new ComponentProperty('breakpoint', 'sm');
-        $this->params[] = new ComponentProperty('label-text-align');
-        $this->params[] = new ComponentProperty('label');
-        $this->params[] = new ComponentProperty('label-for');
-        $this->params[] = new ComponentProperty('label-size');
-        $this->params[] = new ComponentProperty('label-class');
-        $this->params[] = new ComponentProperty('description');
-
-        $prop = new ComponentProperty();
-        $prop->setName('label-sr-only');
-        $prop->setType(ComponentPropertyType::TYPE_BOOL);
-        $prop->setDefaultValue(false);
-        $this->params[] = $prop;
-
-        $prop = new ComponentProperty();
-        $prop->setName('horizontal');
-        $prop->setType(ComponentPropertyType::TYPE_BOOL);
-        $prop->setDefaultValue(false);
-        $this->params[] = $prop;
+        $this->addParam(new ComponentProperty('breakpoint', 'sm'));
+        $this->addParam(new ComponentProperty('label-text-align'));
+        $this->addParam(new ComponentProperty('label'));
+        $this->addParam(new ComponentProperty('label-for'));
+        $this->addParam(new ComponentProperty('label-size'));
+        $this->addParam(new ComponentProperty('label-class'));
+        $this->addParam(new ComponentProperty('description'));
+        $this->addParam(new ComponentProperty('label-sr-only', false, ComponentPropertyType::TYPE_BOOL));
+        $this->addParam(new ComponentProperty('horizontal', false, ComponentPropertyType::TYPE_BOOL));
+        $this->addParam(new ComponentProperty('label-cols', 3, ComponentPropertyType::TYPE_INT));
     }
 }

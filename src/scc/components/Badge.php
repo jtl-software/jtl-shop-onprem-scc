@@ -24,22 +24,22 @@ class Badge extends AbstractBlockComponent
         $this->setTemplate('badge.tpl');
         $this->setName('badge');
 
-        $this->params[] = new ComponentProperty(
+        $this->addParam(new ComponentProperty(
             'active',
             false,
             ComponentPropertyType::TYPE_BOOL
-        );
-        $this->params[] = new ComponentProperty(
+        ));
+        $this->addParam(new ComponentProperty(
             'disabled',
             false,
             ComponentPropertyType::TYPE_BOOL
-        );
-        $this->params[] = new ComponentProperty(
+        ));
+        $this->addParam(new ComponentProperty(
             'pill',
             false,
             ComponentPropertyType::TYPE_BOOL
-        );
-        $this->params[] = new ComponentProperty('tag', 'span');
-        $this->params[] = new ComponentProperty('variant', 'secondary');
+        ));
+        $this->addParam(new ComponentProperty('tag', 'span'));
+        $this->addParam(new ComponentProperty('variant', 'secondary'));
     }
 }

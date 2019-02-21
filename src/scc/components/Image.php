@@ -24,79 +24,22 @@ class Image extends AbstractFunctionComponent
         $this->setTemplate('image.tpl');
         $this->setName('image');
 
-        $this->params[] = new ComponentProperty('src');
-        $this->params[] = new ComponentProperty('srcset');
-        $this->params[] = new ComponentProperty('sizes');
-        $this->params[] = new ComponentProperty('alt', '');
-
-        $prop = new ComponentProperty();
-        $prop->setName('width');
-        $prop->setType(ComponentPropertyType::TYPE_NUMERIC);
-        $this->params[] = $prop;
-
-        $prop = new ComponentProperty();
-        $prop->setName('height');
-        $prop->setType(ComponentPropertyType::TYPE_NUMERIC);
-        $this->params[] = $prop;
-
-        $prop = new ComponentProperty();
-        $prop->setName('block');
-        $prop->setType(ComponentPropertyType::TYPE_BOOL);
-        $prop->setDefaultValue(false);
-        $this->params[] = $prop;
-
-        $prop = new ComponentProperty();
-        $prop->setName('fluid');
-        $prop->setType(ComponentPropertyType::TYPE_BOOL);
-        $prop->setDefaultValue(false);
-        $this->params[] = $prop;
-
-        $prop = new ComponentProperty();
-        $prop->setName('fluid-grow');
-        $prop->setType(ComponentPropertyType::TYPE_BOOL);
-        $prop->setDefaultValue(false);
-        $this->params[] = $prop;
-
-        $prop = new ComponentProperty();
-        $prop->setName('lazy');
-        $prop->setType(ComponentPropertyType::TYPE_BOOL);
-        $prop->setDefaultValue(false);
-        $this->params[] = $prop;
-
-        $prop = new ComponentProperty();
-        $prop->setName('rounded');
-        $prop->setType(ComponentPropertyType::TYPE_BOOL);
-        $prop->setDefaultValue(false);
-        $this->params[] = $prop;
-
-        $prop = new ComponentProperty();
-        $prop->setName('thumbnail');
-        $prop->setType(ComponentPropertyType::TYPE_BOOL);
-        $prop->setDefaultValue(false);
-        $this->params[] = $prop;
-
-        $prop = new ComponentProperty();
-        $prop->setName('left');
-        $prop->setType(ComponentPropertyType::TYPE_BOOL);
-        $prop->setDefaultValue(false);
-        $this->params[] = $prop;
-
-        $prop = new ComponentProperty();
-        $prop->setName('right');
-        $prop->setType(ComponentPropertyType::TYPE_BOOL);
-        $prop->setDefaultValue(false);
-        $this->params[] = $prop;
-
-        $prop = new ComponentProperty();
-        $prop->setName('center');
-        $prop->setType(ComponentPropertyType::TYPE_BOOL);
-        $prop->setDefaultValue(false);
-        $this->params[] = $prop;
-
-        $prop = new ComponentProperty();
-        $prop->setName('blank');
-        $prop->setType(ComponentPropertyType::TYPE_BOOL);
-        $prop->setDefaultValue(false);
-        $this->params[] = $prop;
+        $this->addParam(new ComponentProperty('src'));
+        $this->addParam(new ComponentProperty('srcset'));
+        $this->addParam(new ComponentProperty('sizes'));
+        $this->addParam(new ComponentProperty('alt', ''));
+        $this->addParam(new ComponentProperty('width', null, ComponentPropertyType::TYPE_NUMERIC));
+        $this->addParam(new ComponentProperty('height', null, ComponentPropertyType::TYPE_NUMERIC));
+        $this->addParam(new ComponentProperty('block', false, ComponentPropertyType::TYPE_BOOL));
+        $this->addParam(new ComponentProperty('fluid', false, ComponentPropertyType::TYPE_BOOL));
+        $this->addParam(new ComponentProperty('fluid-grow', false, ComponentPropertyType::TYPE_BOOL));
+        $this->addParam(new ComponentProperty('lazy', false, ComponentPropertyType::TYPE_BOOL));
+        $this->addParam(new ComponentProperty('lazy', false, ComponentPropertyType::TYPE_BOOL));
+        $this->addParam(new ComponentProperty('rounded', false, ComponentPropertyType::TYPE_BOOL));
+        $this->addParam(new ComponentProperty('thumbnail', false, ComponentPropertyType::TYPE_BOOL));
+        $this->addParam(new ComponentProperty('left', false, ComponentPropertyType::TYPE_BOOL));
+        $this->addParam(new ComponentProperty('right', false, ComponentPropertyType::TYPE_BOOL));
+        $this->addParam(new ComponentProperty('center', false, ComponentPropertyType::TYPE_BOOL));
+        $this->addParam(new ComponentProperty('blank', false, ComponentPropertyType::TYPE_BOOL));
     }
 }

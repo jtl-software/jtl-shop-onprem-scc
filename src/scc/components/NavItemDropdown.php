@@ -24,55 +24,17 @@ class NavItemDropdown extends AbstractBlockComponent
         $this->setTemplate('navitemdropdown.tpl');
         $this->setName('navitemdropdown');
 
-        $this->params[] = new ComponentProperty('text');
-        $this->params[] = new ComponentProperty('tag', 'li');
-        $this->params[] = new ComponentProperty('extra-toggle-classes');
-        $this->params[] = new ComponentProperty('extra-menu-classes');
-
-        $prop = new ComponentProperty();
-        $prop->setName('offset');
-        $prop->setType(ComponentPropertyType::TYPE_INT);
-        $prop->setDefaultValue(0);
-        $this->params[] = $prop;
-        
-        $prop = new ComponentProperty();
-        $prop->setName('router-data');
-        $prop->setType(ComponentPropertyType::TYPE_ARRAY);
-        $this->params[] = $prop;
-        
-        $prop = new ComponentProperty();
-        $prop->setName('router-aria');
-        $prop->setType(ComponentPropertyType::TYPE_ARRAY);
-        $this->params[] = $prop;
-
-        $prop = new ComponentProperty();
-        $prop->setName('dropup');
-        $prop->setType(ComponentPropertyType::TYPE_BOOL);
-        $prop->setDefaultValue(false);
-        $this->params[] = $prop;
-
-        $prop = new ComponentProperty();
-        $prop->setName('disabled');
-        $prop->setType(ComponentPropertyType::TYPE_BOOL);
-        $prop->setDefaultValue(false);
-        $this->params[] = $prop;
-
-        $prop = new ComponentProperty();
-        $prop->setName('right');
-        $prop->setType(ComponentPropertyType::TYPE_BOOL);
-        $prop->setDefaultValue(false);
-        $this->params[] = $prop;
-
-        $prop = new ComponentProperty();
-        $prop->setName('no-flip');
-        $prop->setType(ComponentPropertyType::TYPE_BOOL);
-        $prop->setDefaultValue(false);
-        $this->params[] = $prop;
-
-        $prop = new ComponentProperty();
-        $prop->setName('no-caret');
-        $prop->setType(ComponentPropertyType::TYPE_BOOL);
-        $prop->setDefaultValue(false);
-        $this->params[] = $prop;
+        $this->addParam(new ComponentProperty('text'));
+        $this->addParam(new ComponentProperty('tag', 'li'));
+        $this->addParam(new ComponentProperty('extra-toggle-classes'));
+        $this->addParam(new ComponentProperty('extra-menu-classes'));
+        $this->addParam(new ComponentProperty('offset', 0, ComponentPropertyType::TYPE_INT));
+        $this->addParam(new ComponentProperty('router-data', null, ComponentPropertyType::TYPE_ARRAY));
+        $this->addParam(new ComponentProperty('router-aria', null, ComponentPropertyType::TYPE_ARRAY));
+        $this->addParam(new ComponentProperty('dropup', false, ComponentPropertyType::TYPE_BOOL));
+        $this->addParam(new ComponentProperty('disabled', false, ComponentPropertyType::TYPE_BOOL));
+        $this->addParam(new ComponentProperty('right', false, ComponentPropertyType::TYPE_BOOL));
+        $this->addParam(new ComponentProperty('no-flip', false, ComponentPropertyType::TYPE_BOOL));
+        $this->addParam(new ComponentProperty('no-caret', false, ComponentPropertyType::TYPE_BOOL));
     }
 }

@@ -24,52 +24,23 @@ class Pagination extends AbstractBlockComponent
         $this->setTemplate('pagination.tpl');
         $this->setName('pagination');
 
-        $prop = new ComponentProperty();
-        $prop->setName('value');
-        $prop->setType(ComponentPropertyType::TYPE_INT);
-        $prop->setDefaultValue(1);
-        $this->params[] = $prop;
-
-        $prop = new ComponentProperty();
-        $prop->setName('disabled');
-        $prop->setType(ComponentPropertyType::TYPE_BOOL);
-        $prop->setDefaultValue(false);
-        $this->params[] = $prop;
-
-        $prop = new ComponentProperty();
-        $prop->setName('hide-goto-end-buttons');
-        $prop->setType(ComponentPropertyType::TYPE_BOOL);
-        $prop->setDefaultValue(false);
-        $this->params[] = $prop;
-
-        $prop = new ComponentProperty();
-        $prop->setName('hide-ellipsis');
-        $prop->setType(ComponentPropertyType::TYPE_BOOL);
-        $prop->setDefaultValue(false);
-        $this->params[] = $prop;
-        $this->params[] = new ComponentProperty('size', 'md');
-        $this->params[] = new ComponentProperty('align', 'left');
-        $this->params[] = new ComponentProperty('label-first-page', 'leftleft');
-        $this->params[] = new ComponentProperty('first-text', '&laquo;');
-        $this->params[] = new ComponentProperty('label-prev-page', 'Go to previous page');
-        $this->params[] = new ComponentProperty('prev-text', '&lsaquo;');
-        $this->params[] = new ComponentProperty('label-next-page', 'Go to next page');
-        $this->params[] = new ComponentProperty('next-text', '&rsaquo;');
-        $this->params[] = new ComponentProperty('label-last-page', 'Go to last page');
-        $this->params[] = new ComponentProperty('last-text', '&raquo;');
-        $this->params[] = new ComponentProperty('label-page', 'Go to page');
-        $this->params[] = new ComponentProperty('ellipsis-text', '&hellip;');
-
-        $prop = new ComponentProperty();
-        $prop->setName('per-page');
-        $prop->setType(ComponentPropertyType::TYPE_INT);
-        $prop->setDefaultValue(20);
-        $this->params[] = $prop;
-
-        $prop = new ComponentProperty();
-        $prop->setName('total-rows');
-        $prop->setType(ComponentPropertyType::TYPE_INT);
-        $prop->setDefaultValue(20);
-        $this->params[] = $prop;
+        $this->addParam(new ComponentProperty('value', 1, ComponentPropertyType::TYPE_INT));
+        $this->addParam(new ComponentProperty('per-page', 20, ComponentPropertyType::TYPE_INT));
+        $this->addParam(new ComponentProperty('total-rows', 20, ComponentPropertyType::TYPE_INT));
+        $this->addParam(new ComponentProperty('disabled', false, ComponentPropertyType::TYPE_BOOL));
+        $this->addParam(new ComponentProperty('hide-goto-end-buttons', false, ComponentPropertyType::TYPE_BOOL));
+        $this->addParam(new ComponentProperty('hide-ellipsis', false, ComponentPropertyType::TYPE_BOOL));
+        $this->addParam(new ComponentProperty('size', 'md'));
+        $this->addParam(new ComponentProperty('align', 'left'));
+        $this->addParam(new ComponentProperty('label-first-page', 'leftleft'));
+        $this->addParam(new ComponentProperty('first-text', '&laquo;'));
+        $this->addParam(new ComponentProperty('label-prev-page', 'Go to previous page'));
+        $this->addParam(new ComponentProperty('prev-text', '&lsaquo;'));
+        $this->addParam(new ComponentProperty('label-next-page', 'Go to next page'));
+        $this->addParam(new ComponentProperty('next-text', '&rsaquo;'));
+        $this->addParam(new ComponentProperty('label-last-page', 'Go to last page'));
+        $this->addParam(new ComponentProperty('last-text', '&raquo;'));
+        $this->addParam(new ComponentProperty('label-page', 'Go to page'));
+        $this->addParam(new ComponentProperty('ellipsis-text', '&hellip;'));
     }
 }

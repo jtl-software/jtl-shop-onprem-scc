@@ -24,18 +24,8 @@ class NavbarNav extends AbstractBlockComponent
         $this->setTemplate('navbarnav.tpl');
         $this->setName('navbarnav');
 
-        $this->params[] = new ComponentProperty('tag', 'ul');
-
-        $prop = new ComponentProperty();
-        $prop->setName('fill');
-        $prop->setType(ComponentPropertyType::TYPE_BOOL);
-        $prop->setDefaultValue(false);
-        $this->params[] = $prop;
-
-        $prop = new ComponentProperty();
-        $prop->setName('justified');
-        $prop->setType(ComponentPropertyType::TYPE_BOOL);
-        $prop->setDefaultValue(false);
-        $this->params[] = $prop;
+        $this->addParam(new ComponentProperty('tag', 'ul'));
+        $this->addParam(new ComponentProperty('fill', false, ComponentPropertyType::TYPE_BOOL));
+        $this->addParam(new ComponentProperty('justified', false, ComponentPropertyType::TYPE_BOOL));
     }
 }

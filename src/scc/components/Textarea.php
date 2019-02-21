@@ -24,51 +24,18 @@ class Textarea extends AbstractBlockComponent
         $this->setTemplate('textarea.tpl');
         $this->setName('textarea');
 
-        $prop = new ComponentProperty();
-        $prop->setName('disabled');
-        $prop->setType(ComponentPropertyType::TYPE_BOOL);
-        $prop->setDefaultValue(false);
-        $this->params[] = $prop;
-
-        $prop = new ComponentProperty();
-        $prop->setName('required');
-        $prop->setType(ComponentPropertyType::TYPE_BOOL);
-        $prop->setDefaultValue(false);
-        $this->params[] = $prop;
-
-        $prop = new ComponentProperty();
-        $prop->setName('readonly');
-        $prop->setType(ComponentPropertyType::TYPE_BOOL);
-        $prop->setDefaultValue(false);
-        $this->params[] = $prop;
-
-        $prop = new ComponentProperty();
-        $prop->setName('plaintext');
-        $prop->setType(ComponentPropertyType::TYPE_BOOL);
-        $prop->setDefaultValue(false);
-        $this->params[] = $prop;
-
-        $prop = new ComponentProperty();
-        $prop->setName('no-resize');
-        $prop->setType(ComponentPropertyType::TYPE_BOOL);
-        $prop->setDefaultValue(false);
-        $this->params[] = $prop;
-
-        $this->params[] = new ComponentProperty('size');
-        $this->params[] = new ComponentProperty('value');
-        $this->params[] = new ComponentProperty('autocomplete');
-        $this->params[] = new ComponentProperty('placeholder');
-        $this->params[] = new ComponentProperty('name');
-        $this->params[] = new ComponentProperty('wrap', 'soft');
-
-        $prop = new ComponentProperty();
-        $prop->setName('rows');
-        $prop->setType(ComponentPropertyType::TYPE_INT);
-        $this->params[] = $prop;
-
-        $prop = new ComponentProperty();
-        $prop->setName('max-rows');
-        $prop->setType(ComponentPropertyType::TYPE_INT);
-        $this->params[] = $prop;
+        $this->addParam(new ComponentProperty('disabled', false, ComponentPropertyType::TYPE_BOOL));
+        $this->addParam(new ComponentProperty('required', false, ComponentPropertyType::TYPE_BOOL));
+        $this->addParam(new ComponentProperty('readonly', false, ComponentPropertyType::TYPE_BOOL));
+        $this->addParam(new ComponentProperty('plaintext', false, ComponentPropertyType::TYPE_BOOL));
+        $this->addParam(new ComponentProperty('no-resize', false, ComponentPropertyType::TYPE_BOOL));
+        $this->addParam(new ComponentProperty('rows', null, ComponentPropertyType::TYPE_INT));
+        $this->addParam(new ComponentProperty('max-rows', null, ComponentPropertyType::TYPE_INT));
+        $this->addParam(new ComponentProperty('size'));
+        $this->addParam(new ComponentProperty('value'));
+        $this->addParam(new ComponentProperty('autocomplete'));
+        $this->addParam(new ComponentProperty('placeholder'));
+        $this->addParam(new ComponentProperty('name'));
+        $this->addParam(new ComponentProperty('wrap', 'soft'));
     }
 }

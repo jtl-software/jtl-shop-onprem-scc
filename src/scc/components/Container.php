@@ -24,11 +24,7 @@ class Container extends AbstractBlockComponent
         $this->setTemplate('container.tpl');
         $this->setName('container');
 
-        $prop = new ComponentProperty();
-        $prop->setName('fluid');
-        $prop->setType(ComponentPropertyType::TYPE_BOOL);
-        $prop->setDefaultValue(false);
-        $this->params[] = $prop;
-        $this->params[] = new ComponentProperty('tag', 'div');
+        $this->addParam(new ComponentProperty('fluid', false, ComponentPropertyType::TYPE_BOOL));
+        $this->addParam(new ComponentProperty('tag', 'div'));
     }
 }

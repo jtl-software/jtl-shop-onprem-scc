@@ -25,52 +25,17 @@ class Carousel extends AbstractBlockComponent
         $this->setTemplate('carousel.tpl');
         $this->setName('carousel');
 
-        $prop = new ComponentProperty();
-        $prop->setName('disabled');
-        $prop->setType(ComponentPropertyType::TYPE_BOOL);
-        $prop->setDefaultValue(false);
-        $this->params[] = $prop;
-
-        $this->params[] = new ComponentProperty('label-prev', 'Previous slide');
-        $this->params[] = new ComponentProperty('label-next', 'Next slide');
-        $this->params[] = new ComponentProperty('label-goto-slide', 'Go to slide');
-        $this->params[] = new ComponentProperty('label-indicators', 'Select a slide to display');
-
-        $prop = new ComponentProperty();
-        $prop->setName('interval');
-        $prop->setType(ComponentPropertyType::TYPE_INT);
-        $prop->setDefaultValue(5000);
-        $this->params[] = $prop;
-
-        $prop = new ComponentProperty();
-        $prop->setName('indicators');
-        $prop->setType(ComponentPropertyType::TYPE_BOOL);
-        $prop->setDefaultValue(false);
-        $this->params[] = $prop;
-
-        $prop = new ComponentProperty();
-        $prop->setName('controls');
-        $prop->setType(ComponentPropertyType::TYPE_BOOL);
-        $prop->setDefaultValue(false);
-        $this->params[] = $prop;
-
-        $prop = new ComponentProperty();
-        $prop->setName('img-width');
-        $prop->setType(ComponentPropertyType::TYPE_NUMERIC);
-        $this->params[] = $prop;
-
-        $prop = new ComponentProperty();
-        $prop->setName('img-height');
-        $prop->setType(ComponentPropertyType::TYPE_NUMERIC);
-        $this->params[] = $prop;
-
-        $this->params[] = new ComponentProperty('background');
-
-        $prop = new ComponentProperty();
-        $prop->setName('value');
-        $prop->setType(ComponentPropertyType::TYPE_INT);
-        $prop->setDefaultValue(0);
-        $this->params[] = $prop;
+        $this->addParam(new ComponentProperty('label-prev', 'Previous slide'));
+        $this->addParam(new ComponentProperty('label-next', 'Next slide'));
+        $this->addParam(new ComponentProperty('label-goto-slide', 'Go to slide'));
+        $this->addParam(new ComponentProperty('label-indicators', 'Select a slide to display'));
+        $this->addParam(new ComponentProperty('interval', 5000, ComponentPropertyType::TYPE_INT));
+        $this->addParam(new ComponentProperty('value', 0, ComponentPropertyType::TYPE_INT));
+        $this->addParam(new ComponentProperty('indicators', false, ComponentPropertyType::TYPE_BOOL));
+        $this->addParam(new ComponentProperty('disabled', false, ComponentPropertyType::TYPE_BOOL));
+        $this->addParam(new ComponentProperty('controls', false, ComponentPropertyType::TYPE_BOOL));
+        $this->addParam(new ComponentProperty('img-width', null, ComponentPropertyType::TYPE_NUMERIC));
+        $this->addParam(new ComponentProperty('img-height', null, ComponentPropertyType::TYPE_NUMERIC));
 
         $this->setRenderer(new CarouselRenderer($this));
     }

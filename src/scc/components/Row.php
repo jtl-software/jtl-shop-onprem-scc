@@ -24,15 +24,10 @@ class Row extends AbstractBlockComponent
         $this->setTemplate('row.tpl');
         $this->setName('row');
 
-        $prop = new ComponentProperty();
-        $prop->setName('no-gutters');
-        $prop->setType(ComponentPropertyType::TYPE_BOOL);
-        $prop->setDefaultValue(false);
-        $this->params[] = $prop;
-
-        $this->params[] = new ComponentProperty('tag', 'div');
-        $this->params[] = new ComponentProperty('align-h');
-        $this->params[] = new ComponentProperty('align-v');
-        $this->params[] = new ComponentProperty('align-content');
+        $this->addParam(new ComponentProperty('no-gutters', false, ComponentPropertyType::TYPE_BOOL));
+        $this->addParam(new ComponentProperty('tag', 'div'));
+        $this->addParam(new ComponentProperty('align-h'));
+        $this->addParam(new ComponentProperty('align-v'));
+        $this->addParam(new ComponentProperty('align-content'));
     }
 }

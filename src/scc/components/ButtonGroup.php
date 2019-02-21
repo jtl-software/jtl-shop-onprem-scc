@@ -24,13 +24,8 @@ class ButtonGroup extends AbstractBlockComponent
         $this->setTemplate('buttongroup.tpl');
         $this->setName('buttongroup');
 
-        $this->params[] = new ComponentProperty('tag', 'div');
-        $this->params[] = new ComponentProperty('size');
-
-        $prop = new ComponentProperty();
-        $prop->setName('vertical');
-        $prop->setType(ComponentPropertyType::TYPE_BOOL);
-        $prop->setDefaultValue(false);
-        $this->params[] = $prop;
+        $this->addParam(new ComponentProperty('tag', 'div'));
+        $this->addParam(new ComponentProperty('size'));
+        $this->addParam(new ComponentProperty('vertical', false, ComponentPropertyType::TYPE_BOOL));
     }
 }

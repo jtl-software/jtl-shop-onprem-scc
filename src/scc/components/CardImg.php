@@ -24,25 +24,10 @@ class CardImg extends AbstractFunctionComponent
         $this->setTemplate('cardimg.tpl');
         $this->setName('cardimg');
 
-        $this->params[] = new ComponentProperty('src');
-        $this->params[] = new ComponentProperty('alt', '');
-
-        $prop = new ComponentProperty();
-        $prop->setName('top');
-        $prop->setType(ComponentPropertyType::TYPE_BOOL);
-        $prop->setDefaultValue(false);
-        $this->params[] = $prop;
-
-        $prop = new ComponentProperty();
-        $prop->setName('bottom');
-        $prop->setType(ComponentPropertyType::TYPE_BOOL);
-        $prop->setDefaultValue(false);
-        $this->params[] = $prop;
-
-        $prop = new ComponentProperty();
-        $prop->setName('fluid');
-        $prop->setType(ComponentPropertyType::TYPE_BOOL);
-        $prop->setDefaultValue(false);
-        $this->params[] = $prop;
+        $this->addParam(new ComponentProperty('src'));
+        $this->addParam(new ComponentProperty('alt', ''));
+        $this->addParam(new ComponentProperty('top', false, ComponentPropertyType::TYPE_BOOL));
+        $this->addParam(new ComponentProperty('bottom', false, ComponentPropertyType::TYPE_BOOL));
+        $this->addParam(new ComponentProperty('fluid', false, ComponentPropertyType::TYPE_BOOL));
     }
 }

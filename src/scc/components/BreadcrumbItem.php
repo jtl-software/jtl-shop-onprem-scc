@@ -24,49 +24,49 @@ class BreadcrumbItem extends AbstractBlockComponent
         $this->setTemplate('breadcrumbitem.tpl');
         $this->setName('breadcrumbitem');
 
-        $this->params[] = new ComponentProperty('href');
-        $this->params[] = new ComponentProperty('title');
-        $this->params[] = new ComponentProperty('tag', 'li');
-        $this->params[] = new ComponentProperty('target', '_self');
-        $this->params[] = new ComponentProperty('active-class', 'active');
-        $this->params[] = new ComponentProperty('router-tag', 'a');
-        $this->params[] = new ComponentProperty('router-tag-itemprop');
-        $this->params[] = new ComponentProperty('exact-active-class', 'active');
+        $this->addParam(new ComponentProperty('href'));
+        $this->addParam(new ComponentProperty('title'));
+        $this->addParam(new ComponentProperty('tag', 'li'));
+        $this->addParam(new ComponentProperty('target', '_self'));
+        $this->addParam(new ComponentProperty('active-class', 'active'));
+        $this->addParam(new ComponentProperty('router-tag', 'a'));
+        $this->addParam(new ComponentProperty('router-tag-itemprop'));
+        $this->addParam(new ComponentProperty('exact-active-class', 'active'));
 
         $prop = new ComponentProperty();
         $prop->setName('active');
         $prop->setType(ComponentPropertyType::TYPE_BOOL);
         $prop->setDefaultValue(false);
-        $this->params[] = $prop;
+        $this->addParam($prop);
 
         $prop = new ComponentProperty();
         $prop->setName('disabled');
         $prop->setType(ComponentPropertyType::TYPE_BOOL);
         $prop->setDefaultValue(false);
-        $this->params[] = $prop;
+        $this->addParam($prop);
 
         $prop = new ComponentProperty();
         $prop->setName('append');
         $prop->setType(ComponentPropertyType::TYPE_BOOL);
         $prop->setDefaultValue(false);
-        $this->params[] = $prop;
+        $this->addParam($prop);
 
         $prop = new ComponentProperty();
         $prop->setName('exact');
         $prop->setType(ComponentPropertyType::TYPE_BOOL);
         $prop->setDefaultValue(false);
-        $this->params[] = $prop;
+        $this->addParam($prop);
 
         $prop = new ComponentProperty();
         $prop->setName('replace');
         $prop->setType(ComponentPropertyType::TYPE_BOOL);
         $prop->setDefaultValue(false);
-        $this->params[] = $prop;
+        $this->addParam($prop);
 
         $prop = new ComponentProperty();
         $prop->setName('nofollow');
         $prop->setType(ComponentPropertyType::TYPE_BOOL);
         $prop->setDefaultValue(false);
-        $this->params[] = $prop;
+        $this->addParam($prop);
     }
 }

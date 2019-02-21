@@ -24,23 +24,13 @@ class DropDownItem extends AbstractBlockComponent
         $this->setTemplate('dropdownitem.tpl');
         $this->setName('dropdownitem');
 
-        $this->params[] = new ComponentProperty('target', '_self');
-        $this->params[] = new ComponentProperty('variant');
-        $this->params[] = new ComponentProperty('href');
-        $this->params[] = new ComponentProperty('rel');
-        $this->params[] = new ComponentProperty('activeClass', 'active');
-        $this->params[] = new ComponentProperty('tag', 'a');
-
-        $prop = new ComponentProperty();
-        $prop->setName('active');
-        $prop->setType(ComponentPropertyType::TYPE_BOOL);
-        $prop->setDefaultValue(false);
-        $this->params[] = $prop;
-
-        $prop = new ComponentProperty();
-        $prop->setName('disabled');
-        $prop->setType(ComponentPropertyType::TYPE_BOOL);
-        $prop->setDefaultValue(false);
-        $this->params[] = $prop;
+        $this->addParam(new ComponentProperty('target', '_self'));
+        $this->addParam(new ComponentProperty('variant'));
+        $this->addParam(new ComponentProperty('href'));
+        $this->addParam(new ComponentProperty('rel'));
+        $this->addParam(new ComponentProperty('activeClass', 'active'));
+        $this->addParam(new ComponentProperty('tag', 'a'));
+        $this->addParam(new ComponentProperty('active', false, ComponentPropertyType::TYPE_BOOL));
+        $this->addParam(new ComponentProperty('disabled', false, ComponentPropertyType::TYPE_BOOL));
     }
 }

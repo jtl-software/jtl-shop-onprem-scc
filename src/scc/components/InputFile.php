@@ -24,50 +24,15 @@ class InputFile extends AbstractFunctionComponent
         $this->setTemplate('inputfile.tpl');
         $this->setName('inputfile');
 
-        $this->params[] = new ComponentProperty('name');
-        $this->params[] = new ComponentProperty('placeholder');
-        $this->params[] = new ComponentProperty('accept');
-
-        $prop = new ComponentProperty();
-        $prop->setName('disabled');
-        $prop->setType(ComponentPropertyType::TYPE_BOOL);
-        $prop->setDefaultValue(false);
-        $this->params[] = $prop;
-
-        $prop = new ComponentProperty();
-        $prop->setName('required');
-        $prop->setType(ComponentPropertyType::TYPE_BOOL);
-        $prop->setDefaultValue(false);
-        $this->params[] = $prop;
-
-        $prop = new ComponentProperty();
-        $prop->setName('plain');
-        $prop->setType(ComponentPropertyType::TYPE_BOOL);
-        $prop->setDefaultValue(false);
-        $this->params[] = $prop;
-
-        $prop = new ComponentProperty();
-        $prop->setName('capture');
-        $prop->setType(ComponentPropertyType::TYPE_BOOL);
-        $prop->setDefaultValue(false);
-        $this->params[] = $prop;
-
-        $prop = new ComponentProperty();
-        $prop->setName('multiple');
-        $prop->setType(ComponentPropertyType::TYPE_BOOL);
-        $prop->setDefaultValue(false);
-        $this->params[] = $prop;
-
-        $prop = new ComponentProperty();
-        $prop->setName('no-traverse');
-        $prop->setType(ComponentPropertyType::TYPE_BOOL);
-        $prop->setDefaultValue(false);
-        $this->params[] = $prop;
-
-        $prop = new ComponentProperty();
-        $prop->setName('no-drop');
-        $prop->setType(ComponentPropertyType::TYPE_BOOL);
-        $prop->setDefaultValue(false);
-        $this->params[] = $prop;
+        $this->addParam(new ComponentProperty('name'));
+        $this->addParam(new ComponentProperty('placeholder'));
+        $this->addParam(new ComponentProperty('accept'));
+        $this->addParam(new ComponentProperty('required', false, ComponentPropertyType::TYPE_BOOL));
+        $this->addParam(new ComponentProperty('disabled', false, ComponentPropertyType::TYPE_BOOL));
+        $this->addParam(new ComponentProperty('plain', false, ComponentPropertyType::TYPE_BOOL));
+        $this->addParam(new ComponentProperty('capture', false, ComponentPropertyType::TYPE_BOOL));
+        $this->addParam(new ComponentProperty('multiple', false, ComponentPropertyType::TYPE_BOOL));
+        $this->addParam(new ComponentProperty('no-traverse', false, ComponentPropertyType::TYPE_BOOL));
+        $this->addParam(new ComponentProperty('no-drop', false, ComponentPropertyType::TYPE_BOOL));
     }
 }

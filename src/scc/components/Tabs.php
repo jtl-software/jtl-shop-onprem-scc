@@ -26,39 +26,14 @@ class Tabs extends AbstractBlockComponent
         $this->setTemplate('tabs.tpl');
         $this->setName('tabs');
 
-        $this->params[] = new ComponentProperty('tag', 'ul');
-
-        $prop = new ComponentProperty();
-        $prop->setName('card');
-        $prop->setType(ComponentPropertyType::TYPE_BOOL);
-        $prop->setDefaultValue(false);
-        $this->params[] = $prop;
-
-        $prop = new ComponentProperty();
-        $prop->setName('small');
-        $prop->setType(ComponentPropertyType::TYPE_BOOL);
-        $prop->setDefaultValue(false);
-        $this->params[] = $prop;
-
-        $prop = new ComponentProperty();
-        $prop->setName('pills');
-        $prop->setType(ComponentPropertyType::TYPE_BOOL);
-        $prop->setDefaultValue(false);
-        $this->params[] = $prop;
-
-        $this->params[] = new ComponentProperty('nav-class');
-        $this->params[] = new ComponentProperty('content-class');
-
-        $prop = new ComponentProperty();
-        $prop->setName('tabs');
-        $prop->setType(ComponentPropertyType::TYPE_ARRAY);
-        $this->params[] = $prop;
-        
-        $prop = new ComponentProperty();
-        $prop->setName('swipeable');
-        $prop->setType(ComponentPropertyType::TYPE_BOOL);
-        $prop->setDefaultValue(false);
-        $this->params[] = $prop;
+        $this->addParam(new ComponentProperty('tag', 'ul'));
+        $this->addParam(new ComponentProperty('nav-class'));
+        $this->addParam(new ComponentProperty('content-class'));
+        $this->addParam(new ComponentProperty('pills', false, ComponentPropertyType::TYPE_BOOL));
+        $this->addParam(new ComponentProperty('small', false, ComponentPropertyType::TYPE_BOOL));
+        $this->addParam(new ComponentProperty('card', false, ComponentPropertyType::TYPE_BOOL));
+        $this->addParam(new ComponentProperty('swipeable', false, ComponentPropertyType::TYPE_BOOL));
+        $this->addParam(new ComponentProperty('tabs', null, ComponentPropertyType::TYPE_ARRAY));
 
         $this->setRenderer(new TabsRenderer($this));
     }

@@ -24,22 +24,12 @@ class Navbar extends AbstractBlockComponent
         $this->setTemplate('navbar.tpl');
         $this->setName('navbar');
 
-        $this->params[] = new ComponentProperty('tag', 'nav');
-        $this->params[] = new ComponentProperty('type', 'light');
-        $this->params[] = new ComponentProperty('variant');
-        $this->params[] = new ComponentProperty('toggle-breakpoint');
-        $this->params[] = new ComponentProperty('fixed');
-
-        $prop = new ComponentProperty();
-        $prop->setName('toggleable');
-        $prop->setType(ComponentPropertyType::TYPE_BOOL);
-        $prop->setDefaultValue(false);
-        $this->params[] = $prop;
-
-        $prop = new ComponentProperty();
-        $prop->setName('sticky');
-        $prop->setType(ComponentPropertyType::TYPE_BOOL);
-        $prop->setDefaultValue(false);
-        $this->params[] = $prop;
+        $this->addParam(new ComponentProperty('tag', 'nav'));
+        $this->addParam(new ComponentProperty('type', 'light'));
+        $this->addParam(new ComponentProperty('variant'));
+        $this->addParam(new ComponentProperty('toggle-breakpoint'));
+        $this->addParam(new ComponentProperty('fixed'));
+        $this->addParam(new ComponentProperty('toggleable', false, ComponentPropertyType::TYPE_BOOL));
+        $this->addParam(new ComponentProperty('sticky', false, ComponentPropertyType::TYPE_BOOL));
     }
 }

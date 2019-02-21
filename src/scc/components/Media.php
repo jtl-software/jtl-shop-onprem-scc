@@ -24,19 +24,9 @@ class Media extends AbstractBlockComponent
         $this->setTemplate('media.tpl');
         $this->setName('media');
 
-        $this->params[] = new ComponentProperty('tag', 'div');
-        $this->params[] = new ComponentProperty('vertical-align', 'top');
-
-        $prop = new ComponentProperty();
-        $prop->setName('right-align');
-        $prop->setType(ComponentPropertyType::TYPE_BOOL);
-        $prop->setDefaultValue(false);
-        $this->params[] = $prop;
-
-        $prop = new ComponentProperty();
-        $prop->setName('no-body');
-        $prop->setType(ComponentPropertyType::TYPE_BOOL);
-        $prop->setDefaultValue(false);
-        $this->params[] = $prop;
+        $this->addParam(new ComponentProperty('tag', 'div'));
+        $this->addParam(new ComponentProperty('vertical-align', 'top'));
+        $this->addParam(new ComponentProperty('right-align', false, ComponentPropertyType::TYPE_BOOL));
+        $this->addParam(new ComponentProperty('no-body', false, ComponentPropertyType::TYPE_BOOL));
     }
 }

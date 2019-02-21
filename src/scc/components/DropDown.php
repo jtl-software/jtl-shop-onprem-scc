@@ -24,51 +24,17 @@ class DropDown extends AbstractBlockComponent
         $this->setTemplate('dropdown.tpl');
         $this->setName('dropdown');
 
-        $prop = new ComponentProperty();
-        $prop->setName('disabled');
-        $prop->setType(ComponentPropertyType::TYPE_BOOL);
-        $prop->setDefaultValue(false);
-        $this->params[] = $prop;
-
-        $prop = new ComponentProperty();
-        $prop->setName('right');
-        $prop->setType(ComponentPropertyType::TYPE_BOOL);
-        $prop->setDefaultValue(false);
-        $this->params[] = $prop;
-
-        $prop = new ComponentProperty();
-        $prop->setName('split');
-        $prop->setType(ComponentPropertyType::TYPE_BOOL);
-        $prop->setDefaultValue(false);
-        $this->params[] = $prop;
-
-        $prop = new ComponentProperty();
-        $prop->setName('dropup');
-        $prop->setType(ComponentPropertyType::TYPE_BOOL);
-        $prop->setDefaultValue(false);
-        $this->params[] = $prop;
-
-        $prop = new ComponentProperty();
-        $prop->setName('offset');
-        $prop->setType(ComponentPropertyType::TYPE_NUMERIC);
-        $prop->setDefaultValue(0);
-        $this->params[] = $prop;
-
-        $prop = new ComponentProperty();
-        $prop->setName('no-caret');
-        $prop->setType(ComponentPropertyType::TYPE_BOOL);
-        $prop->setDefaultValue(false);
-        $this->params[] = $prop;
-
-        $prop = new ComponentProperty();
-        $prop->setName('no-flip');
-        $prop->setType(ComponentPropertyType::TYPE_BOOL);
-        $prop->setDefaultValue(false);
-        $this->params[] = $prop;
-
-        $this->params[] = new ComponentProperty('variant', 'secondary');
-        $this->params[] = new ComponentProperty('toggleText', 'Toggle dropdown');
-        $this->params[] = new ComponentProperty('size');
-        $this->params[] = new ComponentProperty('text', '');
+        $this->addParam(new ComponentProperty('disabled', false, ComponentPropertyType::TYPE_BOOL));
+        $this->addParam(new ComponentProperty('right', false, ComponentPropertyType::TYPE_BOOL));
+        $this->addParam(new ComponentProperty('split', false, ComponentPropertyType::TYPE_BOOL));
+        $this->addParam(new ComponentProperty('is-nav', false, ComponentPropertyType::TYPE_BOOL));
+        $this->addParam(new ComponentProperty('dropup', false, ComponentPropertyType::TYPE_BOOL));
+        $this->addParam(new ComponentProperty('no-caret', false, ComponentPropertyType::TYPE_BOOL));
+        $this->addParam(new ComponentProperty('no-flip', false, ComponentPropertyType::TYPE_BOOL));
+        $this->addParam(new ComponentProperty('offset', 0, ComponentPropertyType::TYPE_NUMERIC));
+        $this->addParam(new ComponentProperty('variant', 'secondary'));
+        $this->addParam(new ComponentProperty('toggleText', 'Toggle dropdown'));
+        $this->addParam(new ComponentProperty('size'));
+        $this->addParam(new ComponentProperty('text', ''));
     }
 }

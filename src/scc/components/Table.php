@@ -24,79 +24,21 @@ class Table extends AbstractFunctionComponent
         $this->setTemplate('table.tpl');
         $this->setName('table');
 
-        $this->params[] = new ComponentProperty('title');
-        $this->params[] = new ComponentProperty('title-item-class');
-        $this->params[] = new ComponentProperty('title-link-class');
-        $this->params[] = new ComponentProperty('href', '#');
-
-        $prop = new ComponentProperty();
-        $prop->setName('caption');
-        $prop->setType(ComponentPropertyType::TYPE_STRING);
-        $this->params[] = $prop;
-
-        $prop = new ComponentProperty();
-        $prop->setName('responsive');
-        $prop->setType(ComponentPropertyType::TYPE_STRING);
-        $this->params[] = $prop;
-
-        $prop = new ComponentProperty();
-        $prop->setName('fields');
-        $prop->setType(ComponentPropertyType::TYPE_ARRAY);
-        $prop->setDefaultValue([]);
-        $this->params[] = $prop;
-
-        $prop = new ComponentProperty();
-        $prop->setName('items');
-        $prop->setType(ComponentPropertyType::TYPE_ARRAY);
-        $prop->setDefaultValue([]);
-        $this->params[] = $prop;
-
-        $prop = new ComponentProperty();
-        $prop->setName('striped');
-        $prop->setType(ComponentPropertyType::TYPE_BOOL);
-        $prop->setDefaultValue(false);
-        $this->params[] = $prop;
-
-        $prop = new ComponentProperty();
-        $prop->setName('bordered');
-        $prop->setType(ComponentPropertyType::TYPE_BOOL);
-        $prop->setDefaultValue(false);
-        $this->params[] = $prop;
-        
-        $prop = new ComponentProperty();
-        $prop->setName('borderless');
-        $prop->setType(ComponentPropertyType::TYPE_BOOL);
-        $prop->setDefaultValue(false);
-        $this->params[] = $prop;
-
-        $prop = new ComponentProperty();
-        $prop->setName('outlined');
-        $prop->setType(ComponentPropertyType::TYPE_BOOL);
-        $prop->setDefaultValue(false);
-        $this->params[] = $prop;
-
-        $prop = new ComponentProperty();
-        $prop->setName('small');
-        $prop->setType(ComponentPropertyType::TYPE_BOOL);
-        $prop->setDefaultValue(false);
-        $this->params[] = $prop;
-
-        $prop = new ComponentProperty();
-        $prop->setName('hover');
-        $prop->setType(ComponentPropertyType::TYPE_BOOL);
-        $prop->setDefaultValue(false);
-        $this->params[] = $prop;
-
-        $prop = new ComponentProperty();
-        $prop->setName('fixed');
-        $prop->setType(ComponentPropertyType::TYPE_BOOL);
-        $prop->setDefaultValue(false);
-        $this->params[] = $prop;
-
-        $prop = new ComponentProperty();
-        $prop->setName('dark');
-        $prop->setType(ComponentPropertyType::TYPE_BOOL);
-        $prop->setDefaultValue(false);
-        $this->params[] = $prop;
+        $this->addParam(new ComponentProperty('title'));
+        $this->addParam(new ComponentProperty('title-item-class'));
+        $this->addParam(new ComponentProperty('title-link-class'));
+        $this->addParam(new ComponentProperty('href', '#'));
+        $this->addParam(new ComponentProperty('caption', null, ComponentPropertyType::TYPE_STRING));
+        $this->addParam(new ComponentProperty('responsive', null, ComponentPropertyType::TYPE_STRING));
+        $this->addParam(new ComponentProperty('fields', [], ComponentPropertyType::TYPE_ARRAY));
+        $this->addParam(new ComponentProperty('items', [], ComponentPropertyType::TYPE_ARRAY));
+        $this->addParam(new ComponentProperty('striped', false, ComponentPropertyType::TYPE_BOOL));
+        $this->addParam(new ComponentProperty('bordered', false, ComponentPropertyType::TYPE_BOOL));
+        $this->addParam(new ComponentProperty('borderless', false, ComponentPropertyType::TYPE_BOOL));
+        $this->addParam(new ComponentProperty('outlined', false, ComponentPropertyType::TYPE_BOOL));
+        $this->addParam(new ComponentProperty('small', false, ComponentPropertyType::TYPE_BOOL));
+        $this->addParam(new ComponentProperty('hover', false, ComponentPropertyType::TYPE_BOOL));
+        $this->addParam(new ComponentProperty('fixed', false, ComponentPropertyType::TYPE_BOOL));
+        $this->addParam(new ComponentProperty('dark', false, ComponentPropertyType::TYPE_BOOL));
     }
 }

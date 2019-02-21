@@ -24,42 +24,17 @@ class NavbarBrand extends AbstractBlockComponent
         $this->setTemplate('navbarbrand.tpl');
         $this->setName('navbarbrand');
 
-        $this->params[] = new ComponentProperty('tag', 'div');
-        $this->params[] = new ComponentProperty('href');
-        $this->params[] = new ComponentProperty('rel');
-        $this->params[] = new ComponentProperty('target', '_self');
-        $this->params[] = new ComponentProperty('active-class', 'active');
-        $this->params[] = new ComponentProperty('exact-active-class', 'active');
-        $this->params[] = new ComponentProperty('router-tag', 'a');
-
-        $prop = new ComponentProperty();
-        $prop->setName('active');
-        $prop->setType(ComponentPropertyType::TYPE_BOOL);
-        $prop->setDefaultValue(false);
-        $this->params[] = $prop;
-
-        $prop = new ComponentProperty();
-        $prop->setName('disabled');
-        $prop->setType(ComponentPropertyType::TYPE_BOOL);
-        $prop->setDefaultValue(false);
-        $this->params[] = $prop;
-
-        $prop = new ComponentProperty();
-        $prop->setName('append');
-        $prop->setType(ComponentPropertyType::TYPE_BOOL);
-        $prop->setDefaultValue(false);
-        $this->params[] = $prop;
-
-        $prop = new ComponentProperty();
-        $prop->setName('exact');
-        $prop->setType(ComponentPropertyType::TYPE_BOOL);
-        $prop->setDefaultValue(false);
-        $this->params[] = $prop;
-
-        $prop = new ComponentProperty();
-        $prop->setName('replace');
-        $prop->setType(ComponentPropertyType::TYPE_BOOL);
-        $prop->setDefaultValue(false);
-        $this->params[] = $prop;
+        $this->addParam(new ComponentProperty('tag', 'div'));
+        $this->addParam(new ComponentProperty('href'));
+        $this->addParam(new ComponentProperty('rel'));
+        $this->addParam(new ComponentProperty('target', '_self'));
+        $this->addParam(new ComponentProperty('active-class', 'active'));
+        $this->addParam(new ComponentProperty('exact-active-class', 'active'));
+        $this->addParam(new ComponentProperty('router-tag', 'a'));
+        $this->addParam(new ComponentProperty('active', false, ComponentPropertyType::TYPE_BOOL));
+        $this->addParam(new ComponentProperty('disabled', false, ComponentPropertyType::TYPE_BOOL));
+        $this->addParam(new ComponentProperty('append', false, ComponentPropertyType::TYPE_BOOL));
+        $this->addParam(new ComponentProperty('exact', false, ComponentPropertyType::TYPE_BOOL));
+        $this->addParam(new ComponentProperty('replace', false, ComponentPropertyType::TYPE_BOOL));
     }
 }

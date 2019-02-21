@@ -24,30 +24,19 @@ class CarouselSlide extends AbstractBlockComponent
         $this->setTemplate('carouselslide.tpl');
         $this->setName('carouselslide');
 
-        $this->params[] = new ComponentProperty('caption-text');
-
-        $prop = new ComponentProperty();
-        $prop->setName('active');
-        $prop->setType(ComponentPropertyType::TYPE_BOOL);
-        $prop->setDefaultValue(false);
-        $this->params[] = $prop;
-
-        $prop = new ComponentProperty();
-        $prop->setName('img-blank');
-        $prop->setType(ComponentPropertyType::TYPE_BOOL);
-        $prop->setDefaultValue(false);
-        $this->params[] = $prop;
-
-        $this->params[] = new ComponentProperty('img-blank-color', 'transparent');
-        $this->params[] = new ComponentProperty('src');
-        $this->params[] = new ComponentProperty('img-src');
-        $this->params[] = new ComponentProperty('img-alt', '');
-        $this->params[] = new ComponentProperty('img-width');
-        $this->params[] = new ComponentProperty('img-height');
-        $this->params[] = new ComponentProperty('content-tag', 'div');
-        $this->params[] = new ComponentProperty('caption');
-        $this->params[] = new ComponentProperty('caption-tag', 'h3');
-        $this->params[] = new ComponentProperty('caption-text-tag', 'p');
-        $this->params[] = new ComponentProperty('background');
+        $this->addParam(new ComponentProperty('active', false, ComponentPropertyType::TYPE_BOOL));
+        $this->addParam(new ComponentProperty('img-blank', false, ComponentPropertyType::TYPE_BOOL));
+        $this->addParam(new ComponentProperty('img-blank-color', 'transparent'));
+        $this->addParam(new ComponentProperty('caption-text'));
+        $this->addParam(new ComponentProperty('src'));
+        $this->addParam(new ComponentProperty('img-src'));
+        $this->addParam(new ComponentProperty('img-alt', ''));
+        $this->addParam(new ComponentProperty('img-width'));
+        $this->addParam(new ComponentProperty('img-height'));
+        $this->addParam(new ComponentProperty('content-tag', 'div'));
+        $this->addParam(new ComponentProperty('caption'));
+        $this->addParam(new ComponentProperty('caption-tag', 'h3'));
+        $this->addParam(new ComponentProperty('caption-text-tag', 'p'));
+        $this->addParam(new ComponentProperty('background'));
     }
 }

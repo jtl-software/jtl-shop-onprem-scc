@@ -24,28 +24,13 @@ class Tab extends AbstractBlockComponent
         $this->setTemplate('tab.tpl');
         $this->setName('tab');
 
-        $this->params[] = new ComponentProperty('tag', 'li');
-        $this->params[] = new ComponentProperty('title');
-        $this->params[] = new ComponentProperty('title-item-class');
-        $this->params[] = new ComponentProperty('title-link-class');
-        $this->params[] = new ComponentProperty('href', '#');
-
-        $prop = new ComponentProperty();
-        $prop->setName('active');
-        $prop->setType(ComponentPropertyType::TYPE_BOOL);
-        $prop->setDefaultValue(false);
-        $this->params[] = $prop;
-
-        $prop = new ComponentProperty();
-        $prop->setName('disabled');
-        $prop->setType(ComponentPropertyType::TYPE_BOOL);
-        $prop->setDefaultValue(false);
-        $this->params[] = $prop;
-        
-        $prop = new ComponentProperty();
-        $prop->setName('swipeable');
-        $prop->setType(ComponentPropertyType::TYPE_BOOL);
-        $prop->setDefaultValue(false);
-        $this->params[] = $prop;
+        $this->addParam(new ComponentProperty('tag', 'li'));
+        $this->addParam(new ComponentProperty('title'));
+        $this->addParam(new ComponentProperty('title-item-class'));
+        $this->addParam(new ComponentProperty('title-link-class'));
+        $this->addParam(new ComponentProperty('href', '#'));
+        $this->addParam(new ComponentProperty('active', false, ComponentPropertyType::TYPE_BOOL));
+        $this->addParam(new ComponentProperty('disabled', false, ComponentPropertyType::TYPE_BOOL));
+        $this->addParam(new ComponentProperty('swipeable', false, ComponentPropertyType::TYPE_BOOL));
     }
 }

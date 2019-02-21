@@ -24,32 +24,17 @@ class Button extends AbstractBlockComponent
         $this->setTemplate('button.tpl');
         $this->setName('button');
 
-        $this->params[] = new ComponentProperty('type', 'button');
-        $this->params[] = new ComponentProperty('href');
-        $this->params[] = new ComponentProperty('rel');
-        $this->params[] = new ComponentProperty('target');
-        $this->params[] = new ComponentProperty('name');
-        $this->params[] = new ComponentProperty('value');
-        $this->params[] = new ComponentProperty('size');
-        $this->params[] = new ComponentProperty('title');
-        $this->params[] = new ComponentProperty('variant', 'secondary');
-
-        $prop = new ComponentProperty();
-        $prop->setName('disabled');
-        $prop->setType(ComponentPropertyType::TYPE_BOOL);
-        $prop->setDefaultValue(false);
-        $this->params[] = $prop;
-
-        $prop = new ComponentProperty();
-        $prop->setName('block');
-        $prop->setType(ComponentPropertyType::TYPE_BOOL);
-        $prop->setDefaultValue(false);
-        $this->params[] = $prop;
-
-        $prop = new ComponentProperty();
-        $prop->setName('formnovalidate');
-        $prop->setType(ComponentPropertyType::TYPE_BOOL);
-        $prop->setDefaultValue(false);
-        $this->params[] = $prop;
+        $this->addParam(new ComponentProperty('type', 'button'));
+        $this->addParam(new ComponentProperty('href'));
+        $this->addParam(new ComponentProperty('rel'));
+        $this->addParam(new ComponentProperty('target'));
+        $this->addParam(new ComponentProperty('name'));
+        $this->addParam(new ComponentProperty('value'));
+        $this->addParam(new ComponentProperty('size'));
+        $this->addParam(new ComponentProperty('title'));
+        $this->addParam(new ComponentProperty('variant', 'secondary'));
+        $this->addParam(new ComponentProperty('disabled', false, ComponentPropertyType::TYPE_BOOL));
+        $this->addParam(new ComponentProperty('block', false, ComponentPropertyType::TYPE_BOOL));
+        $this->addParam(new ComponentProperty('formnovalidate', false, ComponentPropertyType::TYPE_BOOL));
     }
 }

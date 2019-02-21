@@ -24,34 +24,13 @@ class Form extends AbstractBlockComponent
         $this->setTemplate('form.tpl');
         $this->setName('form');
 
-        $prop = new ComponentProperty();
-        $prop->setName('inline');
-        $prop->setType(ComponentPropertyType::TYPE_BOOL);
-        $prop->setDefaultValue(false);
-        $this->params[] = $prop;
-
-        $prop = new ComponentProperty();
-        $prop->setName('novalidate');
-        $prop->setType(ComponentPropertyType::TYPE_BOOL);
-        $prop->setDefaultValue(false);
-        $this->params[] = $prop;
-
-        $prop = new ComponentProperty();
-        $prop->setName('validated');
-        $prop->setType(ComponentPropertyType::TYPE_BOOL);
-        $prop->setDefaultValue(false);
-        $this->params[] = $prop;
-        $this->params[] = $prop;
-
-        $prop = new ComponentProperty();
-        $prop->setName('addtoken');
-        $prop->setType(ComponentPropertyType::TYPE_BOOL);
-        $prop->setDefaultValue(true);
-        $this->params[] = $prop;
-
-        $this->params[] = new ComponentProperty('action', '');
-        $this->params[] = new ComponentProperty('method', 'POST');
-        $this->params[] = new ComponentProperty('target', '_self');
-        $this->params[] = new ComponentProperty('enctype');
+        $this->addParam(new ComponentProperty('inline', false, ComponentPropertyType::TYPE_BOOL));
+        $this->addParam(new ComponentProperty('novalidate', false, ComponentPropertyType::TYPE_BOOL));
+        $this->addParam(new ComponentProperty('validated', false, ComponentPropertyType::TYPE_BOOL));
+        $this->addParam(new ComponentProperty('addtoken', false, ComponentPropertyType::TYPE_BOOL));
+        $this->addParam(new ComponentProperty('action', ''));
+        $this->addParam(new ComponentProperty('method', 'POST'));
+        $this->addParam(new ComponentProperty('target', '_self'));
+        $this->addParam(new ComponentProperty('enctype'));
     }
 }

@@ -24,63 +24,37 @@ class Card extends AbstractBlockComponent
         $this->setTemplate('card.tpl');
         $this->setName('card');
 
-        $this->params[] = new ComponentProperty('img-src');
-        $this->params[] = new ComponentProperty('img-alt');
-        $this->params[] = new ComponentProperty('title');
-        $this->params[] = new ComponentProperty('title-tag', 'h4');
-        $this->params[] = new ComponentProperty('subtitle');
-        $this->params[] = new ComponentProperty('subtitle-tag', 'h6');
-
-        $prop = new ComponentProperty();
-        $prop->setName('no-body');
-        $prop->setType(ComponentPropertyType::TYPE_BOOL);
-        $prop->setDefaultValue(false);
-        $this->params[] = $prop;
-
-        $prop = new ComponentProperty();
-        $prop->setName('img-top');
-        $prop->setType(ComponentPropertyType::TYPE_BOOL);
-        $prop->setDefaultValue(false);
-        $this->params[] = $prop;
-
-        $prop = new ComponentProperty();
-        $prop->setName('img-bottom');
-        $prop->setType(ComponentPropertyType::TYPE_BOOL);
-        $prop->setDefaultValue(false);
-        $this->params[] = $prop;
-
-        $prop = new ComponentProperty();
-        $prop->setName('img-fluid');
-        $prop->setType(ComponentPropertyType::TYPE_BOOL);
-        $prop->setDefaultValue(false);
-        $this->params[] = $prop;
-
-        $prop = new ComponentProperty();
-        $prop->setName('overlay');
-        $prop->setType(ComponentPropertyType::TYPE_BOOL);
-        $prop->setDefaultValue(false);
-        $this->params[] = $prop;
-
-        $this->params[] = new ComponentProperty('header');
-        $this->params[] = new ComponentProperty('header-tag', 'div');
-        $this->params[] = new ComponentProperty('footer');
-        $this->params[] = new ComponentProperty('footer-tag', 'div');
-        $this->params[] = new ComponentProperty('body-tag');
-        $this->params[] = new ComponentProperty('body-bg-variant');
-        $this->params[] = new ComponentProperty('body-border-variant');
-        $this->params[] = new ComponentProperty('body-text-variant');
-        $this->params[] = new ComponentProperty('body-class');
-        $this->params[] = new ComponentProperty('header-bg-variant');
-        $this->params[] = new ComponentProperty('header-border-variant');
-        $this->params[] = new ComponentProperty('header-text-variant');
-        $this->params[] = new ComponentProperty('header-class');
-        $this->params[] = new ComponentProperty('footer-bg-variant');
-        $this->params[] = new ComponentProperty('footer-border-variant');
-        $this->params[] = new ComponentProperty('footer-text-variant');
-        $this->params[] = new ComponentProperty('footer-class');
-        $this->params[] = new ComponentProperty('bg-variant');
-        $this->params[] = new ComponentProperty('border-variant');
-        $this->params[] = new ComponentProperty('text-variant');
-        $this->params[] = new ComponentProperty('align');
+        $this->addParam(new ComponentProperty('img-src'));
+        $this->addParam(new ComponentProperty('img-alt'));
+        $this->addParam(new ComponentProperty('title'));
+        $this->addParam(new ComponentProperty('title-tag', 'h4'));
+        $this->addParam(new ComponentProperty('subtitle'));
+        $this->addParam(new ComponentProperty('subtitle-tag', 'h6'));
+        $this->addParam(new ComponentProperty('no-body', false, ComponentPropertyType::TYPE_BOOL));
+        $this->addParam(new ComponentProperty('img-top', false, ComponentPropertyType::TYPE_BOOL));
+        $this->addParam(new ComponentProperty('img-bottom', false, ComponentPropertyType::TYPE_BOOL));
+        $this->addParam(new ComponentProperty('img-fluid', false, ComponentPropertyType::TYPE_BOOL));
+        $this->addParam(new ComponentProperty('overlay', false, ComponentPropertyType::TYPE_BOOL));
+        $this->addParam(new ComponentProperty('header'));
+        $this->addParam(new ComponentProperty('header-tag', 'div'));
+        $this->addParam(new ComponentProperty('footer'));
+        $this->addParam(new ComponentProperty('footer-tag', 'div'));
+        $this->addParam(new ComponentProperty('body-tag'));
+        $this->addParam(new ComponentProperty('body-bg-variant'));
+        $this->addParam(new ComponentProperty('body-border-variant'));
+        $this->addParam(new ComponentProperty('body-text-variant'));
+        $this->addParam(new ComponentProperty('body-class'));
+        $this->addParam(new ComponentProperty('header-bg-variant'));
+        $this->addParam(new ComponentProperty('header-border-variant'));
+        $this->addParam(new ComponentProperty('header-text-variant'));
+        $this->addParam(new ComponentProperty('header-class'));
+        $this->addParam(new ComponentProperty('footer-bg-variant'));
+        $this->addParam(new ComponentProperty('footer-border-variant'));
+        $this->addParam(new ComponentProperty('footer-text-variant'));
+        $this->addParam(new ComponentProperty('footer-class'));
+        $this->addParam(new ComponentProperty('bg-variant'));
+        $this->addParam(new ComponentProperty('border-variant'));
+        $this->addParam(new ComponentProperty('text-variant'));
+        $this->addParam(new ComponentProperty('align'));
     }
 }

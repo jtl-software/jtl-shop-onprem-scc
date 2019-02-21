@@ -24,37 +24,13 @@ class Progress extends AbstractFunctionComponent
         $this->setTemplate('progress.tpl');
         $this->setName('progress');
 
-        $prop = new ComponentProperty();
-        $prop->setName('min');
-        $prop->setType(ComponentPropertyType::TYPE_INT);
-        $prop->setDefaultValue(0);
-        $this->params[] = $prop;
-
-        $prop = new ComponentProperty();
-        $prop->setName('max');
-        $prop->setType(ComponentPropertyType::TYPE_INT);
-        $prop->setDefaultValue(100);
-        $this->params[] = $prop;
-
-        $prop = new ComponentProperty();
-        $prop->setName('now');
-        $prop->setType(ComponentPropertyType::TYPE_INT);
-        $this->params[] = $prop;
-
-        $prop = new ComponentProperty();
-        $prop->setName('striped');
-        $prop->setType(ComponentPropertyType::TYPE_BOOL);
-        $prop->setDefaultValue(false);
-        $this->params[] = $prop;
-
-        $prop = new ComponentProperty();
-        $prop->setName('animated');
-        $prop->setType(ComponentPropertyType::TYPE_BOOL);
-        $prop->setDefaultValue(false);
-        $this->params[] = $prop;
-
-        $this->params[] = new ComponentProperty('height');
-        $this->params[] = new ComponentProperty('type');
-        $this->params[] = new ComponentProperty('title');
+        $this->addParam(new ComponentProperty('min', 0, ComponentPropertyType::TYPE_INT));
+        $this->addParam(new ComponentProperty('max', 100, ComponentPropertyType::TYPE_INT));
+        $this->addParam(new ComponentProperty('now', null, ComponentPropertyType::TYPE_INT));
+        $this->addParam(new ComponentProperty('striped', false, ComponentPropertyType::TYPE_BOOL));
+        $this->addParam(new ComponentProperty('animated', false, ComponentPropertyType::TYPE_BOOL));
+        $this->addParam(new ComponentProperty('height'));
+        $this->addParam(new ComponentProperty('type'));
+        $this->addParam(new ComponentProperty('title'));
     }
 }

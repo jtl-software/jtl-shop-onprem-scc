@@ -29,60 +29,19 @@ class Input extends AbstractFunctionComponent
         $prop->setType(ComponentPropertyType::TYPE_STRING);
         $prop->setDefaultValue('text');
         $prop->setIsRequired(true);
-        $this->params[] = $prop;
+        $this->addParam($prop);
 
-        $this->params[] = new ComponentProperty('value');
-
-        $prop = new ComponentProperty();
-        $prop->setName('size');
-        $prop->setType(ComponentPropertyType::TYPE_INT);
-        $this->params[] = $prop;
-
-        $prop = new ComponentProperty();
-        $prop->setName('min');
-        $prop->setType(ComponentPropertyType::TYPE_NUMERIC);
-        $this->params[] = $prop;
-
-        $prop = new ComponentProperty();
-        $prop->setName('max');
-        $prop->setType(ComponentPropertyType::TYPE_NUMERIC);
-        $this->params[] = $prop;
-
-        $prop = new ComponentProperty();
-        $prop->setName('size');
-        $prop->setType(ComponentPropertyType::TYPE_NUMERIC);
-        $this->params[] = $prop;
-
-        $prop = new ComponentProperty();
-        $prop->setName('maxlength');
-        $prop->setType(ComponentPropertyType::TYPE_NUMERIC);
-        $this->params[] = $prop;
-
-        $prop = new ComponentProperty();
-        $prop->setName('step');
-        $prop->setType(ComponentPropertyType::TYPE_NUMERIC);
-        $this->params[] = $prop;
-
-        $this->params[] = new ComponentProperty('placeholder');
-        $this->params[] = new ComponentProperty('name');
-        $this->params[] = new ComponentProperty('autocomplete');
-
-        $prop = new ComponentProperty();
-        $prop->setName('readonly');
-        $prop->setType(ComponentPropertyType::TYPE_BOOL);
-        $prop->setDefaultValue(false);
-        $this->params[] = $prop;
-
-        $prop = new ComponentProperty();
-        $prop->setName('required');
-        $prop->setType(ComponentPropertyType::TYPE_BOOL);
-        $prop->setDefaultValue(false);
-        $this->params[] = $prop;
-
-        $prop = new ComponentProperty();
-        $prop->setName('disabled');
-        $prop->setType(ComponentPropertyType::TYPE_BOOL);
-        $prop->setDefaultValue(false);
-        $this->params[] = $prop;
+        $this->addParam(new ComponentProperty('value'));
+        $this->addParam(new ComponentProperty('placeholder'));
+        $this->addParam(new ComponentProperty('name'));
+        $this->addParam(new ComponentProperty('autocomplete'));
+        $this->addParam(new ComponentProperty('step', null, ComponentPropertyType::TYPE_NUMERIC));
+        $this->addParam(new ComponentProperty('maxlength', null, ComponentPropertyType::TYPE_NUMERIC));
+        $this->addParam(new ComponentProperty('size', null, ComponentPropertyType::TYPE_INT));
+        $this->addParam(new ComponentProperty('max', null, ComponentPropertyType::TYPE_NUMERIC));
+        $this->addParam(new ComponentProperty('min', null, ComponentPropertyType::TYPE_NUMERIC));
+        $this->addParam(new ComponentProperty('readonly', false, ComponentPropertyType::TYPE_BOOL));
+        $this->addParam(new ComponentProperty('required', false, ComponentPropertyType::TYPE_BOOL));
+        $this->addParam(new ComponentProperty('disabled', false, ComponentPropertyType::TYPE_BOOL));
     }
 }

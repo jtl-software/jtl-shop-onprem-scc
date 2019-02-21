@@ -24,17 +24,17 @@ class Alert extends AbstractBlockComponent
         $this->setTemplate('alert.tpl');
         $this->setName('alert');
 
-        $this->params[] = new ComponentProperty('variant', 'info');
-        $this->params[] = new ComponentProperty(
+        $this->addParam(new ComponentProperty('variant', 'info'));
+        $this->addParam(new ComponentProperty(
             'dismissible',
             false,
             ComponentPropertyType::TYPE_BOOL
-        );
-        $this->params[] = new ComponentProperty(
+        ));
+        $this->addParam(new ComponentProperty(
             'show',
             false,
             ComponentPropertyType::TYPE_BOOL
-        );
-        $this->params[] = new ComponentProperty('dismiss-label', 'Close');
+        ));
+        $this->addParam(new ComponentProperty('dismiss-label', 'Close'));
     }
 }

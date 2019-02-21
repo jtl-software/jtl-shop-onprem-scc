@@ -24,17 +24,8 @@ class InputGroupAddon extends AbstractBlockComponent
         $this->setTemplate('inputgroupaddon.tpl');
         $this->setName('inputgroupaddon');
 
-        $prop = new ComponentProperty();
-        $prop->setName('append');
-        $prop->setType(ComponentPropertyType::TYPE_BOOL);
-        $prop->setDefaultValue(false);
-        $this->params[] = $prop;
-
-        $prop = new ComponentProperty();
-        $prop->setName('is-text');
-        $prop->setType(ComponentPropertyType::TYPE_BOOL);
-        $prop->setDefaultValue(false);
-        $this->params[] = $prop;
-        $this->params[] = new ComponentProperty('tag', 'div');
+        $this->addParam(new ComponentProperty('append', false, ComponentPropertyType::TYPE_BOOL));
+        $this->addParam(new ComponentProperty('is-text', false, ComponentPropertyType::TYPE_BOOL));
+        $this->addParam(new ComponentProperty('tag', 'div'));
     }
 }

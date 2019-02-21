@@ -24,6 +24,6 @@ class InputGroupText extends AbstractBlockComponent
         $this->setTemplate('inputgrouptext.tpl');
         $this->setName('inputgrouptext');
 
-        $this->params[] = new ComponentProperty('tag', 'div');
+        $this->addParam(new ComponentProperty('tag', 'div'));
     }
 }

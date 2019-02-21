@@ -25,16 +25,7 @@ class ButtonToolbar extends AbstractBlockComponent
         $this->setTemplate('buttontoolbar.tpl');
         $this->setName('buttontoolbar');
 
-        $prop = new ComponentProperty();
-        $prop->setName('justify');
-        $prop->setType(ComponentPropertyType::TYPE_BOOL);
-        $prop->setDefaultValue(false);
-        $this->params[] = $prop;
-
-        $prop = new ComponentProperty();
-        $prop->setName('key-nav');
-        $prop->setType(ComponentPropertyType::TYPE_BOOL);
-        $prop->setDefaultValue(false);
-        $this->params[] = $prop;
+        $this->addParam(new ComponentProperty('justify', false, ComponentPropertyType::TYPE_BOOL));
+        $this->addParam(new ComponentProperty('key-nav', false, ComponentPropertyType::TYPE_BOOL));
     }
 }

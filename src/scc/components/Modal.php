@@ -24,13 +24,8 @@ class Modal extends AbstractBlockComponent
         $this->setTemplate('modal.tpl');
         $this->setName('modal');
 
-        $this->params[] = new ComponentProperty('title');
-        $this->params[] = new ComponentProperty('footer');
-
-        $prop = new ComponentProperty();
-        $prop->setName('centered');
-        $prop->setType(ComponentPropertyType::TYPE_BOOL);
-        $prop->setDefaultValue(false);
-        $this->params[] = $prop;
+        $this->addParam(new ComponentProperty('title'));
+        $this->addParam(new ComponentProperty('footer'));
+        $this->addParam(new ComponentProperty('centered', false, ComponentPropertyType::TYPE_BOOL));
     }
 }
