@@ -18,4 +18,9 @@ interface ComponentRendererInterface
      * @return string
      */
     public function render(array $params, ...$args): string;
+
+    /**
+     * init default values
+     */
+    public function preset(): void;
 }

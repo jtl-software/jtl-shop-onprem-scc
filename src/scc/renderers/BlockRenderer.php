@@ -35,10 +35,24 @@ class BlockRenderer implements ComponentRendererInterface
     /**
      * @inheritdoc
      */
+    public function preset(): void
+    {
+        foreach ($this->component->getParams() as $param) {
+            if ($param->getType() === ComponentPropertyType::TYPE_UNIQUEID) {
+                $param->setValue(\uniqid('', false));
+            } elseif (($defaultValue = $param->getDefaultValue()) !== null) {
+                $param->setValue($defaultValue);
+            }
+        }
+    }
+
+    /**
+     * @inheritdoc
+     */
     public function render(array $params, ...$args): string
     {
         [$content, $tpl] = $args;
-        $params          = $this->mergeParams($this->component->getParams(), $params);
+        $params          = $this->mergeParams($params);
         if ($content === null) {
             $tpl->smarty->assign('parentBlockParams', $params)
                         ->assign('pbp', $params);
@@ -53,25 +67,22 @@ class BlockRenderer implements ComponentRendererInterface
     }
 
     /**
-     * @param ComponentPropertyInterface[] $base
-     * @param array                        $dynamic
+     * @param array $dynamic
      * @return ComponentPropertyInterface[]
      */
-    protected function mergeParams(array $base, array $dynamic): array
+    protected function mergeParams(array $dynamic): array
     {
-        $merged = [];
-        foreach ($base as $param) {
-            $name = $param->getName();
-            if (isset($dynamic[$name])) {
-                $param->setValue($dynamic[$name]);
-            } elseif ($param->getType() === ComponentPropertyType::TYPE_UNIQUEID) {
-                $param->setValue(\uniqid('', false));
-            } else {
-                $param->setValue($param->getDefaultValue());
+        $params = $this->component->getParams();
+        $clone  = [];
+        foreach ($params as $name => $param) {
+            $clone[$name] = clone $param;
+        }
+        foreach ($dynamic as $name => $value) {
+            if (isset($clone[$name])) {
+                $clone[$name]->setValue($value);
             }
-            $merged[$name] = $param;
         }
 
-        return $merged;
+        return $clone;
     }
 }

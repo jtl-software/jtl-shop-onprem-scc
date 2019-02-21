@@ -82,6 +82,11 @@ class DefaultComponentRegistrator
     protected $renderer;
 
     /**
+     * @var ComponentInterface[]
+     */
+    protected $components = [];
+
+    /**
      * DefaultComponentRegistrator constructor.
      * @param RendererInterface $renderer
      */
@@ -95,68 +100,72 @@ class DefaultComponentRegistrator
      */
     public function registerComponents(): void
     {
-        $this->renderer->registerComponent(new Card());
-        $this->renderer->registerComponent(new Input());
-        $this->renderer->registerComponent(new Link());
-        $this->renderer->registerComponent(new Button());
-        $this->renderer->registerComponent(new ListGroup());
-        $this->renderer->registerComponent(new ListGroupItem());
-        $this->renderer->registerComponent(new Modal());
-        $this->renderer->registerComponent(new Tabs());
-        $this->renderer->registerComponent(new Tab());
-        $this->renderer->registerComponent(new Badge());
-        $this->renderer->registerComponent(new Image());
-        $this->renderer->registerComponent(new Alert());
-        $this->renderer->registerComponent(new Jumbotron());
-        $this->renderer->registerComponent(new DropDown());
-        $this->renderer->registerComponent(new DropDownItem());
-        $this->renderer->registerComponent(new DropDownDivider());
-        $this->renderer->registerComponent(new ButtonGroup());
-        $this->renderer->registerComponent(new ButtonToolbar());
-        $this->renderer->registerComponent(new Carousel());
-        $this->renderer->registerComponent(new CarouselSlide());
-        $this->renderer->registerComponent(new MediaAside());
-        $this->renderer->registerComponent(new MediaBody());
-        $this->renderer->registerComponent(new Media());
-        $this->renderer->registerComponent(new Checkbox());
-        $this->renderer->registerComponent(new CheckboxGroup());
-        $this->renderer->registerComponent(new Radio());
-        $this->renderer->registerComponent(new RadioGroup());
-        $this->renderer->registerComponent(new FormGroup());
-        $this->renderer->registerComponent(new Select());
-        $this->renderer->registerComponent(new Textarea());
-        $this->renderer->registerComponent(new InputFile());
-        $this->renderer->registerComponent(new Form());
-        $this->renderer->registerComponent(new InputGroup());
-        $this->renderer->registerComponent(new InputGroupAddon());
-        $this->renderer->registerComponent(new InputGroupAppend());
-        $this->renderer->registerComponent(new InputGroupPrepend());
-        $this->renderer->registerComponent(new InputGroupText());
-        $this->renderer->registerComponent(new Container());
-        $this->renderer->registerComponent(new Row());
-        $this->renderer->registerComponent(new Col());
-        $this->renderer->registerComponent(new FormRow());
-        $this->renderer->registerComponent(new Pagination());
-        $this->renderer->registerComponent(new Embed());
-        $this->renderer->registerComponent(new CardGroup());
-        $this->renderer->registerComponent(new CardBody());
-        $this->renderer->registerComponent(new CardHeader());
-        $this->renderer->registerComponent(new CardFooter());
-        $this->renderer->registerComponent(new CardImg());
-        $this->renderer->registerComponent(new Nav());
-        $this->renderer->registerComponent(new NavForm());
-        $this->renderer->registerComponent(new NavText());
-        $this->renderer->registerComponent(new NavItem());
-        $this->renderer->registerComponent(new NavItemDropdown());
-        $this->renderer->registerComponent(new Navbar());
-        $this->renderer->registerComponent(new NavbarNav());
-        $this->renderer->registerComponent(new NavbarBrand());
-        $this->renderer->registerComponent(new NavbarToggle());
-        $this->renderer->registerComponent(new Collapse());
-        $this->renderer->registerComponent(new Progress());
-        $this->renderer->registerComponent(new Breadcrumb());
-        $this->renderer->registerComponent(new BreadcrumbItem());
-        $this->renderer->registerComponent(new CSRFToken());
-        $this->renderer->registerComponent(new Table());
+        $this->components[] = new Card();
+        $this->components[] = new Input();
+        $this->components[] = new Link();
+        $this->components[] = new Button();
+        $this->components[] = new ListGroup();
+        $this->components[] = new ListGroupItem();
+        $this->components[] = new Modal();
+        $this->components[] = new Tabs();
+        $this->components[] = new Tab();
+        $this->components[] = new Badge();
+        $this->components[] = new Image();
+        $this->components[] = new Alert();
+        $this->components[] = new Jumbotron();
+        $this->components[] = new DropDown();
+        $this->components[] = new DropDownItem();
+        $this->components[] = new DropDownDivider();
+        $this->components[] = new ButtonGroup();
+        $this->components[] = new ButtonToolbar();
+        $this->components[] = new Carousel();
+        $this->components[] = new CarouselSlide();
+        $this->components[] = new MediaAside();
+        $this->components[] = new MediaBody();
+        $this->components[] = new Media();
+        $this->components[] = new Checkbox();
+        $this->components[] = new CheckboxGroup();
+        $this->components[] = new Radio();
+        $this->components[] = new RadioGroup();
+        $this->components[] = new FormGroup();
+        $this->components[] = new Select();
+        $this->components[] = new Textarea();
+        $this->components[] = new InputFile();
+        $this->components[] = new Form();
+        $this->components[] = new InputGroup();
+        $this->components[] = new InputGroupAddon();
+        $this->components[] = new InputGroupAppend();
+        $this->components[] = new InputGroupPrepend();
+        $this->components[] = new InputGroupText();
+        $this->components[] = new Container();
+        $this->components[] = new Row();
+        $this->components[] = new Col();
+        $this->components[] = new FormRow();
+        $this->components[] = new Pagination();
+        $this->components[] = new Embed();
+        $this->components[] = new CardGroup();
+        $this->components[] = new CardBody();
+        $this->components[] = new CardHeader();
+        $this->components[] = new CardFooter();
+        $this->components[] = new CardImg();
+        $this->components[] = new Nav();
+        $this->components[] = new NavForm();
+        $this->components[] = new NavText();
+        $this->components[] = new NavItem();
+        $this->components[] = new NavItemDropdown();
+        $this->components[] = new Navbar();
+        $this->components[] = new NavbarNav();
+        $this->components[] = new NavbarBrand();
+        $this->components[] = new NavbarToggle();
+        $this->components[] = new Collapse();
+        $this->components[] = new Progress();
+        $this->components[] = new Breadcrumb();
+        $this->components[] = new BreadcrumbItem();
+        $this->components[] = new CSRFToken();
+        $this->components[] = new Table();
+        foreach ($this->components as $component) {
+            $component->getRenderer()->preset();
+            $this->renderer->registerComponent($component);
+        }
     }
 }

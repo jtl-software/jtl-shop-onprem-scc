@@ -26,9 +26,8 @@ class NestedBlockRenderer extends BlockRenderer
 
             return '';
         }
-        $params = $this->mergeParams($this->component->getParams(), $params);
 
-        return $tpl->assign('params', $params)
+        return $tpl->assign('params', $this->mergeParams($params))
                    ->assign('blockContent', $content)
                    ->assign('parentSmarty', $tpl->smarty)
                    ->fetch($this->component->getTemplate());

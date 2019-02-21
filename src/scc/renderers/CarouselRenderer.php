@@ -22,7 +22,7 @@ class CarouselRenderer extends BlockRenderer
             return '';
         }
         $tpl    = $args[1];
-        $params = $this->mergeParams($this->component->getParams(), $params);
+        $params = $this->mergeParams($params);
         $tpl->assign('params', $params)
             ->assign('blockContent', $content)
             ->assign('parentSmarty', $tpl->smarty);

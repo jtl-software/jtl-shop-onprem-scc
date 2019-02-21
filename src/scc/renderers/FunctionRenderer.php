@@ -17,10 +17,9 @@ class FunctionRenderer extends BlockRenderer
      */
     public function render(array $params, ...$args): string
     {
-        $tpl    = $args[0];
-        $params = $this->mergeParams($this->component->getParams(), $params);
+        $tpl = $args[0];
 
-        return $tpl->assign('params', $params)
+        return $tpl->assign('params', $this->mergeParams($params))
                    ->assign('parentSmarty', $tpl->smarty)
                    ->fetch($this->component->getTemplate());
     }
