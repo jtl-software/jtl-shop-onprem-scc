@@ -27,7 +27,7 @@ class Form extends AbstractBlockComponent
         $this->addParam(new ComponentProperty('inline', false, ComponentPropertyType::TYPE_BOOL));
         $this->addParam(new ComponentProperty('novalidate', false, ComponentPropertyType::TYPE_BOOL));
         $this->addParam(new ComponentProperty('validated', false, ComponentPropertyType::TYPE_BOOL));
-        $this->addParam(new ComponentProperty('addtoken', false, ComponentPropertyType::TYPE_BOOL));
+        $this->addParam(new ComponentProperty('addtoken', true, ComponentPropertyType::TYPE_BOOL));
         $this->addParam(new ComponentProperty('action', ''));
         $this->addParam(new ComponentProperty('method', 'POST'));
         $this->addParam(new ComponentProperty('target', '_self'));
