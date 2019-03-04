@@ -23,6 +23,7 @@ use scc\components\Carousel;
 use scc\components\CarouselSlide;
 use scc\components\Checkbox;
 use scc\components\CheckboxGroup;
+use scc\components\Clearfix;
 use scc\components\Col;
 use scc\components\Collapse;
 use scc\components\Container;
@@ -163,6 +164,8 @@ class DefaultComponentRegistrator
         $this->components[] = new BreadcrumbItem();
         $this->components[] = new CSRFToken();
         $this->components[] = new Table();
+        $this->components[] = new Clearfix();
+
         foreach ($this->components as $component) {
             $component->getRenderer()->preset();
             $this->renderer->registerComponent($component);
