@@ -5,6 +5,10 @@
 {if $params['align-v']->hasValue()}
     {$class = "{$class} align-items-{$params['align-v']->getValue()}"}
 {/if}
+{if $params['no-gutters']->getValue() === true}
+    {$class = "{$class} no-gutters"}
+{/if}
+
 
 <{$params.tag->getValue()}
     class="{$class}"
