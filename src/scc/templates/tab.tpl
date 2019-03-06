@@ -1,4 +1,5 @@
 {$id = $params.id->getValue()|default:uniqid()}
+
 <{$params.tag} class="nav-item {$params.class->getValue()}"
     {if $params.id->hasValue()}id="label-{$id}"{/if}
     {if $params.style->hasValue()}style="{$params.style->getValue()}"{/if}
