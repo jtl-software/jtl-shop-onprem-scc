@@ -10,7 +10,7 @@
 
 <img
     src="{$params.src->getValue()}"
-    {if $params.srcset->hasValue()}srcset="{$params.src->getValue()}"{/if}
+    {if $params.srcset->hasValue()}srcset="{$params.srcset->getValue()}"{/if}
     {if $params.sizes->hasValue()}sizes="{$params.sizes->getValue()}"{/if}
     class="{$params.class->getValue()} {$rounded}
         {if $params.fluid->getValue() === true} img-fluid{/if}
