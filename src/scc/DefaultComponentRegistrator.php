@@ -6,6 +6,7 @@
 
 namespace scc;
 
+use scc\components\Accordion;
 use scc\components\Alert;
 use scc\components\Badge;
 use scc\components\Breadcrumb;
@@ -101,6 +102,7 @@ class DefaultComponentRegistrator
      */
     public function registerComponents(): void
     {
+        $this->components[] = new Accordion();
         $this->components[] = new Card();
         $this->components[] = new Input();
         $this->components[] = new Link();

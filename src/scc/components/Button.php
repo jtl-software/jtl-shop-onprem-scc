@@ -26,6 +26,7 @@ class Button extends AbstractBlockComponent
 
         $this->addParam(new ComponentProperty('type', 'button'));
         $this->addParam(new ComponentProperty('href'));
+        $this->addParam(new ComponentProperty('target'));
         $this->addParam(new ComponentProperty('rel'));
         $this->addParam(new ComponentProperty('target'));
         $this->addParam(new ComponentProperty('name'));
