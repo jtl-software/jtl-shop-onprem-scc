@@ -7,7 +7,7 @@
     {if $params.itemid->hasValue()}itemid="{$params.itemid->getValue()}"{/if}
 >
     <button
-        class="btn btn-{$params.variant->getValue()}{if $params.size->hasValue()} btn-{$params.size->getValue()}{/if} dropdown-toggle"
+        class="btn btn-{$params.variant->getValue()}{if $params.size->hasValue()} btn-{$params.size->getValue()}{/if} dropdown-toggle {$params['toggle-class']->getValue()}"
         type="button"
         data-toggle="dropdown"
         aria-haspopup="true"
