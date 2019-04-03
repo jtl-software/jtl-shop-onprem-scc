@@ -34,6 +34,7 @@ class DropDown extends AbstractBlockComponent
         $this->addParam(new ComponentProperty('offset', 0, ComponentPropertyType::TYPE_NUMERIC));
         $this->addParam(new ComponentProperty('variant', 'secondary'));
         $this->addParam(new ComponentProperty('toggleText', 'Toggle dropdown'));
+        $this->addParam(new ComponentProperty('toggle-class'));
         $this->addParam(new ComponentProperty('size'));
         $this->addParam(new ComponentProperty('text', ''));
     }
