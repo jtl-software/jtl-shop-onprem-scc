@@ -27,5 +27,6 @@ class Modal extends AbstractBlockComponent
         $this->addParam(new ComponentProperty('title'));
         $this->addParam(new ComponentProperty('footer'));
         $this->addParam(new ComponentProperty('centered', false, ComponentPropertyType::TYPE_BOOL));
+        $this->addParam(new ComponentProperty('size', false, ComponentPropertyType::TYPE_STRING));
     }
 }
