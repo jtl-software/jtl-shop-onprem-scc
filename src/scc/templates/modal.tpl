@@ -7,8 +7,8 @@
     {if $params.aria->hasValue()}{foreach $params.aria->getValue() as $ariaKey => $ariaVal}aria-{$ariaKey}="{$ariaVal}" {/foreach}{/if}
     {if $params.data->hasValue()}{foreach $params.data->getValue() as $dataKey => $dataVal}data-{$dataKey}="{$dataVal}" {/foreach}{/if}
 >
-    <div class="modal-dialog{if $params.centered->getValue() === true} modal-dialog-centered{/if}" role="document">
-        <div class="modal-content{if $params.size->hasValue()}modal-{$params.size->getValue()}{/if}">
+    <div class="modal-dialog{if $params.centered->getValue() === true} modal-dialog-centered{/if}{if $params.size->hasValue()} modal-{$params.size->getValue()}{/if}" role="document">
+        <div class="modal-content">
             <div class="modal-header">
                 {if $params.title->hasValue()}<h5 class="modal-title">{$params.title->getValue()}</h5>{/if}
                 <button type="button" class="close" data-dismiss="modal" aria-label="Close">
