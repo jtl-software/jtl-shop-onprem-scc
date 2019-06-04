@@ -29,6 +29,7 @@ class TabsRenderer extends BlockRenderer
                    ->assign('blockContent', $content)
                    ->assign('tabContents', $smarty->getTemplateVars('tabContents'))
                    ->assign('tabIDs', $smarty->getTemplateVars('tabIDs'))
+                   ->assign('activeTabID', $smarty->getTemplateVars('activeTabID'))
                    ->assign('parentSmarty', $smarty)
                    ->fetch($this->component->getTemplate());
     }
