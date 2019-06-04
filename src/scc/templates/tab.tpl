@@ -35,3 +35,6 @@
 {$tmp = $parentSmarty->getTemplateVars('tabIDs')|default:[]}
 {$tmp[] = $id}
 {$x = $parentSmarty->assign('tabIDs', $tmp)}
+{if $params.active->getValue() === true}
+    {$x = $parentSmarty->assign('activeTabID', $id)}
+{/if}
