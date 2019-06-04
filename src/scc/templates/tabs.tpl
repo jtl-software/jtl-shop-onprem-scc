@@ -1,5 +1,6 @@
 {$x = $parentSmarty->assign('tabIDs', [])}
 {$x = $parentSmarty->assign('tabContents', [])}
+{$x = $parentSmarty->assign('activeTabID', '')}
 
 <{$params.tag}
     class="nav nav-tabs {$params.class->getValue()}{if $params.pills->getValue() === true} nav-pills{/if}"
@@ -23,7 +24,7 @@
                 {$tab}
             </div>
         {else}*}
-            <div class="tab-pane fade pt-3{if $tab@index === 0} show active{/if}"
+            <div class="tab-pane fade pt-3{if $activeTabID === $tabIDs[$i]} show active{/if}"
                  id="tab-{$tabIDs[$i]}"
                  role="tabpanel"
                  aria-labelledby="tab-link-{$tabIDs[$i]}">
