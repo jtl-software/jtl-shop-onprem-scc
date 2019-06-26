@@ -14,17 +14,25 @@
     >
         {if $params.horizontal->getValue() === true}
             <div class="form-row">
-        {/if}
-        <label id="form-group-label-{$id}" for="{$params['label-for']->getValue()}" class="col-form-label pt-0{if $params.horizontal->getValue() === true} col-{$breakPoint}-{$params['label-cols']->getValue()}{/if}{if $params['label-size']->hasValue()} col-form-label-{$params['label-size']->getValue()}{/if}">
-            {$params.label->getValue()}
-        </label>
-        <div class="{if $params.horizontal->getValue() === true}col-{$breakPoint}-{12 - $params['label-cols']->getValue()}{/if}">
-            {$blockContent}
-            {if $params.description->hasValue()}
-                <small id="form-group-description-{$id}" class="form-text text-muted">{$params.description->getValue()}</small>
-            {/if}
-        </div>
-        {if $params.horizontal->getValue() === true}
+                <label id="form-group-label-{$id}" for="{$params['label-for']->getValue()}" class="col-form-label pt-0 col-{$breakPoint}-{$params['label-cols']->getValue()}{if $params['label-size']->hasValue()} col-form-label-{$params['label-size']->getValue()}{/if}">
+                    {$params.label->getValue()}
+                </label>
+                <div class="col-{$breakPoint}-{12 - $params['label-cols']->getValue()}">
+                    {$blockContent}
+                    {if $params.description->hasValue()}
+                        <small id="form-group-description-{$id}" class="form-text text-muted">{$params.description->getValue()}</small>
+                    {/if}
+                </div>
+            </div>
+        {else}
+            <div class="d-flex flex-column-reverse">
+                {if $params.description->hasValue()}
+                    <small id="form-group-description-{$id}" class="form-text text-muted">{$params.description->getValue()}</small>
+                {/if}
+                {$blockContent}
+                <label id="form-group-label-{$id}" for="{$params['label-for']->getValue()}" class="col-form-label pt-0{if $params['label-size']->hasValue()} col-form-label-{$params['label-size']->getValue()}{/if}">
+                    {$params.label->getValue()}
+                </label>
             </div>
         {/if}
     </div>
