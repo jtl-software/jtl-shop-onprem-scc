@@ -3,7 +3,7 @@
 {assign var=id value=$params.id->getValue()|default:uniqid()}
 {assign var=breakPoint value=$params.breakpoint->getValue()}
 {if $params['label-for']->hasValue()}
-    <div id="{$id}" aria-labelledby="form-group-label-{$id}" class="form-group"
+    <div id="{$id}" aria-labelledby="form-group-label-{$id}" class="form-group {$params.class->getValue()}"
         {if $params.itemprop->hasValue()}itemprop="{$params.itemprop->getValue()}"{/if}
         {if $params.itemscope->getValue() === true}itemscope {/if}
         {if $params.itemtype->hasValue()}itemtype="{$params.itemtype->getValue()}"{/if}
