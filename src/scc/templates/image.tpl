@@ -8,32 +8,57 @@
     {/if}
 {/if}
 
-<img
-    src="{$params.src->getValue()}"
-    {if $params.srcset->hasValue()}srcset="{$params.srcset->getValue()}"{/if}
-    {if $params.sizes->hasValue()}sizes="{$params.sizes->getValue()}"{/if}
-    class="{$params.class->getValue()} {$rounded}
-        {if $params.fluid->getValue() === true} img-fluid{/if}
-        {if $params['fluid-grow']->getValue() === true} img-fluid w-100{/if}
-        {if $params.thumbnail->getValue() === true} img-thumbnail{/if}
-        {if $params.left->getValue() === true} float-left{/if}
-        {if $params.right->getValue() === true} float-right{/if}
-        {if $params.center->getValue() === true} mx-auto d-block{/if}
-        {if $params.lazy->getValue() === true} lazy{/if}"
-    {if $params.id->hasValue()}id="{$params.id->getValue()}"{/if}
-    {if $params.alt->hasValue()}alt="{$params.alt->getValue()}"{/if}
-    {if $params.width->hasValue()}width="{$params.width->getValue()}"{/if}
-    {if $params.height->hasValue()}height="{$params.height->getValue()}"{/if}
-    {if $params.style->hasValue()}style="{$params.style->getValue()}"{/if}
-    {if $params.itemprop->hasValue()}itemprop="{$params.itemprop->getValue()}"{/if}
-    {if $params.itemscope->getValue() === true}itemscope {/if}
-    {if $params.itemtype->hasValue()}itemtype="{$params.itemtype->getValue()}"{/if}
-    {if $params.itemid->hasValue()}itemid="{$params.itemid->getValue()}"{/if}
-    {if $params.role->hasValue()}role="{$params.role->getValue()}"{/if}
-    {if $params.aria->hasValue()}
-        {foreach $params.aria->getValue() as $ariaKey => $ariaVal} aria-{$ariaKey}="{$ariaVal}" {/foreach}
-    {/if}
-    {if $params.data->hasValue()}
-        {foreach $params.data->getValue() as $dataKey => $dataVal} data-{$dataKey}="{$dataVal}" {/foreach}
-    {/if}
->
+{*if an image contains CSS-class "lazyload" the js-lib "lazysize" changes srcset. therefor we check against "lazy" parameter.
+tranparent gif is set as source if "lazy" is active to save bandwidth.
+
+https://github.com/aFarkas/lazysizes#modern-transparent-srcset-pattern
+https://ivopetkov.com/b/lazy-load-responsive-images/
+*}
+{if $params.webp->getValue() === true}
+<picture>
+    <source
+            {if $params.srcset->hasValue()}
+                {if $params.lazy->getValue() === true}data-{/if}srcset="{$params.srcset->getValue()|regex_replace:"/\.(?i)(jpg|jpeg|png)/":".webp"}"
+            {else}
+                {if $params.lazy->getValue() === true}data-{/if}srcset="{$params.src->getValue()|regex_replace:"/\.(?i)(jpg|png)/":".webp"}"
+            {/if}
+            {if $params.sizes->hasValue()}data-sizes="{$params.sizes->getValue()}"{/if}
+            type="image/webp">
+{/if}
+    <img
+            src="{$params.src->getValue()}"
+            srcset="{if $params.lazy->getValue() === true}data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw=={else}{$params.src->getValue()}{/if}"
+            {if $params.srcset->hasValue()}
+                data-srcset="{$params.srcset->getValue()}"
+            {else}
+                data-srcset="{$params.src->getValue()}"
+            {/if}
+            {if $params.sizes->hasValue()}data-sizes="{$params.sizes->getValue()}"{/if}
+            class="{$params.class->getValue()} {$rounded}
+            {if $params.fluid->getValue() === true} img-fluid{/if}
+            {if $params['fluid-grow']->getValue() === true} img-fluid w-100{/if}
+            {if $params.thumbnail->getValue() === true} img-thumbnail{/if}
+            {if $params.left->getValue() === true} float-left{/if}
+            {if $params.right->getValue() === true} float-right{/if}
+            {if $params.center->getValue() === true} mx-auto d-block{/if}
+            {if $params.lazy->getValue() === true} lazyload{/if}"
+            {if $params.id->hasValue()}id="{$params.id->getValue()}"{/if}
+            {if $params.alt->hasValue()}alt="{$params.alt->getValue()}"{/if}
+            {if $params.width->hasValue()}width="{$params.width->getValue()}"{/if}
+            {if $params.height->hasValue()}height="{$params.height->getValue()}"{/if}
+            {if $params.style->hasValue()}style="{$params.style->getValue()}"{/if}
+            {if $params.itemprop->hasValue()}itemprop="{$params.itemprop->getValue()}"{/if}
+            {if $params.itemscope->getValue() === true}itemscope {/if}
+            {if $params.itemtype->hasValue()}itemtype="{$params.itemtype->getValue()}"{/if}
+            {if $params.itemid->hasValue()}itemid="{$params.itemid->getValue()}"{/if}
+            {if $params.role->hasValue()}role="{$params.role->getValue()}"{/if}
+            {if $params.aria->hasValue()}
+                {foreach $params.aria->getValue() as $ariaKey => $ariaVal} aria-{$ariaKey}="{$ariaVal}" {/foreach}
+            {/if}
+            {if $params.data->hasValue()}
+                {foreach $params.data->getValue() as $dataKey => $dataVal} data-{$dataKey}="{$dataVal}" {/foreach}
+            {/if}
+    >
+{if $params.webp->getValue() === true}
+</picture>
+{/if}
