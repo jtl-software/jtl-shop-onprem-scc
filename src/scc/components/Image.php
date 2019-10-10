@@ -34,7 +34,7 @@ class Image extends AbstractFunctionComponent
         $this->addParam(new ComponentProperty('fluid', false, ComponentPropertyType::TYPE_BOOL));
         $this->addParam(new ComponentProperty('fluid-grow', false, ComponentPropertyType::TYPE_BOOL));
         $this->addParam(new ComponentProperty('lazy', false, ComponentPropertyType::TYPE_BOOL));
-        $this->addParam(new ComponentProperty('lazy', false, ComponentPropertyType::TYPE_BOOL));
+        $this->addParam(new ComponentProperty('webp', false, ComponentPropertyType::TYPE_BOOL));
         $this->addParam(new ComponentProperty('rounded', false, ComponentPropertyType::TYPE_BOOL));
         $this->addParam(new ComponentProperty('thumbnail', false, ComponentPropertyType::TYPE_BOOL));
         $this->addParam(new ComponentProperty('left', false, ComponentPropertyType::TYPE_BOOL));
