@@ -22,7 +22,7 @@ https://ivopetkov.com/b/lazy-load-responsive-images/
             {else}
                 {if $params.lazy->getValue() === true}data-{/if}srcset="{$params.src->getValue()|regex_replace:"/\.(?i)(jpg|png)/":".webp"}"
             {/if}
-            {if $params.sizes->hasValue()}data-sizes="{$params.sizes->getValue()}"{/if}
+            {if $params.sizes->hasValue()}{if $params.sizes->hasValue() === 'auto'}data-{/if}sizes="{$params.sizes->getValue()}"{/if}
             type="image/webp">
 {/if}
     <img
@@ -33,7 +33,8 @@ https://ivopetkov.com/b/lazy-load-responsive-images/
             {else}
                 data-srcset="{$params.src->getValue()}"
             {/if}
-            {if $params.sizes->hasValue()}data-sizes="{$params.sizes->getValue()}"{/if}
+
+            {if $params.sizes->hasValue()}{if $params.sizes->hasValue() === 'auto'}data-{/if}sizes="{$params.sizes->getValue()}"{/if}
             class="{$params.class->getValue()} {$rounded}
             {if $params.fluid->getValue() === true} img-fluid{/if}
             {if $params['fluid-grow']->getValue() === true} img-fluid w-100{/if}
