@@ -1,5 +1,5 @@
 {assign var=rounded value=''}
-
+{assign var=useWebP value=$params.webp->getValue() === true && \JTL\Media\Image::hasWebPSupport()}
 {if $params.rounded->getValue() !== false}
     {if $params.rounded->getValue() === true}
         {assign var=rounded value='rounded'}
@@ -14,7 +14,7 @@ tranparent gif is set as source if "lazy" is active to save bandwidth.
 https://github.com/aFarkas/lazysizes#modern-transparent-srcset-pattern
 https://ivopetkov.com/b/lazy-load-responsive-images/
 *}
-{if $params.webp->getValue() === true && \JTL\Media\Image::hasWebPSupport()}
+{if $useWebP}
 <picture>
     <source
             {if $params.srcset->hasValue()}
@@ -60,6 +60,6 @@ https://ivopetkov.com/b/lazy-load-responsive-images/
                 {foreach $params.data->getValue() as $dataKey => $dataVal} data-{$dataKey}="{$dataVal}" {/foreach}
             {/if}
     >
-{if $params.webp->getValue() === true}
+{if $useWebP}
 </picture>
 {/if}
