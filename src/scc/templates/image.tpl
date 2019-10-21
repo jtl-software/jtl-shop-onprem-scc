@@ -14,7 +14,7 @@ tranparent gif is set as source if "lazy" is active to save bandwidth.
 https://github.com/aFarkas/lazysizes#modern-transparent-srcset-pattern
 https://ivopetkov.com/b/lazy-load-responsive-images/
 *}
-{if $params.webp->getValue() === true}
+{if $params.webp->getValue() === true && \JTL\Media\Image::hasWebPSupport()}
 <picture>
     <source
             {if $params.srcset->hasValue()}
