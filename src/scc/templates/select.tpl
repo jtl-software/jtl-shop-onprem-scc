@@ -5,6 +5,7 @@
     {if $params.name->hasValue()}name="{$params.name->getValue()}"{/if}
     {if $params.title->hasValue()}title="{$params.title->getValue()}"{/if}
     {if $params.required->getValue() === true}required{/if}
+    {if $params.disabled->getValue() === true} disabled{/if}
     class="form-control{if $params.class->hasValue()} {$params.class->getValue()}{/if}
     {if $params.size->hasValue()}form-control-{$params.size->getValue()}{/if}
 "
