@@ -27,6 +27,7 @@ class Image extends AbstractFunctionComponent
         $this->addParam(new ComponentProperty('src'));
         $this->addParam(new ComponentProperty('srcset'));
         $this->addParam(new ComponentProperty('sizes'));
+        $this->addParam(new ComponentProperty('title'));
         $this->addParam(new ComponentProperty('alt', ''));
         $this->addParam(new ComponentProperty('width', null, ComponentPropertyType::TYPE_NUMERIC));
         $this->addParam(new ComponentProperty('height', null, ComponentPropertyType::TYPE_NUMERIC));

@@ -44,6 +44,7 @@ https://ivopetkov.com/b/lazy-load-responsive-images/
             {if $params.center->getValue() === true} mx-auto d-block{/if}
             {if $params.lazy->getValue() === true} lazyload{/if}"
             {if $params.id->hasValue()}id="{$params.id->getValue()}"{/if}
+            {if $params.title->hasValue()}title="{$params.title->getValue()}"{/if}
             {if $params.alt->hasValue()}alt="{$params.alt->getValue()}"{/if}
             {if $params.width->hasValue()}width="{$params.width->getValue()}"{/if}
             {if $params.height->hasValue()}height="{$params.height->getValue()}"{/if}
