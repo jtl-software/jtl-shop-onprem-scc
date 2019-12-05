@@ -27,13 +27,16 @@ https://ivopetkov.com/b/lazy-load-responsive-images/
 {/if}
     <img
             src="{$params.src->getValue()}"
-            srcset="{if $params.lazy->getValue() === true}data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw=={else}{$params.src->getValue()}{/if}"
-            {if $params.srcset->hasValue()}
-                data-srcset="{$params.srcset->getValue()}"
+            {if $params.lazy->getValue() === true}
+                srcset="data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw=="
+                {if $params.srcset->hasValue()}
+                    data-srcset="{$params.srcset->getValue()}"
+                {else}
+                    data-srcset="{$params.src->getValue()}"
+                {/if}
             {else}
-                data-srcset="{$params.src->getValue()}"
+                srcset="{$params.srcset->getValue()}"
             {/if}
-
             {if $params.sizes->hasValue()}{if $params.sizes->hasValue() === 'auto'}data-{/if}sizes="{$params.sizes->getValue()}"{/if}
             class="{$params.class->getValue()} {$rounded}
             {if $params.fluid->getValue() === true} img-fluid{/if}
