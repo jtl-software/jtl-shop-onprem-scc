@@ -7,7 +7,6 @@
 namespace scc\components;
 
 use scc\ComponentProperty;
-use scc\ComponentPropertyType;
 
 /**
  * Class Breadcrumb
@@ -23,7 +22,6 @@ class Breadcrumb extends AbstractBlockComponent
         parent::__construct();
         $this->setTemplate('breadcrumb.tpl');
         $this->setName('breadcrumb');
-
         $this->addParam(new ComponentProperty('tag', 'ol'));
     }
 }

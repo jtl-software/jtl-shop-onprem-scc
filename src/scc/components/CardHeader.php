@@ -7,7 +7,6 @@
 namespace scc\components;
 
 use scc\ComponentProperty;
-use scc\ComponentPropertyType;
 
 /**
  * Class CardHeader
@@ -23,7 +22,6 @@ class CardHeader extends AbstractBlockComponent
         parent::__construct();
         $this->setTemplate('cardheader.tpl');
         $this->setName('cardheader');
-
         $this->addParam(new ComponentProperty('header'));
         $this->addParam(new ComponentProperty('header-tag', 'div'));
         $this->addParam(new ComponentProperty('header-bg-variant'));

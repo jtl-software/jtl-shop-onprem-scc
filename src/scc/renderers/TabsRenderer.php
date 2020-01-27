@@ -21,7 +21,7 @@ class TabsRenderer extends BlockRenderer
         if ($content === null) {
             return '';
         }
-        /** @var JTL\Smarty\JTLSmarty|Smarty $tpl */
+        /** @var \JTL\Smarty\JTLSmarty|Smarty $tpl */
         $tpl    = $args[1];
         $smarty = $tpl->smarty;
 

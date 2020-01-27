@@ -149,6 +149,6 @@ class ComponentProperty implements ComponentPropertyInterface
      */
     public function __toString()
     {
-        return $this->value !== null ? (string)$this->value : '';
+        return (string)($this->value ?? '');
     }
 }

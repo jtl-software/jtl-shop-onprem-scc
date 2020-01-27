@@ -7,7 +7,6 @@
 namespace scc\components;
 
 use scc\ComponentProperty;
-use scc\ComponentPropertyType;
 
 /**
  * Class CardBody
@@ -23,7 +22,6 @@ class CardBody extends AbstractBlockComponent
         parent::__construct();
         $this->setTemplate('cardbody.tpl');
         $this->setName('cardbody');
-
         $this->addParam(new ComponentProperty('footer'));
         $this->addParam(new ComponentProperty('footer-tag', 'div'));
         $this->addParam(new ComponentProperty('footer-bg-variant'));

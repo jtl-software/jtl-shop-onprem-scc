@@ -15,7 +15,7 @@ use scc\exceptions\ComponentAlreadyRegisteredException;
 class Renderer implements RendererInterface
 {
     /**
-     * @var JTL\Smarty\JTLSmarty|\Smarty
+     * @var \JTL\Smarty\JTLSmarty|\Smarty
      */
     protected $smarty;
 
@@ -23,7 +23,7 @@ class Renderer implements RendererInterface
 
     /**
      * Renderer constructor.
-     * @param JTL\Smarty\JTLSmarty|\Smarty $smarty
+     * @param \JTL\Smarty\JTLSmarty|\Smarty $smarty
      */
     public function __construct($smarty)
     {

@@ -6,9 +6,6 @@
 
 namespace scc\components;
 
-use scc\ComponentProperty;
-use scc\ComponentPropertyType;
-use scc\ComponentRendererInterface;
 use scc\ComponentType;
 use scc\renderers\FunctionRenderer;
 
@@ -24,7 +21,6 @@ abstract class AbstractFunctionComponent extends AbstractBaseComponent
     public function __construct()
     {
         parent::__construct();
-
         $this->setRenderer(new FunctionRenderer($this));
         $this->setType(new ComponentType(ComponentType::TYPE_FUNCTION));
     }

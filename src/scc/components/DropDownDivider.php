@@ -7,7 +7,6 @@
 namespace scc\components;
 
 use scc\ComponentProperty;
-use scc\ComponentPropertyType;
 
 /**
  * Class DropDownDivider
@@ -23,7 +22,6 @@ class DropDownDivider extends AbstractFunctionComponent
         parent::__construct();
         $this->setTemplate('dropdowndivider.tpl');
         $this->setName('dropdowndivider');
-
         $this->addParam(new ComponentProperty('tag', 'div'));
     }
 }

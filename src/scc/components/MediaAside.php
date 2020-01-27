@@ -7,7 +7,6 @@
 namespace scc\components;
 
 use scc\ComponentProperty;
-use scc\ComponentPropertyType;
 
 /**
  * Class MediaAside
@@ -23,7 +22,6 @@ class MediaAside extends AbstractBlockComponent
         parent::__construct();
         $this->setTemplate('mediaaside.tpl');
         $this->setName('mediaaside');
-
         $this->addParam(new ComponentProperty('tag', 'div'));
         $this->addParam(new ComponentProperty('vertical-align', 'top'));
     }

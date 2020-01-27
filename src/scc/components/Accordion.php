@@ -6,6 +6,10 @@
 
 namespace scc\components;
 
+/**
+ * Class Accordion
+ * @package scc\components
+ */
 class Accordion extends AbstractBlockComponent
 {
     /**

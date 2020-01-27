@@ -7,7 +7,6 @@
 namespace scc\components;
 
 use scc\ComponentProperty;
-use scc\ComponentPropertyType;
 
 /**
  * Class ListGroup
@@ -23,7 +22,6 @@ class ListGroup extends AbstractBlockComponent
         parent::__construct();
         $this->setTemplate('listgroup.tpl');
         $this->setName('listgroup');
-
         $this->addParam(new ComponentProperty('tag', 'div'));
     }
 }

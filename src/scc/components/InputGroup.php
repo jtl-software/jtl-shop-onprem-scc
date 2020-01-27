@@ -7,7 +7,6 @@
 namespace scc\components;
 
 use scc\ComponentProperty;
-use scc\ComponentPropertyType;
 
 /**
  * Class InputGroup
@@ -23,7 +22,6 @@ class InputGroup extends AbstractBlockComponent
         parent::__construct();
         $this->setTemplate('inputgroup.tpl');
         $this->setName('inputgroup');
-
         $this->addParam(new ComponentProperty('size'));
         $this->addParam(new ComponentProperty('prepend'));
         $this->addParam(new ComponentProperty('append'));

@@ -7,7 +7,6 @@
 namespace scc\components;
 
 use scc\ComponentProperty;
-use scc\ComponentPropertyType;
 
 /**
  * Class NavForm
@@ -15,6 +14,9 @@ use scc\ComponentPropertyType;
  */
 class NavForm extends AbstractBlockComponent
 {
+    /**
+     * NavForm constructor.
+     */
     public function __construct()
     {
         parent::__construct();

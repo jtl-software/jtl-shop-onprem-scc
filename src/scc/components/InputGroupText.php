@@ -7,7 +7,6 @@
 namespace scc\components;
 
 use scc\ComponentProperty;
-use scc\ComponentPropertyType;
 
 /**
  * Class InputGroupText
@@ -23,7 +22,6 @@ class InputGroupText extends AbstractBlockComponent
         parent::__construct();
         $this->setTemplate('inputgrouptext.tpl');
         $this->setName('inputgrouptext');
-
         $this->addParam(new ComponentProperty('tag', 'div'));
     }
 }

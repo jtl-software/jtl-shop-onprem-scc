@@ -7,7 +7,6 @@
 namespace scc\components;
 
 use scc\ComponentProperty;
-use scc\ComponentPropertyType;
 
 /**
  * Class FormRow
@@ -23,7 +22,6 @@ class FormRow extends AbstractBlockComponent
         parent::__construct();
         $this->setTemplate('formrow.tpl');
         $this->setName('formrow');
-
         $this->addParam(new ComponentProperty('tag', 'div'));
     }
 }
