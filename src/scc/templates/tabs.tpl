@@ -24,7 +24,7 @@
                 {$tab}
             </div>
         {else}*}
-            <div class="tab-pane fade pt-3{if $activeTabID === $tabIDs[$i]} show active{/if}"
+            <div class="tab-pane fade {if $activeTabID === $tabIDs[$i]} show active{/if}"
                  id="tab-{$tabIDs[$i]}"
                  role="tabpanel"
                  aria-labelledby="tab-link-{$tabIDs[$i]}">
