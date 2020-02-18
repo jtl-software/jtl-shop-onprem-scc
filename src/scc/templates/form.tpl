@@ -1,5 +1,5 @@
 <form
-    class="{$params.class->getValue()}{if $params.inline->getValue() === true} form-inline{/if}"
+    class="{$params.class->getValue()}{if $params.inline->getValue() === true} form-inline{/if}{if $params.slide->getValue() === true} label-slide{/if}"
     target="{$params.target->getValue()}"
     {if $params.novalidate->getValue() === true}novalidate="novalidate"{/if}
     {if $params.id->hasValue()}id="{$params.id->getValue()}"{/if}
