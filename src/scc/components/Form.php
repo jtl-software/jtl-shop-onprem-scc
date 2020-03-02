@@ -32,6 +32,6 @@ class Form extends AbstractBlockComponent
         $this->addParam(new ComponentProperty('method', 'POST'));
         $this->addParam(new ComponentProperty('target', '_self'));
         $this->addParam(new ComponentProperty('enctype'));
-        $this->addParam(new ComponentProperty('slide', true, ComponentPropertyType::TYPE_BOOL));
+        $this->addParam(new ComponentProperty('slide', false, ComponentPropertyType::TYPE_BOOL));
     }
 }
