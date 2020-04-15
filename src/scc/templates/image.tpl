@@ -28,7 +28,7 @@
                 {else}
                     {if $params.lazy->getValue() === true}data-{/if}srcset="{$params.src->getValue()|regex_replace:"/\.(?i)(jpg|png)/":".webp"}"
                 {/if}
-                {if $params.sizes->hasValue()}{if $params.sizes->hasValue() === 'auto'}data-{/if}sizes="{$params.sizes->getValue()}"{/if}
+                {if $params.sizes->hasValue()}{if $params.sizes->getValue() === 'auto'}data-{/if}sizes="{$params.sizes->getValue()}"{/if}
                 type="image/webp">
     {/if}
         <img
@@ -43,7 +43,7 @@
                 {else}
                     srcset="{$params.srcset->getValue()}"
                 {/if}
-                {if $params.sizes->hasValue()}{if $params.sizes->hasValue() === 'auto'}data-{/if}sizes="{$params.sizes->getValue()}"{/if}
+                {if $params.sizes->hasValue()}{if $params.sizes->getValue() === 'auto'}data-{/if}sizes="{$params.sizes->getValue()}"{/if}
                 class="{$params.class->getValue()} {$rounded}
                 {if $params.fluid->getValue() === true} img-fluid{/if}
                 {if $params['fluid-grow']->getValue() === true} img-fluid w-100{/if}
