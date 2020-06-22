@@ -12,6 +12,7 @@
 <img class="{$params.class->getValue()} {$rounded} {if $params['fluid-grow']->getValue() === true} img-fluid w-100{/if}"
      height="{if $params.height->hasValue()}{$params.height->getValue()}{elseif $params.sizes->hasValue()}{$params.sizes->getValue()}{else}auto{/if}"
      width="{if $params.width->hasValue()}{$params.width->getValue()}{elseif $params.sizes->hasValue()}{$params.sizes->getValue()}{else}auto{/if}"
+     {if $params.alt->hasValue()}alt="{$params.alt->getValue()}"{/if}
      src="{$params.src->getValue()}">
 {else}
     {*if an image contains CSS-class "lazyload" the js-lib "lazysize" changes srcset. therefor we check against "lazy" parameter.
