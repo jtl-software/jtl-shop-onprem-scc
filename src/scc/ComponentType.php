@@ -6,13 +6,11 @@
 
 namespace scc;
 
-use MyCLabs\Enum\Enum;
-
 /**
  * Class ComponentType
  * @package scc
  */
-class ComponentType extends Enum
+class ComponentType
 {
     public const TYPE_BLOCK = 'block';
 

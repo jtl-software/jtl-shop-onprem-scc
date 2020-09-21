@@ -22,6 +22,6 @@ abstract class AbstractFunctionComponent extends AbstractBaseComponent
     {
         parent::__construct();
         $this->setRenderer(new FunctionRenderer($this));
-        $this->setType(new ComponentType(ComponentType::TYPE_FUNCTION));
+        $this->setType(ComponentType::TYPE_FUNCTION);
     }
 }

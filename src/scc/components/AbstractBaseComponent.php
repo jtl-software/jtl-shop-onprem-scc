@@ -11,7 +11,6 @@ use scc\ComponentProperty;
 use scc\ComponentPropertyType;
 use scc\ComponentPropertyInterface;
 use scc\ComponentRendererInterface;
-use scc\ComponentType;
 
 /**
  * Class AbstractBaseComponent
@@ -45,7 +44,7 @@ abstract class AbstractBaseComponent implements ComponentInterface
     protected $renderer;
 
     /**
-     * @var ComponentType
+     * @var string
      */
     protected $type;
 
@@ -141,7 +140,7 @@ abstract class AbstractBaseComponent implements ComponentInterface
     /**
      * @inheritdoc
      */
-    public function getType(): ComponentType
+    public function getType(): string
     {
         return $this->type;
     }
@@ -149,7 +148,7 @@ abstract class AbstractBaseComponent implements ComponentInterface
     /**
      * @inheritdoc
      */
-    public function setType(ComponentType $type): void
+    public function setType(string $type): void
     {
         $this->type = $type;
     }

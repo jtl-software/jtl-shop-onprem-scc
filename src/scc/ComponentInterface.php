@@ -48,14 +48,14 @@ interface ComponentInterface
     public function setName(string $name): void;
 
     /**
-     * @return ComponentType
+     * @return string
      */
-    public function getType(): ComponentType;
+    public function getType(): string;
 
     /**
-     * @param ComponentType $type
+     * @param string $type
      */
-    public function setType(ComponentType $type): void;
+    public function setType(string $type): void;
 
     /**
      * @return ComponentRendererInterface

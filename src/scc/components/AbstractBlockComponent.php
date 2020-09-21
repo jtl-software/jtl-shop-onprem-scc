@@ -21,7 +21,7 @@ abstract class AbstractBlockComponent extends AbstractBaseComponent
     public function __construct()
     {
         parent::__construct();
-        $this->setType(new ComponentType(ComponentType::TYPE_BLOCK));
+        $this->setType(ComponentType::TYPE_BLOCK);
         $this->setRenderer(new BlockRenderer($this));
     }
 }

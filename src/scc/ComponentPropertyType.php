@@ -6,13 +6,11 @@
 
 namespace scc;
 
-use MyCLabs\Enum\Enum;
-
 /**
  * Class ComponentPropertyType
  * @package scc
  */
-class ComponentPropertyType extends Enum
+class ComponentPropertyType
 {
     public const TYPE_BOOL = 'bool';
 
