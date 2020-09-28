@@ -1,6 +1,6 @@
 <input
     type="{$params.type->getValue()}"
-    class="form-control {$params.class->getValue()}{if $params.size->hasValue()} form-control-{$params.size->getValue()}{/if}"
+    class="form-control {$params.class->getValue()}{if $params['size-class']->hasValue()} form-control-{$params['size-class']->getValue()}{/if}"
     {if $params.placeholder->hasValue()}placeholder="{$params.placeholder->getValue()}"{/if}
     {if $params.readonly->getValue() === true} readonly{/if}
     {if $params.id->hasValue()} id="{$params.id->getValue()}"{/if}
