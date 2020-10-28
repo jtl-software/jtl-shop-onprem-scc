@@ -25,7 +25,6 @@ class BreadcrumbItem extends AbstractBlockComponent
         $this->setName('breadcrumbitem');
 
         $this->addParam(new ComponentProperty('href'));
-        $this->addParam(new ComponentProperty('title'));
         $this->addParam(new ComponentProperty('tag', 'li'));
         $this->addParam(new ComponentProperty('target', '_self'));
         $this->addParam(new ComponentProperty('active-class', 'active'));

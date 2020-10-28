@@ -24,7 +24,6 @@ class Link extends AbstractBlockComponent
         $this->setTemplate('link.tpl');
         $this->setName('link');
 
-        $this->addParam(new ComponentProperty('title'));
         $this->addParam(new ComponentProperty('rel'));
         $this->addParam(new ComponentProperty('target'));
         $this->addParam(new ComponentProperty('href', '#'));

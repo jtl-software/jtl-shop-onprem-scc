@@ -13,6 +13,7 @@
 <div class="tab-content"{if $params.id->hasValue()} id="tab-content-{$params.id->getValue()}"{/if}
     {if $params.itemprop->hasValue()}itemprop="{$params.itemprop->getValue()}"{/if}
     {if $params.itemscope->getValue() === true}itemscope {/if}
+    {if $params.title->hasValue() === true} title="{$params.title->getValue()}"{/if}
     {if $params.itemtype->hasValue()}itemtype="{$params.itemtype->getValue()}"{/if}
     {if $params.itemid->hasValue()}itemid="{$params.itemid->getValue()}"{/if}
 >

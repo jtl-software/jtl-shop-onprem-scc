@@ -30,14 +30,14 @@
 
 	<h2 class="mt-4">Collapse</h2>
 
-	{button href="#test-collapse" data=["toggle"=>"collapse"] role="button" aria=["expanded"=>"true","controls"=>"test-collapse"]}
+	{button href="#test-collapse" data=["toggle"=>"collapse"] role="button" aria=["expanded"=>"true","controls"=>"test-collapse"] title="btn-title!"}
 		Toggle 1
 	{/button}
-	{collapse id="test-collapse" class="mt-2"}
+	{collapse id="test-collapse" class="mt-2" title="collapse title!"}
 		{card}Hallo Welt!{/card}
 	{/collapse}
 	<hr>
-	{button href="#test-collapse2" data=["toggle"=>"collapse"] role="button" aria=["expanded"=>"true","controls"=>"test-collapse"]}
+	{button href="#test-collapse2" data=["toggle"=>"collapse"] role="button" aria=["expanded"=>"true","controls"=>"test-collapse"] title="Button title!"}
 		Toggle 2
 	{/button}
 	{collapse id="test-collapse2" class="mt-2" visible=true}
@@ -47,7 +47,7 @@
 	<h3 class="mt-4">Accordion</h3>
 	<div class="accordion" id="accordion">
 
-	{card no-body=true}
+	{card no-body=true title="Card title!"}
 		{cardheader id="tab-1-head" data=["toggle" => "collapse", "target"=>"#tab-1"]}First{/cardheader}
 		{collapse id="tab-1" class="mb-2" visible=true data=["parent"=>"#accordion"] aria=["labelledby"=>"tab-1-head"]}
 			{cardbody}
@@ -117,7 +117,7 @@
 	</div>
 
 	<h2 class="mt-4">Progress</h2>
-	{progress now=25 min=0 max=100 animated=true striped=true}<br>
+	{progress now=25 min=0 max=100 animated=true striped=true title="Progress title!"}<br>
 	{progress now=50 min=0 max=100 animated=true striped=false type="danger"}<br>
 	{progress now=75 min=0 max=100 animated=true striped=true type="success"}<br>
 	{progress now=85 min=0 max=100 animated=false striped=true type="info" height="50px"}<br>
@@ -994,7 +994,7 @@
 		{listgroupitem tag="button"}Noch eins{/listgroupitem}
 	{/listgroup}
 	<br>
-	{listgroup}
+	{listgroup title="LG Title!"}
 		{listgroupitem variant="primary"}Element primary{/listgroupitem}
 		{listgroupitem variant="secondary"}Element secondary{/listgroupitem}
 		{listgroupitem variant="success"}Element success{/listgroupitem}

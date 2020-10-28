@@ -44,6 +44,7 @@
     {if $params.style->hasValue()}style="{$params.style->getValue()}"{/if}
     {if $params.aria->hasValue()}{foreach $params.aria->getValue() as $ariaKey => $ariaVal}aria-{$ariaKey}="{$ariaVal}" {/foreach}{/if}
     {if $params.data->hasValue()}{foreach $params.data->getValue() as $dataKey => $dataVal}data-{$dataKey}="{$dataVal}" {/foreach}{/if}
+    {if $params.title->hasValue() === true} title="{$params.title->getValue()}"{/if}
 >
     {if $params.caption->hasValue()}<caption>{$params.caption->getValue()}</caption>{/if}
     {if $addHead === true}

@@ -1,5 +1,6 @@
 <textarea
     class="form-control {$params.class->getValue()}"
+    {if $params.title->hasValue() === true} title="{$params.title->getValue()}"{/if}
     {if $params.placeholder->hasValue()}placeholder="{$params.placeholder->getValue()}"{/if}
     {if $params.rows->hasValue()}rows="{$params.rows->getValue()}"{/if}
     {if $params.id->hasValue()}id="{$params.id->getValue()}"{/if}

@@ -25,7 +25,6 @@ class Tab extends AbstractBlockComponent
         $this->setName('tab');
 
         $this->addParam(new ComponentProperty('tag', 'li'));
-        $this->addParam(new ComponentProperty('title'));
         $this->addParam(new ComponentProperty('title-item-class'));
         $this->addParam(new ComponentProperty('title-link-class'));
         $this->addParam(new ComponentProperty('href', '#'));

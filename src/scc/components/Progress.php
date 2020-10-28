@@ -31,6 +31,5 @@ class Progress extends AbstractFunctionComponent
         $this->addParam(new ComponentProperty('animated', false, ComponentPropertyType::TYPE_BOOL));
         $this->addParam(new ComponentProperty('height'));
         $this->addParam(new ComponentProperty('type'));
-        $this->addParam(new ComponentProperty('title'));
     }
 }

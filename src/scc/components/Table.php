@@ -24,7 +24,6 @@ class Table extends AbstractFunctionComponent
         $this->setTemplate('table.tpl');
         $this->setName('table');
 
-        $this->addParam(new ComponentProperty('title'));
         $this->addParam(new ComponentProperty('title-item-class'));
         $this->addParam(new ComponentProperty('title-link-class'));
         $this->addParam(new ComponentProperty('href', '#'));

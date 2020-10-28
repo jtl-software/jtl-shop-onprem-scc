@@ -26,7 +26,7 @@ class Card extends AbstractBlockComponent
 
         $this->addParam(new ComponentProperty('img-src'));
         $this->addParam(new ComponentProperty('img-alt'));
-        $this->addParam(new ComponentProperty('title'));
+        $this->addParam(new ComponentProperty('title-text'));
         $this->addParam(new ComponentProperty('title-tag', 'h4'));
         $this->addParam(new ComponentProperty('subtitle'));
         $this->addParam(new ComponentProperty('subtitle-tag', 'h6'));
