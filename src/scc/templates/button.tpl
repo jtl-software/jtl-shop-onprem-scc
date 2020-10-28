@@ -10,7 +10,6 @@
     {$tag = 'button'}
 {/if}
 
-title: {$params.title->getValue()}
 <{$tag}
     {if $tag == 'button'}type="{$params.type}"{/if}
     class="{$class}{if $params.size->hasValue()} btn-{$params.size->getValue()}{/if}{if $params.block->getValue() === true} btn-block{/if}"
