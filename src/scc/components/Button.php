@@ -32,7 +32,6 @@ class Button extends AbstractBlockComponent
         $this->addParam(new ComponentProperty('name'));
         $this->addParam(new ComponentProperty('value'));
         $this->addParam(new ComponentProperty('size'));
-        $this->addParam(new ComponentProperty('title'));
         $this->addParam(new ComponentProperty('variant', 'secondary'));
         $this->addParam(new ComponentProperty('disabled', false, ComponentPropertyType::TYPE_BOOL));
         $this->addParam(new ComponentProperty('block', false, ComponentPropertyType::TYPE_BOOL));

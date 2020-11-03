@@ -1,9 +1,10 @@
 <div class="card {$params.class->getValue()}
-        {if $params['text-variant']->hasValue()}text-{$params['text-variant']->getValue()}{/if}
-        {if $params['border-variant']->hasValue()}border-{$params['border-variant']->getValue()}{/if}
-        {if $params['bg-variant']->hasValue()}bg-{$params['bg-variant']->getValue()}{/if}"
+    {if $params['text-variant']->hasValue()}text-{$params['text-variant']->getValue()}{/if}
+    {if $params['border-variant']->hasValue()}border-{$params['border-variant']->getValue()}{/if}
+    {if $params['bg-variant']->hasValue()}bg-{$params['bg-variant']->getValue()}{/if}"
     {if $params.id->hasValue()}id="{$params.id->getValue()}"{/if}
     {if $params.style->hasValue()}style="{$params.style->getValue()}"{/if}
+    {if $params.title->hasValue()} title="{$params.title->getValue()}"{/if}
     {if $params.itemprop->hasValue()}itemprop="{$params.itemprop->getValue()}"{/if}
     {if $params.itemscope->getValue() === true}itemscope{/if}
     {if $params.itemtype->hasValue()}itemtype="{$params.itemtype->getValue()}"{/if}
@@ -31,13 +32,13 @@
     {if $params['no-body']->getValue() === false}
         <div class="card-body{if $params.overlay->getValue() === true} card-img-overlay{/if}">
     {/if}
-    {if $params.title->hasValue()}
-            <{$params['title-tag']->getValue()} class="card-title">{$params.title}</{$params['title-tag']->getValue()}>
+    {if $params['title-text']->hasValue()}
+        <{$params['title-tag']->getValue()} class="card-title">{$params['title-text']}</{$params['title-tag']->getValue()}>
     {/if}
     {if $params.subtitle->hasValue()}
-            <{$params['subtitle-tag']->getValue()} class="card-subtitle mb-2 text-muted">
-                {$params.subtitle}
-            </{$params['subtitle-tag']->getValue()}>
+        <{$params['subtitle-tag']->getValue()} class="card-subtitle mb-2 text-muted">
+            {$params.subtitle}
+        </{$params['subtitle-tag']->getValue()}>
     {/if}
     {$blockContent|default:''}
     {if $params['no-body']->getValue() === false}

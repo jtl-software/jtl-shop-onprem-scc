@@ -31,7 +31,6 @@ class Select extends AbstractBlockComponent
         $this->addParam(new ComponentProperty('select-size', 0, ComponentPropertyType::TYPE_INT));
         $this->addParam(new ComponentProperty('size'));
         $this->addParam(new ComponentProperty('autocomplete'));
-        $this->addParam(new ComponentProperty('title'));
         $this->addParam(new ComponentProperty('name'));
     }
 }

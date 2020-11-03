@@ -54,6 +54,7 @@ abstract class AbstractBaseComponent implements ComponentInterface
     public function __construct()
     {
         $this->addParam(new ComponentProperty('class'));
+        $this->addParam(new ComponentProperty('title'));
         $this->addParam(new ComponentProperty('id'));
         $this->addParam(new ComponentProperty('style'));
         $this->addParam(new ComponentProperty('itemprop'));

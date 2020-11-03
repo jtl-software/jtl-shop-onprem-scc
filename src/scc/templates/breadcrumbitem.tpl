@@ -14,7 +14,7 @@
 	{if $params.active->getValue() === true} {$params['active-class']->getValue()}{/if}
 	{if $params.disabled->getValue() === true} disabled{/if}"
 	{if $params.nofollow->getValue() === true} rel="nofollow"{/if}
-	{if $params.title->hasValue() === true} title="{$params.title->getValue()}"{/if}
+	{if $params.title->hasValue()} title="{$params.title->getValue()}"{/if}
 	target="{$params.target->getValue()}"
 	{if $params.href->hasValue()}href="{$params.href->getValue()}"{/if}
 	{if $params['router-tag-itemprop']->hasValue()}itemprop="{$params['router-tag-itemprop']->getValue()}"{/if}

@@ -1,21 +1,9 @@
 {assign var=id value=$params.id->getValue()|default:uniqid()}
 {$parentParams = $parentSmarty->getTemplateVars('pbp')|default:$parentBlockParams}
 
-{if isset($parentParams.stacked)}
-    {assign var=stacked value=$parentParams.stacked->getValue()}
-{else}
-    {assign var=stacked value=false}
-{/if}
-{if isset($parentParams.plain)}
-    {assign var=plain value=$parentParams.plain->getValue()}
-{else}
-    {assign var=plain value=false}
-{/if}
-{if isset($parentParams.buttons)}
-    {assign var=buttons value=$parentParams.buttons->getValue()}
-{else}
-    {assign var=buttons value=false}
-{/if}
+{assign var=stacked value=$parentParams.stacked->getValue()|default:false}
+{assign var=plain value=$parentParams.plain->getValue()|default:false}
+{assign var=buttons value=$parentParams.buttons->getValue()|default:false}
 {if $buttons === false}
     <div class="
         {if $plain === false}
@@ -34,6 +22,7 @@
             type="radio"
             id="{$id}"
             {if $params.name->hasValue()}name="{$params.name->getValue()}"{/if}
+            {if $params.title->hasValue()} title="{$params.title->getValue()}"{/if}
             {if $params.role->hasValue()}role="{$params.role->getValue()}"{/if}
             {if $params.aria->hasValue()}{foreach $params.aria->getValue() as $ariaKey => $ariaVal}aria-{$ariaKey}="{$ariaVal}" {/foreach}{/if}
             {if $params.data->hasValue()}{foreach $params.data->getValue() as $dataKey => $dataVal}data-{$dataKey}="{$dataVal}" {/foreach}{/if}
@@ -61,6 +50,7 @@
             id="{$id}"
             type="radio"
             {if $params.name->hasValue()}name="{$params.name->getValue()}"{/if}
+            {if $params.title->hasValue()} title="{$params.title->getValue()}"{/if}
             {if $params.role->hasValue()}role="{$params.role->getValue()}"{/if}
             {if $params.aria->hasValue()}{foreach $params.aria->getValue() as $ariaKey => $ariaVal}aria-{$ariaKey}="{$ariaVal}" {/foreach}{/if}
             {if $params.data->hasValue()}{foreach $params.data->getValue() as $dataKey => $dataVal}data-{$dataKey}="{$dataVal}" {/foreach}{/if}
