@@ -22,7 +22,7 @@
     >
         <input class="{if $plain === false}custom-control-input{else}form-check-input{/if} {$params.class->getValue()}"
             type="checkbox" id="{$id}"
-            {if $params.title->hasValue() === true} title="{$params.title->getValue()}"{/if}
+            {if $params.title->hasValue()} title="{$params.title->getValue()}"{/if}
             {if $params.value->hasValue()}value="{$params.value->getValue()}"{/if}
             {if $params.name->hasValue()}name="{$params.name->getValue()}"{/if}
             {if $params.disabled->getValue() === true}disabled{/if}
@@ -48,7 +48,7 @@
         <input id="{$id}" type="checkbox"
             {if $params.value->hasValue()}value="{$params.value->getValue()}"{/if}
             {if $params.name->hasValue()}name="{$params.name->getValue()}"{/if}
-            {if $params.title->hasValue() === true} title="{$params.title->getValue()}"{/if}
+            {if $params.title->hasValue()} title="{$params.title->getValue()}"{/if}
             {if $params.disabled->getValue() === true}disabled{/if}
             {if $params.required->getValue() === true}required{/if}
             {if $params.checked->getValue() === true}checked{/if}

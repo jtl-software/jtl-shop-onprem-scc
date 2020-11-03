@@ -6,7 +6,7 @@
     <div id="{$id}" aria-labelledby="form-group-label-{$id}" class="form-group {$params.class->getValue()}"
         {if $params.itemprop->hasValue()}itemprop="{$params.itemprop->getValue()}"{/if}
         {if $params.itemscope->getValue() === true}itemscope {/if}
-        {if $params.title->hasValue() === true} title="{$params.title->getValue()}"{/if}
+        {if $params.title->hasValue()} title="{$params.title->getValue()}"{/if}
         {if $params.itemtype->hasValue()}itemtype="{$params.itemtype->getValue()}"{/if}
         {if $params.itemid->hasValue()}itemid="{$params.itemid->getValue()}"{/if}
         role="{if $params.role->hasValue()}{$params.role->getValue()}{else}group{/if}"
