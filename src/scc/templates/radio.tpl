@@ -1,9 +1,20 @@
 {assign var=id value=$params.id->getValue()|default:uniqid()}
 {$parentParams = $parentSmarty->getTemplateVars('pbp')|default:$parentBlockParams}
-
-{assign var=stacked value=$parentParams.stacked->getValue()|default:false}
-{assign var=plain value=$parentParams.plain->getValue()|default:false}
-{assign var=buttons value=$parentParams.buttons->getValue()|default:false}
+{if isset($parentParams.stacked)}
+    {assign var=stacked value=$parentParams.stacked->getValue()}
+{else}
+    {assign var=stacked value=false}
+{/if}
+{if isset($parentParams.plain)}
+    {assign var=plain value=$parentParams.plain->getValue()}
+{else}
+    {assign var=plain value=false}
+{/if}
+{if isset($parentParams.buttons)}
+    {assign var=buttons value=$parentParams.buttons->getValue()}
+{else}
+    {assign var=buttons value=false}
+{/if}
 {if $buttons === false}
     <div class="
         {if $plain === false}
