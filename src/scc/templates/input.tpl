@@ -9,7 +9,7 @@
     {if $params.style->hasValue()}style="{$params.style->getValue()}"{/if}
     {if $params.value->hasValue()}value="{$params.value->getValue()}"{/if}
     {if $params.min->hasValue()}min="{$params.min->getValue()}"{/if}
-    {if $params.max->hasValue()}max="{$params.max->getValue()}"{/if}
+    {if $params.max->hasValue() && !empty($params.max->getValue())}max="{$params.max->getValue()}"{/if}
     {if $params.size->hasValue()}size="{$params.size->getValue()}"{/if}
     {if $params.maxlength->hasValue()}maxlength="{$params.maxlength->getValue()}"{/if}
     {if $params.step->hasValue()}step="{$params.step->getValue()}"{/if}
