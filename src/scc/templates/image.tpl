@@ -70,6 +70,9 @@
             {if $params.data->hasValue()}
                 {foreach $params.data->getValue() as $dataKey => $dataVal} data-{$dataKey}="{$dataVal}" {/foreach}
             {/if}
+            {if $params.attribs->hasValue()}
+                {foreach $params.attribs->getValue() as $key => $val} {$key}="{$val}" {/foreach}
+            {/if}
         >
     {if $useWebP}
     </picture>

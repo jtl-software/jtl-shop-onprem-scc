@@ -64,6 +64,7 @@ abstract class AbstractBaseComponent implements ComponentInterface
         $this->addParam(new ComponentProperty('itemscope', null, ComponentPropertyType::TYPE_BOOL));
         $this->addParam(new ComponentProperty('aria', null, ComponentPropertyType::TYPE_ARRAY));
         $this->addParam(new ComponentProperty('data', null, ComponentPropertyType::TYPE_ARRAY));
+        $this->addParam(new ComponentProperty('attribs', null, ComponentPropertyType::TYPE_ARRAY));
     }
 
     /**
