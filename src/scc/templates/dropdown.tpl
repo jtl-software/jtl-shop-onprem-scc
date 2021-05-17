@@ -16,7 +16,10 @@
         {if $params.id->hasValue()} aria-labelledby="{$params.id->getValue()}"{/if}
         {if $params.role->hasValue()}role="{$params.role->getValue()}"{/if}
         {if $params.aria->hasValue()}{foreach $params.aria->getValue() as $ariaKey => $ariaVal}aria-{$ariaKey}="{$ariaVal}" {/foreach} {/if}
-        {if $params.data->hasValue()}{foreach $params.data->getValue() as $dataKey => $dataVal}data-{$dataKey}="{$dataVal}" {/foreach} {/if}>
+        {if $params.data->hasValue()}{foreach $params.data->getValue() as $dataKey => $dataVal}data-{$dataKey}="{$dataVal}" {/foreach} {/if}
+        {if $params.attribs->hasValue()}
+            {foreach $params.attribs->getValue() as $key => $val} {$key}="{$val}" {/foreach}
+        {/if}>
         {$params.text->getValue()}</button>
     <div class="dropdown-menu{if $params.right->getValue() === true} dropdown-menu-right{/if}">
         {$blockContent}

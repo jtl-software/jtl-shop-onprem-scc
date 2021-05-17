@@ -11,6 +11,9 @@
     role="{if $params.role->hasValue()}{$params.role->getValue()}{else}presentation{/if}"
     {if $params.aria->hasValue()}{foreach $params.aria->getValue() as $ariaKey => $ariaVal}aria-{$ariaKey}="{$ariaVal}" {/foreach}{/if}
     {if $params.data->hasValue()}{foreach $params.data->getValue() as $dataKey => $dataVal}data-{$dataKey}="{$dataVal}" {/foreach}{/if}
+    {if $params.attribs->hasValue()}
+        {foreach $params.attribs->getValue() as $key => $val} {$key}="{$val}" {/foreach}
+    {/if}
 >
    {* {if $params.swipeable->getValue() === true}
         <div class="nav-link{if $params.active->getValue() === true} active{/if}{if $params.disabled->getValue() === true} disabled{/if}"
