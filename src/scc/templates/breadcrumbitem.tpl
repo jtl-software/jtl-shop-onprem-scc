@@ -18,6 +18,9 @@
 	target="{$params.target->getValue()}"
 	{if $params.href->hasValue()}href="{$params.href->getValue()}"{/if}
 	{if $params['router-tag-itemprop']->hasValue()}itemprop="{$params['router-tag-itemprop']->getValue()}"{/if}
+	{if $params.attribs->hasValue()}
+		{foreach $params.attribs->getValue() as $key => $val} {$key}="{$val}" {/foreach}
+	{/if}
 >
 {$blockContent}
 </{$params['router-tag']->getValue()}>

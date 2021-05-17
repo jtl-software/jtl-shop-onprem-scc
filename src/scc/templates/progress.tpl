@@ -6,6 +6,9 @@
     {if $params.itemscope->getValue() === true}itemscope {/if}
     {if $params.itemtype->hasValue()}itemtype="{$params.itemtype->getValue()}"{/if}
     {if $params.itemid->hasValue()}itemid="{$params.itemid->getValue()}"{/if}
+    {if $params.attribs->hasValue()}
+        {foreach $params.attribs->getValue() as $key => $val} {$key}="{$val}" {/foreach}
+    {/if}
 >
     <div class="progress-bar{if $params.type->hasValue()} bg-{$params.type->getValue()}{/if}
          {if $params.striped->getValue() === true} progress-bar-striped{/if}

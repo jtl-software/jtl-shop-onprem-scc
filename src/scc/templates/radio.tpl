@@ -37,6 +37,9 @@
             {if $params.role->hasValue()}role="{$params.role->getValue()}"{/if}
             {if $params.aria->hasValue()}{foreach $params.aria->getValue() as $ariaKey => $ariaVal}aria-{$ariaKey}="{$ariaVal}" {/foreach}{/if}
             {if $params.data->hasValue()}{foreach $params.data->getValue() as $dataKey => $dataVal}data-{$dataKey}="{$dataVal}" {/foreach}{/if}
+            {if $params.attribs->hasValue()}
+                {foreach $params.attribs->getValue() as $key => $val} {$key}="{$val}" {/foreach}
+            {/if}
             {if $params.value->hasValue()}value="{$params.value->getValue()}"{/if}
             {if $params.disabled->getValue() === true}disabled{/if}
             {if $params.required->getValue() === true}required{/if}
@@ -65,6 +68,9 @@
             {if $params.role->hasValue()}role="{$params.role->getValue()}"{/if}
             {if $params.aria->hasValue()}{foreach $params.aria->getValue() as $ariaKey => $ariaVal}aria-{$ariaKey}="{$ariaVal}" {/foreach}{/if}
             {if $params.data->hasValue()}{foreach $params.data->getValue() as $dataKey => $dataVal}data-{$dataKey}="{$dataVal}" {/foreach}{/if}
+            {if $params.attribs->hasValue()}
+                {foreach $params.attribs->getValue() as $key => $val} {$key}="{$val}" {/foreach}
+            {/if}
             class=""
             {if $params.value->hasValue()}value="{$params.value->getValue()}"{/if}
             {if $params.disabled->getValue() === true}disabled{/if}

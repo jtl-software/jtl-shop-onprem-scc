@@ -16,6 +16,9 @@
     {if $params.data->hasValue()}
         {foreach $params.data->getValue() as $dataKey => $dataVal}data-{$dataKey}="{$dataVal}" {/foreach}
     {/if}
+    {if $params.attribs->hasValue()}
+        {foreach $params.attribs->getValue() as $key => $val} {$key}="{$val}" {/foreach}
+    {/if}
 >
     {if $params['img-src']->hasValue()}
         <img class="card-img-top" src="{$params['img-src']}" alt="{$params['img-alt']|default:''}">
