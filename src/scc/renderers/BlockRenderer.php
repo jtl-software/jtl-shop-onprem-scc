@@ -4,8 +4,8 @@ namespace scc\renderers;
 
 use scc\ComponentInterface;
 use scc\ComponentPropertyInterface;
-use scc\ComponentRendererInterface;
 use scc\ComponentPropertyType;
+use scc\ComponentRendererInterface;
 
 /**
  * Class BlockRenderer

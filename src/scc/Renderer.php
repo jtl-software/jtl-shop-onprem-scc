@@ -34,7 +34,7 @@ class Renderer implements RendererInterface
     {
         try {
             $this->smarty->registerPlugin(
-                (string)$component->getType(),
+                $component->getType(),
                 $component->getName(),
                 [$component->getRenderer(), 'render'],
                 true

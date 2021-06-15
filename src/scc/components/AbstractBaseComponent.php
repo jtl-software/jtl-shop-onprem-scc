@@ -4,8 +4,8 @@ namespace scc\components;
 
 use scc\ComponentInterface;
 use scc\ComponentProperty;
-use scc\ComponentPropertyType;
 use scc\ComponentPropertyInterface;
+use scc\ComponentPropertyType;
 use scc\ComponentRendererInterface;
 
 /**
