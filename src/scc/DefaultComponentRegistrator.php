@@ -72,7 +72,7 @@ use scc\components\Textarea;
  * Class DefaultComponentRegistrator
  * @package scc
  */
-class DefaultComponentRegistrator
+class DefaultComponentRegistrator implements ComponentRegistratorInterface
 {
     /**
      * @var RendererInterface
@@ -85,8 +85,7 @@ class DefaultComponentRegistrator
     protected $components = [];
 
     /**
-     * DefaultComponentRegistrator constructor.
-     * @param RendererInterface $renderer
+     * @inheritdoc
      */
     public function __construct(RendererInterface $renderer)
     {
@@ -168,5 +167,37 @@ class DefaultComponentRegistrator
             $component->getRenderer()->preset();
             $this->renderer->registerComponent($component);
         }
+    }
+
+    /**
+     * @inheritdoc
+     */
+    public function getRenderer(): RendererInterface
+    {
+        return $this->renderer;
+    }
+
+    /**
+     * @inheritdoc
+     */
+    public function setRenderer(RendererInterface $renderer): void
+    {
+        $this->renderer = $renderer;
+    }
+
+    /**
+     * @inheritdoc
+     */
+    public function getComponents(): array
+    {
+        return $this->components;
+    }
+
+    /**
+     * @inheritdoc
+     */
+    public function setComponents(array $components): void
+    {
+        $this->components = $components;
     }
 }
