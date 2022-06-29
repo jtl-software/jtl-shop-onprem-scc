@@ -10,8 +10,8 @@
 
 {if {$params.src->getValue()}|strpos:'keinBild.gif' !== false}
 <img class="{$params.class->getValue()} {$rounded} {if $params['fluid-grow']->getValue() === true} img-fluid w-100{/if}"
-     height="{if $params.height->hasValue()}{$params.height->getValue()}{elseif $params.sizes->hasValue()}{$params.sizes->getValue()}{else}auto{/if}"
-     width="{if $params.width->hasValue()}{$params.width->getValue()}{elseif $params.sizes->hasValue()}{$params.sizes->getValue()}{else}auto{/if}"
+     {if $params.height->hasValue() && !empty($params.height->getValue())}height="{$params.height->getValue()}"{elseif $params.sizes->hasValue()}height="{$params.sizes->getValue()}"{/if}
+     {if $params.width->hasValue() && !empty($params.width->getValue())}width="{$params.width->getValue()}"{elseif $params.sizes->hasValue()}width="{$params.sizes->getValue()}"{/if}
      {if $params.alt->hasValue()}alt="{$params.alt->getValue()}"{/if}
      src="{$params.src->getValue()}">
 {else}
@@ -56,8 +56,8 @@
             {if $params.id->hasValue()}id="{$params.id->getValue()}"{/if}
             {if $params.title->hasValue()}title="{$params.title->getValue()}"{/if}
             {if $params.alt->hasValue()}alt="{$params.alt->getValue()}"{/if}
-            {if $params.width->hasValue()}width="{$params.width->getValue()}"{/if}
-            {if $params.height->hasValue()}height="{$params.height->getValue()}"{/if}
+            {if $params.width->hasValue() && !empty($params.width->getValue())}width="{$params.width->getValue()}"{/if}
+            {if $params.height->hasValue() && !empty($params.height->getValue())}height="{$params.height->getValue()}"{/if}
             {if $params.style->hasValue()}style="{$params.style->getValue()}"{/if}
             {if $params.itemprop->hasValue()}itemprop="{$params.itemprop->getValue()}"{/if}
             {if $params.itemscope->getValue() === true}itemscope {/if}
