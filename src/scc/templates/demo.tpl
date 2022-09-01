@@ -132,10 +132,10 @@
     <h3 class="mt-4">MP4 via video tag</h3>
     {embed type="video"
     aspect="16by9"
-    poster="https://shop5.moches.de/big_buck_bunny.jpg"
+    poster="https://peach.blender.org/wp-content/themes/bf-bunny/graphics/header1.jpg"
     controls=true
     allowfullscreen=true}
-        <source src="https://shop5.moches.de/big_buck_bunny.mp4"
+        <source src="https://download.blender.org/peach/bigbuckbunny_movies/BigBuckBunny_320x180.mp4"
                 type="video/mp4" />
     {/embed}
 
@@ -670,7 +670,7 @@
     <h2 class="mt-4">Media</h2>
     {media id='media-test-id-1'}
         {mediaaside}
-            {image src="https://lorempixel.com/128/240/" alt="Asideimage"}
+            {image src="https://via.placeholder.com/128x240" alt="Asideimage"}
         {/mediaaside}
         {mediabody}
             <h5 class="mt-0">Media Title</h5>
@@ -691,7 +691,7 @@
     <h3 class="mt-1">Nested media</h3>
     {media no-body=true}
         {mediaaside}
-            {image src="https://lorempixel.com/128/230/" alt="Asideimage 2"}
+            {image src="https://via.placeholder.com/128x230" alt="Asideimage 2"}
         {/mediaaside}
         {mediabody class="ml-3"}
             <h5 class="mt-0">Media Title</h5>
@@ -707,7 +707,7 @@
             </p>
             {media}
                 {mediaaside}
-                    {image src="https://lorempixel.com/64/64/" alt="Asideimage"}
+                    {image src="https://via.placeholder.com/64" alt="Asideimage"}
                 {/mediaaside}
                 {mediabody}
                     <h5 class="mt-0">Nested Media</h5>
@@ -724,14 +724,14 @@
         caption='Textcaption1'
         caption-text='Lorem ipsum1'
         content="Nulla vitae elit libero, a pharetra augue mollis interdum."
-        img-src="https://lorempixel.com/1024/480/technics/2/"
+        img-src="https://via.placeholder.com/1024x480?text=First+Slide"
         img-alt="Bild zwei"
         active=true}
         {/carouselslide}
         {carouselslide
         caption='Textcaption2'
         caption-text='Lorem ipsum2'
-        img-src="https://lorempixel.com/1024/480/technics/4/"
+        img-src="https://via.placeholder.com/1024x480?text=Second+Slide"
         img-alt="Bild zwei"}
             <h1>Hello world!</h1>
         {/carouselslide}
@@ -739,7 +739,7 @@
         caption='Textcaption3'
         caption-text='Lorem ipsum3'
         img-alt="Bild drei"
-        img-src="https://lorempixel.com/1024/480/technics/6/"}
+        img-src="https://via.placeholder.com/1024x480?text=Third+Slide"}
             <h1>Hello world!</h1>
         {/carouselslide}
     {/carousel}
@@ -749,15 +749,15 @@
         caption="Textcaption1"
         caption-text="Lorem ipsum caption text"
         content="Nulla vitae elit libero, a pharetra augue mollis interdum."
-        img-src="https://lorempixel.com/800/400/technics/1/"
-        img-alt="Bild zwei"
+        img-src="https://via.placeholder.com/1024x480?text=First+Slide"
+        img-alt="Bild eins"
         active=true}
             <h1>Bild eins!</h1>
         {/carouselslide}
         {carouselslide
         caption="Textcaption2"
         caption-text="Lorem ipsum2"
-        img-src="https://lorempixel.com/800/400/technics/3/"
+        img-src="https://via.placeholder.com/1024x480?text=Second+Slide"
         img-alt="Bild zwei"}
             <h1>Bild zwei!</h1>
         {/carouselslide}
@@ -765,14 +765,14 @@
         caption="Textcaption3"
         caption-text="Lorem ipsum3"
         img-alt="Bild drei"
-        img-src="https://lorempixel.com/800/400/technics/5/"}
+        img-src="https://via.placeholder.com/1024x480?text=Third+Slide"}
             <h1>Bild drei!</h1>
         {/carouselslide}
         {carouselslide
         caption="Textcaption4"
         caption-text="Lorem ipsum4"
         img-alt="Bild vier"
-        img-src="https://lorempixel.com/800/400/technics/7/"}
+        img-src="https://via.placeholder.com/1024x480?text=Fourth+Slide"}
             <h1>Bild vier!</h1>
         {/carouselslide}
     {/carousel}
@@ -852,9 +852,9 @@
     <h2 class="mt-4">Images</h2>
     <div>
         <h5>Small image with <code>fluid</code>:</h5>
-        {image src="https://lorempixel.com/300/150/" fluid=true alt="Fluid image"}
+        {image src="https://via.placeholder.com/300x150" fluid=true alt="Fluid image"}
         <h5 class="my-3">Small image with <code>fluid-grow</code>:</h5>
-        {image src="https://lorempixel.com/300/150/" fluid-grow=true alt="Fluid-Grow image"}
+        {image src="https://via.placeholder.com/300x150" fluid-grow=true alt="Fluid-Grow image"}
     </div>
     <br>
 
@@ -862,19 +862,19 @@
         <div class="p-4 bg-dark container-fluid">
             <div class="row">
                 <div class="col">
-                    {image src="https://lorempixel.com/250/250/technics/4/"
+                    {image src="https://via.placeholder.com/250"
                     alt="Thumbnail"
                     thumbnail=true
                     fluid=true}
                 </div>
                 <div class="col">
-                    {image src="https://lorempixel.com/250/250/technics/5/"
+                    {image src="https://via.placeholder.com/250"
                     alt="Thumbnail"
                     thumbnail=true
                     fluid=true}
                 </div>
                 <div class="col">
-                    {image src="https://lorempixel.com/250/250/technics/6/"
+                    {image src="https://via.placeholder.com/250"
                     alt="Thumbnail"
                     thumbnail=true
                     fluid=true}
@@ -884,25 +884,25 @@
     </div>
 
     <br>
-    {image src="https://lorempixel.com/60/60/" rounded=true alt="rounded" class="m-1"}
-    {image src="https://lorempixel.com/60/60/" rounded="top" alt="top" class="m-1"}
-    {image src="https://lorempixel.com/60/60/" rounded="right" alt="top" class="m-1"}
-    {image src="https://lorempixel.com/60/60/" rounded="left" alt="left" class="m-1"}
-    {image src="https://lorempixel.com/60/60/" rounded="circle" alt="circle" class="m-1"}
-    {image src="https://lorempixel.com/60/60/" rounded="0" alt="0" class="m-1"}
+    {image src="https://via.placeholder.com/60" rounded=true alt="rounded" class="m-1"}
+    {image src="https://via.placeholder.com/60" rounded="top" alt="top" class="m-1"}
+    {image src="https://via.placeholder.com/60" rounded="right" alt="top" class="m-1"}
+    {image src="https://via.placeholder.com/60" rounded="left" alt="left" class="m-1"}
+    {image src="https://via.placeholder.com/60" rounded="circle" alt="circle" class="m-1"}
+    {image src="https://via.placeholder.com/60" rounded="0" alt="0" class="m-1"}
 
     <h3>Alignment</h3>
     <div class="clearfix">
-        {image src="https://lorempixel.com/201/201/" height=200 width=200 left=true alt="Left"}
-        {image src="https://lorempixel.com/202/202/" height=200 width=200 right=true alt="Right"}
+        {image src="https://via.placeholder.com/200" height=200 width=200 left=true alt="Left"}
+        {image src="https://via.placeholder.com/200" height=200 width=200 right=true alt="Right"}
     </div>
     <br>
-    {image src="https://lorempixel.com/200/200/" center=true alt="Center"}
+    {image src="https://via.placeholder.com/200" center=true alt="Center"}
     <br>
 
 
     <h3>Height/Width</h3>
-    {image src="https://lorempixel.com/400/400/" height=300 width=250 alt="300x250"}
+    {image src="https://via.placeholder.com/400" height=300 width=250 alt="300x250"}
 
     <h2 class="mt-4">Alerts</h2>
     <div>
@@ -930,13 +930,13 @@
     {alert show=true dismissible=true variant="dark"}Dark Alert dismissable{/alert}
 
     <h2 class="mt-4">Link</h2>
-    {link href="https://shop5.moches.de/" rel="noopener"}This is a link with rel=noopen!!{/link}
-    {link href="https://shop5.moches.de/" target="_blank"}This is a link with target=_blank!{/link}
+    {link href="https://google.com/" rel="noopener"}This is a link with rel=noopen!!{/link}
+    {link href="https://google.com/" target="_blank"}This is a link with target=_blank!{/link}
     <h2 class="mt-4">Card</h2>
     {card
     title="Card mit Bild!"
     subtitle="Some subtitle..."
-    img-src="https://shop5.moches.de/media/image/product/15511/sm/sonderpreis-bei-einem-lagernden-artikel-sonderpreis-gilt-bis-lagerbestand-10.jpg"
+    img-src="https://via.placeholder.com/320x220"
     img-alt="Image"
     tag="article"
     style="max-width: 20rem;"
@@ -1014,7 +1014,7 @@
 
     {card header="Card with listgroup" tag="article" style="max-width: 20rem;" hasBody=false class="mt-4 mb-4"}
         {listgroup class='list-group-flush'}
-            {listgroupitem href='https://shop5.moches.de'}Element 1 - mit Link{/listgroupitem}
+            {listgroupitem href='https://google.com'}Element 1 - mit Link{/listgroupitem}
             {listgroupitem}Element 2 - no link{/listgroupitem}
             {listgroupitem href='#'}Noch eins - li mit Badge{badge variant='info'}Info{/badge}{/listgroupitem}
         {/listgroup}
