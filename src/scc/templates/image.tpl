@@ -9,7 +9,7 @@
 {/if}
 
 {if {$params.src->getValue()}|strpos:'keinBild.gif' !== false}
-<img class="{$params.class->getValue()}{$rounded} {if $params['fluid-grow']->getValue() === true} img-fluid w-100{/if}"
+<img class="{$params.class->getValue()} {$rounded} img-fluid{if $params['fluid-grow']->getValue() === true} w-100{/if}"
      height="{if $params.height->hasValue() && !empty($params.height->getValue())}{$params.height->getValue()}{else}130{/if}"
      width="{if $params.width->hasValue() && !empty($params.width->getValue())}{$params.width->getValue()}{else}130{/if}"
      {if $params.alt->hasValue()}alt="{$params.alt->getValue()}"{/if}
