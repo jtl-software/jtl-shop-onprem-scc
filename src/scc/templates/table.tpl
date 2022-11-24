@@ -30,9 +30,9 @@
 {$addHead = false}
 {$fields = $params.fields->getValue()}
 {foreach $fields as $k => $v}
-    {if $v|is_array} {*assoc-array with labels*}
+    {if is_array($v)} {*assoc-array with labels*}
         {$addHead = true}
-        {$fieldNames = $fields|array_keys}
+        {$fieldNames = array_keys($fields)}
     {else}
         {$fieldNames = $fields}
     {/if}
@@ -65,8 +65,8 @@
     {foreach $params.items->getValue() as $v}
         <tr>
         {foreach $v|get_object_vars as $key => $value}
-            {if $key|in_array:$fieldNames:true}
-                {if $value|is_object && isset($fields[$key]['key'])}
+            {if in_array($key, $fieldNames, true)}
+                {if is_object($value) && isset($fields[$key]['key'])}
                     {$idx = $fields[$key]['key']}
                     <td>{$value->$idx}</td>
                 {else}
