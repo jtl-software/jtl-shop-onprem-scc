@@ -8,7 +8,7 @@
     {/if}
 {/if}
 
-{if {$params.src->getValue()}|strpos:'keinBild.gif' !== false}
+{if $params.src->hasValue() && strpos($params.src->getValue(), 'keinBild.gif') !== false}
 <img class="{$params.class->getValue()} {$rounded} img-fluid{if $params['fluid-grow']->getValue() === true} w-100{/if}"
      height="{if $params.height->hasValue() && !empty($params.height->getValue())}{$params.height->getValue()}{else}130{/if}"
      width="{if $params.width->hasValue() && !empty($params.width->getValue())}{$params.width->getValue()}{else}130{/if}"
@@ -20,8 +20,10 @@
         <source
             {if $params.srcset->hasValue()}
                 srcset="{$params.srcset->getValue()|regex_replace:"/\.(?i)(jpg|jpeg|png)/":".webp"}"
-            {else}
+            {elseif $params.src->hasValue()}
                 srcset="{$params.src->getValue()|regex_replace:"/\.(?i)(jpg|png)/":".webp"}"
+            {else}
+                srcset=""
             {/if}
             {if $params.sizes->hasValue()}sizes="{$params.sizes->getValue()}"{/if}
             {if $params.width->hasValue() && !empty($params.width->getValue())}width="{$params.width->getValue()}"{/if}
