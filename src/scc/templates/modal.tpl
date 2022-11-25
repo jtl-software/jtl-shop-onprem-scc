@@ -13,7 +13,7 @@
     <div class="modal-dialog{if $params.centered->getValue() === true} modal-dialog-centered{/if}{if $params.size->hasValue()} modal-{$params.size->getValue()}{/if}" role="document">
         <div class="modal-content">
             <div class="modal-header">
-                {if $params.title->hasValue()}<strong class="modal-title h5">{$params.title->getValue()}</strong>{/if}
+                {if $params.title->hasValue()}<div class="modal-title h5">{$params.title->getValue()}</div>{/if}
                 <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                     <span aria-hidden="true">&times;</span>
                 </button>

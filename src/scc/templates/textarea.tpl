@@ -19,4 +19,4 @@
     {if $params.attribs->hasValue()}
         {foreach $params.attribs->getValue() as $key => $val} {$key}="{$val}" {/foreach}
     {/if}
->{$blockContent|trim}</textarea>
+>{trim($blockContent)}</textarea>
