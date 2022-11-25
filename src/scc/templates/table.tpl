@@ -64,7 +64,7 @@
 
     {foreach $params.items->getValue() as $v}
         <tr>
-        {foreach $v|get_object_vars as $key => $value}
+        {foreach get_object_vars($v) as $key => $value}
             {if in_array($key, $fieldNames, true)}
                 {if is_object($value) && isset($fields[$key]['key'])}
                     {$idx = $fields[$key]['key']}
