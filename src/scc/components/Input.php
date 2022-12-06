@@ -40,5 +40,7 @@ class Input extends AbstractFunctionComponent
         $this->addParam(new ComponentProperty('required', false, ComponentPropertyType::TYPE_BOOL));
         $this->addParam(new ComponentProperty('disabled', false, ComponentPropertyType::TYPE_BOOL));
         $this->addParam(new ComponentProperty('size-class', null, ComponentPropertyType::TYPE_STRING));
+        $this->addParam(new ComponentProperty('onfocus'));
+        $this->addParam(new ComponentProperty('onblur'));
     }
 }

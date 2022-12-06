@@ -26,4 +26,6 @@
     {if $params.attribs->hasValue()}
         {foreach $params.attribs->getValue() as $key => $val} {$key}="{$val}" {/foreach}
     {/if}
+    {if $params.onfocus->hasValue()} onfocus="{$params.onfocus->getValue()}"{/if}
+    {if $params.onblur->hasValue()} onblur="{$params.onblur->getValue()}"{/if}
 >
