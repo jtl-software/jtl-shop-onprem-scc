@@ -1,4 +1,4 @@
-<div class="progress{if $params.class->hasValue() || $params.height->hasValue()} {$params.class->getValue()}{/if}"
+<div class="progress{if $params.class->hasValue()} {$params.class->getValue()}{/if}"
     {if $params.style->hasValue() || $params.height->hasValue()}style="{$params.style->getValue()}{if $params.height->hasValue()}; height: {$params.height->getValue()}{/if}" {/if}
     {if $params.id->hasValue()}id="{$params.id->getValue()}" {/if}
     {if $params.itemprop->hasValue()}itemprop="{$params.itemprop->getValue()}"{/if}
