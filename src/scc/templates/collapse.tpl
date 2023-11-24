@@ -4,7 +4,7 @@
     </{$params.tag->getValue()}>
 {/if}
 <{$params.tag->getValue()}
-class="collapse{if $params['is-nav']->getValue() === true} navbar-collapse{/if}
+class="collapse {if $params['is-nav']->getValue() === true} navbar-collapse{/if}
 {if $params['button-label-show']->hasValue() && $params['button-label-hide']->hasValue()} collapse-with-button{/if}
 {if $params['clip-text']->hasValue()} collapse-with-clip{/if}
 {$params.class->getValue()}{if $params.visible->getValue() === true} show{/if}"
