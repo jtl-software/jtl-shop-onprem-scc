@@ -8,7 +8,6 @@
     {/if}
 {/if}
 
-
 {if $params.src->hasValue() && strpos($params.src->getValue(), 'keinBild.gif') !== false}
 <img class="{$params.class->getValue()} {$rounded} img-fluid{if $params['fluid-grow']->getValue() === true} w-100{/if}"
      height="{if $params.height->hasValue() && !empty($params.height->getValue())}{$params.height->getValue()}{else}130{/if}"
