@@ -1,6 +1,5 @@
 {assign var=rounded value=''}
 {assign var=useWebP value=$params.webp->getValue() === true && \JTL\Media\Image::hasWebPSupport()}
-{assign var=path value=$params.src->getValue()|pathinfo}
 {if $params.rounded->getValue() !== false}
     {if $params.rounded->getValue() === true}
         {assign var=rounded value=' rounded'}
@@ -10,14 +9,14 @@
 {/if}
 
 
-{if $params.src->hasValue() && $path.basename === 'keinBild.gif'}
+{if $params.src->hasValue() && str_ends_with($params.src->getValue(), 'keinBild.gif')}
 <img class="{$params.class->getValue()} {$rounded} img-fluid{if $params['fluid-grow']->getValue() === true} w-100{/if}"
      height="{if $params.height->hasValue() && !empty($params.height->getValue())}{$params.height->getValue()}{else}130{/if}"
      width="{if $params.width->hasValue() && !empty($params.width->getValue())}{$params.width->getValue()}{else}130{/if}"
      {if $params.alt->hasValue()}alt="{$params.alt->getValue()}"{/if}
      src="{$params.src->getValue()}">
 {else}
-    {if $useWebP && $path.extension !== '.svg'}
+    {if $useWebP && !str_ends_with($params.src->getValue(), '.svg')}
     <picture>
         <source
             {if $params.srcset->hasValue()}
@@ -34,8 +33,8 @@
     {/if}
         <img
             src="{$params.src->getValue()}"
-            {if $params.srcset->hasValue() && $path.extension !== '.svg'}srcset="{$params.srcset->getValue()}"{/if}
-            {if $params.sizes->hasValue() && $path.extension !== '.svg'}sizes="{$params.sizes->getValue()}"{/if}
+            {if $params.srcset->hasValue() && !str_ends_with($params.src->getValue(), '.svg')}srcset="{$params.srcset->getValue()}"{/if}
+            {if $params.sizes->hasValue() && !str_ends_with($params.src->getValue(), '.svg')}sizes="{$params.sizes->getValue()}"{/if}
             class="{strip}{$params.class->getValue()}{$rounded}
             {if $params.fluid->getValue() === true} img-fluid{/if}
             {if $params['fluid-grow']->getValue() === true} img-fluid w-100{/if}
@@ -65,7 +64,7 @@
                 {foreach $params.attribs->getValue() as $key => $val} {$key}="{$val}" {/foreach}
             {/if}
         >
-    {if $useWebP && $path.extension !== '.svg'}
+    {if $useWebP && !str_ends_with($params.src->getValue(), '.svg')}
     </picture>
     {/if}
 {/if}
