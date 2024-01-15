@@ -7,22 +7,22 @@
         {assign var=rounded value=' rounded-'|cat:$params.rounded->getValue()}
     {/if}
 {/if}
+{$src = $params.src->getValue()|default:''}
 
-
-{if $params.src->hasValue() && str_ends_with($params.src->getValue(), 'keinBild.gif')}
+{if str_ends_with($src, 'keinBild.gif')}
 <img class="{$params.class->getValue()} {$rounded} img-fluid{if $params['fluid-grow']->getValue() === true} w-100{/if}"
      height="{if $params.height->hasValue() && !empty($params.height->getValue())}{$params.height->getValue()}{else}130{/if}"
      width="{if $params.width->hasValue() && !empty($params.width->getValue())}{$params.width->getValue()}{else}130{/if}"
      {if $params.alt->hasValue()}alt="{$params.alt->getValue()}"{/if}
-     src="{$params.src->getValue()}">
+     src="{$src}">
 {else}
-    {if $useWebP && !str_ends_with($params.src->getValue(), '.svg')}
+    {if $useWebP && !str_ends_with($src, '.svg')}
     <picture>
         <source
             {if $params.srcset->hasValue()}
                 srcset="{$params.srcset->getValue()|regex_replace:"/\.(?i)(jpg|jpeg|png)/":".webp"}"
-            {elseif $params.src->hasValue()}
-                srcset="{$params.src->getValue()|regex_replace:"/\.(?i)(jpg|png)/":".webp"}"
+            {elseif $src !== ''}
+                srcset="{$src|regex_replace:"/\.(?i)(jpg|png)/":".webp"}"
             {else}
                 srcset=""
             {/if}
@@ -32,9 +32,9 @@
             type="image/webp">
     {/if}
         <img
-            src="{$params.src->getValue()}"
-            {if $params.srcset->hasValue() && !str_ends_with($params.src->getValue(), '.svg')}srcset="{$params.srcset->getValue()}"{/if}
-            {if $params.sizes->hasValue() && !str_ends_with($params.src->getValue(), '.svg')}sizes="{$params.sizes->getValue()}"{/if}
+            src="{$src}"
+            {if $params.srcset->hasValue() && !str_ends_with($src, '.svg')}srcset="{$params.srcset->getValue()}"{/if}
+            {if $params.sizes->hasValue() && !str_ends_with($src, '.svg')}sizes="{$params.sizes->getValue()}"{/if}
             class="{strip}{$params.class->getValue()}{$rounded}
             {if $params.fluid->getValue() === true} img-fluid{/if}
             {if $params['fluid-grow']->getValue() === true} img-fluid w-100{/if}
@@ -64,7 +64,7 @@
                 {foreach $params.attribs->getValue() as $key => $val} {$key}="{$val}" {/foreach}
             {/if}
         >
-    {if $useWebP && !str_ends_with($params.src->getValue(), '.svg')}
+    {if $useWebP && !str_ends_with($src, '.svg')}
     </picture>
     {/if}
 {/if}
