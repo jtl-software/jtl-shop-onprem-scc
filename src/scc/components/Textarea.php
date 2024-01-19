@@ -26,6 +26,8 @@ class Textarea extends AbstractBlockComponent
         $this->addParam(new ComponentProperty('plaintext', false, ComponentPropertyType::TYPE_BOOL));
         $this->addParam(new ComponentProperty('no-resize', false, ComponentPropertyType::TYPE_BOOL));
         $this->addParam(new ComponentProperty('rows', null, ComponentPropertyType::TYPE_INT));
+        $this->addParam(new ComponentProperty('cols', null, ComponentPropertyType::TYPE_INT));
+        $this->addParam(new ComponentProperty('maxlength', null, ComponentPropertyType::TYPE_INT));
         $this->addParam(new ComponentProperty('max-rows', null, ComponentPropertyType::TYPE_INT));
         $this->addParam(new ComponentProperty('size'));
         $this->addParam(new ComponentProperty('value'));
