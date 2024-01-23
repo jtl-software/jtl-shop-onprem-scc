@@ -3,6 +3,8 @@
     {if $params.title->hasValue()} title="{$params.title->getValue()}"{/if}
     {if $params.placeholder->hasValue()}placeholder="{$params.placeholder->getValue()}"{/if}
     {if $params.rows->hasValue()}rows="{$params.rows->getValue()}"{/if}
+    {if $params.cols->hasValue()}cols="{$params.cols->getValue()}"{/if}
+    {if $params.maxlength->hasValue()}maxlength="{$params.maxlength->getValue()}"{/if}
     {if $params.id->hasValue()}id="{$params.id->getValue()}"{/if}
     {if $params.style->hasValue()}style="{$params.style->getValue()}"{/if}
     {if $params.disabled->getValue() === true}disabled{/if}
