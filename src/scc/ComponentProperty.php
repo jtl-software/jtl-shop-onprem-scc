@@ -9,47 +9,26 @@ namespace scc;
 class ComponentProperty implements ComponentPropertyInterface
 {
     /**
-     * @var mixed
-     */
-    private $defaultValue;
-
-    /**
      * @var bool
      */
-    private $isRequired = false;
-
-    /**
-     * @var string
-     */
-    private $type = ComponentPropertyType::TYPE_STRING;
-
-    /**
-     * @var string
-     */
-    private $name;
+    private bool $isRequired = false;
 
     /**
      * @var mixed
      */
-    private $value;
+    private mixed $value = null;
 
     /**
      * ComponentProperty constructor.
-     * @param string|null $name
-     * @param null        $defaultValue
-     * @param string|null $type
+     * @param string $name
+     * @param mixed  $defaultValue
+     * @param string $type
      */
-    public function __construct(string $name = null, $defaultValue = null, string $type = null)
+    public function __construct(
+        private string $name,
+        private mixed $defaultValue = null,
+        private string $type = ComponentPropertyType::TYPE_STRING)
     {
-        if ($name !== null) {
-            $this->setName($name);
-        }
-        if ($defaultValue !== null) {
-            $this->setDefaultValue($defaultValue);
-        }
-        if ($type !== null) {
-            $this->setType($type);
-        }
     }
 
     /**

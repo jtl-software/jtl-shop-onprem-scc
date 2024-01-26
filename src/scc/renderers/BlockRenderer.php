@@ -14,18 +14,12 @@ use scc\ComponentRendererInterface;
 class BlockRenderer implements ComponentRendererInterface
 {
     /**
-     * @var ComponentInterface
-     */
-    protected $component;
-
-    /**
      * BlockRenderer constructor.
      *
      * @param ComponentInterface $component
      */
-    public function __construct(ComponentInterface $component)
+    public function __construct(protected ComponentInterface $component)
     {
-        $this->component = $component;
     }
 
     /**
@@ -51,15 +45,15 @@ class BlockRenderer implements ComponentRendererInterface
         $params          = $this->mergeParams($params);
         if ($content === null) {
             $tpl->smarty->assign('parentBlockParams', $params)
-                        ->assign('pbp', $params);
+                ->assign('pbp', $params);
 
             return '';
         }
 
         return $tpl->assign('params', $params)
-                   ->assign('blockContent', $content)
-                   ->assign('parentSmarty', $tpl->smarty)
-                   ->fetch($this->component->getTemplate());
+            ->assign('blockContent', $content)
+            ->assign('parentSmarty', $tpl->smarty)
+            ->fetch($this->component->getTemplate());
     }
 
     /**

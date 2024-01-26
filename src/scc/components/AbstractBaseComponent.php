@@ -17,32 +17,32 @@ abstract class AbstractBaseComponent implements ComponentInterface
     /**
      * @var string|null
      */
-    protected $content;
+    protected ?string $content = null;
 
     /**
      * @var ComponentPropertyInterface[]
      */
-    protected $params;
+    protected array $params;
 
     /**
      * @var string
      */
-    protected $template;
+    protected string $template;
 
     /**
      * @var string
      */
-    protected $name;
+    protected string $name;
 
     /**
      * @var ComponentRendererInterface
      */
-    protected $renderer;
+    protected ComponentRendererInterface $renderer;
 
     /**
      * @var string
      */
-    protected $type;
+    protected string $type;
 
     /**
      * AbstractBaseComponent constructor.

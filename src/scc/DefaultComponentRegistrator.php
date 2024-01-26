@@ -32,6 +32,7 @@ use scc\components\Embed;
 use scc\components\Form;
 use scc\components\FormGroup;
 use scc\components\FormRow;
+use scc\components\Honeypot;
 use scc\components\Image;
 use scc\components\Input;
 use scc\components\InputFile;
@@ -75,21 +76,15 @@ use scc\components\Textarea;
 class DefaultComponentRegistrator implements ComponentRegistratorInterface
 {
     /**
-     * @var RendererInterface
-     */
-    protected $renderer;
-
-    /**
      * @var ComponentInterface[]
      */
-    protected $components = [];
+    protected array $components = [];
 
     /**
      * @inheritdoc
      */
-    public function __construct(RendererInterface $renderer)
+    public function __construct(protected RendererInterface $renderer)
     {
-        $this->renderer = $renderer;
     }
 
     /**
@@ -162,6 +157,7 @@ class DefaultComponentRegistrator implements ComponentRegistratorInterface
         $this->components[] = new CSRFToken();
         $this->components[] = new Table();
         $this->components[] = new Clearfix();
+        $this->components[] = new Honeypot();
 
         foreach ($this->components as $component) {
             $component->getRenderer()->preset();
