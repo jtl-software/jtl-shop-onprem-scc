@@ -20,5 +20,6 @@
     {/if}
 >
     {if $params.addtoken->getValue()}{csrf_token}{/if}
+    {if $params.addhoneypot->getValue()}{honeypot}{/if}
     {$blockContent}
 </form>
