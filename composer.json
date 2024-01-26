@@ -4,7 +4,7 @@
   "homepage": "https://www.jtl-software.de/",
   "keywords": ["jtl-shop"],
   "license": "MIT",
-  "version": "1.1.4",
+  "version": "1.2.0",
   "authors": [
     {
       "name": "Felix Moche",
@@ -13,7 +13,7 @@
     }
   ],
   "require": {
-    "php": ">=7.1"
+    "php": ">=8.1"
   },
   "autoload": {
     "psr-4": { "scc\\": "src/scc" }
