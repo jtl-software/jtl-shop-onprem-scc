@@ -22,11 +22,11 @@ class TabsRenderer extends BlockRenderer
         $smarty = $tpl->smarty;
 
         return $tpl->assign('params', $this->mergeParams($params))
-                   ->assign('blockContent', $content)
-                   ->assign('tabContents', $smarty->getTemplateVars('tabContents'))
-                   ->assign('tabIDs', $smarty->getTemplateVars('tabIDs'))
-                   ->assign('activeTabID', $smarty->getTemplateVars('activeTabID'))
-                   ->assign('parentSmarty', $smarty)
-                   ->fetch($this->component->getTemplate());
+            ->assign('blockContent', $content)
+            ->assign('tabContents', $smarty->getTemplateVars('tabContents'))
+            ->assign('tabIDs', $smarty->getTemplateVars('tabIDs'))
+            ->assign('activeTabID', $smarty->getTemplateVars('activeTabID'))
+            ->assign('parentSmarty', $smarty)
+            ->fetch($this->component->getTemplate());
     }
 }

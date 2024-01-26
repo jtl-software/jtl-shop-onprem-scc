@@ -36,10 +36,9 @@ class Renderer implements RendererInterface
             $this->smarty->registerPlugin(
                 $component->getType(),
                 $component->getName(),
-                [$component->getRenderer(), 'render'],
-                true
+                [$component->getRenderer(), 'render']
             );
-        } catch (\SmartyException $e) {
+        } catch (\SmartyException) {
             throw new ComponentAlreadyRegisteredException(
                 'The component ' . $component->getName() . ' is already registered'
             );

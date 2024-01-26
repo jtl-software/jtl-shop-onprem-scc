@@ -20,10 +20,7 @@ class Input extends AbstractFunctionComponent
         $this->setTemplate('input.tpl');
         $this->setName('input');
 
-        $prop = new ComponentProperty();
-        $prop->setName('type');
-        $prop->setType(ComponentPropertyType::TYPE_STRING);
-        $prop->setDefaultValue('text');
+        $prop = new ComponentProperty('type', 'text', ComponentPropertyType::TYPE_STRING);
         $prop->setIsRequired(true);
         $this->addParam($prop);
 

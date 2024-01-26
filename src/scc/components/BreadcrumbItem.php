@@ -27,41 +27,11 @@ class BreadcrumbItem extends AbstractBlockComponent
         $this->addParam(new ComponentProperty('router-tag', 'a'));
         $this->addParam(new ComponentProperty('router-tag-itemprop'));
         $this->addParam(new ComponentProperty('exact-active-class', 'active'));
-
-        $prop = new ComponentProperty();
-        $prop->setName('active');
-        $prop->setType(ComponentPropertyType::TYPE_BOOL);
-        $prop->setDefaultValue(false);
-        $this->addParam($prop);
-
-        $prop = new ComponentProperty();
-        $prop->setName('disabled');
-        $prop->setType(ComponentPropertyType::TYPE_BOOL);
-        $prop->setDefaultValue(false);
-        $this->addParam($prop);
-
-        $prop = new ComponentProperty();
-        $prop->setName('append');
-        $prop->setType(ComponentPropertyType::TYPE_BOOL);
-        $prop->setDefaultValue(false);
-        $this->addParam($prop);
-
-        $prop = new ComponentProperty();
-        $prop->setName('exact');
-        $prop->setType(ComponentPropertyType::TYPE_BOOL);
-        $prop->setDefaultValue(false);
-        $this->addParam($prop);
-
-        $prop = new ComponentProperty();
-        $prop->setName('replace');
-        $prop->setType(ComponentPropertyType::TYPE_BOOL);
-        $prop->setDefaultValue(false);
-        $this->addParam($prop);
-
-        $prop = new ComponentProperty();
-        $prop->setName('nofollow');
-        $prop->setType(ComponentPropertyType::TYPE_BOOL);
-        $prop->setDefaultValue(false);
-        $this->addParam($prop);
+        $this->addParam(new ComponentProperty('active', false, ComponentPropertyType::TYPE_BOOL));
+        $this->addParam(new ComponentProperty('disabled', false, ComponentPropertyType::TYPE_BOOL));
+        $this->addParam(new ComponentProperty('append', false, ComponentPropertyType::TYPE_BOOL));
+        $this->addParam(new ComponentProperty('exact', false, ComponentPropertyType::TYPE_BOOL));
+        $this->addParam(new ComponentProperty('replace', false, ComponentPropertyType::TYPE_BOOL));
+        $this->addParam(new ComponentProperty('nofollow', false, ComponentPropertyType::TYPE_BOOL));
     }
 }

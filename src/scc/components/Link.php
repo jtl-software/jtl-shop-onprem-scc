@@ -24,9 +24,7 @@ class Link extends AbstractBlockComponent
         $this->addParam(new ComponentProperty('target'));
         $this->addParam(new ComponentProperty('href', '#'));
 
-        $prop = new ComponentProperty();
-        $prop->setName('name');
-        $prop->setType(ComponentPropertyType::TYPE_STRING);
+        $prop = new ComponentProperty('name');
         $prop->setIsRequired(true);
         $this->addParam($prop);
     }
