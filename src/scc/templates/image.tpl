@@ -20,9 +20,9 @@
     <picture>
         <source
             {if $params.srcset->hasValue()}
-                srcset="{$params.srcset->getValue()|regex_replace:"/\.(?i)(jpg|jpeg|png)/":".webp"}"
+                srcset="{$params.srcset->getValue()|regex_replace:"/\.(?i)(jpg|jpeg|png)$/":".webp"}"
             {elseif $src !== ''}
-                srcset="{$src|regex_replace:"/\.(?i)(jpg|png)/":".webp"}"
+                srcset="{$src|regex_replace:"/\.(?i)(jpg|png)$/":".webp"}"
             {else}
                 srcset=""
             {/if}
