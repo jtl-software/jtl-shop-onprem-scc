@@ -19,7 +19,14 @@ class CheckboxGroup extends AbstractBlockComponent
         parent::__construct();
         $this->setTemplate('checkboxgroup.tpl');
         $this->setName('checkboxgroup');
+    }
 
+    public function init(): void
+    {
+        parent::init();
+        if ($this->isInitialized) {
+            return;
+        }
         $this->addParam(new ComponentProperty('required', false, ComponentPropertyType::TYPE_BOOL));
         $this->addParam(new ComponentProperty('disabled', false, ComponentPropertyType::TYPE_BOOL));
         $this->addParam(new ComponentProperty('plain', false, ComponentPropertyType::TYPE_BOOL));
@@ -31,7 +38,7 @@ class CheckboxGroup extends AbstractBlockComponent
         $this->addParam(new ComponentProperty('value-field', 'value'));
         $this->addParam(new ComponentProperty('text-field', 'text'));
         $this->addParam(new ComponentProperty('disabled-field', 'disabled'));
-
         $this->addParam(new ComponentProperty('button-variant', 'secondary'));
+        $this->isInitialized = true;
     }
 }

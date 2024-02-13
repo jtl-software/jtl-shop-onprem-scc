@@ -19,7 +19,14 @@ class DropDown extends AbstractBlockComponent
         parent::__construct();
         $this->setTemplate('dropdown.tpl');
         $this->setName('dropdown');
+    }
 
+    public function init(): void
+    {
+        parent::init();
+        if ($this->isInitialized) {
+            return;
+        }
         $this->addParam(new ComponentProperty('disabled', false, ComponentPropertyType::TYPE_BOOL));
         $this->addParam(new ComponentProperty('right', false, ComponentPropertyType::TYPE_BOOL));
         $this->addParam(new ComponentProperty('split', false, ComponentPropertyType::TYPE_BOOL));
@@ -33,5 +40,6 @@ class DropDown extends AbstractBlockComponent
         $this->addParam(new ComponentProperty('toggle-class'));
         $this->addParam(new ComponentProperty('size'));
         $this->addParam(new ComponentProperty('text', ''));
+        $this->isInitialized = true;
     }
 }

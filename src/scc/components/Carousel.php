@@ -20,7 +20,15 @@ class Carousel extends AbstractBlockComponent
         parent::__construct();
         $this->setTemplate('carousel.tpl');
         $this->setName('carousel');
+        $this->setRenderer(new CarouselRenderer($this));
+    }
 
+    public function init(): void
+    {
+        parent::init();
+        if ($this->isInitialized) {
+            return;
+        }
         $this->addParam(new ComponentProperty('label-prev', 'Previous slide'));
         $this->addParam(new ComponentProperty('label-next', 'Next slide'));
         $this->addParam(new ComponentProperty('label-goto-slide', 'Go to slide'));
@@ -32,7 +40,6 @@ class Carousel extends AbstractBlockComponent
         $this->addParam(new ComponentProperty('controls', false, ComponentPropertyType::TYPE_BOOL));
         $this->addParam(new ComponentProperty('img-width', null, ComponentPropertyType::TYPE_NUMERIC));
         $this->addParam(new ComponentProperty('img-height', null, ComponentPropertyType::TYPE_NUMERIC));
-
-        $this->setRenderer(new CarouselRenderer($this));
+        $this->isInitialized = true;
     }
 }

@@ -18,9 +18,18 @@ class InputGroup extends AbstractBlockComponent
         parent::__construct();
         $this->setTemplate('inputgroup.tpl');
         $this->setName('inputgroup');
+    }
+
+    public function init(): void
+    {
+        parent::init();
+        if ($this->isInitialized) {
+            return;
+        }
         $this->addParam(new ComponentProperty('size'));
         $this->addParam(new ComponentProperty('prepend'));
         $this->addParam(new ComponentProperty('append'));
         $this->addParam(new ComponentProperty('tag', 'div'));
+        $this->isInitialized = true;
     }
 }

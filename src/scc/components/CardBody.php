@@ -18,11 +18,20 @@ class CardBody extends AbstractBlockComponent
         parent::__construct();
         $this->setTemplate('cardbody.tpl');
         $this->setName('cardbody');
+    }
+
+    public function init(): void
+    {
+        parent::init();
+        if ($this->isInitialized) {
+            return;
+        }
         $this->addParam(new ComponentProperty('footer'));
         $this->addParam(new ComponentProperty('footer-tag', 'div'));
         $this->addParam(new ComponentProperty('footer-bg-variant'));
         $this->addParam(new ComponentProperty('footer-border-variant'));
         $this->addParam(new ComponentProperty('footer-text-variant'));
         $this->addParam(new ComponentProperty('footer-class'));
+        $this->isInitialized = true;
     }
 }

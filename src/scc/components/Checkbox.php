@@ -20,7 +20,15 @@ class Checkbox extends AbstractBlockComponent
         parent::__construct();
         $this->setTemplate('checkbox.tpl');
         $this->setName('checkbox');
+        $this->setRenderer(new NestedBlockRenderer($this));
+    }
 
+    public function init(): void
+    {
+        parent::init();
+        if ($this->isInitialized) {
+            return;
+        }
         $this->addParam(new ComponentProperty('checked', false, ComponentPropertyType::TYPE_BOOL));
         $this->addParam(new ComponentProperty('required', false, ComponentPropertyType::TYPE_BOOL));
         $this->addParam(new ComponentProperty('disabled', false, ComponentPropertyType::TYPE_BOOL));
@@ -29,7 +37,6 @@ class Checkbox extends AbstractBlockComponent
         $this->addParam(new ComponentProperty('name'));
         $this->addParam(new ComponentProperty('size'));
         $this->addParam(new ComponentProperty('value'));
-
-        $this->setRenderer(new NestedBlockRenderer($this));
+        $this->isInitialized = true;
     }
 }

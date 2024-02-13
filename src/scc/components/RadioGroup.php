@@ -14,4 +14,13 @@ class RadioGroup extends CheckboxGroup
         $this->setTemplate('radiogroup.tpl');
         $this->setName('radiogroup');
     }
+
+    public function init(): void
+    {
+        if ($this->isInitialized === true) {
+            return;
+        }
+        parent::init();
+        $this->isInitialized = true;
+    }
 }

@@ -19,7 +19,14 @@ class Card extends AbstractBlockComponent
         parent::__construct();
         $this->setTemplate('card.tpl');
         $this->setName('card');
+    }
 
+    public function init(): void
+    {
+        parent::init();
+        if ($this->isInitialized) {
+            return;
+        }
         $this->addParam(new ComponentProperty('img-src'));
         $this->addParam(new ComponentProperty('img-alt'));
         $this->addParam(new ComponentProperty('title-text'));
@@ -52,5 +59,6 @@ class Card extends AbstractBlockComponent
         $this->addParam(new ComponentProperty('border-variant'));
         $this->addParam(new ComponentProperty('text-variant'));
         $this->addParam(new ComponentProperty('align'));
+        $this->isInitialized = true;
     }
 }

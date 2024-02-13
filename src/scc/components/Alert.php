@@ -19,7 +19,14 @@ class Alert extends AbstractBlockComponent
         parent::__construct();
         $this->setTemplate('alert.tpl');
         $this->setName('alert');
+    }
 
+    public function init(): void
+    {
+        if ($this->isInitialized) {
+            return;
+        }
+        parent::init();
         $this->addParam(new ComponentProperty('variant', 'info'));
         $this->addParam(new ComponentProperty(
             'dismissible',
@@ -32,5 +39,6 @@ class Alert extends AbstractBlockComponent
             ComponentPropertyType::TYPE_BOOL
         ));
         $this->addParam(new ComponentProperty('dismiss-label', 'Close'));
+        $this->isInitialized = true;
     }
 }

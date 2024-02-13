@@ -18,11 +18,20 @@ class CardHeader extends AbstractBlockComponent
         parent::__construct();
         $this->setTemplate('cardheader.tpl');
         $this->setName('cardheader');
+    }
+
+    public function init(): void
+    {
+        parent::init();
+        if ($this->isInitialized) {
+            return;
+        }
         $this->addParam(new ComponentProperty('header'));
         $this->addParam(new ComponentProperty('header-tag', 'div'));
         $this->addParam(new ComponentProperty('header-bg-variant'));
         $this->addParam(new ComponentProperty('header-border-variant'));
         $this->addParam(new ComponentProperty('header-text-variant'));
         $this->addParam(new ComponentProperty('header-class'));
+        $this->isInitialized = true;
     }
 }

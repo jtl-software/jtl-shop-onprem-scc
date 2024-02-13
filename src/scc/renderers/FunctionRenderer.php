@@ -13,6 +13,7 @@ class FunctionRenderer extends BlockRenderer
      */
     public function render(array $params, ...$args): string
     {
+        $this->preset();
         $tpl       = $args[0];
         $oldParams = $tpl->getTemplateVars('params');
         $html      = $tpl->assign('params', $this->mergeParams($params))

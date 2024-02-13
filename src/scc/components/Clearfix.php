@@ -19,6 +19,15 @@ class Clearfix extends AbstractFunctionComponent
         parent::__construct();
         $this->setTemplate('clearfix.tpl');
         $this->setName('clearfix');
+    }
+
+    public function init(): void
+    {
+        parent::init();
+        if ($this->isInitialized) {
+            return;
+        }
         $this->addParam(new ComponentProperty('visible-size', null, ComponentPropertyType::TYPE_STRING));
+        $this->isInitialized = true;
     }
 }

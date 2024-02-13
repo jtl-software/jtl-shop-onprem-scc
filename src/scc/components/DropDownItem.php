@@ -19,7 +19,14 @@ class DropDownItem extends AbstractBlockComponent
         parent::__construct();
         $this->setTemplate('dropdownitem.tpl');
         $this->setName('dropdownitem');
+    }
 
+    public function init(): void
+    {
+        if ($this->isInitialized === true) {
+            return;
+        }
+        parent::init();
         $this->addParam(new ComponentProperty('target', '_self'));
         $this->addParam(new ComponentProperty('variant'));
         $this->addParam(new ComponentProperty('href'));
@@ -28,5 +35,6 @@ class DropDownItem extends AbstractBlockComponent
         $this->addParam(new ComponentProperty('tag', 'a'));
         $this->addParam(new ComponentProperty('active', false, ComponentPropertyType::TYPE_BOOL));
         $this->addParam(new ComponentProperty('disabled', false, ComponentPropertyType::TYPE_BOOL));
+        $this->isInitialized = true;
     }
 }

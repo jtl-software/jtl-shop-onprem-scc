@@ -19,7 +19,14 @@ class Col extends AbstractBlockComponent
         parent::__construct();
         $this->setTemplate('col.tpl');
         $this->setName('col');
+    }
 
+    public function init(): void
+    {
+        parent::init();
+        if ($this->isInitialized) {
+            return;
+        }
         $this->addParam(new ComponentProperty('tag', 'div'));
         $this->addParam(new ComponentProperty('cols', null, ComponentPropertyType::TYPE_INT));
         $this->addParam(new ComponentProperty('offset', null, ComponentPropertyType::TYPE_INT));
@@ -38,5 +45,6 @@ class Col extends AbstractBlockComponent
         $this->addParam(new ComponentProperty('order-lg'));
         $this->addParam(new ComponentProperty('order-xl'));
         $this->addParam(new ComponentProperty('align-self'));
+        $this->isInitialized = true;
     }
 }

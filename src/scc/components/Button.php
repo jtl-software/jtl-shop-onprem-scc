@@ -19,7 +19,14 @@ class Button extends AbstractBlockComponent
         parent::__construct();
         $this->setTemplate('button.tpl');
         $this->setName('button');
+    }
 
+    public function init(): void
+    {
+        parent::init();
+        if ($this->isInitialized) {
+            return;
+        }
         $this->addParam(new ComponentProperty('type', 'button'));
         $this->addParam(new ComponentProperty('href'));
         $this->addParam(new ComponentProperty('target'));
@@ -32,5 +39,6 @@ class Button extends AbstractBlockComponent
         $this->addParam(new ComponentProperty('disabled', false, ComponentPropertyType::TYPE_BOOL));
         $this->addParam(new ComponentProperty('block', false, ComponentPropertyType::TYPE_BOOL));
         $this->addParam(new ComponentProperty('formnovalidate', false, ComponentPropertyType::TYPE_BOOL));
+        $this->isInitialized = true;
     }
 }

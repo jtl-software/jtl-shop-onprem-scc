@@ -19,11 +19,19 @@ class ListGroupItem extends AbstractBlockComponent
         parent::__construct();
         $this->setTemplate('listgroupitem.tpl');
         $this->setName('listgroupitem');
+    }
 
+    public function init(): void
+    {
+        parent::init();
+        if ($this->isInitialized) {
+            return;
+        }
         $this->addParam(new ComponentProperty('tag', 'div'));
         $this->addParam(new ComponentProperty('variant'));
         $this->addParam(new ComponentProperty('href'));
         $this->addParam(new ComponentProperty('active', false, ComponentPropertyType::TYPE_BOOL));
         $this->addParam(new ComponentProperty('disabled', false, ComponentPropertyType::TYPE_BOOL));
+        $this->isInitialized = true;
     }
 }

@@ -19,7 +19,14 @@ class InputFile extends AbstractFunctionComponent
         parent::__construct();
         $this->setTemplate('inputfile.tpl');
         $this->setName('inputfile');
+    }
 
+    public function init(): void
+    {
+        parent::init();
+        if ($this->isInitialized) {
+            return;
+        }
         $this->addParam(new ComponentProperty('name'));
         $this->addParam(new ComponentProperty('placeholder'));
         $this->addParam(new ComponentProperty('accept'));
@@ -30,5 +37,6 @@ class InputFile extends AbstractFunctionComponent
         $this->addParam(new ComponentProperty('multiple', false, ComponentPropertyType::TYPE_BOOL));
         $this->addParam(new ComponentProperty('no-traverse', false, ComponentPropertyType::TYPE_BOOL));
         $this->addParam(new ComponentProperty('no-drop', false, ComponentPropertyType::TYPE_BOOL));
+        $this->isInitialized = true;
     }
 }

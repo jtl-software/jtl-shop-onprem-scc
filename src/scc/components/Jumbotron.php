@@ -19,7 +19,14 @@ class Jumbotron extends AbstractBlockComponent
         parent::__construct();
         $this->setTemplate('jumbotron.tpl');
         $this->setName('jumbotron');
+    }
 
+    public function init(): void
+    {
+        parent::init();
+        if ($this->isInitialized) {
+            return;
+        }
         $this->addParam(new ComponentProperty('fluid', false, ComponentPropertyType::TYPE_BOOL));
         $this->addParam(new ComponentProperty('container-fluid', false, ComponentPropertyType::TYPE_BOOL));
         $this->addParam(new ComponentProperty('header'));
@@ -31,5 +38,6 @@ class Jumbotron extends AbstractBlockComponent
         $this->addParam(new ComponentProperty('border-variant'));
         $this->addParam(new ComponentProperty('text-variant'));
         $this->addParam(new ComponentProperty('header-level', 3, ComponentPropertyType::TYPE_NUMERIC));
+        $this->isInitialized = true;
     }
 }

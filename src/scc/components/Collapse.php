@@ -19,7 +19,14 @@ class Collapse extends AbstractBlockComponent
         parent::__construct();
         $this->setTemplate('collapse.tpl');
         $this->setName('collapse');
+    }
 
+    public function init(): void
+    {
+        parent::init();
+        if ($this->isInitialized) {
+            return;
+        }
         $this->addParam(new ComponentProperty('accordion'));
         $this->addParam(new ComponentProperty('tag', 'div'));
         $this->addParam(new ComponentProperty('visible', false, ComponentPropertyType::TYPE_BOOL));
@@ -31,5 +38,6 @@ class Collapse extends AbstractBlockComponent
             'd-flex justify-content-start text-decoration-none p-2'
         ));
         $this->addParam(new ComponentProperty('clip-text'));
+        $this->isInitialized = true;
     }
 }

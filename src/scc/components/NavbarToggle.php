@@ -18,6 +18,15 @@ class NavbarToggle extends AbstractFunctionComponent
         parent::__construct();
         $this->setTemplate('navbartoggle.tpl');
         $this->setName('navbartoggle');
+    }
+
+    public function init(): void
+    {
+        parent::init();
+        if ($this->isInitialized) {
+            return;
+        }
         $this->addParam(new ComponentProperty('label', 'Toggle navigation'));
+        $this->isInitialized = true;
     }
 }

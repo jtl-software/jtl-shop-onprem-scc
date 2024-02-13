@@ -62,4 +62,6 @@ interface ComponentInterface
      * @param ComponentRendererInterface $renderer
      */
     public function setRenderer(ComponentRendererInterface $renderer): void;
+
+    public function init(): void;
 }

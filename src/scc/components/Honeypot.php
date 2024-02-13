@@ -17,4 +17,13 @@ class Honeypot extends AbstractFunctionComponent
         $this->setTemplate('honeypot.tpl');
         $this->setName('honeypot');
     }
+
+    public function init(): void
+    {
+        if ($this->isInitialized === true) {
+            return;
+        }
+        parent::init();
+        $this->isInitialized = true;
+    }
 }

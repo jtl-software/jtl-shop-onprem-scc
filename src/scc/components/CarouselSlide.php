@@ -19,7 +19,14 @@ class CarouselSlide extends AbstractBlockComponent
         parent::__construct();
         $this->setTemplate('carouselslide.tpl');
         $this->setName('carouselslide');
+    }
 
+    public function init(): void
+    {
+        parent::init();
+        if ($this->isInitialized) {
+            return;
+        }
         $this->addParam(new ComponentProperty('active', false, ComponentPropertyType::TYPE_BOOL));
         $this->addParam(new ComponentProperty('img-blank', false, ComponentPropertyType::TYPE_BOOL));
         $this->addParam(new ComponentProperty('img-blank-color', 'transparent'));
@@ -34,5 +41,6 @@ class CarouselSlide extends AbstractBlockComponent
         $this->addParam(new ComponentProperty('caption-tag', 'h3'));
         $this->addParam(new ComponentProperty('caption-text-tag', 'p'));
         $this->addParam(new ComponentProperty('background'));
+        $this->isInitialized = true;
     }
 }

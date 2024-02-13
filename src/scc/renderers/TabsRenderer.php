@@ -13,6 +13,7 @@ class TabsRenderer extends BlockRenderer
      */
     public function render(array $params, ...$args): string
     {
+        $this->preset();
         $content = $args[0];
         if ($content === null) {
             return '';

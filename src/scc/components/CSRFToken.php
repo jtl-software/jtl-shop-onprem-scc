@@ -17,4 +17,13 @@ class CSRFToken extends AbstractFunctionComponent
         $this->setTemplate('csrf_token.tpl');
         $this->setName('csrf_token');
     }
+
+    public function init(): void
+    {
+        if ($this->isInitialized === true) {
+            return;
+        }
+        parent::init();
+        $this->isInitialized = true;
+    }
 }

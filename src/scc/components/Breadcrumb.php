@@ -18,6 +18,15 @@ class Breadcrumb extends AbstractBlockComponent
         parent::__construct();
         $this->setTemplate('breadcrumb.tpl');
         $this->setName('breadcrumb');
+    }
+
+    public function init(): void
+    {
+        if ($this->isInitialized) {
+            return;
+        }
+        parent::init();
         $this->addParam(new ComponentProperty('tag', 'ol'));
+        $this->isInitialized = true;
     }
 }

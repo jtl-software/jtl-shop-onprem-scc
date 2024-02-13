@@ -160,7 +160,7 @@ class DefaultComponentRegistrator implements ComponentRegistratorInterface
         $this->components[] = new Honeypot();
 
         foreach ($this->components as $component) {
-            $component->getRenderer()->preset();
+//            $component->getRenderer()->preset();
             $this->renderer->registerComponent($component);
         }
     }

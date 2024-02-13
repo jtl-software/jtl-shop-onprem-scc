@@ -19,7 +19,14 @@ class Navbar extends AbstractBlockComponent
         parent::__construct();
         $this->setTemplate('navbar.tpl');
         $this->setName('navbar');
+    }
 
+    public function init(): void
+    {
+        parent::init();
+        if ($this->isInitialized) {
+            return;
+        }
         $this->addParam(new ComponentProperty('tag', 'nav'));
         $this->addParam(new ComponentProperty('type', 'light'));
         $this->addParam(new ComponentProperty('variant'));
@@ -27,5 +34,6 @@ class Navbar extends AbstractBlockComponent
         $this->addParam(new ComponentProperty('fixed'));
         $this->addParam(new ComponentProperty('toggleable', false, ComponentPropertyType::TYPE_BOOL));
         $this->addParam(new ComponentProperty('sticky', false, ComponentPropertyType::TYPE_BOOL));
+        $this->isInitialized = true;
     }
 }

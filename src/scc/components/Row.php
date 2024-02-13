@@ -19,11 +19,19 @@ class Row extends AbstractBlockComponent
         parent::__construct();
         $this->setTemplate('row.tpl');
         $this->setName('row');
+    }
 
+    public function init(): void
+    {
+        parent::init();
+        if ($this->isInitialized) {
+            return;
+        }
         $this->addParam(new ComponentProperty('no-gutters', false, ComponentPropertyType::TYPE_BOOL));
         $this->addParam(new ComponentProperty('tag', 'div'));
         $this->addParam(new ComponentProperty('align-h'));
         $this->addParam(new ComponentProperty('align-v'));
         $this->addParam(new ComponentProperty('align-content'));
+        $this->isInitialized = true;
     }
 }

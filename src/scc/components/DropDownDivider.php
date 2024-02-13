@@ -20,4 +20,13 @@ class DropDownDivider extends AbstractFunctionComponent
         $this->setName('dropdowndivider');
         $this->addParam(new ComponentProperty('tag', 'div'));
     }
+
+    public function init(): void
+    {
+        if ($this->isInitialized === true) {
+            return;
+        }
+        parent::init();
+        $this->isInitialized = true;
+    }
 }

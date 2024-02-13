@@ -19,7 +19,14 @@ class Image extends AbstractFunctionComponent
         parent::__construct();
         $this->setTemplate('image.tpl');
         $this->setName('image');
+    }
 
+    public function init(): void
+    {
+        parent::init();
+        if ($this->isInitialized) {
+            return;
+        }
         $this->addParam(new ComponentProperty('src'));
         $this->addParam(new ComponentProperty('srcset'));
         $this->addParam(new ComponentProperty('sizes'));
@@ -37,5 +44,6 @@ class Image extends AbstractFunctionComponent
         $this->addParam(new ComponentProperty('right', false, ComponentPropertyType::TYPE_BOOL));
         $this->addParam(new ComponentProperty('center', false, ComponentPropertyType::TYPE_BOOL));
         $this->addParam(new ComponentProperty('blank', false, ComponentPropertyType::TYPE_BOOL));
+        $this->isInitialized = true;
     }
 }

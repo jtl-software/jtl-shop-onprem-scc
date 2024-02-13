@@ -18,6 +18,15 @@ class InputGroupText extends AbstractBlockComponent
         parent::__construct();
         $this->setTemplate('inputgrouptext.tpl');
         $this->setName('inputgrouptext');
+    }
+
+    public function init(): void
+    {
+        parent::init();
+        if ($this->isInitialized) {
+            return;
+        }
         $this->addParam(new ComponentProperty('tag', 'div'));
+        $this->isInitialized = true;
     }
 }

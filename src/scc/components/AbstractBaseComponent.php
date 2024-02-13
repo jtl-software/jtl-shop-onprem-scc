@@ -45,9 +45,19 @@ abstract class AbstractBaseComponent implements ComponentInterface
     protected string $type;
 
     /**
+     * @var bool
+     */
+    protected bool $isInitialized = false;
+
+    /**
      * AbstractBaseComponent constructor.
      */
     public function __construct()
+    {
+
+    }
+
+    public function init(): void
     {
         $this->addParam(new ComponentProperty('class'));
         $this->addParam(new ComponentProperty('title'));

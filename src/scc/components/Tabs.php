@@ -20,6 +20,15 @@ class Tabs extends AbstractBlockComponent
         parent::__construct();
         $this->setTemplate('tabs.tpl');
         $this->setName('tabs');
+        $this->setRenderer(new TabsRenderer($this));
+    }
+
+    public function init(): void
+    {
+        parent::init();
+        if ($this->isInitialized) {
+            return;
+        }
         $this->addParam(new ComponentProperty('tag', 'ul'));
         $this->addParam(new ComponentProperty('nav-class'));
         $this->addParam(new ComponentProperty('content-class'));
@@ -28,6 +37,6 @@ class Tabs extends AbstractBlockComponent
         $this->addParam(new ComponentProperty('card', false, ComponentPropertyType::TYPE_BOOL));
         $this->addParam(new ComponentProperty('swipeable', false, ComponentPropertyType::TYPE_BOOL));
         $this->addParam(new ComponentProperty('tabs', null, ComponentPropertyType::TYPE_ARRAY));
-        $this->setRenderer(new TabsRenderer($this));
+        $this->isInitialized = true;
     }
 }

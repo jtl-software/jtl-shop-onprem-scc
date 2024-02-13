@@ -19,7 +19,14 @@ class BreadcrumbItem extends AbstractBlockComponent
         parent::__construct();
         $this->setTemplate('breadcrumbitem.tpl');
         $this->setName('breadcrumbitem');
+    }
 
+    public function init(): void
+    {
+        if ($this->isInitialized) {
+            return;
+        }
+        parent::init();
         $this->addParam(new ComponentProperty('href'));
         $this->addParam(new ComponentProperty('tag', 'li'));
         $this->addParam(new ComponentProperty('target', '_self'));
@@ -33,5 +40,6 @@ class BreadcrumbItem extends AbstractBlockComponent
         $this->addParam(new ComponentProperty('exact', false, ComponentPropertyType::TYPE_BOOL));
         $this->addParam(new ComponentProperty('replace', false, ComponentPropertyType::TYPE_BOOL));
         $this->addParam(new ComponentProperty('nofollow', false, ComponentPropertyType::TYPE_BOOL));
+        $this->isInitialized = true;
     }
 }

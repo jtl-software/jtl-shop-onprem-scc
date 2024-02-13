@@ -19,7 +19,14 @@ class Pagination extends AbstractBlockComponent
         parent::__construct();
         $this->setTemplate('pagination.tpl');
         $this->setName('pagination');
+    }
 
+    public function init(): void
+    {
+        parent::init();
+        if ($this->isInitialized) {
+            return;
+        }
         $this->addParam(new ComponentProperty('value', 1, ComponentPropertyType::TYPE_INT));
         $this->addParam(new ComponentProperty('per-page', 20, ComponentPropertyType::TYPE_INT));
         $this->addParam(new ComponentProperty('total-rows', 20, ComponentPropertyType::TYPE_INT));
@@ -38,5 +45,6 @@ class Pagination extends AbstractBlockComponent
         $this->addParam(new ComponentProperty('last-text', '&raquo;'));
         $this->addParam(new ComponentProperty('label-page', 'Go to page'));
         $this->addParam(new ComponentProperty('ellipsis-text', '&hellip;'));
+        $this->isInitialized = true;
     }
 }

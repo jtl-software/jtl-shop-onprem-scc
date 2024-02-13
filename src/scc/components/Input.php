@@ -23,7 +23,14 @@ class Input extends AbstractFunctionComponent
         $prop = new ComponentProperty('type', 'text', ComponentPropertyType::TYPE_STRING);
         $prop->setIsRequired(true);
         $this->addParam($prop);
+    }
 
+    public function init(): void
+    {
+        parent::init();
+        if ($this->isInitialized) {
+            return;
+        }
         $this->addParam(new ComponentProperty('value'));
         $this->addParam(new ComponentProperty('placeholder'));
         $this->addParam(new ComponentProperty('name'));
@@ -37,5 +44,6 @@ class Input extends AbstractFunctionComponent
         $this->addParam(new ComponentProperty('required', false, ComponentPropertyType::TYPE_BOOL));
         $this->addParam(new ComponentProperty('disabled', false, ComponentPropertyType::TYPE_BOOL));
         $this->addParam(new ComponentProperty('size-class', null, ComponentPropertyType::TYPE_STRING));
+        $this->isInitialized = true;
     }
 }

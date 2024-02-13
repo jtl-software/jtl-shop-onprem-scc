@@ -19,7 +19,14 @@ class Form extends AbstractBlockComponent
         parent::__construct();
         $this->setTemplate('form.tpl');
         $this->setName('form');
+    }
 
+    public function init(): void
+    {
+        parent::init();
+        if ($this->isInitialized) {
+            return;
+        }
         $this->addParam(new ComponentProperty('inline', false, ComponentPropertyType::TYPE_BOOL));
         $this->addParam(new ComponentProperty('novalidate', false, ComponentPropertyType::TYPE_BOOL));
         $this->addParam(new ComponentProperty('validated', false, ComponentPropertyType::TYPE_BOOL));
@@ -30,5 +37,6 @@ class Form extends AbstractBlockComponent
         $this->addParam(new ComponentProperty('target', '_self'));
         $this->addParam(new ComponentProperty('enctype'));
         $this->addParam(new ComponentProperty('slide', false, ComponentPropertyType::TYPE_BOOL));
+        $this->isInitialized = true;
     }
 }

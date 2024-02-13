@@ -15,7 +15,14 @@ class InputGroupAppend extends InputGroupAddon
     {
         parent::__construct();
         $this->setName('inputgroupappend');
+    }
 
+    public function init(): void
+    {
+        parent::init();
+        if ($this->isInitialized) {
+            return;
+        }
         foreach ($this->params as $param) {
             if ($param->getName() === 'append') {
                 $param->setDefaultValue(true);
@@ -23,5 +30,6 @@ class InputGroupAppend extends InputGroupAddon
                 break;
             }
         }
+        $this->isInitialized = true;
     }
 }

@@ -19,7 +19,14 @@ class Badge extends AbstractBlockComponent
         parent::__construct();
         $this->setTemplate('badge.tpl');
         $this->setName('badge');
+    }
 
+    public function init(): void
+    {
+        if ($this->isInitialized) {
+            return;
+        }
+        parent::init();
         $this->addParam(new ComponentProperty(
             'active',
             false,
@@ -37,5 +44,6 @@ class Badge extends AbstractBlockComponent
         ));
         $this->addParam(new ComponentProperty('tag', 'span'));
         $this->addParam(new ComponentProperty('variant', 'secondary'));
+        $this->isInitialized = true;
     }
 }

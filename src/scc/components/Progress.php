@@ -19,7 +19,14 @@ class Progress extends AbstractFunctionComponent
         parent::__construct();
         $this->setTemplate('progress.tpl');
         $this->setName('progress');
+    }
 
+    public function init(): void
+    {
+        parent::init();
+        if ($this->isInitialized) {
+            return;
+        }
         $this->addParam(new ComponentProperty('min', 0, ComponentPropertyType::TYPE_INT));
         $this->addParam(new ComponentProperty('max', 100, ComponentPropertyType::TYPE_INT));
         $this->addParam(new ComponentProperty('now', null, ComponentPropertyType::TYPE_INT));
@@ -27,5 +34,6 @@ class Progress extends AbstractFunctionComponent
         $this->addParam(new ComponentProperty('animated', false, ComponentPropertyType::TYPE_BOOL));
         $this->addParam(new ComponentProperty('height'));
         $this->addParam(new ComponentProperty('type'));
+        $this->isInitialized = true;
     }
 }

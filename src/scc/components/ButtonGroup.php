@@ -19,9 +19,17 @@ class ButtonGroup extends AbstractBlockComponent
         parent::__construct();
         $this->setTemplate('buttongroup.tpl');
         $this->setName('buttongroup');
+    }
 
+    public function init(): void
+    {
+        parent::init();
+        if ($this->isInitialized) {
+            return;
+        }
         $this->addParam(new ComponentProperty('tag', 'div'));
         $this->addParam(new ComponentProperty('size'));
         $this->addParam(new ComponentProperty('vertical', false, ComponentPropertyType::TYPE_BOOL));
+        $this->isInitialized = true;
     }
 }

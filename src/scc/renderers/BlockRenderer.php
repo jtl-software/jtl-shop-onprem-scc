@@ -27,6 +27,7 @@ class BlockRenderer implements ComponentRendererInterface
      */
     public function preset(): void
     {
+        $this->component->init();
         foreach ($this->component->getParams() as $param) {
             if ($param->getType() === ComponentPropertyType::TYPE_UNIQUEID) {
                 $param->setValue(\uniqid('', false));
@@ -41,6 +42,7 @@ class BlockRenderer implements ComponentRendererInterface
      */
     public function render(array $params, ...$args): string
     {
+        $this->preset();
         [$content, $tpl] = $args;
         $params          = $this->mergeParams($params);
         if ($content === null) {

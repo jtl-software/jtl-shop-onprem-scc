@@ -17,4 +17,13 @@ class Accordion extends AbstractBlockComponent
         $this->setTemplate('accordion.tpl');
         $this->setName('accordion');
     }
+
+    public function init(): void
+    {
+        if ($this->isInitialized) {
+            return;
+        }
+        parent::init();
+        $this->isInitialized = true;
+    }
 }

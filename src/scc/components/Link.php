@@ -3,7 +3,6 @@
 namespace scc\components;
 
 use scc\ComponentProperty;
-use scc\ComponentPropertyType;
 
 /**
  * Class Link
@@ -19,7 +18,14 @@ class Link extends AbstractBlockComponent
         parent::__construct();
         $this->setTemplate('link.tpl');
         $this->setName('link');
+    }
 
+    public function init(): void
+    {
+        parent::init();
+        if ($this->isInitialized) {
+            return;
+        }
         $this->addParam(new ComponentProperty('rel'));
         $this->addParam(new ComponentProperty('target'));
         $this->addParam(new ComponentProperty('href', '#'));
@@ -27,5 +33,6 @@ class Link extends AbstractBlockComponent
         $prop = new ComponentProperty('name');
         $prop->setIsRequired(true);
         $this->addParam($prop);
+        $this->isInitialized = true;
     }
 }

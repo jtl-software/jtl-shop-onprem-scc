@@ -19,11 +19,19 @@ class CardImg extends AbstractFunctionComponent
         parent::__construct();
         $this->setTemplate('cardimg.tpl');
         $this->setName('cardimg');
+    }
 
+    public function init(): void
+    {
+        parent::init();
+        if ($this->isInitialized) {
+            return;
+        }
         $this->addParam(new ComponentProperty('src'));
         $this->addParam(new ComponentProperty('alt', ''));
         $this->addParam(new ComponentProperty('top', false, ComponentPropertyType::TYPE_BOOL));
         $this->addParam(new ComponentProperty('bottom', false, ComponentPropertyType::TYPE_BOOL));
         $this->addParam(new ComponentProperty('fluid', false, ComponentPropertyType::TYPE_BOOL));
+        $this->isInitialized = true;
     }
 }

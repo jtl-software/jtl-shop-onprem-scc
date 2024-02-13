@@ -20,14 +20,21 @@ class Radio extends AbstractBlockComponent
         parent::__construct();
         $this->setTemplate('radio.tpl');
         $this->setName('radio');
+        $this->setRenderer(new NestedBlockRenderer($this));
+    }
 
+    public function init(): void
+    {
+        parent::init();
+        if ($this->isInitialized) {
+            return;
+        }
         $this->addParam(new ComponentProperty('disabled', false, ComponentPropertyType::TYPE_BOOL));
         $this->addParam(new ComponentProperty('checked', false, ComponentPropertyType::TYPE_BOOL));
         $this->addParam(new ComponentProperty('required', false, ComponentPropertyType::TYPE_BOOL));
         $this->addParam(new ComponentProperty('value'));
         $this->addParam(new ComponentProperty('button-variant'));
         $this->addParam(new ComponentProperty('name'));
-
-        $this->setRenderer(new NestedBlockRenderer($this));
+        $this->isInitialized = true;
     }
 }

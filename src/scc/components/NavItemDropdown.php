@@ -19,7 +19,14 @@ class NavItemDropdown extends AbstractBlockComponent
         parent::__construct();
         $this->setTemplate('navitemdropdown.tpl');
         $this->setName('navitemdropdown');
+    }
 
+    public function init(): void
+    {
+        parent::init();
+        if ($this->isInitialized) {
+            return;
+        }
         $this->addParam(new ComponentProperty('text'));
         $this->addParam(new ComponentProperty('tag', 'li'));
         $this->addParam(new ComponentProperty('extra-toggle-classes'));
@@ -32,5 +39,6 @@ class NavItemDropdown extends AbstractBlockComponent
         $this->addParam(new ComponentProperty('right', false, ComponentPropertyType::TYPE_BOOL));
         $this->addParam(new ComponentProperty('no-flip', false, ComponentPropertyType::TYPE_BOOL));
         $this->addParam(new ComponentProperty('no-caret', false, ComponentPropertyType::TYPE_BOOL));
+        $this->isInitialized = true;
     }
 }

@@ -19,7 +19,14 @@ class Tab extends AbstractBlockComponent
         parent::__construct();
         $this->setTemplate('tab.tpl');
         $this->setName('tab');
+    }
 
+    public function init(): void
+    {
+        parent::init();
+        if ($this->isInitialized) {
+            return;
+        }
         $this->addParam(new ComponentProperty('tag', 'li'));
         $this->addParam(new ComponentProperty('title-item-class'));
         $this->addParam(new ComponentProperty('title-link-class'));
@@ -27,5 +34,6 @@ class Tab extends AbstractBlockComponent
         $this->addParam(new ComponentProperty('active', false, ComponentPropertyType::TYPE_BOOL));
         $this->addParam(new ComponentProperty('disabled', false, ComponentPropertyType::TYPE_BOOL));
         $this->addParam(new ComponentProperty('swipeable', false, ComponentPropertyType::TYPE_BOOL));
+        $this->isInitialized = true;
     }
 }

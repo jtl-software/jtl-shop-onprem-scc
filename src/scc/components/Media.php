@@ -19,10 +19,18 @@ class Media extends AbstractBlockComponent
         parent::__construct();
         $this->setTemplate('media.tpl');
         $this->setName('media');
+    }
 
+    public function init(): void
+    {
+        parent::init();
+        if ($this->isInitialized) {
+            return;
+        }
         $this->addParam(new ComponentProperty('tag', 'div'));
         $this->addParam(new ComponentProperty('vertical-align', 'top'));
         $this->addParam(new ComponentProperty('right-align', false, ComponentPropertyType::TYPE_BOOL));
         $this->addParam(new ComponentProperty('no-body', false, ComponentPropertyType::TYPE_BOOL));
+        $this->isInitialized = true;
     }
 }

@@ -19,7 +19,14 @@ class Select extends AbstractBlockComponent
         parent::__construct();
         $this->setTemplate('select.tpl');
         $this->setName('select');
+    }
 
+    public function init(): void
+    {
+        parent::init();
+        if ($this->isInitialized) {
+            return;
+        }
         $this->addParam(new ComponentProperty('disabled', false, ComponentPropertyType::TYPE_BOOL));
         $this->addParam(new ComponentProperty('required', false, ComponentPropertyType::TYPE_BOOL));
         $this->addParam(new ComponentProperty('plain', false, ComponentPropertyType::TYPE_BOOL));
@@ -28,5 +35,6 @@ class Select extends AbstractBlockComponent
         $this->addParam(new ComponentProperty('size'));
         $this->addParam(new ComponentProperty('autocomplete'));
         $this->addParam(new ComponentProperty('name'));
+        $this->isInitialized = true;
     }
 }

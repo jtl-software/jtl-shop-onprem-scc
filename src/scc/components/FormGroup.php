@@ -19,7 +19,14 @@ class FormGroup extends AbstractBlockComponent
         parent::__construct();
         $this->setTemplate('formgroup.tpl');
         $this->setName('formgroup');
+    }
 
+    public function init(): void
+    {
+        parent::init();
+        if ($this->isInitialized) {
+            return;
+        }
         $this->addParam(new ComponentProperty('breakpoint', 'sm'));
         $this->addParam(new ComponentProperty('label-text-align'));
         $this->addParam(new ComponentProperty('label'));
@@ -30,5 +37,6 @@ class FormGroup extends AbstractBlockComponent
         $this->addParam(new ComponentProperty('label-sr-only', false, ComponentPropertyType::TYPE_BOOL));
         $this->addParam(new ComponentProperty('horizontal', false, ComponentPropertyType::TYPE_BOOL));
         $this->addParam(new ComponentProperty('label-cols', 3, ComponentPropertyType::TYPE_INT));
+        $this->isInitialized = true;
     }
 }

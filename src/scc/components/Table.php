@@ -19,7 +19,14 @@ class Table extends AbstractFunctionComponent
         parent::__construct();
         $this->setTemplate('table.tpl');
         $this->setName('table');
+    }
 
+    public function init(): void
+    {
+        parent::init();
+        if ($this->isInitialized) {
+            return;
+        }
         $this->addParam(new ComponentProperty('title-item-class'));
         $this->addParam(new ComponentProperty('title-link-class'));
         $this->addParam(new ComponentProperty('href', '#'));
@@ -35,5 +42,6 @@ class Table extends AbstractFunctionComponent
         $this->addParam(new ComponentProperty('hover', false, ComponentPropertyType::TYPE_BOOL));
         $this->addParam(new ComponentProperty('fixed', false, ComponentPropertyType::TYPE_BOOL));
         $this->addParam(new ComponentProperty('dark', false, ComponentPropertyType::TYPE_BOOL));
+        $this->isInitialized = true;
     }
 }

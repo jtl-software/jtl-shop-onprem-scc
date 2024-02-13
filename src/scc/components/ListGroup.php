@@ -18,6 +18,15 @@ class ListGroup extends AbstractBlockComponent
         parent::__construct();
         $this->setTemplate('listgroup.tpl');
         $this->setName('listgroup');
+    }
+
+    public function init(): void
+    {
+        parent::init();
+        if ($this->isInitialized) {
+            return;
+        }
         $this->addParam(new ComponentProperty('tag', 'div'));
+        $this->isInitialized = true;
     }
 }

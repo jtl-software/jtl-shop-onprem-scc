@@ -32,5 +32,6 @@ class NavbarBrand extends AbstractBlockComponent
         $this->addParam(new ComponentProperty('append', false, ComponentPropertyType::TYPE_BOOL));
         $this->addParam(new ComponentProperty('exact', false, ComponentPropertyType::TYPE_BOOL));
         $this->addParam(new ComponentProperty('replace', false, ComponentPropertyType::TYPE_BOOL));
+        $this->isInitialized = true;
     }
 }

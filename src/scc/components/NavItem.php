@@ -19,7 +19,14 @@ class NavItem extends AbstractBlockComponent
         parent::__construct();
         $this->setTemplate('navitem.tpl');
         $this->setName('navitem');
+    }
 
+    public function init(): void
+    {
+        parent::init();
+        if ($this->isInitialized) {
+            return;
+        }
         $this->addParam(new ComponentProperty('href'));
         $this->addParam(new ComponentProperty('tag', 'li'));
         $this->addParam(new ComponentProperty('target', '_self'));
@@ -35,5 +42,6 @@ class NavItem extends AbstractBlockComponent
         $this->addParam(new ComponentProperty('exact', false, ComponentPropertyType::TYPE_BOOL));
         $this->addParam(new ComponentProperty('replace', false, ComponentPropertyType::TYPE_BOOL));
         $this->addParam(new ComponentProperty('nofollow', false, ComponentPropertyType::TYPE_BOOL));
+        $this->isInitialized = true;
     }
 }

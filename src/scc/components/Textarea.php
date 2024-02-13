@@ -19,7 +19,14 @@ class Textarea extends AbstractBlockComponent
         parent::__construct();
         $this->setTemplate('textarea.tpl');
         $this->setName('textarea');
+    }
 
+    public function init(): void
+    {
+        parent::init();
+        if ($this->isInitialized) {
+            return;
+        }
         $this->addParam(new ComponentProperty('disabled', false, ComponentPropertyType::TYPE_BOOL));
         $this->addParam(new ComponentProperty('required', false, ComponentPropertyType::TYPE_BOOL));
         $this->addParam(new ComponentProperty('readonly', false, ComponentPropertyType::TYPE_BOOL));
@@ -35,5 +42,6 @@ class Textarea extends AbstractBlockComponent
         $this->addParam(new ComponentProperty('placeholder'));
         $this->addParam(new ComponentProperty('name'));
         $this->addParam(new ComponentProperty('wrap', 'soft'));
+        $this->isInitialized = true;
     }
 }

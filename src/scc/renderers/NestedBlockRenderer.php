@@ -13,6 +13,7 @@ class NestedBlockRenderer extends BlockRenderer
      */
     public function render(array $params, ...$args): string
     {
+        $this->preset();
         [$content, $tpl] = $args;
         if ($content === null) {
             $tpl->smarty->assign('parentBlockParams', $params);
