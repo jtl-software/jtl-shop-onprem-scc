@@ -160,4 +160,20 @@ abstract class AbstractBaseComponent implements ComponentInterface
     {
         $this->type = $type;
     }
+
+    /**
+     * @inheritdoc
+     */
+    public function isInitialized(): bool
+    {
+        return $this->isInitialized;
+    }
+
+    /**
+     * @inheritdoc
+     */
+    public function setIsInitialized(bool $isInitialized): void
+    {
+        $this->isInitialized = $isInitialized;
+    }
 }

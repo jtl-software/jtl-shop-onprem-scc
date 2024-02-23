@@ -23,10 +23,10 @@ class ListGroupItem extends AbstractBlockComponent
 
     public function init(): void
     {
-        parent::init();
         if ($this->isInitialized) {
             return;
         }
+        parent::init();
         $this->addParam(new ComponentProperty('tag', 'div'));
         $this->addParam(new ComponentProperty('variant'));
         $this->addParam(new ComponentProperty('href'));

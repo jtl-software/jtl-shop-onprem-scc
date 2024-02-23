@@ -23,10 +23,10 @@ class CardGroup extends AbstractBlockComponent
 
     public function init(): void
     {
-        parent::init();
         if ($this->isInitialized) {
             return;
         }
+        parent::init();
         $this->addParam(new ComponentProperty('tag', 'div'));
         $this->addParam(new ComponentProperty('deck', false, ComponentPropertyType::TYPE_BOOL));
         $this->addParam(new ComponentProperty('columns', false, ComponentPropertyType::TYPE_BOOL));

@@ -22,10 +22,10 @@ class NavbarToggle extends AbstractFunctionComponent
 
     public function init(): void
     {
-        parent::init();
         if ($this->isInitialized) {
             return;
         }
+        parent::init();
         $this->addParam(new ComponentProperty('label', 'Toggle navigation'));
         $this->isInitialized = true;
     }

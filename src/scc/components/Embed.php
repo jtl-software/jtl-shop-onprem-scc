@@ -23,10 +23,10 @@ class Embed extends AbstractBlockComponent
 
     public function init(): void
     {
-        parent::init();
         if ($this->isInitialized) {
             return;
         }
+        parent::init();
         $this->addParam(new ComponentProperty('src'));
         $this->addParam(new ComponentProperty('type', 'iframe'));
         $this->addParam(new ComponentProperty('aspect', '16by9'));

@@ -23,10 +23,10 @@ class Col extends AbstractBlockComponent
 
     public function init(): void
     {
-        parent::init();
         if ($this->isInitialized) {
             return;
         }
+        parent::init();
         $this->addParam(new ComponentProperty('tag', 'div'));
         $this->addParam(new ComponentProperty('cols', null, ComponentPropertyType::TYPE_INT));
         $this->addParam(new ComponentProperty('offset', null, ComponentPropertyType::TYPE_INT));

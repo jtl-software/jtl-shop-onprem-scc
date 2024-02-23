@@ -23,10 +23,10 @@ class Pagination extends AbstractBlockComponent
 
     public function init(): void
     {
-        parent::init();
         if ($this->isInitialized) {
             return;
         }
+        parent::init();
         $this->addParam(new ComponentProperty('value', 1, ComponentPropertyType::TYPE_INT));
         $this->addParam(new ComponentProperty('per-page', 20, ComponentPropertyType::TYPE_INT));
         $this->addParam(new ComponentProperty('total-rows', 20, ComponentPropertyType::TYPE_INT));

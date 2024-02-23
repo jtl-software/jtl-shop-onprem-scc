@@ -19,7 +19,14 @@ class NavbarBrand extends AbstractBlockComponent
         parent::__construct();
         $this->setTemplate('navbarbrand.tpl');
         $this->setName('navbarbrand');
+    }
 
+    public function init(): void
+    {
+        if ($this->isInitialized) {
+            return;
+        }
+        parent::init();
         $this->addParam(new ComponentProperty('tag', 'div'));
         $this->addParam(new ComponentProperty('href'));
         $this->addParam(new ComponentProperty('rel'));

@@ -23,10 +23,10 @@ class Modal extends AbstractBlockComponent
 
     public function init(): void
     {
-        parent::init();
         if ($this->isInitialized) {
             return;
         }
+        parent::init();
         $this->addParam(new ComponentProperty('footer'));
         $this->addParam(new ComponentProperty('centered', false, ComponentPropertyType::TYPE_BOOL));
         $this->addParam(new ComponentProperty('size', false, ComponentPropertyType::TYPE_STRING));

@@ -23,10 +23,10 @@ class Clearfix extends AbstractFunctionComponent
 
     public function init(): void
     {
-        parent::init();
         if ($this->isInitialized) {
             return;
         }
+        parent::init();
         $this->addParam(new ComponentProperty('visible-size', null, ComponentPropertyType::TYPE_STRING));
         $this->isInitialized = true;
     }

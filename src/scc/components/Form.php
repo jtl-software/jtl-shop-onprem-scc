@@ -23,10 +23,10 @@ class Form extends AbstractBlockComponent
 
     public function init(): void
     {
-        parent::init();
         if ($this->isInitialized) {
             return;
         }
+        parent::init();
         $this->addParam(new ComponentProperty('inline', false, ComponentPropertyType::TYPE_BOOL));
         $this->addParam(new ComponentProperty('novalidate', false, ComponentPropertyType::TYPE_BOOL));
         $this->addParam(new ComponentProperty('validated', false, ComponentPropertyType::TYPE_BOOL));

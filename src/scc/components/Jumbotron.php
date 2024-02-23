@@ -23,10 +23,10 @@ class Jumbotron extends AbstractBlockComponent
 
     public function init(): void
     {
-        parent::init();
         if ($this->isInitialized) {
             return;
         }
+        parent::init();
         $this->addParam(new ComponentProperty('fluid', false, ComponentPropertyType::TYPE_BOOL));
         $this->addParam(new ComponentProperty('container-fluid', false, ComponentPropertyType::TYPE_BOOL));
         $this->addParam(new ComponentProperty('header'));

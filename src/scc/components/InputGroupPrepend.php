@@ -19,10 +19,10 @@ class InputGroupPrepend extends InputGroupAddon
 
     public function init(): void
     {
-        parent::init();
         if ($this->isInitialized) {
             return;
         }
+        parent::init();
         foreach ($this->params as $param) {
             if ($param->getName() === 'append') {
                 $param->setDefaultValue(false);

@@ -22,10 +22,10 @@ class CardFooter extends AbstractBlockComponent
 
     public function init(): void
     {
-        parent::init();
         if ($this->isInitialized) {
             return;
         }
+        parent::init();
         $this->addParam(new ComponentProperty('footer'));
         $this->addParam(new ComponentProperty('footer-tag', 'div'));
         $this->addParam(new ComponentProperty('footer-bg-variant'));

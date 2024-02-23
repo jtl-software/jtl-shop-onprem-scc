@@ -27,6 +27,9 @@ class BlockRenderer implements ComponentRendererInterface
      */
     public function preset(): void
     {
+        if ($this->component->isInitialized()) {
+            return;
+        }
         $this->component->init();
         foreach ($this->component->getParams() as $param) {
             if ($param->getType() === ComponentPropertyType::TYPE_UNIQUEID) {

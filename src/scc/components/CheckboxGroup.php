@@ -23,10 +23,10 @@ class CheckboxGroup extends AbstractBlockComponent
 
     public function init(): void
     {
-        parent::init();
         if ($this->isInitialized) {
             return;
         }
+        parent::init();
         $this->addParam(new ComponentProperty('required', false, ComponentPropertyType::TYPE_BOOL));
         $this->addParam(new ComponentProperty('disabled', false, ComponentPropertyType::TYPE_BOOL));
         $this->addParam(new ComponentProperty('plain', false, ComponentPropertyType::TYPE_BOOL));

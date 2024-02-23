@@ -24,10 +24,10 @@ class ButtonToolbar extends AbstractBlockComponent
 
     public function init(): void
     {
-        parent::init();
         if ($this->isInitialized) {
             return;
         }
+        parent::init();
         $this->addParam(new ComponentProperty('justify', false, ComponentPropertyType::TYPE_BOOL));
         $this->addParam(new ComponentProperty('key-nav', false, ComponentPropertyType::TYPE_BOOL));
         $this->isInitialized = true;

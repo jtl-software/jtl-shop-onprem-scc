@@ -23,10 +23,10 @@ class Progress extends AbstractFunctionComponent
 
     public function init(): void
     {
-        parent::init();
         if ($this->isInitialized) {
             return;
         }
+        parent::init();
         $this->addParam(new ComponentProperty('min', 0, ComponentPropertyType::TYPE_INT));
         $this->addParam(new ComponentProperty('max', 100, ComponentPropertyType::TYPE_INT));
         $this->addParam(new ComponentProperty('now', null, ComponentPropertyType::TYPE_INT));

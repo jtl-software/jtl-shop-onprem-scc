@@ -23,10 +23,10 @@ class FormGroup extends AbstractBlockComponent
 
     public function init(): void
     {
-        parent::init();
         if ($this->isInitialized) {
             return;
         }
+        parent::init();
         $this->addParam(new ComponentProperty('breakpoint', 'sm'));
         $this->addParam(new ComponentProperty('label-text-align'));
         $this->addParam(new ComponentProperty('label'));

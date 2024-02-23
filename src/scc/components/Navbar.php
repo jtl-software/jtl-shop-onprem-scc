@@ -23,10 +23,10 @@ class Navbar extends AbstractBlockComponent
 
     public function init(): void
     {
-        parent::init();
         if ($this->isInitialized) {
             return;
         }
+        parent::init();
         $this->addParam(new ComponentProperty('tag', 'nav'));
         $this->addParam(new ComponentProperty('type', 'light'));
         $this->addParam(new ComponentProperty('variant'));

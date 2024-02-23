@@ -23,10 +23,10 @@ class NavItem extends AbstractBlockComponent
 
     public function init(): void
     {
-        parent::init();
         if ($this->isInitialized) {
             return;
         }
+        parent::init();
         $this->addParam(new ComponentProperty('href'));
         $this->addParam(new ComponentProperty('tag', 'li'));
         $this->addParam(new ComponentProperty('target', '_self'));

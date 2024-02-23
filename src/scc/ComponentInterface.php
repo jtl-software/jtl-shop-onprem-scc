@@ -64,4 +64,15 @@ interface ComponentInterface
     public function setRenderer(ComponentRendererInterface $renderer): void;
 
     public function init(): void;
+
+    /**
+     * @return bool
+     */
+    public function isInitialized(): bool;
+
+    /**
+     * @param bool $isInitialized
+     * @return void
+     */
+    public function setIsInitialized(bool $isInitialized): void;
 }

@@ -25,10 +25,10 @@ class Carousel extends AbstractBlockComponent
 
     public function init(): void
     {
-        parent::init();
         if ($this->isInitialized) {
             return;
         }
+        parent::init();
         $this->addParam(new ComponentProperty('label-prev', 'Previous slide'));
         $this->addParam(new ComponentProperty('label-next', 'Next slide'));
         $this->addParam(new ComponentProperty('label-goto-slide', 'Go to slide'));

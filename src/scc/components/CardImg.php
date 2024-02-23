@@ -23,10 +23,10 @@ class CardImg extends AbstractFunctionComponent
 
     public function init(): void
     {
-        parent::init();
         if ($this->isInitialized) {
             return;
         }
+        parent::init();
         $this->addParam(new ComponentProperty('src'));
         $this->addParam(new ComponentProperty('alt', ''));
         $this->addParam(new ComponentProperty('top', false, ComponentPropertyType::TYPE_BOOL));

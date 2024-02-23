@@ -23,10 +23,10 @@ class Tab extends AbstractBlockComponent
 
     public function init(): void
     {
-        parent::init();
         if ($this->isInitialized) {
             return;
         }
+        parent::init();
         $this->addParam(new ComponentProperty('tag', 'li'));
         $this->addParam(new ComponentProperty('title-item-class'));
         $this->addParam(new ComponentProperty('title-link-class'));

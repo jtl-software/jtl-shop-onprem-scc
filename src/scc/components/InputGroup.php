@@ -22,10 +22,10 @@ class InputGroup extends AbstractBlockComponent
 
     public function init(): void
     {
-        parent::init();
         if ($this->isInitialized) {
             return;
         }
+        parent::init();
         $this->addParam(new ComponentProperty('size'));
         $this->addParam(new ComponentProperty('prepend'));
         $this->addParam(new ComponentProperty('append'));

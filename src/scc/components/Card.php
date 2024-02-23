@@ -23,10 +23,10 @@ class Card extends AbstractBlockComponent
 
     public function init(): void
     {
-        parent::init();
         if ($this->isInitialized) {
             return;
         }
+        parent::init();
         $this->addParam(new ComponentProperty('img-src'));
         $this->addParam(new ComponentProperty('img-alt'));
         $this->addParam(new ComponentProperty('title-text'));

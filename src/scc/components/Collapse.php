@@ -23,10 +23,10 @@ class Collapse extends AbstractBlockComponent
 
     public function init(): void
     {
-        parent::init();
         if ($this->isInitialized) {
             return;
         }
+        parent::init();
         $this->addParam(new ComponentProperty('accordion'));
         $this->addParam(new ComponentProperty('tag', 'div'));
         $this->addParam(new ComponentProperty('visible', false, ComponentPropertyType::TYPE_BOOL));
