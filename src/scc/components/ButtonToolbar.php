@@ -1,4 +1,6 @@
-<?php declare(strict_types=1);
+<?php
+
+declare(strict_types=1);
 
 namespace scc\components;
 
@@ -11,7 +13,6 @@ use scc\ComponentPropertyType;
  */
 class ButtonToolbar extends AbstractBlockComponent
 {
-
     /**
      * ButtonToolbar constructor.
      */

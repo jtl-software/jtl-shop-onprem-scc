@@ -1,4 +1,6 @@
-<?php declare(strict_types=1);
+<?php
+
+declare(strict_types=1);
 
 namespace scc\components;
 
@@ -54,7 +56,6 @@ abstract class AbstractBaseComponent implements ComponentInterface
      */
     public function __construct()
     {
-
     }
 
     public function init(): void

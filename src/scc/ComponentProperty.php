@@ -1,4 +1,6 @@
-<?php declare(strict_types=1);
+<?php
+
+declare(strict_types=1);
 
 namespace scc;
 
@@ -27,8 +29,8 @@ class ComponentProperty implements ComponentPropertyInterface
     public function __construct(
         private string $name,
         private mixed $defaultValue = null,
-        private string $type = ComponentPropertyType::TYPE_STRING)
-    {
+        private string $type = ComponentPropertyType::TYPE_STRING
+    ) {
     }
 
     /**
