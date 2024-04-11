@@ -22,7 +22,7 @@
             {if $params.srcset->hasValue()}
                 srcset="{$params.srcset->getValue()|regex_replace:"/\.(?i)(jpg|jpeg|png|bmp) /":".webp "}"
             {elseif $src !== ''}
-                srcset="{$src|regex_replace:"/\.(?i)(jpg|jpeg|png|bmp) /":".webp "}"
+                srcset="{$src|regex_replace:'/\.(?i)(jpg|jpeg|png|bmp)$/':".webp"}"
             {else}
                 srcset=""
             {/if}
