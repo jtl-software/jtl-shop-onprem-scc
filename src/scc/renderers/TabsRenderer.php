@@ -20,16 +20,14 @@ class TabsRenderer extends BlockRenderer
         if ($content === null) {
             return '';
         }
-        /** @var \JTL\Smarty\JTLSmarty|Smarty $tpl */
-        $tpl    = $args[1];
-        $smarty = $tpl->smarty;
+        $tpl = $args[1];
 
-        return $tpl->assign('params', $this->mergeParams($params))
+        return $tpl->getSmarty()->assign('params', $this->mergeParams($params))
             ->assign('blockContent', $content)
-            ->assign('tabContents', $smarty->getTemplateVars('tabContents'))
-            ->assign('tabIDs', $smarty->getTemplateVars('tabIDs'))
-            ->assign('activeTabID', $smarty->getTemplateVars('activeTabID'))
-            ->assign('parentSmarty', $smarty)
+            ->assign('tabContents', $tpl->getTemplateVars('tabContents'))
+            ->assign('tabIDs', $tpl->getTemplateVars('tabIDs'))
+            ->assign('activeTabID', $tpl->getTemplateVars('activeTabID'))
+            ->assign('parentSmarty', $tpl->parent->getSmarty())
             ->fetch($this->component->getTemplate());
     }
 }

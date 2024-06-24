@@ -1,7 +1,3 @@
-{$x = $parentSmarty->assign('tabIDs', [])}
-{$x = $parentSmarty->assign('tabContents', [])}
-{$x = $parentSmarty->assign('activeTabID', '')}
-
 <{$params.tag}
     class="nav nav-tabs {$params.class->getValue()}{if $params.pills->getValue() === true} nav-pills{/if}"
     {*{if $params.swipeable->getValue() === false}*}role="tablist"{*{/if}*}

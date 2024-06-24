@@ -5,6 +5,7 @@ declare(strict_types=1);
 namespace scc;
 
 use scc\exceptions\ComponentAlreadyRegisteredException;
+use Exception;
 
 /**
  * Class Renderer
@@ -13,15 +14,15 @@ use scc\exceptions\ComponentAlreadyRegisteredException;
 class Renderer implements RendererInterface
 {
     /**
-     * @var \JTL\Smarty\JTLSmarty|\Smarty
+     * @var \JTL\Smarty\JTLSmarty|\Smarty|\Smarty\Smarty
      */
     protected $smarty;
 
-    protected const TEMPLATES_DIR = __DIR__ . '/' . 'templates';
+    protected const TEMPLATES_DIR = __DIR__ . '/' . 'templates/scc';
 
     /**
      * Renderer constructor.
-     * @param \JTL\Smarty\JTLSmarty|\Smarty $smarty
+     * @param \JTL\Smarty\JTLSmarty|\Smarty|\Smarty\Smarty $smarty
      */
     public function __construct($smarty)
     {
@@ -40,7 +41,7 @@ class Renderer implements RendererInterface
                 $component->getName(),
                 [$component->getRenderer(), 'render']
             );
-        } catch (\SmartyException) {
+        } catch (Exception) {
             throw new ComponentAlreadyRegisteredException(
                 'The component ' . $component->getName() . ' is already registered'
             );

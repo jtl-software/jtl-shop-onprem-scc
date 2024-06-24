@@ -49,17 +49,19 @@ class BlockRenderer implements ComponentRendererInterface
     {
         $this->preset();
         [$content, $tpl] = $args;
-        $params          = $this->mergeParams($params);
+
+        $params = $this->mergeParams($params);
+        $smarty = $tpl->getSmarty();
         if ($content === null) {
-            $tpl->smarty->assign('parentBlockParams', $params)
+            $smarty->assign('parentBlockParams', $params)
                 ->assign('pbp', $params);
 
             return '';
         }
 
-        return $tpl->assign('params', $params)
+        return $smarty->assign('params', $params)
             ->assign('blockContent', $content)
-            ->assign('parentSmarty', $tpl->smarty)
+            ->assign('parentSmarty', $smarty)
             ->fetch($this->component->getTemplate());
     }
 

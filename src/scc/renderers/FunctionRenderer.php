@@ -17,9 +17,10 @@ class FunctionRenderer extends BlockRenderer
     {
         $this->preset();
         $tpl       = $args[0];
+        $smarty    = $tpl->getSmarty();
         $oldParams = $tpl->getTemplateVars('params');
-        $html      = $tpl->assign('params', $this->mergeParams($params))
-            ->assign('parentSmarty', $tpl->smarty)
+        $html      = $smarty->assign('params', $this->mergeParams($params))
+            ->assign('parentSmarty', $smarty)
             ->fetch($this->component->getTemplate());
         if ($oldParams !== null) {
             $tpl->assign('params', $oldParams);
