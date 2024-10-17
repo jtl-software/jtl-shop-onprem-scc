@@ -1,9 +1,9 @@
 <{$params.tag}
-    class="jumbotron{if $params.class->hasValue()} {$params.class->getValue()}{/if}
+    class="{strip}jumbotron{if $params.class->hasValue()} {$params.class->getValue()}{/if}
     {if $params['text-variant']->hasValue()} text-{$params['text-variant']->getValue()}{/if}
     {if $params['bg-variant']->hasValue()} bg-{$params['bg-variant']->getValue()}{/if}
     {if $params['border-variant']->hasValue()} border border-{$params['border-variant']->getValue()}{/if}
-"
+{/strip}"
     {if $params.id->hasValue()}id="{$params.id->getValue()}"{/if}
     {if $params.style->hasValue()}style="{$params.style->getValue()}"{/if}
     {if $params.itemprop->hasValue()}itemprop="{$params.itemprop->getValue()}"{/if}

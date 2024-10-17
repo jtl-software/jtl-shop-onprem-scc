@@ -1,8 +1,8 @@
 <div role="alert"
-    class="alert{if $params.class->hasValue()} {$params.class->getValue()}{/if}
+    class="{strip}alert{if $params.class->hasValue()} {$params.class->getValue()}{/if}
     {if $params.variant->hasValue()} alert-{$params.variant->getValue()}{/if}
     {if $params.dismissible->getValue() === true} alert-dismissable{/if}
-"
+{/strip}"
     {if $params.id->hasValue()}id="{$params.id->getValue()}"{/if}
     {if $params.style->hasValue()}style="{$params.style->getValue()}"{/if}
     {if $params.itemprop->hasValue()}itemprop="{$params.itemprop->getValue()}"{/if}
