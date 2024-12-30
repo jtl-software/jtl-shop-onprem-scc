@@ -21,6 +21,7 @@
     {if $params.name->hasValue()}name="{$params.name->getValue()}" {/if}
     {if $params.value->hasValue()}value="{$params.value->getValue()}" {/if}
     {if $params.disabled->getValue() === true}disabled{/if}
+    {if $params.tabindex->hasValue()}tabindex="{$params.tabindex->getValue()}" {/if}
     {if $params.itemprop->hasValue()}itemprop="{$params.itemprop->getValue()}"{/if}
     {if $params.itemscope->getValue() === true}itemscope {/if}
     {if $params.itemtype->hasValue()}itemtype="{$params.itemtype->getValue()}"{/if}
