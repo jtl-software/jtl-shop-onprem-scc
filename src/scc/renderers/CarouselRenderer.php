@@ -18,13 +18,14 @@ class CarouselRenderer extends BlockRenderer
             return '';
         }
         $tpl    = $args[1];
+        $smarty = $tpl->getSmarty();
         $params = $this->mergeParams($params);
-        $tpl->assign('params', $params)
+        $smarty->assign('params', $params)
             ->assign('blockContent', $content)
             ->assign('parentSmarty', $tpl->smarty);
 
-        $res = $tpl->fetch($this->component->getTemplate());
-        $tpl->smarty->assign('carouselSlides', 0);
+        $res = $smarty->fetch($this->component->getTemplate());
+        $smarty->assign('carouselSlides', 0);
 
         return $res;
     }
