@@ -16,13 +16,13 @@
     {assign var=buttons value=false}
 {/if}
 {if $buttons === false}
-    <div class="
+    <div class="{strip}
         {if $plain === false}
             custom-control custom-radio
             {if $stacked === false} custom-control-inline{/if}
         {else}
             form-check{if $stacked === false} form-check-inline{/if}
-        {/if}"
+        {/if}{/strip}"
         {if $params.itemprop->hasValue()}itemprop="{$params.itemprop->getValue()}"{/if}
         {if $params.itemscope->getValue() === true}itemscope {/if}
         {if $params.itemtype->hasValue()}itemtype="{$params.itemtype->getValue()}"{/if}

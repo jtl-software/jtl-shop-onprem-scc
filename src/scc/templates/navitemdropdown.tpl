@@ -13,9 +13,9 @@
         {foreach $params.attribs->getValue() as $key => $val} {$key}="{$val}" {/foreach}
     {/if}
 >
-    <a class="nav-link nav-link-custom
+    <a class="{strip}nav-link nav-link-custom
         {if $params['no-caret']->getValue() === false} dropdown-toggle{/if}
-        {if $params.disabled->getValue() === true} disabled{/if}"
+        {if $params.disabled->getValue() === true} disabled{/if}{/strip}"
         href="#"
         data-toggle="dropdown"
         aria-haspopup="true"
@@ -26,9 +26,9 @@
     >
         {$params.text->getValue()}
     </a>
-    <div class="dropdown-menu
+    <div class="{strip}dropdown-menu
         {if $params.right->getValue() === true} dropdown-menu-right{/if}
-    ">
+    {/strip}">
         {$blockContent}
     </div>
 </{$params.tag->getValue()}>

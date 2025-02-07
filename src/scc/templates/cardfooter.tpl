@@ -1,8 +1,8 @@
-<div class="card-footer{if $params.class->hasValue()} {$params.class->getValue()}{/if}
+<div class="{strip}card-footer{if $params.class->hasValue()} {$params.class->getValue()}{/if}
     {if $params['footer-bg-variant']->hasValue()} bg-{$params['footer-bg-variant']->getValue()}{/if}
     {if $params['footer-text-variant']->hasValue()} text-{$params['footer-bg-variant']->getValue()}{/if}
     {if $params['footer-border-variant']->hasValue()} border-{$params['footer-border-variant']->getValue()}{/if}
-"
+{/strip}"
     {if $params.id->hasValue()} id="{$params.id->getValue()}"{/if}
     {if $params.style->hasValue()} style="{$params.style->getValue()}"{/if}
     {if $params.itemprop->hasValue()}itemprop="{$params.itemprop->getValue()}"{/if}
