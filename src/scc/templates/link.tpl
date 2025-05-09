@@ -6,6 +6,7 @@
     {if $params.style->hasValue()}style="{$params.style->getValue()}" {/if}
     {if $params.rel->hasValue()}rel="{$params.rel->getValue()}" {/if}
     {if $params.target->hasValue()}target="{$params.target->getValue()}" {/if}
+    {if $params.tabindex->hasValue()}tabindex="{$params.tabindex->getValue()}" {/if}
     {if $params.itemprop->hasValue()}itemprop="{$params.itemprop->getValue()}"{/if}
     {if $params.itemscope->getValue() === true}itemscope {/if}
     {if $params.itemtype->hasValue()}itemtype="{$params.itemtype->getValue()}"{/if}
