@@ -13,9 +13,9 @@
         {foreach $params.attribs->getValue() as $key => $val} {$key}="{$val}" {/foreach}
     {/if}
 >
-    <{$params['router-tag']->getValue()} class="nav-link {if $params['router-class']->hasValue()}{$params['router-class']->getValue()}{/if}
+    <{$params['router-tag']->getValue()} class="{strip}nav-link {if $params['router-class']->hasValue()}{$params['router-class']->getValue()}{/if}
     {if $params.active->getValue() === true} {$params['active-class']->getValue()}{/if}
-    {if $params.disabled->getValue() === true} disabled{/if}"
+    {if $params.disabled->getValue() === true} disabled{/if}{/strip}"
     {if $params.nofollow->getValue() === true} rel="nofollow"{/if}
     {if $params.title->hasValue()} title="{$params.title->getValue()}"{/if}
     target="{$params.target->getValue()}"

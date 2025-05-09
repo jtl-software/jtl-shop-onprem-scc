@@ -9,9 +9,9 @@
         {foreach $params.attribs->getValue() as $key => $val} {$key}="{$val}" {/foreach}
     {/if}
 >
-    <div class="progress-bar{if $params.type->hasValue()} bg-{$params.type->getValue()}{/if}
+    <div class="{strip}progress-bar{if $params.type->hasValue()} bg-{$params.type->getValue()}{/if}
          {if $params.striped->getValue() === true} progress-bar-striped{/if}
-         {if $params.animated->getValue() === true} progress-bar-animated{/if}"
+         {if $params.animated->getValue() === true} progress-bar-animated{/if}{/strip}"
          role="{if $params.role->hasValue()}{$params.role->getValue()}{else}progressbar{/if}"
          {if $params.aria->hasValue()}{foreach $params.aria->getValue() as $ariaKey => $ariaVal}aria-{$ariaKey}="{$ariaVal}" {/foreach}{/if}
          {if $params.data->hasValue()}{foreach $params.data->getValue() as $dataKey => $dataVal}data-{$dataKey}="{$dataVal}" {/foreach}{/if}
