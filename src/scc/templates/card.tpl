@@ -49,9 +49,9 @@
     {/if}
     {if $params.footer->hasValue()}
         <{$params['footer-tag']} class="{strip}card-footer
-            {if $params['footer-bg-variant']->hasValue()}bg-{$params['footer-bg-variant']->getValue()}{/if}
-            {if $params['footer-text-variant']->hasValue()}text-{$params['footer-bg-variant']->getValue()}{/if}
-            {if $params['footer-border-variant']->hasValue()}border-{$params['footer-border-variant']->getValue()}{/if}{/strip}"
+            {if $params['footer-bg-variant']->hasValue()} bg-{$params['footer-bg-variant']->getValue()}{/if}
+            {if $params['footer-text-variant']->hasValue()} text-{$params['footer-bg-variant']->getValue()}{/if}
+            {if $params['footer-border-variant']->hasValue()} border-{$params['footer-border-variant']->getValue()}{/if}{/strip}"
         >
             {$params.footer}
         </{$params['footer-tag']}>

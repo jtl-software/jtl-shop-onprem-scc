@@ -26,9 +26,7 @@
     >
         {$params.text->getValue()}
     </a>
-    <div class="{strip}dropdown-menu
-        {if $params.right->getValue() === true} dropdown-menu-right{/if}
-    {/strip}">
+    <div class="{strip}dropdown-menu{if $params.right->getValue() === true} dropdown-menu-right{/if}{/strip}">
         {$blockContent}
     </div>
 </{$params.tag->getValue()}>

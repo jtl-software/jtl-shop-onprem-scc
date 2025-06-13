@@ -6,7 +6,7 @@
     {if $params.title->hasValue()}title="{$params.title->getValue()}"{/if}
     {if $params.required->getValue() === true}required{/if}
     class="{strip}form-control{if $params.class->hasValue()} {$params.class->getValue()}{/if}
-    {if $params.size->hasValue()}form-control-{$params.size->getValue()}{/if}
+    {if $params.size->hasValue()} form-control-{$params.size->getValue()}{/if}
 {/strip}"
     {if $params.itemprop->hasValue()}itemprop="{$params.itemprop->getValue()}"{/if}
     {if $params.itemscope->getValue() === true}itemscope {/if}
