@@ -1,7 +1,7 @@
 <div class="{strip}card {$params.class->getValue()}
-    {if $params['text-variant']->hasValue()}text-{$params['text-variant']->getValue()}{/if}
-    {if $params['border-variant']->hasValue()}border-{$params['border-variant']->getValue()}{/if}
-    {if $params['bg-variant']->hasValue()}bg-{$params['bg-variant']->getValue()}{/if}{/strip}"
+    {if $params['text-variant']->hasValue()} text-{$params['text-variant']->getValue()}{/if}
+    {if $params['border-variant']->hasValue()} border-{$params['border-variant']->getValue()}{/if}
+    {if $params['bg-variant']->hasValue()} bg-{$params['bg-variant']->getValue()}{/if}{/strip}"
     {if $params.id->hasValue()}id="{$params.id->getValue()}"{/if}
     {if $params.style->hasValue()}style="{$params.style->getValue()}"{/if}
     {if $params.title->hasValue()} title="{$params.title->getValue()}"{/if}
@@ -25,9 +25,9 @@
     {/if}
     {if $params.header->hasValue()}
         <{$params['header-tag']} class="{strip}card-header
-            {if $params['header-bg-variant']->hasValue()}bg-{$params['header-bg-variant']->getValue()}{/if}
-            {if $params['header-text-variant']->hasValue()}text-{$params['header-text-variant']->getValue()}{/if}
-            {if $params['header-border-variant']->hasValue()}border-{$params['header-border-variant']->getValue()}{/if}{/strip}"
+            {if $params['header-bg-variant']->hasValue()} bg-{$params['header-bg-variant']->getValue()}{/if}
+            {if $params['header-text-variant']->hasValue()} text-{$params['header-text-variant']->getValue()}{/if}
+            {if $params['header-border-variant']->hasValue()} border-{$params['header-border-variant']->getValue()}{/if}{/strip}"
         >
             {$params.header}
         </{$params['header-tag']}>

@@ -1,6 +1,6 @@
 <{$params.tag->getValue()}
     class="{strip}btn-group{if $params.vertical->getValue() === true}-vertical{/if}
-    {if $params.class->hasValue()}{$params.class->getValue()}{/if}
+    {if $params.class->hasValue()} {$params.class->getValue()}{/if}
     {if $params.size->hasValue()} btn-group-{$params.size->getValue()}{/if}
     {/strip}"
     {if $params.id->hasValue()}id="{$params.id->getValue()}"{/if}
