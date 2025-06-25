@@ -1,5 +1,7 @@
 {assign var=rounded value=''}
-{assign var=useWebP value=$params.webp->getValue() === true && \JTL\Media\Image::hasWebPSupport()}
+{assign var=useModernFormats value= $params.webp->getValue() === true}
+{assign var=hasWebPSupport value= \JTL\Media\Image::hasWebPSupport()}
+{assign var=hasAVIFSupport value= \JTL\Media\Image::hasAVIFSupport()}
 {if $params.rounded->getValue() !== false}
     {if $params.rounded->getValue() === true}
         {assign var=rounded value=' rounded'}
@@ -16,8 +18,23 @@
      {if $params.alt->hasValue()}alt="{$params.alt->getValue()}"{/if}
      src="{$src}">
 {else}
-    {if $useWebP && !str_ends_with($src, '.svg')}
+    {if $useModernFormats && !str_ends_with($src, '.svg')}
     <picture>
+    {if $hasAVIFSupport}
+        <source
+            {if $params.srcset->hasValue()}
+                srcset="{$params.srcset->getValue()|regex_replace:"/\.(?i)(jpg|jpeg|png|bmp) /":".avif "}"
+            {elseif $src !== ''}
+                srcset="{$src|regex_replace:'/\.(?i)(jpg|jpeg|png|bmp)$/':".avif"}"
+            {else}
+                srcset=""
+            {/if}
+            {if $params.sizes->hasValue()}sizes="{$params.sizes->getValue()}"{/if}
+            {if $params.width->hasValue() && !empty($params.width->getValue())}width="{$params.width->getValue()}"{/if}
+            {if $params.height->hasValue() && !empty($params.height->getValue())}height="{$params.height->getValue()}"{/if}
+            type="image/avif">
+    {/if}
+    {if $hasWebPSupport}
         <source
             {if $params.srcset->hasValue()}
                 srcset="{$params.srcset->getValue()|regex_replace:"/\.(?i)(jpg|jpeg|png|bmp) /":".webp "}"
@@ -30,6 +47,7 @@
             {if $params.width->hasValue() && !empty($params.width->getValue())}width="{$params.width->getValue()}"{/if}
             {if $params.height->hasValue() && !empty($params.height->getValue())}height="{$params.height->getValue()}"{/if}
             type="image/webp">
+        {/if}
     {/if}
         <img
             src="{$src}"
@@ -64,7 +82,7 @@
                 {foreach $params.attribs->getValue() as $key => $val} {$key}="{$val}" {/foreach}
             {/if}
         >
-    {if $useWebP && !str_ends_with($src, '.svg')}
+    {if $useModernFormats && !str_ends_with($src, '.svg')}
     </picture>
     {/if}
 {/if}
