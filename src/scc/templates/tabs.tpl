@@ -1,6 +1,6 @@
-{$x = $parentSmarty->assign('tabIDs', [])}
-{$x = $parentSmarty->assign('tabContents', [])}
-{$x = $parentSmarty->assign('activeTabID', '')}
+{$tabIDs = $tabIDs|default:[]}
+{$tabContents = $tabContents|default:[]}
+{$activeTabID = $activeTabID|default:''}
 
 <{$params.tag}
     class="nav nav-tabs {$params.class->getValue()}{if $params.pills->getValue() === true} nav-pills{/if}"
