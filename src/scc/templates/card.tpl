@@ -20,7 +20,7 @@
         {foreach $params.attribs->getValue() as $key => $val} {$key}="{$val}" {/foreach}
     {/if}
 >
-    {if $params['img-src']->hasValue()}
+    {if $params['img-src']->hasValue() && $params['img-top']->getValue() === true}
         <img class="card-img-top" src="{$params['img-src']}" alt="{$params['img-alt']|default:''}">
     {/if}
     {if $params.header->hasValue()}
@@ -42,6 +42,9 @@
         <{$params['subtitle-tag']->getValue()} class="card-subtitle mb-2 text-muted">
             {$params.subtitle}
         </{$params['subtitle-tag']->getValue()}>
+    {/if}
+    {if $params['img-src']->hasValue() && $params['img-top']->getValue() === false}
+        <img class="card-img-top" src="{$params['img-src']}" alt="{$params['img-alt']|default:''}">
     {/if}
     {$blockContent|default:''}
     {if $params['no-body']->getValue() === false}
