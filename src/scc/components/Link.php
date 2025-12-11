@@ -23,6 +23,7 @@ class Link extends AbstractBlockComponent
         $this->addParam(new ComponentProperty('rel'));
         $this->addParam(new ComponentProperty('target'));
         $this->addParam(new ComponentProperty('href', '#'));
+        $this->addParam(new ComponentProperty('usePRG', false, ComponentPropertyType::TYPE_BOOL));
 
         $prop = new ComponentProperty('name');
         $prop->setIsRequired(true);

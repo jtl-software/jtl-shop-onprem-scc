@@ -1,5 +1,10 @@
 <a
-    href="{$params.href|default:'#'}"
+    {if $params.usePRG->getValue()}
+        data-prg-href="{$params.href|default:'#'}"
+        href="#"
+    {else}
+        href="{$params.href|default:'#'}"
+    {/if}
     {if $params.title->hasValue()}title="{$params.title->getValue()}" {/if}
     {if $params.id->hasValue()}id="{$params.id->getValue()}" {/if}
     {if $params.class->hasValue()}class="{$params.class->getValue()}" {/if}
