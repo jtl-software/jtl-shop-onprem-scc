@@ -1,6 +1,6 @@
 <a
     {if $params.usePRG->getValue()}
-        data-prg-href="{$params.href|default:'#'}"
+        data-prg-href="{$params.href|default:''|base64_encode}"
         href="#"
     {else}
         href="{$params.href|default:'#'}"
